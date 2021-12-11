@@ -4,6 +4,12 @@ Give Me a Sniglet is a random word-like generator with an on-device machine lear
 word is likely to be valid. Generate a set of words and view various confidence score, and copy them to your clipboard
 with a single tap. Customize the algorithm by changing the size of the words and syllable shapes.
 
+![App screenshots](.readme/screenshot.png)
+
+<a href="https://apple.co/336C4oX">
+    <img src="/.readme/appstore.svg" height="64" alt="Get on the App Store" />
+</a>
+
 ---
 
 This project was originally a part of Codename Abysima as an attempt to generate a language using machine learning. Now,
