@@ -86,20 +86,14 @@ class Sniglet {
 
             // Predict each result, convert them into a result format the app can use, and only keep those that are
             // valid.
-            var batchResults = try model.predictions(inputs: batchInput).enumerated()
-                .map { index, result in
-                    Result(word: generatedWords[index].replacingOccurrences(of: "*", with: ""),
-                           validation: result.Valid, confidence: result.ValidProbability["valid"] ?? 0)
-                }
-                .filter { result in result.validation == "valid" }
+            var batchResults = try validateResults(batchInput, from: generatedWords)
 
             // Add words until our set is complete (or until we fill in all of our options).
             while wordResults.count < count && batchResults.count > 0 {
                 wordResults.update(with: batchResults.removeFirst())
             }
-        } catch {
-            return Set(arrayLiteral: .error())
-        }
+
+        } catch { return Set(arrayLiteral: .error()) }
 
         // Return a recursive call of this function with the new set we just created to add more, if necessary.
         return getNewWords(count: count, from: wordResults)
@@ -118,5 +112,15 @@ class Sniglet {
             generatedWords.append(newWord)
         }
         return generatedWords
+    }
+
+    /// Returns a list of results containing words that are valid by the machine learning model.
+    private func validateResults(_ batchInput: [SnigletValidatorInput], from origin: [String]) throws -> [Result] {
+        try model.predictions(inputs: batchInput).enumerated()
+            .map { index, result in
+                Result(word: origin[index].replacingOccurrences(of: "*", with: ""),
+                       validation: result.Valid, confidence: result.ValidProbability["valid"] ?? 0)
+            }
+            .filter { result in result.validation == "valid" }
     }
 }
