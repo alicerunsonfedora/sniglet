@@ -1,0 +1,35 @@
+/* 
+  Localizable.strings
+  Give Me a Sniglet
+
+  Created by Marquis Kurt on 16/11/21.
+  
+*/
+
+
+"generator.title" = "Generator";
+"generator.button.prompt" = "Give me a sniglet!";
+"generator.button.help" = "What's this?";
+
+"generator.explain.title" = "Confidence Score";
+"generator.explain.detail" = "Generated sniglets are compared against a machine learning algorithm that detects whether or not a word is likely to exist in a given language. This algorithm has been trained on English and Japanese words and returns a percentage that represents how likely it is for the generated sniglet to be a real word (or wordlike).";
+"generator.explain.detail2" = "The sniglet is broken up into its individual letters and fed into the algorithm. If the sniglet is less than eight characters, asterisks are added as padding. The model will try to predict its validity as best as it can. The system will return a random sniglet from the batch that was successful in its prediction.";
+"generator.explain.detail3" = "The confidence score should be considered when using the sniglet, but is not a definitive answer. You can go to Settings to fine-tune these parameters including boundaries and batch sizes.";
+
+"settings.title" = "Settings";
+"settings.general.title" = "General";
+"settings.clipboard.title" = "Clipboard";
+"settings.clipboard.name" = "Allow Tap to Copy";
+"settings.clipboard.footer" = "Tap on a generated sniglet to copy it to your clipboard.";
+"settings.algorithm.title" = "Algorithm";
+"settings.algorithm.boundaries.title" = "Boundaries";
+"settings.algorithm.boundaries.explain" = "The boundaries determine how many letters are inserted into a word. The boundaries cannot be exceed three to eight characters.";
+"settings.algorithm.batch.title" = "Batch Size";
+"settings.algorithm.batch.explain" = "The batch size determines how many sniglets to generate at a time to ensure at least one valid sniglet appears.";
+
+"settings.syllable.title" = "Syllable Shapes";
+"settings.syllable.add" = "Add";
+"settings.syllable.convert" = "This word will be converted into a syllable shape automatically.";
+"settings.syllable.textprompt" = "Type shape or word";
+"settings.syllable.limit" = "This syllable shape is too long and will be trimmed to the first eight characters.";
+"settings.syllable.footer" = "Syllable shapes describe how to place consonants (C) and vowels (V) together. Shapes may repeat to match the length of the word. Common syllable structures cannot be removed.";

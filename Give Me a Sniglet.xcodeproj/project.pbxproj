@@ -1,0 +1,616 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		95511DC2274AC36500234573 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95511DC1274AC36500234573 /* String.swift */; };
+		9552F65327432CE2004582D6 /* Give_Me_a_SnigletApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9552F64327432CE0004582D6 /* Give_Me_a_SnigletApp.swift */; };
+		9552F65527432CE2004582D6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9552F64427432CE0004582D6 /* ContentView.swift */; };
+		9552F65727432CE2004582D6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9552F64527432CE2004582D6 /* Assets.xcassets */; };
+		9552F66227432DCE004582D6 /* SnigletValidator.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 9552F66127432DCE004582D6 /* SnigletValidator.mlmodel */; };
+		9552F66527432F0F004582D6 /* Sniglet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9552F66427432F0F004582D6 /* Sniglet.swift */; };
+		957676EA274CA3250011E558 /* GeneratorList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957676E9274CA3250011E558 /* GeneratorList.swift */; };
+		957676EC274CA38A0011E558 /* GeneratorSingle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957676EB274CA38A0011E558 /* GeneratorSingle.swift */; };
+		958C2D3F274C1C1D0076E0D9 /* SyllableShapes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958C2D3E274C1C1D0076E0D9 /* SyllableShapes.swift */; };
+		95E0697C274417F00043F568 /* Generator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E0697B274417F00043F568 /* Generator.swift */; };
+		95E0697F2744188B0043F568 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E0697E2744188B0043F568 /* Settings.swift */; };
+		95E06984274419870043F568 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 95E06987274419870043F568 /* Localizable.strings */; };
+		95E0698927442B9D0043F568 /* DoubleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E0698827442B9D0043F568 /* DoubleExtension.swift */; };
+		95F6D19127568CBC00668877 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95F6D19027568CBC00668877 /* WidgetKit.framework */; platformFilter = maccatalyst; };
+		95F6D19327568CBC00668877 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95F6D19227568CBC00668877 /* SwiftUI.framework */; platformFilter = maccatalyst; };
+		95F6D19627568CBC00668877 /* Sniglet_Widget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F6D19527568CBC00668877 /* Sniglet_Widget.swift */; };
+		95F6D19827568CBD00668877 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95F6D19727568CBD00668877 /* Assets.xcassets */; };
+		95F6D19C27568CBD00668877 /* Sniglet WidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 95F6D18E27568CBC00668877 /* Sniglet WidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		95F6D1A227568CE700668877 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95511DC1274AC36500234573 /* String.swift */; };
+		95F6D1A327568CE900668877 /* DoubleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E0698827442B9D0043F568 /* DoubleExtension.swift */; };
+		95F6D1A427568CEC00668877 /* SyllableShapes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958C2D3E274C1C1D0076E0D9 /* SyllableShapes.swift */; };
+		95F6D1A527568CF100668877 /* Sniglet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9552F66427432F0F004582D6 /* Sniglet.swift */; };
+		95F6D1A627568CF500668877 /* SnigletValidator.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 9552F66127432DCE004582D6 /* SnigletValidator.mlmodel */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		95F6D19A27568CBD00668877 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9552F63E27432CE0004582D6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 95F6D18D27568CBC00668877;
+			remoteInfo = "Sniglet WidgetExtension";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		95F6D19E27568CBD00668877 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				95F6D19C27568CBD00668877 /* Sniglet WidgetExtension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		95511DC1274AC36500234573 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		9552F64327432CE0004582D6 /* Give_Me_a_SnigletApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Give_Me_a_SnigletApp.swift; sourceTree = "<group>"; };
+		9552F64427432CE0004582D6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		9552F64527432CE2004582D6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		9552F64A27432CE2004582D6 /* Give Me a Sniglet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Give Me a Sniglet.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9552F65227432CE2004582D6 /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
+		9552F66127432DCE004582D6 /* SnigletValidator.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = SnigletValidator.mlmodel; path = ../../coreml/SnigletValidator.mlmodel; sourceTree = "<group>"; };
+		9552F66427432F0F004582D6 /* Sniglet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sniglet.swift; sourceTree = "<group>"; };
+		957676E9274CA3250011E558 /* GeneratorList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneratorList.swift; sourceTree = "<group>"; };
+		957676EB274CA38A0011E558 /* GeneratorSingle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneratorSingle.swift; sourceTree = "<group>"; };
+		958C2D3E274C1C1D0076E0D9 /* SyllableShapes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyllableShapes.swift; sourceTree = "<group>"; };
+		95E0697B274417F00043F568 /* Generator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Generator.swift; sourceTree = "<group>"; };
+		95E0697E2744188B0043F568 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		95E06986274419870043F568 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		95E0698827442B9D0043F568 /* DoubleExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleExtension.swift; sourceTree = "<group>"; };
+		95E0698B274454F20043F568 /* Give Me a Sniglet (iOS).entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Give Me a Sniglet (iOS).entitlements"; sourceTree = "<group>"; };
+		95F6D18E27568CBC00668877 /* Sniglet WidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Sniglet WidgetExtension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		95F6D19027568CBC00668877 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		95F6D19227568CBC00668877 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		95F6D19527568CBC00668877 /* Sniglet_Widget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sniglet_Widget.swift; sourceTree = "<group>"; };
+		95F6D19727568CBD00668877 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		95F6D19927568CBD00668877 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		95F6D19D27568CBD00668877 /* Sniglet WidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Sniglet WidgetExtension.entitlements"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9552F64727432CE2004582D6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		95F6D18B27568CBC00668877 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				95F6D19327568CBC00668877 /* SwiftUI.framework in Frameworks */,
+				95F6D19127568CBC00668877 /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		9552F63D27432CE0004582D6 = {
+			isa = PBXGroup;
+			children = (
+				95F6D19D27568CBD00668877 /* Sniglet WidgetExtension.entitlements */,
+				95E0698B274454F20043F568 /* Give Me a Sniglet (iOS).entitlements */,
+				9552F64227432CE0004582D6 /* Shared */,
+				9552F65127432CE2004582D6 /* macOS */,
+				95F6D19427568CBC00668877 /* Sniglet Widget */,
+				95F6D18F27568CBC00668877 /* Frameworks */,
+				9552F64B27432CE2004582D6 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		9552F64227432CE0004582D6 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				957676EE274CA5140011E558 /* Views */,
+				9552F66127432DCE004582D6 /* SnigletValidator.mlmodel */,
+				9552F64327432CE0004582D6 /* Give_Me_a_SnigletApp.swift */,
+				9552F64527432CE2004582D6 /* Assets.xcassets */,
+				9552F66427432F0F004582D6 /* Sniglet.swift */,
+				95E06987274419870043F568 /* Localizable.strings */,
+				95E0698827442B9D0043F568 /* DoubleExtension.swift */,
+				95511DC1274AC36500234573 /* String.swift */,
+				958C2D3E274C1C1D0076E0D9 /* SyllableShapes.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		9552F64B27432CE2004582D6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9552F64A27432CE2004582D6 /* Give Me a Sniglet.app */,
+				95F6D18E27568CBC00668877 /* Sniglet WidgetExtension.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9552F65127432CE2004582D6 /* macOS */ = {
+			isa = PBXGroup;
+			children = (
+				9552F65227432CE2004582D6 /* macOS.entitlements */,
+			);
+			path = macOS;
+			sourceTree = "<group>";
+		};
+		957676E8274CA3110011E558 /* Generator */ = {
+			isa = PBXGroup;
+			children = (
+				95E0697B274417F00043F568 /* Generator.swift */,
+				957676E9274CA3250011E558 /* GeneratorList.swift */,
+				957676EB274CA38A0011E558 /* GeneratorSingle.swift */,
+			);
+			path = Generator;
+			sourceTree = "<group>";
+		};
+		957676EE274CA5140011E558 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				957676E8274CA3110011E558 /* Generator */,
+				9552F64427432CE0004582D6 /* ContentView.swift */,
+				95E0697E2744188B0043F568 /* Settings.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		95F6D18F27568CBC00668877 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				95F6D19027568CBC00668877 /* WidgetKit.framework */,
+				95F6D19227568CBC00668877 /* SwiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		95F6D19427568CBC00668877 /* Sniglet Widget */ = {
+			isa = PBXGroup;
+			children = (
+				95F6D19527568CBC00668877 /* Sniglet_Widget.swift */,
+				95F6D19727568CBD00668877 /* Assets.xcassets */,
+				95F6D19927568CBD00668877 /* Info.plist */,
+			);
+			path = "Sniglet Widget";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9552F64927432CE2004582D6 /* Give Me a Sniglet (iOS) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9552F65B27432CE2004582D6 /* Build configuration list for PBXNativeTarget "Give Me a Sniglet (iOS)" */;
+			buildPhases = (
+				9552F64627432CE2004582D6 /* Sources */,
+				9552F64727432CE2004582D6 /* Frameworks */,
+				9552F64827432CE2004582D6 /* Resources */,
+				95F6D19E27568CBD00668877 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				95F6D19B27568CBD00668877 /* PBXTargetDependency */,
+			);
+			name = "Give Me a Sniglet (iOS)";
+			productName = "Give Me a Sniglet (iOS)";
+			productReference = 9552F64A27432CE2004582D6 /* Give Me a Sniglet.app */;
+			productType = "com.apple.product-type.application";
+		};
+		95F6D18D27568CBC00668877 /* Sniglet WidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 95F6D1A127568CBD00668877 /* Build configuration list for PBXNativeTarget "Sniglet WidgetExtension" */;
+			buildPhases = (
+				95F6D18A27568CBC00668877 /* Sources */,
+				95F6D18B27568CBC00668877 /* Frameworks */,
+				95F6D18C27568CBC00668877 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Sniglet WidgetExtension";
+			productName = "Sniglet WidgetExtension";
+			productReference = 95F6D18E27568CBC00668877 /* Sniglet WidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9552F63E27432CE0004582D6 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1310;
+				LastUpgradeCheck = 1310;
+				TargetAttributes = {
+					9552F64927432CE2004582D6 = {
+						CreatedOnToolsVersion = 13.1;
+					};
+					95F6D18D27568CBC00668877 = {
+						CreatedOnToolsVersion = 13.1;
+					};
+				};
+			};
+			buildConfigurationList = 9552F64127432CE0004582D6 /* Build configuration list for PBXProject "Give Me a Sniglet" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 9552F63D27432CE0004582D6;
+			productRefGroup = 9552F64B27432CE2004582D6 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9552F64927432CE2004582D6 /* Give Me a Sniglet (iOS) */,
+				95F6D18D27568CBC00668877 /* Sniglet WidgetExtension */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9552F64827432CE2004582D6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9552F65727432CE2004582D6 /* Assets.xcassets in Resources */,
+				95E06984274419870043F568 /* Localizable.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		95F6D18C27568CBC00668877 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				95F6D19827568CBD00668877 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9552F64627432CE2004582D6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				95E0697F2744188B0043F568 /* Settings.swift in Sources */,
+				9552F65527432CE2004582D6 /* ContentView.swift in Sources */,
+				9552F65327432CE2004582D6 /* Give_Me_a_SnigletApp.swift in Sources */,
+				957676EC274CA38A0011E558 /* GeneratorSingle.swift in Sources */,
+				9552F66227432DCE004582D6 /* SnigletValidator.mlmodel in Sources */,
+				9552F66527432F0F004582D6 /* Sniglet.swift in Sources */,
+				95E0698927442B9D0043F568 /* DoubleExtension.swift in Sources */,
+				958C2D3F274C1C1D0076E0D9 /* SyllableShapes.swift in Sources */,
+				95511DC2274AC36500234573 /* String.swift in Sources */,
+				95E0697C274417F00043F568 /* Generator.swift in Sources */,
+				957676EA274CA3250011E558 /* GeneratorList.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		95F6D18A27568CBC00668877 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				95F6D1A627568CF500668877 /* SnigletValidator.mlmodel in Sources */,
+				95F6D1A327568CE900668877 /* DoubleExtension.swift in Sources */,
+				95F6D1A527568CF100668877 /* Sniglet.swift in Sources */,
+				95F6D1A227568CE700668877 /* String.swift in Sources */,
+				95F6D19627568CBC00668877 /* Sniglet_Widget.swift in Sources */,
+				95F6D1A427568CEC00668877 /* SyllableShapes.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		95F6D19B27568CBD00668877 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 95F6D18D27568CBC00668877 /* Sniglet WidgetExtension */;
+			targetProxy = 95F6D19A27568CBD00668877 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		95E06987274419870043F568 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				95E06986274419870043F568 /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		9552F65927432CE2004582D6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		9552F65A27432CE2004582D6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		9552F65C27432CE2004582D6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Give Me a Sniglet (iOS).entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = FQQXSP79X3;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = net.marquiskurt.abysima;
+				PRODUCT_NAME = "Give Me a Sniglet";
+				SDKROOT = iphoneos;
+				SUPPORTS_MACCATALYST = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		9552F65D27432CE2004582D6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Give Me a Sniglet (iOS).entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = FQQXSP79X3;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = net.marquiskurt.abysima;
+				PRODUCT_NAME = "Give Me a Sniglet";
+				SDKROOT = iphoneos;
+				SUPPORTS_MACCATALYST = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		95F6D19F27568CBD00668877 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = "Sniglet WidgetExtension.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = FQQXSP79X3;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Sniglet Widget/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Sniglet Widget";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "net.marquiskurt.abysima.widget-library";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		95F6D1A027568CBD00668877 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = "Sniglet WidgetExtension.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = FQQXSP79X3;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Sniglet Widget/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Sniglet Widget";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "net.marquiskurt.abysima.widget-library";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9552F64127432CE0004582D6 /* Build configuration list for PBXProject "Give Me a Sniglet" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9552F65927432CE2004582D6 /* Debug */,
+				9552F65A27432CE2004582D6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9552F65B27432CE2004582D6 /* Build configuration list for PBXNativeTarget "Give Me a Sniglet (iOS)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9552F65C27432CE2004582D6 /* Debug */,
+				9552F65D27432CE2004582D6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		95F6D1A127568CBD00668877 /* Build configuration list for PBXNativeTarget "Sniglet WidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				95F6D19F27568CBD00668877 /* Debug */,
+				95F6D1A027568CBD00668877 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 9552F63E27432CE0004582D6 /* Project object */;
+}
