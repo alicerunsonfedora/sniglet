@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9539B80F27651F9D00E9E54D /* SnigletResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9539B80E27651F9D00E9E54D /* SnigletResult.swift */; };
+		9539B81027651FCF00E9E54D /* SnigletResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9539B80E27651F9D00E9E54D /* SnigletResult.swift */; };
 		95511DC2274AC36500234573 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95511DC1274AC36500234573 /* String.swift */; };
 		9552F65327432CE2004582D6 /* Give_Me_a_SnigletApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9552F64327432CE0004582D6 /* Give_Me_a_SnigletApp.swift */; };
 		9552F65527432CE2004582D6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9552F64427432CE0004582D6 /* ContentView.swift */; };
@@ -57,13 +59,14 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		9539B80E27651F9D00E9E54D /* SnigletResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnigletResult.swift; sourceTree = "<group>"; };
 		95511DC1274AC36500234573 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		9552F64327432CE0004582D6 /* Give_Me_a_SnigletApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Give_Me_a_SnigletApp.swift; sourceTree = "<group>"; };
 		9552F64427432CE0004582D6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		9552F64527432CE2004582D6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9552F64A27432CE2004582D6 /* Give Me a Sniglet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Give Me a Sniglet.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9552F65227432CE2004582D6 /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
-		9552F66127432DCE004582D6 /* SnigletValidator.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = SnigletValidator.mlmodel; path = ../../coreml/SnigletValidator.mlmodel; sourceTree = "<group>"; };
+		9552F66127432DCE004582D6 /* SnigletValidator.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = SnigletValidator.mlmodel; sourceTree = "<group>"; };
 		9552F66427432F0F004582D6 /* Sniglet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sniglet.swift; sourceTree = "<group>"; };
 		957676E9274CA3250011E558 /* GeneratorList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneratorList.swift; sourceTree = "<group>"; };
 		957676EB274CA38A0011E558 /* GeneratorSingle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneratorSingle.swift; sourceTree = "<group>"; };
@@ -102,6 +105,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9539B80D27650FD200E9E54D /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				95E0698827442B9D0043F568 /* DoubleExtension.swift */,
+				95511DC1274AC36500234573 /* String.swift */,
+				958C2D3E274C1C1D0076E0D9 /* SyllableShapes.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
 		9552F63D27432CE0004582D6 = {
 			isa = PBXGroup;
 			children = (
@@ -118,15 +131,14 @@
 		9552F64227432CE0004582D6 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				9539B80D27650FD200E9E54D /* Utilities */,
 				957676EE274CA5140011E558 /* Views */,
 				9552F66127432DCE004582D6 /* SnigletValidator.mlmodel */,
 				9552F64327432CE0004582D6 /* Give_Me_a_SnigletApp.swift */,
 				9552F64527432CE2004582D6 /* Assets.xcassets */,
 				9552F66427432F0F004582D6 /* Sniglet.swift */,
 				95E06987274419870043F568 /* Localizable.strings */,
-				95E0698827442B9D0043F568 /* DoubleExtension.swift */,
-				95511DC1274AC36500234573 /* String.swift */,
-				958C2D3E274C1C1D0076E0D9 /* SyllableShapes.swift */,
+				9539B80E27651F9D00E9E54D /* SnigletResult.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -299,6 +311,7 @@
 				95511DC2274AC36500234573 /* String.swift in Sources */,
 				95E0697C274417F00043F568 /* Generator.swift in Sources */,
 				957676EA274CA3250011E558 /* GeneratorList.swift in Sources */,
+				9539B80F27651F9D00E9E54D /* SnigletResult.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -309,6 +322,7 @@
 				95F6D1A627568CF500668877 /* SnigletValidator.mlmodel in Sources */,
 				95F6D1A327568CE900668877 /* DoubleExtension.swift in Sources */,
 				95F6D1A527568CF100668877 /* Sniglet.swift in Sources */,
+				9539B81027651FCF00E9E54D /* SnigletResult.swift in Sources */,
 				95F6D1A227568CE700668877 /* String.swift in Sources */,
 				95F6D19627568CBC00668877 /* Sniglet_Widget.swift in Sources */,
 				95F6D1A427568CEC00668877 /* SyllableShapes.swift in Sources */,
