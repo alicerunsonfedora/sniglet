@@ -24,6 +24,8 @@
 "saved.empty.prompt" = "Fill your dictionary by saving generated sniglets and assign personal definitions to them.";
 "saved.detail.title" = "Dictionary Entry";
 "saved.button.add" = "Add to Dictionary";
+"saved.alert.title" = "Sniglet Added To Dictionary";
+"saved.alert.detail" = "You can go to Dictionary to view the word and add a custom definition.";
 
 // MARK: - SETTINGS
 "settings.title" = "Settings";

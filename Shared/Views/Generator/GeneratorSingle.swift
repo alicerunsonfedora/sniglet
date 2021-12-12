@@ -14,6 +14,7 @@ struct GeneratorSingleView: View {
     @Environment(\.managedObjectContext) var managedObjectContext
     @State var result: Sniglet.Result = .empty()
     @State var showDetails: Bool = false
+    @State private var showAddedAlert: Bool = false
 
     var body: some View {
         VStack(spacing: 16) {
@@ -54,6 +55,14 @@ struct GeneratorSingleView: View {
                 Button(action: saveSniglet) {
                     Label("saved.button.add", systemImage: "bookmark")
                 }
+                .alert(
+                    "saved.alert.title",
+                    isPresented: $showAddedAlert,
+                    actions: {
+                        Button("OK", role: .cancel) { }
+                    },
+                    message: { Text("saved.alert.detail") }
+                )
             }
         }
         .onAppear(perform: setSniglet)
@@ -76,6 +85,7 @@ struct GeneratorSingleView: View {
         entry.validity = result.validation
         entry.note = ""
         DBController.shared.save()
+        showAddedAlert = true
     }
 
 }

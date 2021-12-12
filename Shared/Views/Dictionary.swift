@@ -22,10 +22,12 @@ struct Dictionary: View {
     var body: some View {
         NavigationView {
             Group {
-                if words.isEmpty { emptyView }
+                if words.isEmpty { Spacer() }
                 else { dictionaryList }
             }
             .navigationTitle("saved.title.long")
+
+            if words.isEmpty { emptyView }
         }
     }
 
