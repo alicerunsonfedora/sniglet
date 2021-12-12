@@ -7,6 +7,7 @@
 
 import Foundation
 import SwiftUI
+import CoreData
 
 struct GeneratorList: View {
     @AppStorage("generateSize") var generateSize: Int = 1
@@ -68,7 +69,7 @@ struct GeneratorList: View {
 }
 
 struct GeneratorListDetail: View {
-
+    @Environment(\.managedObjectContext) var managedObjectContext
     @AppStorage("allowClipboard") var tapToCopy: Bool = true
     @State var result: Sniglet.Result
     @State var showDetails: Bool = false
@@ -102,12 +103,26 @@ struct GeneratorListDetail: View {
                     }
                 }
             }
+            ToolbarItem {
+                Button(action: saveSniglet) {
+                    Label("saved.button.add", systemImage: "bookmark")
+                }
+            }
         }
         .sheet(isPresented: $showDetails) {
             GeneratorExplanation {
                 showDetails.toggle()
             }
         }
+    }
+
+    func saveSniglet() {
+        let entry = SavedWord(context: managedObjectContext)
+        entry.word = result.word
+        entry.confidence = result.confidence
+        entry.validity = result.validation
+        entry.note = ""
+        DBController.shared.save()
     }
 
 }

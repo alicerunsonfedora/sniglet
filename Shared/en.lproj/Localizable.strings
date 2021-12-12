@@ -23,6 +23,7 @@
 "saved.empty.title" = "No Saved Sniglets";
 "saved.empty.prompt" = "Fill your dictionary by saving generated sniglets and assign personal definitions to them.";
 "saved.detail.title" = "Dictionary Entry";
+"saved.button.add" = "Add to Dictionary";
 
 // MARK: - SETTINGS
 "settings.title" = "Settings";

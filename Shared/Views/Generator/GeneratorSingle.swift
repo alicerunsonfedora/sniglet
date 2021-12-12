@@ -6,10 +6,12 @@
 //
 
 import Foundation
+import CoreData
 import SwiftUI
 
 struct GeneratorSingleView: View {
     @AppStorage("allowClipboard") var tapToCopy: Bool = true
+    @Environment(\.managedObjectContext) var managedObjectContext
     @State var result: Sniglet.Result = .empty()
     @State var showDetails: Bool = false
 
@@ -47,6 +49,13 @@ struct GeneratorSingleView: View {
             }
 
         }
+        .toolbar {
+            ToolbarItem {
+                Button(action: saveSniglet) {
+                    Label("saved.button.add", systemImage: "bookmark")
+                }
+            }
+        }
         .onAppear(perform: setSniglet)
         .sheet(isPresented: $showDetails) {
             GeneratorExplanation {
@@ -60,13 +69,24 @@ struct GeneratorSingleView: View {
         result = Sniglet.shared.getNewWords().first ?? .null()
     }
 
+    func saveSniglet() {
+        let entry = SavedWord(context: managedObjectContext)
+        entry.word = result.word
+        entry.confidence = result.confidence
+        entry.validity = result.validation
+        entry.note = ""
+        DBController.shared.save()
+    }
+
 }
 
 struct GeneratorSingle_Preview: PreviewProvider {
     static var previews: some View {
         Group {
-            GeneratorSingleView()
-                .previewDevice("iPhone 13")
+            NavigationView {
+                GeneratorSingleView()
+                    .previewDevice("iPhone 13")
+            }
         }
     }
 }
