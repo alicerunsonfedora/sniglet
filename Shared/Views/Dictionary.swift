@@ -10,6 +10,8 @@ import CoreData
 
 struct Dictionary: View {
     @Environment(\.managedObjectContext) var managedObjectContext
+    @Environment(\.horizontalSizeClass) private var horizontalSizeClass
+
     @FetchRequest(
         entity: SavedWord.entity(),
         sortDescriptors: [
@@ -22,12 +24,18 @@ struct Dictionary: View {
     var body: some View {
         NavigationView {
             Group {
-                if words.isEmpty { Spacer() }
+                if words.isEmpty {
+                    if horizontalSizeClass == .compact {
+                        emptyView
+                    } else {
+                        EmptyView()
+                    }
+                }
                 else { dictionaryList }
             }
             .navigationTitle("saved.title.long")
 
-            if words.isEmpty { emptyView }
+            if words.isEmpty && horizontalSizeClass == .regular { emptyView }
         }
     }
 

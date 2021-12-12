@@ -18,6 +18,20 @@ struct GeneratorSingleView: View {
 
     var body: some View {
         VStack(spacing: 16) {
+            HStack {
+                Spacer()
+                Button(action: saveSniglet) {
+                    Label("saved.button.add", systemImage: "bookmark")
+                }
+                .alert(
+                    "saved.alert.title",
+                    isPresented: $showAddedAlert,
+                    actions: {
+                        Button("OK", role: .cancel) { }
+                    },
+                    message: { Text("saved.alert.detail") }
+                )
+            }
             Spacer()
             if tapToCopy {
                 Button(action: { UIPasteboard.general.string = result.word }) {
@@ -28,10 +42,10 @@ struct GeneratorSingleView: View {
                 GeneratorResultText(word: result.word)
             }
 
-
             Button(action: setSniglet) {
                 Label("generator.button.prompt", systemImage: "wand.and.stars")
             }
+
             .buttonStyle(.borderedProminent)
             #if os(iOS)
             .cornerRadius(16)
@@ -49,21 +63,6 @@ struct GeneratorSingleView: View {
                 showDetails.toggle()
             }
 
-        }
-        .toolbar {
-            ToolbarItem {
-                Button(action: saveSniglet) {
-                    Label("saved.button.add", systemImage: "bookmark")
-                }
-                .alert(
-                    "saved.alert.title",
-                    isPresented: $showAddedAlert,
-                    actions: {
-                        Button("OK", role: .cancel) { }
-                    },
-                    message: { Text("saved.alert.detail") }
-                )
-            }
         }
         .onAppear(perform: setSniglet)
         .sheet(isPresented: $showDetails) {
@@ -93,10 +92,8 @@ struct GeneratorSingleView: View {
 struct GeneratorSingle_Preview: PreviewProvider {
     static var previews: some View {
         Group {
-            NavigationView {
-                GeneratorSingleView()
-                    .previewDevice("iPhone 13")
-            }
+            GeneratorSingleView()
+                .previewDevice("iPhone 13")
         }
     }
 }
