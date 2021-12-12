@@ -35,7 +35,7 @@ struct GeneratorSingleView: View {
             #endif
 
             if tapToCopy {
-                Text("Tap the word to copy it to your clipboard.")
+                Text("generator.copy.prompt")
                     .font(.caption)
                     .foregroundColor(.secondary)
             }

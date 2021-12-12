@@ -6,16 +6,25 @@
   
 */
 
-
+// MARK: - GENERATOR
 "generator.title" = "Generator";
 "generator.button.prompt" = "Give me a sniglet!";
 "generator.button.help" = "What's this?";
+"generator.copy.prompt" = "Tap the word to copy it to your clipboard.";
 
 "generator.explain.title" = "Confidence Score";
 "generator.explain.detail" = "Generated sniglets are compared against a machine learning algorithm that detects whether or not a word is likely to exist in a given language. This algorithm has been trained on English and Japanese words and returns a percentage that represents how likely it is for the generated sniglet to be a real word (or wordlike).";
 "generator.explain.detail2" = "The sniglet is broken up into its individual letters and fed into the algorithm. If the sniglet is less than eight characters, asterisks are added as padding. The model will try to predict its validity as best as it can. The system will return a random sniglet from the batch that was successful in its prediction.";
 "generator.explain.detail3" = "The confidence score should be considered when using the sniglet, but is not a definitive answer. You can go to Settings to fine-tune these parameters including boundaries and batch sizes.";
 
+// MARK: - SAVED WORDS
+"saved.title" = "Dictionary";
+"saved.title.long" = "Your Dictionary";
+"saved.empty.title" = "No Saved Sniglets";
+"saved.empty.prompt" = "Fill your dictionary by saving generated sniglets and assign personal definitions to them.";
+"saved.detail.title" = "Dictionary Entry";
+
+// MARK: - SETTINGS
 "settings.title" = "Settings";
 "settings.general.title" = "General";
 "settings.clipboard.title" = "Clipboard";

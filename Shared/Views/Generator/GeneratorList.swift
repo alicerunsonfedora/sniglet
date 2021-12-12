@@ -98,7 +98,7 @@ struct GeneratorListDetail: View {
             ToolbarItem {
                 if !tapToCopy {
                     Button(action: { UIPasteboard.general.string = result.word }) {
-                        Label("Copy to Clipboard", systemImage: "doc.on.clipboard")
+                        Label("Copy to Clipboard", systemImage: "doc.on.doc")
                     }
                 }
             }

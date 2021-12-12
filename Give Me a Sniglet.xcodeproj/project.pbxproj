@@ -9,12 +9,17 @@
 /* Begin PBXBuildFile section */
 		9539B80F27651F9D00E9E54D /* SnigletResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9539B80E27651F9D00E9E54D /* SnigletResult.swift */; };
 		9539B81027651FCF00E9E54D /* SnigletResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9539B80E27651F9D00E9E54D /* SnigletResult.swift */; };
+		9540B227276692DE00A6E5D2 /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9540B225276692DE00A6E5D2 /* DataModel.xcdatamodeld */; };
+		9540B228276692DE00A6E5D2 /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9540B225276692DE00A6E5D2 /* DataModel.xcdatamodeld */; };
 		95511DC2274AC36500234573 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95511DC1274AC36500234573 /* String.swift */; };
 		9552F65327432CE2004582D6 /* Give_Me_a_SnigletApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9552F64327432CE0004582D6 /* Give_Me_a_SnigletApp.swift */; };
 		9552F65527432CE2004582D6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9552F64427432CE0004582D6 /* ContentView.swift */; };
 		9552F65727432CE2004582D6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9552F64527432CE2004582D6 /* Assets.xcassets */; };
 		9552F66227432DCE004582D6 /* SnigletValidator.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 9552F66127432DCE004582D6 /* SnigletValidator.mlmodel */; };
 		9552F66527432F0F004582D6 /* Sniglet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9552F66427432F0F004582D6 /* Sniglet.swift */; };
+		95562DCE276695FF00E0C6FD /* Dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95562DCD276695FF00E0C6FD /* Dictionary.swift */; };
+		95562DD1276698FA00E0C6FD /* DBController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95562DD0276698FA00E0C6FD /* DBController.swift */; };
+		95562DD227669A7500E0C6FD /* DBController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95562DD0276698FA00E0C6FD /* DBController.swift */; };
 		957676EA274CA3250011E558 /* GeneratorList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957676E9274CA3250011E558 /* GeneratorList.swift */; };
 		957676EC274CA38A0011E558 /* GeneratorSingle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957676EB274CA38A0011E558 /* GeneratorSingle.swift */; };
 		958C2D3F274C1C1D0076E0D9 /* SyllableShapes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958C2D3E274C1C1D0076E0D9 /* SyllableShapes.swift */; };
@@ -61,6 +66,7 @@
 /* Begin PBXFileReference section */
 		9539B80E27651F9D00E9E54D /* SnigletResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnigletResult.swift; sourceTree = "<group>"; };
 		9539B8112765263200E9E54D /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		9540B226276692DE00A6E5D2 /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
 		95511DC1274AC36500234573 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		9552F64327432CE0004582D6 /* Give_Me_a_SnigletApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Give_Me_a_SnigletApp.swift; sourceTree = "<group>"; };
 		9552F64427432CE0004582D6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -69,6 +75,8 @@
 		9552F65227432CE2004582D6 /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
 		9552F66127432DCE004582D6 /* SnigletValidator.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = SnigletValidator.mlmodel; sourceTree = "<group>"; };
 		9552F66427432F0F004582D6 /* Sniglet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sniglet.swift; sourceTree = "<group>"; };
+		95562DCD276695FF00E0C6FD /* Dictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dictionary.swift; sourceTree = "<group>"; };
+		95562DD0276698FA00E0C6FD /* DBController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBController.swift; sourceTree = "<group>"; };
 		957676E9274CA3250011E558 /* GeneratorList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneratorList.swift; sourceTree = "<group>"; };
 		957676EB274CA38A0011E558 /* GeneratorSingle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneratorSingle.swift; sourceTree = "<group>"; };
 		958C2D3E274C1C1D0076E0D9 /* SyllableShapes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyllableShapes.swift; sourceTree = "<group>"; };
@@ -133,6 +141,7 @@
 		9552F64227432CE0004582D6 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				95562DCF276698EA00E0C6FD /* Models */,
 				9539B80D27650FD200E9E54D /* Utilities */,
 				957676EE274CA5140011E558 /* Views */,
 				9552F66127432DCE004582D6 /* SnigletValidator.mlmodel */,
@@ -162,6 +171,15 @@
 			path = macOS;
 			sourceTree = "<group>";
 		};
+		95562DCF276698EA00E0C6FD /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				9540B225276692DE00A6E5D2 /* DataModel.xcdatamodeld */,
+				95562DD0276698FA00E0C6FD /* DBController.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		957676E8274CA3110011E558 /* Generator */ = {
 			isa = PBXGroup;
 			children = (
@@ -178,6 +196,7 @@
 				957676E8274CA3110011E558 /* Generator */,
 				9552F64427432CE0004582D6 /* ContentView.swift */,
 				95E0697E2744188B0043F568 /* Settings.swift */,
+				95562DCD276695FF00E0C6FD /* Dictionary.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -303,6 +322,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				95E0697F2744188B0043F568 /* Settings.swift in Sources */,
+				95562DD1276698FA00E0C6FD /* DBController.swift in Sources */,
 				9552F65527432CE2004582D6 /* ContentView.swift in Sources */,
 				9552F65327432CE2004582D6 /* Give_Me_a_SnigletApp.swift in Sources */,
 				957676EC274CA38A0011E558 /* GeneratorSingle.swift in Sources */,
@@ -312,6 +332,8 @@
 				958C2D3F274C1C1D0076E0D9 /* SyllableShapes.swift in Sources */,
 				95511DC2274AC36500234573 /* String.swift in Sources */,
 				95E0697C274417F00043F568 /* Generator.swift in Sources */,
+				9540B227276692DE00A6E5D2 /* DataModel.xcdatamodeld in Sources */,
+				95562DCE276695FF00E0C6FD /* Dictionary.swift in Sources */,
 				957676EA274CA3250011E558 /* GeneratorList.swift in Sources */,
 				9539B80F27651F9D00E9E54D /* SnigletResult.swift in Sources */,
 			);
@@ -322,6 +344,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				95F6D1A627568CF500668877 /* SnigletValidator.mlmodel in Sources */,
+				95562DD227669A7500E0C6FD /* DBController.swift in Sources */,
+				9540B228276692DE00A6E5D2 /* DataModel.xcdatamodeld in Sources */,
 				95F6D1A327568CE900668877 /* DoubleExtension.swift in Sources */,
 				95F6D1A527568CF100668877 /* Sniglet.swift in Sources */,
 				9539B81027651FCF00E9E54D /* SnigletResult.swift in Sources */,
@@ -627,6 +651,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		9540B225276692DE00A6E5D2 /* DataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				9540B226276692DE00A6E5D2 /* DataModel.xcdatamodel */,
+			);
+			currentVersion = 9540B226276692DE00A6E5D2 /* DataModel.xcdatamodel */;
+			path = DataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 9552F63E27432CE0004582D6 /* Project object */;
 }

@@ -16,6 +16,12 @@ struct ContentView: View {
             .tabItem {
                 Label("generator.title", systemImage: "wand.and.stars")
             }
+
+            Dictionary()
+            .tabItem {
+                Label("saved.title", systemImage: "character.book.closed")
+            }
+
             SettingsView()
             .tabItem {
                 Label("settings.title", systemImage: "gear")
