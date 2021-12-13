@@ -23,13 +23,22 @@
 		957676EA274CA3250011E558 /* GeneratorList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957676E9274CA3250011E558 /* GeneratorList.swift */; };
 		957676EC274CA38A0011E558 /* GeneratorSingle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957676EB274CA38A0011E558 /* GeneratorSingle.swift */; };
 		958C2D3F274C1C1D0076E0D9 /* SyllableShapes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958C2D3E274C1C1D0076E0D9 /* SyllableShapes.swift */; };
+		95C794952766D33100051AED /* RandomSniglet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C794942766D33100051AED /* RandomSniglet.swift */; };
+		95C794972766D35300051AED /* RandomSnigletProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C794962766D35300051AED /* RandomSnigletProvider.swift */; };
+		95C7949A2766D3C100051AED /* RandomSnigletEV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C794992766D3C100051AED /* RandomSnigletEV.swift */; };
+		95C7949C2766D3EF00051AED /* WidgetConfidenceBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C7949B2766D3EF00051AED /* WidgetConfidenceBar.swift */; };
+		95C7949E2766D55000051AED /* SavedWOTDProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C7949D2766D55000051AED /* SavedWOTDProvider.swift */; };
+		95C794A02766D92A00051AED /* SavedWOTDEV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C7949F2766D92A00051AED /* SavedWOTDEV.swift */; };
+		95C794A22766DE1900051AED /* DailySavedSniglet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C794A12766DE1800051AED /* DailySavedSniglet.swift */; };
+		95C794A42766E5A500051AED /* AppGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C794A32766E5A500051AED /* AppGroup.swift */; };
+		95C794A52766E5A500051AED /* AppGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C794A32766E5A500051AED /* AppGroup.swift */; };
 		95E0697C274417F00043F568 /* Generator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E0697B274417F00043F568 /* Generator.swift */; };
 		95E0697F2744188B0043F568 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E0697E2744188B0043F568 /* Settings.swift */; };
 		95E06984274419870043F568 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 95E06987274419870043F568 /* Localizable.strings */; };
 		95E0698927442B9D0043F568 /* DoubleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E0698827442B9D0043F568 /* DoubleExtension.swift */; };
 		95F6D19127568CBC00668877 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95F6D19027568CBC00668877 /* WidgetKit.framework */; platformFilter = maccatalyst; };
 		95F6D19327568CBC00668877 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95F6D19227568CBC00668877 /* SwiftUI.framework */; platformFilter = maccatalyst; };
-		95F6D19627568CBC00668877 /* Sniglet_Widget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F6D19527568CBC00668877 /* Sniglet_Widget.swift */; };
+		95F6D19627568CBC00668877 /* WidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F6D19527568CBC00668877 /* WidgetBundle.swift */; };
 		95F6D19827568CBD00668877 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95F6D19727568CBD00668877 /* Assets.xcassets */; };
 		95F6D19C27568CBD00668877 /* Sniglet WidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 95F6D18E27568CBC00668877 /* Sniglet WidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		95F6D1A227568CE700668877 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95511DC1274AC36500234573 /* String.swift */; };
@@ -80,6 +89,14 @@
 		957676E9274CA3250011E558 /* GeneratorList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneratorList.swift; sourceTree = "<group>"; };
 		957676EB274CA38A0011E558 /* GeneratorSingle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneratorSingle.swift; sourceTree = "<group>"; };
 		958C2D3E274C1C1D0076E0D9 /* SyllableShapes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyllableShapes.swift; sourceTree = "<group>"; };
+		95C794942766D33100051AED /* RandomSniglet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomSniglet.swift; sourceTree = "<group>"; };
+		95C794962766D35300051AED /* RandomSnigletProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomSnigletProvider.swift; sourceTree = "<group>"; };
+		95C794992766D3C100051AED /* RandomSnigletEV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomSnigletEV.swift; sourceTree = "<group>"; };
+		95C7949B2766D3EF00051AED /* WidgetConfidenceBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetConfidenceBar.swift; sourceTree = "<group>"; };
+		95C7949D2766D55000051AED /* SavedWOTDProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedWOTDProvider.swift; sourceTree = "<group>"; };
+		95C7949F2766D92A00051AED /* SavedWOTDEV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedWOTDEV.swift; sourceTree = "<group>"; };
+		95C794A12766DE1800051AED /* DailySavedSniglet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailySavedSniglet.swift; sourceTree = "<group>"; };
+		95C794A32766E5A500051AED /* AppGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppGroup.swift; sourceTree = "<group>"; };
 		95E0697B274417F00043F568 /* Generator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Generator.swift; sourceTree = "<group>"; };
 		95E0697E2744188B0043F568 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		95E06986274419870043F568 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -88,7 +105,7 @@
 		95F6D18E27568CBC00668877 /* Sniglet WidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Sniglet WidgetExtension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		95F6D19027568CBC00668877 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		95F6D19227568CBC00668877 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
-		95F6D19527568CBC00668877 /* Sniglet_Widget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sniglet_Widget.swift; sourceTree = "<group>"; };
+		95F6D19527568CBC00668877 /* WidgetBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetBundle.swift; sourceTree = "<group>"; };
 		95F6D19727568CBD00668877 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		95F6D19927568CBD00668877 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		95F6D19D27568CBD00668877 /* Sniglet WidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Sniglet WidgetExtension.entitlements"; sourceTree = "<group>"; };
@@ -120,6 +137,7 @@
 				95E0698827442B9D0043F568 /* DoubleExtension.swift */,
 				95511DC1274AC36500234573 /* String.swift */,
 				958C2D3E274C1C1D0076E0D9 /* SyllableShapes.swift */,
+				95C794A32766E5A500051AED /* AppGroup.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -201,6 +219,34 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		95C794922766D31700051AED /* Providers */ = {
+			isa = PBXGroup;
+			children = (
+				95C794962766D35300051AED /* RandomSnigletProvider.swift */,
+				95C7949D2766D55000051AED /* SavedWOTDProvider.swift */,
+			);
+			path = Providers;
+			sourceTree = "<group>";
+		};
+		95C794932766D31D00051AED /* Widgets */ = {
+			isa = PBXGroup;
+			children = (
+				95C794942766D33100051AED /* RandomSniglet.swift */,
+				95C794A12766DE1800051AED /* DailySavedSniglet.swift */,
+			);
+			path = Widgets;
+			sourceTree = "<group>";
+		};
+		95C794982766D3B500051AED /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				95C794992766D3C100051AED /* RandomSnigletEV.swift */,
+				95C7949B2766D3EF00051AED /* WidgetConfidenceBar.swift */,
+				95C7949F2766D92A00051AED /* SavedWOTDEV.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		95F6D18F27568CBC00668877 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -213,7 +259,10 @@
 		95F6D19427568CBC00668877 /* Sniglet Widget */ = {
 			isa = PBXGroup;
 			children = (
-				95F6D19527568CBC00668877 /* Sniglet_Widget.swift */,
+				95C794982766D3B500051AED /* Views */,
+				95C794932766D31D00051AED /* Widgets */,
+				95C794922766D31700051AED /* Providers */,
+				95F6D19527568CBC00668877 /* WidgetBundle.swift */,
 				95F6D19727568CBD00668877 /* Assets.xcassets */,
 				95F6D19927568CBD00668877 /* Info.plist */,
 			);
@@ -328,6 +377,7 @@
 				957676EC274CA38A0011E558 /* GeneratorSingle.swift in Sources */,
 				9552F66227432DCE004582D6 /* SnigletValidator.mlmodel in Sources */,
 				9552F66527432F0F004582D6 /* Sniglet.swift in Sources */,
+				95C794A42766E5A500051AED /* AppGroup.swift in Sources */,
 				95E0698927442B9D0043F568 /* DoubleExtension.swift in Sources */,
 				958C2D3F274C1C1D0076E0D9 /* SyllableShapes.swift in Sources */,
 				95511DC2274AC36500234573 /* String.swift in Sources */,
@@ -343,14 +393,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				95C794972766D35300051AED /* RandomSnigletProvider.swift in Sources */,
 				95F6D1A627568CF500668877 /* SnigletValidator.mlmodel in Sources */,
+				95C7949E2766D55000051AED /* SavedWOTDProvider.swift in Sources */,
 				95562DD227669A7500E0C6FD /* DBController.swift in Sources */,
+				95C7949C2766D3EF00051AED /* WidgetConfidenceBar.swift in Sources */,
 				9540B228276692DE00A6E5D2 /* DataModel.xcdatamodeld in Sources */,
 				95F6D1A327568CE900668877 /* DoubleExtension.swift in Sources */,
 				95F6D1A527568CF100668877 /* Sniglet.swift in Sources */,
+				95C7949A2766D3C100051AED /* RandomSnigletEV.swift in Sources */,
+				95C794A52766E5A500051AED /* AppGroup.swift in Sources */,
+				95C794952766D33100051AED /* RandomSniglet.swift in Sources */,
+				95C794A02766D92A00051AED /* SavedWOTDEV.swift in Sources */,
 				9539B81027651FCF00E9E54D /* SnigletResult.swift in Sources */,
 				95F6D1A227568CE700668877 /* String.swift in Sources */,
-				95F6D19627568CBC00668877 /* Sniglet_Widget.swift in Sources */,
+				95F6D19627568CBC00668877 /* WidgetBundle.swift in Sources */,
+				95C794A22766DE1900051AED /* DailySavedSniglet.swift in Sources */,
 				95F6D1A427568CEC00668877 /* SyllableShapes.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -36,9 +36,15 @@ struct DBController {
     /// Create an instance of the database controller.
     /// - Parameter inMemory: Whether to only keep the database in memory. Defaults to false.
     init(inMemory: Bool = false) {
+        let storeURL = AppGroup.sniglets.containerURL
+            .appendingPathComponent("savedwords.sqlite")
+        let description = NSPersistentStoreDescription(url: storeURL)
         container = NSPersistentContainer(name: "DataModel")
+
         if inMemory {
             container.persistentStoreDescriptions.first?.url = URL(fileURLWithPath: "/dev/null")
+        } else {
+            container.persistentStoreDescriptions = [description]
         }
 
         container.loadPersistentStores { description, error in
