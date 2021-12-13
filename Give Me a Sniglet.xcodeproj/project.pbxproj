@@ -89,6 +89,7 @@
 		957676E9274CA3250011E558 /* GeneratorList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneratorList.swift; sourceTree = "<group>"; };
 		957676EB274CA38A0011E558 /* GeneratorSingle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneratorSingle.swift; sourceTree = "<group>"; };
 		958C2D3E274C1C1D0076E0D9 /* SyllableShapes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyllableShapes.swift; sourceTree = "<group>"; };
+		95BFE9C72766F804004E8630 /* Give-Me-a-Sniglet--iOS--Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Give-Me-a-Sniglet--iOS--Info.plist"; sourceTree = "<group>"; };
 		95C794942766D33100051AED /* RandomSniglet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomSniglet.swift; sourceTree = "<group>"; };
 		95C794962766D35300051AED /* RandomSnigletProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomSnigletProvider.swift; sourceTree = "<group>"; };
 		95C794992766D3C100051AED /* RandomSnigletEV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomSnigletEV.swift; sourceTree = "<group>"; };
@@ -145,6 +146,7 @@
 		9552F63D27432CE0004582D6 = {
 			isa = PBXGroup;
 			children = (
+				95BFE9C72766F804004E8630 /* Give-Me-a-Sniglet--iOS--Info.plist */,
 				9539B8112765263200E9E54D /* README.md */,
 				95F6D19D27568CBD00668877 /* Sniglet WidgetExtension.entitlements */,
 				95E0698B274454F20043F568 /* Give Me a Sniglet (iOS).entitlements */,
@@ -554,10 +556,11 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "Give Me a Sniglet (iOS).entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = FQQXSP79X3;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Give-Me-a-Sniglet--iOS--Info.plist";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -569,7 +572,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.1;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = net.marquiskurt.abysima;
 				PRODUCT_NAME = "Give Me a Sniglet";
 				SDKROOT = iphoneos;
@@ -588,10 +591,11 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "Give Me a Sniglet (iOS).entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = FQQXSP79X3;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Give-Me-a-Sniglet--iOS--Info.plist";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -603,7 +607,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.1;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = net.marquiskurt.abysima;
 				PRODUCT_NAME = "Give Me a Sniglet";
 				SDKROOT = iphoneos;
@@ -622,7 +626,7 @@
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_ENTITLEMENTS = "Sniglet WidgetExtension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = FQQXSP79X3;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Sniglet Widget/Info.plist";
@@ -634,7 +638,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.0.1;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "net.marquiskurt.abysima.widget-library";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
@@ -653,7 +657,7 @@
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_ENTITLEMENTS = "Sniglet WidgetExtension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = FQQXSP79X3;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Sniglet Widget/Info.plist";
@@ -665,7 +669,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.0.1;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "net.marquiskurt.abysima.widget-library";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
