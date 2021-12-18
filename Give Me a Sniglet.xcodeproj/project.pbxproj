@@ -76,6 +76,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		95071750276E51F900A3E541 /* create_dataset.py */ = {isa = PBXFileReference; lastKnownFileType = text.script.python; path = create_dataset.py; sourceTree = "<group>"; };
+		95071752276E51F900A3E541 /* INFO.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = INFO.txt; sourceTree = "<group>"; };
+		95071753276E51F900A3E541 /* jp-romaji.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "jp-romaji.txt"; sourceTree = "<group>"; };
+		95071754276E51F900A3E541 /* words.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = words.txt; sourceTree = "<group>"; };
 		9539B80E27651F9D00E9E54D /* SnigletResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnigletResult.swift; sourceTree = "<group>"; };
 		9539B8112765263200E9E54D /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		9540B226276692DE00A6E5D2 /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
@@ -93,7 +97,6 @@
 		957676E9274CA3250011E558 /* GeneratorList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneratorList.swift; sourceTree = "<group>"; };
 		957676EB274CA38A0011E558 /* GeneratorSingle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneratorSingle.swift; sourceTree = "<group>"; };
 		957DFBC4276D724A0034CBB0 /* WhatsNewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhatsNewView.swift; sourceTree = "<group>"; };
-		957DFBCC276E44C10034CBB0 /* Scripts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Scripts; sourceTree = "<group>"; };
 		958C2D3E274C1C1D0076E0D9 /* SyllableShapes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyllableShapes.swift; sourceTree = "<group>"; };
 		95BFE9C72766F804004E8630 /* Give-Me-a-Sniglet--iOS--Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Give-Me-a-Sniglet--iOS--Info.plist"; sourceTree = "<group>"; };
 		95C794942766D33100051AED /* RandomSniglet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomSniglet.swift; sourceTree = "<group>"; };
@@ -140,6 +143,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9507174F276E51F900A3E541 /* Scripts */ = {
+			isa = PBXGroup;
+			children = (
+				95071750276E51F900A3E541 /* create_dataset.py */,
+			);
+			path = Scripts;
+			sourceTree = "<group>";
+		};
+		95071751276E51F900A3E541 /* Banks */ = {
+			isa = PBXGroup;
+			children = (
+				95071752276E51F900A3E541 /* INFO.txt */,
+				95071753276E51F900A3E541 /* jp-romaji.txt */,
+				95071754276E51F900A3E541 /* words.txt */,
+			);
+			path = Banks;
+			sourceTree = "<group>";
+		};
 		9539B80D27650FD200E9E54D /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
@@ -155,8 +176,9 @@
 			isa = PBXGroup;
 			children = (
 				9539B8112765263200E9E54D /* README.md */,
-				957DFBCC276E44C10034CBB0 /* Scripts */,
 				957DFBCD276E451D0034CBB0 /* App Entitlements */,
+				95071751276E51F900A3E541 /* Banks */,
+				9507174F276E51F900A3E541 /* Scripts */,
 				9552F64227432CE0004582D6 /* Shared */,
 				9552F65127432CE2004582D6 /* macOS */,
 				95F6D19427568CBC00668877 /* Sniglet Widget */,

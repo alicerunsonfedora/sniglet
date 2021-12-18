@@ -1,0 +1,6 @@
+These datasets originated from their respective sites and are under their respective licenses.
+
+Thanks to the following datasets and their authors for helping make this possible:
+
+- Pop!_OS (/usr/share/dict/words): https://pop.system76.com
+- Wiktionary (jp-romaji): https://en.wiktionary.org/wiki/Appendix:1000_Japanese_basic_words
