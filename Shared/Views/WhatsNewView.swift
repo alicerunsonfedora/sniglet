@@ -21,6 +21,11 @@ struct WhatsNewView: View {
 
             VStack(alignment: .leading, spacing: 32) {
                 WhatsNewLabel(
+                    title: LocalizedStringKey("feat.watch.title"),
+                    subtitle: "feat.watch.detail",
+                    systemImage: "applewatch.watchface"
+                )
+                WhatsNewLabel(
                     title: LocalizedStringKey("feat.dictionary.title"),
                     subtitle: "feat.dictionary.detail",
                     systemImage: "bookmark"
@@ -29,11 +34,6 @@ struct WhatsNewView: View {
                     title: LocalizedStringKey("feat.icloud.title"),
                     subtitle: "feat.icloud.detail",
                     systemImage: "icloud"
-                )
-                WhatsNewLabel(
-                    title: LocalizedStringKey("feat.watch.title"),
-                    subtitle: "feat.watch.detail",
-                    systemImage: "applewatch.watchface"
                 )
             }
 

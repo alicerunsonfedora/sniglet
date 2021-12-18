@@ -47,15 +47,15 @@
 "settings.syllable.footer" = "Syllable shapes describe how to place consonants (C) and vowels (V) together. Shapes may repeat to match the length of the word. Common syllable structures cannot be removed.";
 
 // MARK: - CHANGELOG
-"feat.dictionary.title" = "Sniglet Dictionary";
+"feat.dictionary.title" = "Sniglet Dictionary*";
 "feat.dictionary.detail" = "Save your favorite sniglets into your personal dictionary.";
 
 "feat.watch.title" = "Apple Watch Support";
 "feat.watch.detail" = "Generate random sniglets on the fly with a brand-new app for Apple Watch.";
 
-"feat.icloud.title" = "iCloud Sync";
+"feat.icloud.title" = "iCloud Sync*";
 "feat.icloud.detail" = "Sync your dictionaries across your devices with iCloud.";
 
 "feat.title" = "What's New in Give Me a Sniglet";
 "feat.accept" = "Continue";
-"feat.prompt" = "Some features may require an in-app purchase.";
+"feat.prompt" = "*Some features may require an in-app purchase.";
