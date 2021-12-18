@@ -17,5 +17,16 @@ struct Give_Me_a_SnigletApp: App {
             ContentView()
                 .environment(\.managedObjectContext, database.container.viewContext)
         }
+        .commands {
+            CommandGroup(after: .appInfo) {
+                Button("Reset Warnings") {
+                    resetWarnings()
+                }
+            }
+        }
+    }
+
+    private func resetWarnings() {
+        UserDefaults.standard.set("", forKey: "app-version")
     }
 }

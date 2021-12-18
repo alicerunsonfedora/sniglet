@@ -23,6 +23,7 @@
 		95609547276D512E0026D4E1 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95609546276D512E0026D4E1 /* CloudKit.framework */; };
 		957676EA274CA3250011E558 /* GeneratorList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957676E9274CA3250011E558 /* GeneratorList.swift */; };
 		957676EC274CA38A0011E558 /* GeneratorSingle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957676EB274CA38A0011E558 /* GeneratorSingle.swift */; };
+		957DFBC5276D724A0034CBB0 /* WhatsNewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957DFBC4276D724A0034CBB0 /* WhatsNewView.swift */; };
 		958C2D3F274C1C1D0076E0D9 /* SyllableShapes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958C2D3E274C1C1D0076E0D9 /* SyllableShapes.swift */; };
 		95C7401E276D6C2200A9AE63 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95609546276D512E0026D4E1 /* CloudKit.framework */; };
 		95C794952766D33100051AED /* RandomSniglet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C794942766D33100051AED /* RandomSniglet.swift */; };
@@ -91,6 +92,7 @@
 		95609546276D512E0026D4E1 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS15.2.sdk/System/Library/Frameworks/CloudKit.framework; sourceTree = DEVELOPER_DIR; };
 		957676E9274CA3250011E558 /* GeneratorList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneratorList.swift; sourceTree = "<group>"; };
 		957676EB274CA38A0011E558 /* GeneratorSingle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneratorSingle.swift; sourceTree = "<group>"; };
+		957DFBC4276D724A0034CBB0 /* WhatsNewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhatsNewView.swift; sourceTree = "<group>"; };
 		958C2D3E274C1C1D0076E0D9 /* SyllableShapes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyllableShapes.swift; sourceTree = "<group>"; };
 		95BFE9C72766F804004E8630 /* Give-Me-a-Sniglet--iOS--Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Give-Me-a-Sniglet--iOS--Info.plist"; sourceTree = "<group>"; };
 		95C794942766D33100051AED /* RandomSniglet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomSniglet.swift; sourceTree = "<group>"; };
@@ -218,12 +220,21 @@
 		957676EE274CA5140011E558 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				957676E8274CA3110011E558 /* Generator */,
+				957DFBC3276D722C0034CBB0 /* Pages */,
 				9552F64427432CE0004582D6 /* ContentView.swift */,
+				957DFBC4276D724A0034CBB0 /* WhatsNewView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		957DFBC3276D722C0034CBB0 /* Pages */ = {
+			isa = PBXGroup;
+			children = (
+				957676E8274CA3110011E558 /* Generator */,
 				95E0697E2744188B0043F568 /* Settings.swift */,
 				95562DCD276695FF00E0C6FD /* Dictionary.swift */,
 			);
-			path = Views;
+			path = Pages;
 			sourceTree = "<group>";
 		};
 		95C794922766D31700051AED /* Providers */ = {
@@ -379,6 +390,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				95E0697F2744188B0043F568 /* Settings.swift in Sources */,
+				957DFBC5276D724A0034CBB0 /* WhatsNewView.swift in Sources */,
 				95562DD1276698FA00E0C6FD /* DBController.swift in Sources */,
 				9552F65527432CE2004582D6 /* ContentView.swift in Sources */,
 				9552F65327432CE2004582D6 /* Give_Me_a_SnigletApp.swift in Sources */,

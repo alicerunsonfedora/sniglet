@@ -10,6 +10,9 @@ import CoreML
 
 struct ContentView: View {
 
+    @AppStorage("app-version") var appVersion: String = ""
+    @State var showWhatsNew: Bool = false
+
     var body: some View {
         TabView {
             Generator()
@@ -28,6 +31,17 @@ struct ContentView: View {
             }
         }
         .frame(minWidth: 350, minHeight: 300)
+        .sheet(isPresented: $showWhatsNew) {
+            WhatsNewView {
+                showWhatsNew.toggle()
+            }
+        }
+        .onAppear {
+            guard let curver = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String else { return }
+            if appVersion != curver {
+                showWhatsNew = true
+            }
+        }
     }
 
 }
