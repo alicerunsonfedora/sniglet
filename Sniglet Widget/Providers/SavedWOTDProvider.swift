@@ -48,7 +48,9 @@ struct SavedWOTDProvider: TimelineProvider {
 
             for dayOffset in 0..<5 {
                 let date = Calendar.current.date(byAdding: .day, value: dayOffset, to: currentDate)!
-                entries.append(SavedWordEntry(date: date, word: words.randomElement()!))
+                if let randomSniglet = words.randomElement() {
+                    entries.append(SavedWordEntry(date: date, word: randomSniglet))
+                }
             }
         } catch {
             entries.append(placeholder(in: context))

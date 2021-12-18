@@ -7,6 +7,7 @@
 
 import Foundation
 import CoreData
+import CloudKit
 
 /// A structure responsible for calling the Core Data database to store save words.
 struct DBController {
@@ -15,7 +16,7 @@ struct DBController {
     static let shared = DBController()
 
     /// The `NSPersistentContainer` that hooks into Core Data.
-    let container: NSPersistentContainer
+    let container: NSPersistentCloudKitContainer
 
     /// A preview instance of the controller used in SwiftUI.
     static var preview: DBController = {
@@ -36,17 +37,11 @@ struct DBController {
     /// Create an instance of the database controller.
     /// - Parameter inMemory: Whether to only keep the database in memory. Defaults to false.
     init(inMemory: Bool = false) {
-        let storeURL = AppGroup.sniglets.containerURL
-            .appendingPathComponent("savedwords.sqlite")
-        let description = NSPersistentStoreDescription(url: storeURL)
-        container = NSPersistentContainer(name: "DataModel")
-
+        container = NSPersistentCloudKitContainer(name: "DataModel")
         if inMemory {
             container.persistentStoreDescriptions.first?.url = URL(fileURLWithPath: "/dev/null")
-        } else {
-            container.persistentStoreDescriptions = [description]
         }
-
+        container.viewContext.automaticallyMergesChangesFromParent = true
         container.loadPersistentStores { description, error in
             if let error = error {
                 fatalError("Fatal Error: \(error.localizedDescription)")

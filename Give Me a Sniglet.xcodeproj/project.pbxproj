@@ -20,9 +20,11 @@
 		95562DCE276695FF00E0C6FD /* Dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95562DCD276695FF00E0C6FD /* Dictionary.swift */; };
 		95562DD1276698FA00E0C6FD /* DBController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95562DD0276698FA00E0C6FD /* DBController.swift */; };
 		95562DD227669A7500E0C6FD /* DBController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95562DD0276698FA00E0C6FD /* DBController.swift */; };
+		95609547276D512E0026D4E1 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95609546276D512E0026D4E1 /* CloudKit.framework */; };
 		957676EA274CA3250011E558 /* GeneratorList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957676E9274CA3250011E558 /* GeneratorList.swift */; };
 		957676EC274CA38A0011E558 /* GeneratorSingle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957676EB274CA38A0011E558 /* GeneratorSingle.swift */; };
 		958C2D3F274C1C1D0076E0D9 /* SyllableShapes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958C2D3E274C1C1D0076E0D9 /* SyllableShapes.swift */; };
+		95C7401E276D6C2200A9AE63 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95609546276D512E0026D4E1 /* CloudKit.framework */; };
 		95C794952766D33100051AED /* RandomSniglet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C794942766D33100051AED /* RandomSniglet.swift */; };
 		95C794972766D35300051AED /* RandomSnigletProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C794962766D35300051AED /* RandomSnigletProvider.swift */; };
 		95C7949A2766D3C100051AED /* RandomSnigletEV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C794992766D3C100051AED /* RandomSnigletEV.swift */; };
@@ -86,6 +88,7 @@
 		9552F66427432F0F004582D6 /* Sniglet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sniglet.swift; sourceTree = "<group>"; };
 		95562DCD276695FF00E0C6FD /* Dictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dictionary.swift; sourceTree = "<group>"; };
 		95562DD0276698FA00E0C6FD /* DBController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBController.swift; sourceTree = "<group>"; };
+		95609546276D512E0026D4E1 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS15.2.sdk/System/Library/Frameworks/CloudKit.framework; sourceTree = DEVELOPER_DIR; };
 		957676E9274CA3250011E558 /* GeneratorList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneratorList.swift; sourceTree = "<group>"; };
 		957676EB274CA38A0011E558 /* GeneratorSingle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneratorSingle.swift; sourceTree = "<group>"; };
 		958C2D3E274C1C1D0076E0D9 /* SyllableShapes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyllableShapes.swift; sourceTree = "<group>"; };
@@ -117,6 +120,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				95609547276D512E0026D4E1 /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -124,6 +128,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				95C7401E276D6C2200A9AE63 /* CloudKit.framework in Frameworks */,
 				95F6D19327568CBC00668877 /* SwiftUI.framework in Frameworks */,
 				95F6D19127568CBC00668877 /* WidgetKit.framework in Frameworks */,
 			);
@@ -252,6 +257,7 @@
 		95F6D18F27568CBC00668877 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				95609546276D512E0026D4E1 /* CloudKit.framework */,
 				95F6D19027568CBC00668877 /* WidgetKit.framework */,
 				95F6D19227568CBC00668877 /* SwiftUI.framework */,
 			);
@@ -639,7 +645,7 @@
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 1.1;
-				PRODUCT_BUNDLE_IDENTIFIER = "net.marquiskurt.abysima.widget-library";
+				PRODUCT_BUNDLE_IDENTIFIER = net.marquiskurt.abysima.widgets;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
@@ -670,7 +676,7 @@
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 1.1;
-				PRODUCT_BUNDLE_IDENTIFIER = "net.marquiskurt.abysima.widget-library";
+				PRODUCT_BUNDLE_IDENTIFIER = net.marquiskurt.abysima.widgets;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
