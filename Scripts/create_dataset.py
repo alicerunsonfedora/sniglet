@@ -5,11 +5,22 @@
 # file, You can obtain one at https://mozilla.org/MPL/2.0/.
 
 import os
+from argparse import ArgumentParser
 from random import randrange, shuffle
 from string import ascii_lowercase
+from sys import argv
 from typing import Iterable, List, Tuple
 
 
+def create_parser() -> ArgumentParser:
+    """Returns an argument parser that will be used to parse arguments passed into this script."""
+    arg_parser = ArgumentParser()
+    arg_parser.add_argument("--output-dir", default="datasets", help="The directory to write the CSV files to.")
+    arg_parser.add_argument(
+        "input", nargs="+", help="The list of files to make the outputs from.", type=str)
+    return arg_parser
+
+# DEPRECATED! DO NOT USE!
 def get_valid_words_from_files() -> List[str]:
     """Returns a list of words from the specified words files that are valid."""
     words_file = "outside_sources/words" if os.path.isfile(
@@ -70,8 +81,11 @@ def pad_sequence(sequence: Iterable, max_length: int = 8) -> list:
 
 
 if __name__ == "__main__":
+    # Create the argument parser and parse the arguments passed in.
+    options = create_parser().parse_args(argv[1:])
+
     # Create the dataset pools for valid and invalid words.
-    valid_word_dataset = get_valid_words_from_files()
+    valid_word_dataset = import_valid_words(options.input)
     avg_length = sum([len(str(w)) for w in valid_word_dataset]) // len(valid_word_dataset)
     invalid_word_dataset = [random_string(avg_length) for _ in range(len(valid_word_dataset))]
 
@@ -100,25 +114,25 @@ if __name__ == "__main__":
         (f"char{i+1:02d}" for i in range(avg_length))) + ",prediction\n"
 
     # Write the training data to the training dataset.
-    with open("datasets/dtrain.csv", "w+") as train_file:
+    with open(f"{options.output_dir}/dtrain.csv", "w+") as train_file:
         train_file.write(csv_header)
         for word, classifier in train:
             train_file.write(",".join(pad_sequence(word, avg_length)) + f",{classifier}\n")
 
     # Write the testing data to the testing dataset.
-    with open("datasets/dtest.csv", "w+") as test_file:
+    with open(f"{options.output_dir}/dtest.csv", "w+") as test_file:
         test_file.write(csv_header)
         for word, classifier in test:
             test_file.write(",".join(pad_sequence(word, avg_length)) + f",{classifier}\n")
 
     # Write the training data to the training dataset using the predictive headers.
-    with open("datasets/dtrain_predict.csv", "w+") as train_predict_file:
+    with open(f"{options.output_dir}/dtrain_predict.csv", "w+") as train_predict_file:
         train_predict_file.write(csv_header_predictive)
         for word, classifier in train:
             train_predict_file.write(",".join(pad_sequence(word, avg_length)) + f",{classifier}\n")
 
     # Write the testing data to the testing dataset using the predictive headers.
-    with open("datasets/dtest_predict.csv", "w+") as test_predict_file:
+    with open(f"{options.output_dir}/dtest_predict.csv", "w+") as test_predict_file:
         test_predict_file.write(csv_header_predictive)
         for word, classifier in test:
             test_predict_file.write(",".join(pad_sequence(word, avg_length)) + f",{classifier}\n")
