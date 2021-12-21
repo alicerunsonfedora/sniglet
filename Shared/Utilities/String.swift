@@ -68,9 +68,9 @@ extension String {
 
     /// Returns the current string as an input for the Sniglet validation model.
     /// - SeeAlso: ``Sniglet.Validator``
-    func asSnigletValidatorInput() -> SnigletValidatorInput {
+    func asModelInput() -> ClassicInput {
         let wordSplit = self.splitCharacters()
-        return SnigletValidatorInput(
+        return ClassicInput(
             char01: wordSplit[0], char02: wordSplit[1], char03: wordSplit[2], char04: wordSplit[3],
             char05: wordSplit[4], char06: wordSplit[5], char07: wordSplit[6], char08: wordSplit[7])
     }

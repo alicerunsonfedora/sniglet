@@ -6,12 +6,13 @@
 //
 
 import Foundation
+import CoreML
 
 /// A class that contains all of the business logic needed to create and validate sniglets.
 class Sniglet {
 
-    /// A class reference to the machine learning model.
-    public typealias Validator = SnigletValidator
+    /// A class reference to a machine learning model.
+    public typealias Validator = MLModel
 
     /// A class reference to the sniglet result type.
     public typealias Result = SnigletResult
@@ -20,7 +21,13 @@ class Sniglet {
     public static var shared: Sniglet { Sniglet() }
 
     // MARK: - PRIVATE FIELDS
-    private var model: Validator
+    private var model: some Validator {
+        switch kind {
+        case .Classic:
+            return try! Classic(configuration: .init()).model
+        }
+    }
+    private var kind: ValidatorKind
     private var minChars: Int
     private var maxChars: Int
     private var batchSize: Int
@@ -29,7 +36,9 @@ class Sniglet {
     // MARK: - CONSTRUCTOR
 
     init() {
-        model = try! SnigletValidator(configuration: .init())
+        // Set the kind from the UserDefaults so that the class can pick the correct model for predictions.
+        // TODO: Implement the switching from other models here.
+        kind = .Classic
 
         // Grab the minimum number of letters from user preferences, or use the default value and set it.
         minChars = UserDefaults.standard.integer(forKey: "algoMinBound")
@@ -82,7 +91,7 @@ class Sniglet {
         // set with an Error tag.
         do {
             // Map them to inputs that the model will be able to understand.
-            let batchInput = generatedWords.map { word in word.asSnigletValidatorInput() }
+            let batchInput = generatedWords.map { word in word.asModelInput() }
 
             // Predict each result, convert them into a result format the app can use, and only keep those that are
             // valid.
@@ -120,12 +129,32 @@ class Sniglet {
     }
 
     /// Returns a list of results containing words that are valid by the machine learning model.
-    private func validateResults(_ batchInput: [SnigletValidatorInput], from origin: [String]) throws -> [Result] {
-        try model.predictions(inputs: batchInput).enumerated()
-            .map { index, result in
-                Result(word: origin[index].replacingOccurrences(of: "*", with: ""),
-                       validation: result.Valid, confidence: result.ValidProbability["valid"] ?? 0)
-            }
-            .filter { result in result.validation == "valid" }
+    private func validateResults(_ batchInput: [ClassicInput], from origin: [String]) throws -> [Result] {
+        // Make the predictions from the model and create an empty list of results.
+        let predictions = try model.predictions(fromBatch: MLArrayBatchProvider(array: batchInput))
+        var filteredResults = [Result]()
+
+        // Iterate through every feature. This has to be abstracted out because the type of machine learning model can
+        // change depending on what the user has selected.
+        for index in 0..<predictions.count {
+
+            // Grab the results at the specified index.
+            let pred = predictions.features(at: index)
+
+            // Create the Result struct and grab the validation score.
+            let scores = pred.featureValue(for: "predictionProbability")!.dictionaryValue as! [String: Double]
+            let result = Result(
+                word: origin[index].replacingOccurrences(of: "*", with: ""),
+                validation: pred.featureValue(for: "prediction")!.stringValue,
+                confidence: scores["valid"] ?? 0
+            )
+
+            // Skip adding the result if it's an invalid sniglet.
+            if result.validation != "valid" { continue }
+            filteredResults.append(result)
+        }
+
+        // Return the filtered list.
+        return filteredResults
     }
 }
