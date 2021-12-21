@@ -8,10 +8,17 @@
 import SwiftUI
 import CoreData
 
+/// A view that represents the Dictionary page in the application.
 struct Dictionary: View {
+
+    /// The managed object context from the database.
     @Environment(\.managedObjectContext) var managedObjectContext
+
+    /// The horizontal size class of the app: either compact or standard.
+    /// This is used to determine whether the device is in landscape or if running on iPadOS and/or macOS.
     @Environment(\.horizontalSizeClass) private var horizontalSizeClass
 
+    /// The fetch request that stores the saved sniglets.
     @FetchRequest(
         entity: SavedWord.entity(),
         sortDescriptors: [
@@ -19,8 +26,10 @@ struct Dictionary: View {
         ]
     ) var words: FetchedResults<SavedWord>
 
+    /// The search query that will be used to filter the request results.
     @State private var searchQuery: String = ""
 
+    /// The primary body for the view.
     var body: some View {
         NavigationView {
             Group {
@@ -39,6 +48,7 @@ struct Dictionary: View {
         }
     }
 
+    /// The view to display when there are no saved sniglets.
     var emptyView: some View {
         VStack(spacing: 4) {
             Image(systemName: "character.book.closed")
@@ -51,6 +61,7 @@ struct Dictionary: View {
         .padding()
     }
 
+    /// The list of saved sniglets in the database.
     var dictionaryList: some View {
         List {
             ForEach(filteredWords(), id: \.self) { word in
@@ -74,6 +85,8 @@ struct Dictionary: View {
         }
     }
 
+    /// Remove entries from the database at the specified offsets.
+    /// This is used to handle delete gestures when the list is in editing mode.
     func removeEntries(at offsets: IndexSet) {
         for index in offsets {
             managedObjectContext.delete(words[index])
@@ -81,6 +94,8 @@ struct Dictionary: View {
         DBController.shared.save()
     }
 
+    /// Returns a list of saved sniglets that contain the search query text.
+    /// This is needed to get the search functionality working.
     func filteredWords() -> [SavedWord] {
         if searchQuery.isEmpty { return words.map { entry in entry } }
         return words.filter { entry in
@@ -89,18 +104,32 @@ struct Dictionary: View {
     }
 }
 
+/// A view that represents a single entry from the database.
 struct DictionaryEntryView: View {
+
+    /// Whether the user has turned on Tap to Copy.
     @AppStorage("allowClipboard") var tapToCopy: Bool = true
+
+    /// The saved sniglet entry.
     @ObservedObject var entry: SavedWord
-    @State var showDetails: Bool = false
+
+    /// Whether to show the details window that explains the validation process and confidence score.
+    @State private var showDetails: Bool = false
+
+    /// The user-assigned definition of the sniglet.
     @State var definition: String = ""
 
+    /// The primary body for the view.
     var body: some View {
         List {
             Section {
                 VStack(spacing: 8) {
                     if tapToCopy {
-                        Button(action: { UIPasteboard.general.string = entry.word ?? "" }) {
+                        Button {
+                            if let word = entry.word {
+                                UIPasteboard.general.string = word
+                            }
+                        } label: {
                             GeneratorResultText(word: entry.word ?? "")
                                 .listRowSeparator(.hidden, edges: .bottom)
                         }
@@ -131,7 +160,11 @@ struct DictionaryEntryView: View {
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {
             if !tapToCopy {
-                Button(action: { UIPasteboard.general.string = entry.word ?? "" }) {
+                Button {
+                    if let word = entry.word {
+                        UIPasteboard.general.string = word
+                    }
+                } label: {
                     Label("Copy", systemImage: "doc.on.doc")
                 }
             }

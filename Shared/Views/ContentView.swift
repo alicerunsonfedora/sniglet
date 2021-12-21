@@ -8,11 +8,17 @@
 import SwiftUI
 import CoreML
 
+/// The primary content view of the application.
 struct ContentView: View {
 
-    @AppStorage("app-version") var appVersion: String = ""
-    @State var showWhatsNew: Bool = false
+    /// The current app build number.
+    /// This is used to determine whether the "What's New" dialog needs to be displayed.
+    @AppStorage("app-version") private var appVersion: String = ""
 
+    /// Whether to show the "What's New" dialog on startup.
+    @State private var showWhatsNew: Bool = false
+
+    /// The primary body of the view.
     var body: some View {
         TabView {
             Generator()

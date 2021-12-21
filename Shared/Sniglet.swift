@@ -103,12 +103,17 @@ class Sniglet {
     private func makeWordBatch(_ count: Int) -> [String] {
         var generatedWords: [String] = []
         for _ in 0..<count {
+            // Create a new word between the minimum and maximum character limits.
             var newWord = String.makeWord(limit: minChars..<maxChars, with: syllablicStructs.randomElement() ?? "CV")
-            if newWord.count < 8 {
-                for _ in newWord.count..<8 {
-                    newWord += "*"
-                }
+
+            // If the word is already the maximum length of eight characters, add it to the list of words.
+            if newWord.count == 8 {
+                generatedWords.append(newWord)
+                continue
             }
+
+            // Otherwise, pad it with asterisks so that it matches eight characters.
+            for _ in newWord.count..<8 { newWord += "*" }
             generatedWords.append(newWord)
         }
         return generatedWords

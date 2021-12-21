@@ -14,6 +14,7 @@ extension String {
     /// A string of consonants.
     public static let consonants = "bcdfghjklmnprqstvwxz"
 
+    /// Whether the string consists of only syllable markers (C, V).
     public var isMarker: Bool {
         var succeeded = true
         self.forEach { char in

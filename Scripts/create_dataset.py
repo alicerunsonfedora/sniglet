@@ -21,6 +21,15 @@ def get_valid_words_from_files() -> List[str]:
     return valid_words
 
 
+def import_valid_words(files: List[str]) -> List[str]:
+    """Returns a list of valid words from a specified list of word files."""
+    valid_words = []
+    for file in files:
+        with open(file, 'r') as word_file:
+            valid_words += [w.strip().lower() for w in word_file.readlines() if is_admissible(w)]
+    return valid_words
+
+
 def is_admissible(word: str) -> bool:
     """Returns whether a word is considered admissible for the dataset.
     

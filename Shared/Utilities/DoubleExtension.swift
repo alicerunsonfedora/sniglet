@@ -8,6 +8,7 @@
 import Foundation
 
 extension Double {
+    /// Returns an integer between 1 and 100 that represents the double.
     func asPercentage() -> Int {
         var new = self
         if new < 100 { new *= 100 }

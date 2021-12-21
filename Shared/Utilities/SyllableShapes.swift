@@ -7,10 +7,12 @@
 
 import Foundation
 
+/// A type alias for an array of syllabic shapes.
 typealias SyllableShapes = [String]
 
 extension SyllableShapes: RawRepresentable {
 
+    /// Returns a list of common syllabic shapes.
     static func common() -> SyllableShapes {
         ["CV", "CVC", "CVVC", "CCV"]
     }

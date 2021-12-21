@@ -46,6 +46,22 @@
 "settings.syllable.limit" = "This syllable shape is too long and will be trimmed to the first eight characters.";
 "settings.syllable.footer" = "Syllable shapes describe how to place consonants (C) and vowels (V) together. Shapes may repeat to match the length of the word. Common syllable structures cannot be removed.";
 
+// MARK: - IAP UPGRADE
+"upgrade.title" = "Upgrade to Give Me A Sniglet+";
+"upgrade.subtitle" = "Unlock new features that expand upon the core feature set for a one-time purchase of $0.99.";
+
+"upgrade.dictionary.title" = "Sniglet Dictionary";
+"upgrade.dictionary.detail" = "Save your favorite sniglets into your personal dictionary.";
+
+"upgrade.icloud.title" = "iCloud Sync";
+"upgrade.icloud.detail" = "Sync your dictionaries across your devices with iCloud.";
+
+"upgrade.models.title" = "More Models to Select";
+"upgrade.models.detail" = "Switch between more models to validate your sniglets with various uses in mind.";
+
+"upgrade.accept" = "Upgrade ($0.99, one-time)";
+"upgrade.cancel" = "Not Now";
+
 // MARK: - CHANGELOG
 "feat.dictionary.title" = "Sniglet Dictionary*";
 "feat.dictionary.detail" = "Save your favorite sniglets into your personal dictionary.";

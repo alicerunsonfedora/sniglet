@@ -7,10 +7,16 @@
 
 import SwiftUI
 
+/// The view that represents the generator page. This is the main page that the user will interact with.
 struct Generator: View {
+
+    /// The number of sniglets to generate at a given time.
     @AppStorage("generateSize") var generateSize: Int = 1
+
+    /// Whether to show the details page that explains the algorithm and confidence scores.
     @State var showDetails: Bool = false
 
+    /// The primary body for the view.
     var body: some View {
         Group {
             if generateSize == 1 {
@@ -22,9 +28,13 @@ struct Generator: View {
     }
 }
 
+/// A view that represents the sniglet that is generated with the appropriate styles applied.
 struct GeneratorResultText: View {
+
+    /// The text that will be rendered with custom styles.
     var word: String
 
+    /// The primary body for the view.
     var body: some View {
         Text(word)
             .font(.system(.largeTitle, design: .serif))
@@ -33,9 +43,13 @@ struct GeneratorResultText: View {
     }
 }
 
+/// A view that represents the generator confidence bar with a custom gradient applied.
 struct GeneratorConfidenceBar: View {
+
+    /// A double that the progress bar will represent.
     var confidence: Double
 
+    /// The primary body for the view.
     var body: some View {
         GeometryReader { geom in
             ZStack(alignment: .leading) {
@@ -60,10 +74,17 @@ struct GeneratorConfidenceBar: View {
     }
 }
 
+/// A view that represents the confidence component which shows the confidence bar and a button to show the explanation dialog.
 struct GeneratorConfidence: View {
+
+    /// A double that the confidence bar will display.
     var confidence: Double
+
+    /// An action that executes when the user clicks on "What's this?"
+    /// Ideally, this should display the explanation dialog.
     var onDismissExplanation: () -> Void
 
+    /// The primary body for the view.
     var body: some View {
         VStack {
             GeneratorConfidenceBar(confidence: confidence)
@@ -86,8 +107,11 @@ struct GeneratorConfidence: View {
 }
 
 struct GeneratorExplanation: View {
+
+    /// An action that executes when the user clicks "Done" or "Dismiss".
     var onDismiss: () -> Void
 
+    /// The primary body for the view.
     var body: some View {
         NavigationView {
             ScrollView {
@@ -122,7 +146,8 @@ struct GeneratorExplanation: View {
         }
     }
 
-    func letterNode(_ text: LocalizedStringKey) -> some View {
+    /// Returns a view that contains a single character.
+    private func letterNode(_ text: LocalizedStringKey) -> some View {
         Text(text)
             .font(.system(.title, design: .monospaced))
             .foregroundColor(.green)

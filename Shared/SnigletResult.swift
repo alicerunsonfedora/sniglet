@@ -36,6 +36,7 @@ struct SnigletResult: Hashable, Identifiable, Equatable {
         SnigletResult(word: "error", validation: "valid", confidence: 0.0)
     }
 
+    /// Determines whether a result is equal to another.
     public static func ==(lhs: SnigletResult, rhs: SnigletResult) -> Bool {
         return lhs.word == rhs.word && lhs.validation == rhs.validation
     }

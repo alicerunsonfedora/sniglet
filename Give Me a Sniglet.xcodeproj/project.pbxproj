@@ -24,6 +24,9 @@
 		957676EA274CA3250011E558 /* GeneratorList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957676E9274CA3250011E558 /* GeneratorList.swift */; };
 		957676EC274CA38A0011E558 /* GeneratorSingle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957676EB274CA38A0011E558 /* GeneratorSingle.swift */; };
 		957DFBC5276D724A0034CBB0 /* WhatsNewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957DFBC4276D724A0034CBB0 /* WhatsNewView.swift */; };
+		9589F6812770A29D00BF3855 /* UpgradePromptView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9589F6802770A29D00BF3855 /* UpgradePromptView.swift */; };
+		9589F6832770A79000BF3855 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9589F6822770A79000BF3855 /* StoreKit.framework */; };
+		9589F68C2770D98500BF3855 /* Upgrades.storekit in Resources */ = {isa = PBXBuildFile; fileRef = 9589F68B2770D98500BF3855 /* Upgrades.storekit */; };
 		958C2D3F274C1C1D0076E0D9 /* SyllableShapes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958C2D3E274C1C1D0076E0D9 /* SyllableShapes.swift */; };
 		95C7401E276D6C2200A9AE63 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95609546276D512E0026D4E1 /* CloudKit.framework */; };
 		95C794952766D33100051AED /* RandomSniglet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C794942766D33100051AED /* RandomSniglet.swift */; };
@@ -97,6 +100,9 @@
 		957676E9274CA3250011E558 /* GeneratorList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneratorList.swift; sourceTree = "<group>"; };
 		957676EB274CA38A0011E558 /* GeneratorSingle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneratorSingle.swift; sourceTree = "<group>"; };
 		957DFBC4276D724A0034CBB0 /* WhatsNewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhatsNewView.swift; sourceTree = "<group>"; };
+		9589F6802770A29D00BF3855 /* UpgradePromptView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpgradePromptView.swift; sourceTree = "<group>"; };
+		9589F6822770A79000BF3855 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS15.2.sdk/System/Library/Frameworks/StoreKit.framework; sourceTree = DEVELOPER_DIR; };
+		9589F68B2770D98500BF3855 /* Upgrades.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = Upgrades.storekit; sourceTree = "<group>"; };
 		958C2D3E274C1C1D0076E0D9 /* SyllableShapes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyllableShapes.swift; sourceTree = "<group>"; };
 		95BFE9C72766F804004E8630 /* Give-Me-a-Sniglet--iOS--Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Give-Me-a-Sniglet--iOS--Info.plist"; sourceTree = "<group>"; };
 		95C794942766D33100051AED /* RandomSniglet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomSniglet.swift; sourceTree = "<group>"; };
@@ -127,6 +133,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				95609547276D512E0026D4E1 /* CloudKit.framework in Frameworks */,
+				9589F6832770A79000BF3855 /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -175,6 +182,7 @@
 		9552F63D27432CE0004582D6 = {
 			isa = PBXGroup;
 			children = (
+				9589F67F2770A18B00BF3855 /* Models */,
 				9539B8112765263200E9E54D /* README.md */,
 				957DFBCD276E451D0034CBB0 /* App Entitlements */,
 				95071751276E51F900A3E541 /* Banks */,
@@ -190,7 +198,8 @@
 		9552F64227432CE0004582D6 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
-				95562DCF276698EA00E0C6FD /* Models */,
+				9589F6842770A79F00BF3855 /* Upgrades */,
+				95562DCF276698EA00E0C6FD /* Databases */,
 				9539B80D27650FD200E9E54D /* Utilities */,
 				957676EE274CA5140011E558 /* Views */,
 				9552F66127432DCE004582D6 /* SnigletValidator.mlmodel */,
@@ -220,13 +229,13 @@
 			path = macOS;
 			sourceTree = "<group>";
 		};
-		95562DCF276698EA00E0C6FD /* Models */ = {
+		95562DCF276698EA00E0C6FD /* Databases */ = {
 			isa = PBXGroup;
 			children = (
 				9540B225276692DE00A6E5D2 /* DataModel.xcdatamodeld */,
 				95562DD0276698FA00E0C6FD /* DBController.swift */,
 			);
-			path = Models;
+			path = Databases;
 			sourceTree = "<group>";
 		};
 		957676E8274CA3110011E558 /* Generator */ = {
@@ -245,6 +254,7 @@
 				957DFBC3276D722C0034CBB0 /* Pages */,
 				9552F64427432CE0004582D6 /* ContentView.swift */,
 				957DFBC4276D724A0034CBB0 /* WhatsNewView.swift */,
+				9589F6802770A29D00BF3855 /* UpgradePromptView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -267,6 +277,21 @@
 				95E0698B274454F20043F568 /* Give Me a Sniglet (iOS).entitlements */,
 			);
 			path = "App Entitlements";
+			sourceTree = "<group>";
+		};
+		9589F67F2770A18B00BF3855 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		9589F6842770A79F00BF3855 /* Upgrades */ = {
+			isa = PBXGroup;
+			children = (
+				9589F68B2770D98500BF3855 /* Upgrades.storekit */,
+			);
+			path = Upgrades;
 			sourceTree = "<group>";
 		};
 		95C794922766D31700051AED /* Providers */ = {
@@ -300,6 +325,7 @@
 		95F6D18F27568CBC00668877 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9589F6822770A79000BF3855 /* StoreKit.framework */,
 				95609546276D512E0026D4E1 /* CloudKit.framework */,
 				95F6D19027568CBC00668877 /* WidgetKit.framework */,
 				95F6D19227568CBC00668877 /* SwiftUI.framework */,
@@ -401,6 +427,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9589F68C2770D98500BF3855 /* Upgrades.storekit in Resources */,
 				9552F65727432CE2004582D6 /* Assets.xcassets in Resources */,
 				95E06984274419870043F568 /* Localizable.strings in Resources */,
 			);
@@ -438,6 +465,7 @@
 				95562DCE276695FF00E0C6FD /* Dictionary.swift in Sources */,
 				957676EA274CA3250011E558 /* GeneratorList.swift in Sources */,
 				9539B80F27651F9D00E9E54D /* SnigletResult.swift in Sources */,
+				9589F6812770A29D00BF3855 /* UpgradePromptView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

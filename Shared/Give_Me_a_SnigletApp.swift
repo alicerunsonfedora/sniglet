@@ -7,11 +7,14 @@
 
 import SwiftUI
 
+/// The main entry point of the application.
 @main
 struct Give_Me_a_SnigletApp: App {
 
+    /// The shared database that the app will use to store saved sniglets.
     let database = DBController.shared
 
+    /// The main body of the application.
     var body: some Scene {
         WindowGroup {
             ContentView()
@@ -19,13 +22,14 @@ struct Give_Me_a_SnigletApp: App {
         }
         .commands {
             CommandGroup(after: .appInfo) {
-                Button("Reset Warnings") {
+                Button("Reset Dialogs") {
                     resetWarnings()
                 }
             }
         }
     }
 
+    /// Reset dialogs and warnings.
     private func resetWarnings() {
         UserDefaults.standard.set("", forKey: "app-version")
     }

@@ -9,13 +9,26 @@ import Foundation
 import CoreData
 import SwiftUI
 
+/// A view that represents the single generation view.
 struct GeneratorSingleView: View {
+
+    /// Whether the user has turned on "Tap to Copy"
     @AppStorage("allowClipboard") var tapToCopy: Bool = true
+
+    /// The managed object context for the database.
     @Environment(\.managedObjectContext) var managedObjectContext
+
+    /// The current generated sniglet.
     @State var result: Sniglet.Result = .empty()
+
+    /// Whether to show the explanation dialog.
     @State var showDetails: Bool = false
+
+    /// Whether to display an alert that indicates the user has saved the sniglet to their dictionary.
     @State private var showAddedAlert: Bool = false
 
+
+    /// The primary body for the view.
     var body: some View {
         VStack(spacing: 16) {
             HStack {
@@ -34,7 +47,10 @@ struct GeneratorSingleView: View {
             }
             Spacer()
             if tapToCopy {
-                Button(action: { UIPasteboard.general.string = result.word }) {
+                Button {
+                    UIPasteboard.general.string = result.word
+
+                } label: {
                     GeneratorResultText(word: result.word)
                 }
                 .buttonStyle(.plain)
@@ -73,10 +89,12 @@ struct GeneratorSingleView: View {
         .padding()
     }
 
+    /// Sets the result to a generated sniglet.
     func setSniglet() {
         result = Sniglet.shared.getNewWords().first ?? .null()
     }
 
+    /// Saves the sniglet to the user's dictionary.
     func saveSniglet() {
         let entry = SavedWord(context: managedObjectContext)
         entry.word = result.word

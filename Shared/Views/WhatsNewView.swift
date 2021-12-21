@@ -7,9 +7,13 @@
 
 import SwiftUI
 
+/// A view that shows a prompt displaying the new features.
 struct WhatsNewView: View {
+
+    /// An action that executes when the prompt is closed, after writing logic to not display it again.
     var onDismiss: () -> Void
 
+    /// The primary body of the view.
     var body: some View {
         VStack(spacing: 48) {
             Spacer()
@@ -60,6 +64,8 @@ struct WhatsNewView: View {
         .padding(16)
     }
 
+    /// Write the current version to the user defaults.
+    /// This is used to determine whether or not the user has seen the dialog.
     private func writeAppVersion() {
         if let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String {
             UserDefaults.standard.set(version, forKey: "app-version")
@@ -67,12 +73,18 @@ struct WhatsNewView: View {
     }
 }
 
+/// A view that represents a label for the "What's New" dialog.
 struct WhatsNewLabel: View {
+    /// The title or main point in the label.
     @State var title: LocalizedStringKey
+
+    /// The subtitle or the supporting text in the label.
     @State var subtitle: LocalizedStringKey
+
+    /// The icon that will be displayed on the left side of the label.
     @State var systemImage: String
 
-
+    /// The primary body of the view.
     var body: some View {
         Label {
             VStack(alignment: .leading, spacing: 4) {

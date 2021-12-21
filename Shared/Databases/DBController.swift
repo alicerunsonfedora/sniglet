@@ -22,6 +22,8 @@ struct DBController {
     static var preview: DBController = {
         let controller = DBController(inMemory: true)
 
+        // Create ten entries in the preview context, so that there is content available when using a preview instance
+        // of the database.
         for _ in 0..<10 {
             let sniglet = Sniglet.shared.getNewWords().first ?? .null()
             let dictWord = SavedWord(context: controller.container.viewContext)
@@ -49,6 +51,7 @@ struct DBController {
         }
     }
 
+    /// Returns a single entry from the database.
     func singleEntry() -> SavedWord {
         let word = SavedWord(context: container.viewContext)
         let sniglet = Sniglet.shared.getNewWords().first ?? .null()
