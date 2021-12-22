@@ -16,6 +16,9 @@ struct SettingsView: View {
     /// The number of sniglets to generate at a given time.
     @AppStorage("generateSize") var generateBatches: Int = 1
 
+    /// The validation model to use.
+    @AppStorage("generateMethod") var generateMethod: String = "Classic"
+
     /// The minimum number of characters needed to generate a sniglet input.
     @AppStorage("algoMinBound") var minGenerationValue: Int = 3
 
@@ -33,6 +36,10 @@ struct SettingsView: View {
 
     /// The current page the user is viewing.
     @State private var currentPage: Page? = nil
+
+    /// The validation model to use.
+    /// This is used in the picker. To store into User Defaults, refer to `generateMethod`.
+    @State private var genMethodEnum: ValidatorKind = .Classic
 
     /// The horizontal size class of the app: either compact or standard.
     /// This is used to determine whether the device is in landscape or if running on iPadOS and/or macOS.
@@ -70,17 +77,19 @@ struct SettingsView: View {
                 .listStyle(.insetGrouped)
             }
         }
+        .onAppear {
+            genMethodEnum = ValidatorKind(rawValue: generateMethod) ?? .Classic
+        }
+        .onChange(of: genMethodEnum) { value in
+            generateMethod = value.rawValue
+        }
     }
 
     /// The view to use when in portrait mode or for iPhones.
     var bodyPhone: some View {
         List {
             generalSettings
-            boundaries
-            batches
-            NavigationLink(destination: { syllables }) {
-                Label("settings.syllable.title", systemImage: "quote.closing")
-            }
+            generationSection
         }
         .listStyle(.insetGrouped)
         .navigationTitle("settings.title")
@@ -99,27 +108,7 @@ struct SettingsView: View {
                 Label("settings.general.title", systemImage: "gear")
             }
             .tag(Page.general)
-            Section(header: Text("Generation")) {
-                NavigationLink(destination: {
-                    List {
-                        boundaries
-                        batches
-                    }
-                    .navigationTitle("settings.algorithm.title")
-                    .navigationBarTitleDisplayMode(.inline)
-                }) {
-                    Label("settings.algorithm.title", systemImage: "waveform")
-                }
-                .tag(Page.algorithm)
-                NavigationLink(destination: { syllables.navigationBarTitleDisplayMode(.inline)
-                }) {
-                    Label("settings.syllable.title", systemImage: "quote.closing")
-                }
-                .tag(Page.syllable)
-            }
-            #if os(macOS)
-            .collapsible(false)
-            #endif
+            generationSection
         }
         .navigationTitle("settings.title")
         .listStyle(.sidebar)
@@ -134,6 +123,29 @@ struct SettingsView: View {
             Toggle(isOn: $allowCopying) {
                 Label("settings.clipboard.name", systemImage: "doc.on.clipboard")
             }
+        }
+    }
+
+    /// The generation settings section.
+    var generationSection: some View {
+        Section(header: Text("Generation")) {
+            NavigationLink(destination: {
+                List {
+                    boundaries
+                    batches
+                    generationMethod
+                }
+                .navigationTitle("settings.algorithm.title")
+                .navigationBarTitleDisplayMode(.inline)
+            }) {
+                Label("settings.algorithm.title", systemImage: "waveform")
+            }
+            .tag(Page.algorithm)
+            NavigationLink(destination: { syllables.navigationBarTitleDisplayMode(.inline)
+            }) {
+                Label("settings.syllable.title", systemImage: "quote.closing")
+            }
+            .tag(Page.syllable)
         }
     }
 
@@ -154,6 +166,18 @@ struct SettingsView: View {
             }
             Stepper(value: $maxGenerationValue, in: minGenerationValue...8) {
                 Label("Max: \(maxGenerationValue) letters", systemImage: "circle.circle.fill")
+            }
+        }
+    }
+
+    /// The section dedicated to selecting the validation model.
+    var generationMethod: some View {
+        Section(header: Text("settings.algorithm.model.title"), footer: Text("settings.algorithm.model.explain")) {
+            Picker("settings.algorithm.model.picker", selection: $genMethodEnum) {
+                ForEach(ValidatorKind.allCases, id: \.self) { kind in
+                    Text(kind.rawValue)
+                        .tag(kind)
+                }
             }
         }
     }
@@ -231,6 +255,15 @@ struct Settings_Previews: PreviewProvider {
     static var previews: some View {
         Group {
             SettingsView()
+                .previewDevice("iPhone 13")
+            NavigationView {
+                List {
+                    SettingsView().boundaries
+                    SettingsView().batches
+                    SettingsView().generationMethod
+                }
+                .navigationTitle("settings.algorithm.title")
+            }
                 .previewDevice("iPhone 13")
             NavigationView {
                 SettingsView().syllables

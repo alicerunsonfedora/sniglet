@@ -38,6 +38,9 @@
 "settings.algorithm.boundaries.explain" = "The boundaries determine how many letters are inserted into a word. The boundaries cannot be exceed three to eight characters.";
 "settings.algorithm.batch.title" = "Batch Size";
 "settings.algorithm.batch.explain" = "The batch size determines how many sniglets to generate at a time to ensure at least one valid sniglet appears.";
+"settings.algorithm.model.title" = "Generation Method";
+"settings.algorithm.model.picker" = "Validation Model";
+"settings.algorithm.model.explain" = "The validation model is used to determine how likely a word is to be valid. Different models are trained with different words, which may improve accuracy based on use case.";
 
 "settings.syllable.title" = "Syllable Shapes";
 "settings.syllable.add" = "Add";
@@ -71,6 +74,9 @@
 
 "feat.icloud.title" = "iCloud Sync*";
 "feat.icloud.detail" = "Sync your dictionaries across your devices with iCloud.";
+
+"feat.models.title" = "Model Customization";
+"feat.models.detail" = "Switch between different validation models to fit your needs.";
 
 "feat.title" = "What's New in Give Me a Sniglet";
 "feat.accept" = "Continue";

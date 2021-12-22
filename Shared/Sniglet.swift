@@ -25,6 +25,8 @@ class Sniglet {
         switch kind {
         case .Classic:
             return try! Classic(configuration: .init()).model
+        case .Fantasy:
+            return try! Fantasy(configuration: .init()).model
         }
     }
     private var kind: ValidatorKind
@@ -38,7 +40,13 @@ class Sniglet {
     init() {
         // Set the kind from the UserDefaults so that the class can pick the correct model for predictions.
         // TODO: Implement the switching from other models here.
-        kind = .Classic
+        if let kindStr = UserDefaults.standard.string(forKey: "generateMethod") {
+            kind = ValidatorKind(rawValue: kindStr) ?? .Classic
+        } else {
+            UserDefaults.standard.set("Classic", forKey: "generateMethod")
+            kind = .Classic
+        }
+        print("Init model with type: \(kind.rawValue)")
 
         // Grab the minimum number of letters from user preferences, or use the default value and set it.
         minChars = UserDefaults.standard.integer(forKey: "algoMinBound")

@@ -5,6 +5,7 @@
 # file, You can obtain one at https://mozilla.org/MPL/2.0/.
 
 import os
+import warnings
 from argparse import ArgumentParser
 from random import randrange, shuffle
 from string import ascii_lowercase
@@ -15,6 +16,9 @@ from typing import Iterable, List, Tuple
 def create_parser() -> ArgumentParser:
     """Returns an argument parser that will be used to parse arguments passed into this script."""
     arg_parser = ArgumentParser()
+    arg_parser.add_argument("--limit", default=0, help="The hard limit length for words in the dataset.", type=int)
+    arg_parser.add_argument(
+        "--include-coreml", action="store_true", help="Whether to include the CoreML prediction headers.")
     arg_parser.add_argument("--output-dir", default="datasets", help="The directory to write the CSV files to.")
     arg_parser.add_argument(
         "input", nargs="+", help="The list of files to make the outputs from.", type=str)
@@ -23,13 +27,9 @@ def create_parser() -> ArgumentParser:
 # DEPRECATED! DO NOT USE!
 def get_valid_words_from_files() -> List[str]:
     """Returns a list of words from the specified words files that are valid."""
-    words_file = "outside_sources/words" if os.path.isfile(
-        "outside_sources/words") else "/usr/share/dict/words"
-    with open(words_file, 'r') as words:
-        valid_words = [w.strip().lower() for w in words.readlines() if is_admissible(w)]
-    with open("outside_sources/jp-romaji.txt") as jp_data:
-        valid_words += [w.strip().lower() for w in jp_data.readlines()]
-    return valid_words
+    warnings.warn("Deprecated: Use import_valid_words instead and specify file paths.")
+    words_file = "Banks/words" if os.path.isfile("Banks/words") else "/usr/share/dict/words"
+    return import_valid_words(words_file, "Banks/jp-romaji.txt")
 
 
 def import_valid_words(files: List[str]) -> List[str]:
@@ -80,13 +80,20 @@ def pad_sequence(sequence: Iterable, max_length: int = 8) -> list:
     return [i for i in sequence] + ["*" for _ in range(diff)]
 
 
-if __name__ == "__main__":
+def run_script(args: List[str]):
+    """Runs the primary script."""
+    # Capture the real arguments.
     # Create the argument parser and parse the arguments passed in.
-    options = create_parser().parse_args(argv[1:])
+    options = create_parser().parse_args(args)
 
     # Create the dataset pools for valid and invalid words.
     valid_word_dataset = import_valid_words(options.input)
+
+    # Get the average length of the list, or use the pre-defined limit options.
     avg_length = sum([len(str(w)) for w in valid_word_dataset]) // len(valid_word_dataset)
+    if options.limit > 0:
+        avg_length = options.limit
+
     invalid_word_dataset = [random_string(avg_length) for _ in range(len(valid_word_dataset))]
 
     # Filter out words that are too long for our tests.
@@ -136,3 +143,8 @@ if __name__ == "__main__":
         test_predict_file.write(csv_header_predictive)
         for word, classifier in test:
             test_predict_file.write(",".join(pad_sequence(word, avg_length)) + f",{classifier}\n")
+
+
+
+if __name__ == "__main__":
+    run_script(argv[1:])

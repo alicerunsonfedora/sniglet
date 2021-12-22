@@ -11,6 +11,8 @@
 		95187FD027720C5A00313B85 /* ValidatorModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95187FCF27720C5A00313B85 /* ValidatorModels.swift */; };
 		95187FD127720EB600313B85 /* ValidatorModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95187FCF27720C5A00313B85 /* ValidatorModels.swift */; };
 		95187FD227720EC100313B85 /* Classic.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 95187FCD27720C4500313B85 /* Classic.mlmodel */; };
+		95187FDE277332C500313B85 /* Fantasy.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 95187FDD277332C500313B85 /* Fantasy.mlmodel */; };
+		95187FDF277332C500313B85 /* Fantasy.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 95187FDD277332C500313B85 /* Fantasy.mlmodel */; };
 		9539B80F27651F9D00E9E54D /* SnigletResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9539B80E27651F9D00E9E54D /* SnigletResult.swift */; };
 		9539B81027651FCF00E9E54D /* SnigletResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9539B80E27651F9D00E9E54D /* SnigletResult.swift */; };
 		9540B227276692DE00A6E5D2 /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9540B225276692DE00A6E5D2 /* DataModel.xcdatamodeld */; };
@@ -88,6 +90,12 @@
 		95071754276E51F900A3E541 /* words.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = words.txt; sourceTree = "<group>"; };
 		95187FCD27720C4500313B85 /* Classic.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = Classic.mlmodel; sourceTree = "<group>"; };
 		95187FCF27720C5A00313B85 /* ValidatorModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidatorModels.swift; sourceTree = "<group>"; };
+		95187FD32772189700313B85 /* fantasy.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = fantasy.txt; sourceTree = "<group>"; };
+		95187FD52773319B00313B85 /* dtest_predict.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dtest_predict.csv; sourceTree = "<group>"; };
+		95187FD62773319B00313B85 /* dtrain.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dtrain.csv; sourceTree = "<group>"; };
+		95187FD72773319B00313B85 /* dtest.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dtest.csv; sourceTree = "<group>"; };
+		95187FD82773319B00313B85 /* dtrain_predict.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dtrain_predict.csv; sourceTree = "<group>"; };
+		95187FDD277332C500313B85 /* Fantasy.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = Fantasy.mlmodel; sourceTree = "<group>"; };
 		9539B80E27651F9D00E9E54D /* SnigletResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnigletResult.swift; sourceTree = "<group>"; };
 		9539B8112765263200E9E54D /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		9540B226276692DE00A6E5D2 /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
@@ -173,8 +181,20 @@
 				95071752276E51F900A3E541 /* INFO.txt */,
 				95071753276E51F900A3E541 /* jp-romaji.txt */,
 				95071754276E51F900A3E541 /* words.txt */,
+				95187FD32772189700313B85 /* fantasy.txt */,
 			);
 			path = Banks;
+			sourceTree = "<group>";
+		};
+		95187FD42773310D00313B85 /* Fantasy */ = {
+			isa = PBXGroup;
+			children = (
+				95187FD52773319B00313B85 /* dtest_predict.csv */,
+				95187FD72773319B00313B85 /* dtest.csv */,
+				95187FD82773319B00313B85 /* dtrain_predict.csv */,
+				95187FD62773319B00313B85 /* dtrain.csv */,
+			);
+			path = Fantasy;
 			sourceTree = "<group>";
 		};
 		9539B80D27650FD200E9E54D /* Utilities */ = {
@@ -292,6 +312,7 @@
 		9589F67F2770A18B00BF3855 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				95187FDD277332C500313B85 /* Fantasy.mlmodel */,
 				95187FCD27720C4500313B85 /* Classic.mlmodel */,
 				9570C99F2771FF5900BE9044 /* Abysima v2.mlproj */,
 			);
@@ -309,6 +330,7 @@
 		95B048E62771FD92006F84F6 /* Datasets */ = {
 			isa = PBXGroup;
 			children = (
+				95187FD42773310D00313B85 /* Fantasy */,
 				95B048E72771FD92006F84F6 /* Classic */,
 			);
 			path = Datasets;
@@ -497,6 +519,7 @@
 				9540B227276692DE00A6E5D2 /* DataModel.xcdatamodeld in Sources */,
 				95562DCE276695FF00E0C6FD /* Dictionary.swift in Sources */,
 				957676EA274CA3250011E558 /* GeneratorList.swift in Sources */,
+				95187FDE277332C500313B85 /* Fantasy.mlmodel in Sources */,
 				9539B80F27651F9D00E9E54D /* SnigletResult.swift in Sources */,
 				9589F6812770A29D00BF3855 /* UpgradePromptView.swift in Sources */,
 			);
@@ -521,6 +544,7 @@
 				9539B81027651FCF00E9E54D /* SnigletResult.swift in Sources */,
 				95F6D1A227568CE700668877 /* String.swift in Sources */,
 				95F6D19627568CBC00668877 /* WidgetBundle.swift in Sources */,
+				95187FDF277332C500313B85 /* Fantasy.mlmodel in Sources */,
 				95C794A22766DE1900051AED /* DailySavedSniglet.swift in Sources */,
 				95187FD127720EB600313B85 /* ValidatorModels.swift in Sources */,
 				95F6D1A427568CEC00668877 /* SyllableShapes.swift in Sources */,

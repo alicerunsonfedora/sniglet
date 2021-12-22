@@ -15,15 +15,15 @@ struct WhatsNewView: View {
 
     /// The primary body of the view.
     var body: some View {
-        VStack(spacing: 48) {
+        VStack(spacing: 32) {
             Spacer()
 
-            Text("What's New in Give Me a Sniglet")
+            Text("feat.title")
                 .bold()
                 .font(.title)
                 .multilineTextAlignment(.center)
 
-            VStack(alignment: .leading, spacing: 32) {
+            VStack(alignment: .leading, spacing: 24) {
                 WhatsNewLabel(
                     title: LocalizedStringKey("feat.watch.title"),
                     subtitle: "feat.watch.detail",
@@ -38,6 +38,11 @@ struct WhatsNewView: View {
                     title: LocalizedStringKey("feat.icloud.title"),
                     subtitle: "feat.icloud.detail",
                     systemImage: "icloud"
+                )
+                WhatsNewLabel(
+                    title: LocalizedStringKey("feat.models.title"),
+                    subtitle: "feat.models.detail",
+                    systemImage: "brain"
                 )
             }
 

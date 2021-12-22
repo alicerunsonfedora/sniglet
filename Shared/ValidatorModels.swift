@@ -8,6 +8,7 @@
 import Foundation
 import CoreML
 
-public enum ValidatorKind: String, CaseIterable {
+public enum ValidatorKind: String, CaseIterable, Equatable {
     case Classic
+    case Fantasy
 }
