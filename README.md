@@ -6,9 +6,11 @@ with a single tap. Customize the algorithm by changing the size of the words and
 
 ![App screenshots](.readme/screenshot.png)
 
-<a href="https://apple.co/336C4oX">
-    <img src="/.readme/appstore.svg" height="64" alt="Get on the App Store" />
-</a>
+<p align="center">
+    <a href="https://apple.co/336C4oX">
+        <img src="/.readme/appstore.svg" height="64" alt="Get on the App Store" />
+    </a>
+</p>
 
 ---
 
@@ -16,6 +18,19 @@ This project was originally a part of Codename Abysima as an attempt to generate
 this project will host updates to the Give Me A Sniglet app.
 
 More information on the original project can be found at https://github.com/alicerunsonfedora/abysima.
+
+## Features
+
+- Generate as many sniglets as you like and share them easily
+- Customize the generation algorithm by adjusting the word length and syllabic shapes
+- View random sniglets on your home screen with the Random Sniglet Widget
+    - 🧪 Select from different trained models for validation
+- 🧪 Save your favorite sniglets into a personal dictionary synced with iCloud
+    - 🧪 Assign a definition to your saved sniglets for future reference
+    - 🧪 View a different entry every day with the Daily Saved Sniglet Widget
+- 🧪 Generate sniglets on-the-go with support for Apple Watch
+
+> *Features marked with 🧪 are in a pre-release state, usually in a TestFlight build.
 
 ## Build from source
 
