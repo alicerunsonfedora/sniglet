@@ -38,9 +38,21 @@ More information on the original project can be found at https://github.com/alic
 
 - Xcode 13 or later
 - macOS 12.0 Monterey or later
+- Apple ID registered with the Apple Developer Program
 
 Clone the repository using `git clone`, and then open the Xcode project. To run for iOS, change the run target from
 "My Mac" to either an iOS simulator device or "Any iOS Device". The same applies for macOS.
+
+### CloudKit integration
+
+> Note: This feature is still highly experimental.
+
+Part of this app integrates with CloudKit to store saved sniglets into a user's iCloud account. It is important that you
+register the app identifier and enable the iCloud/CloudKit entitlements in your app's identifier. Additionally, you will
+want to change the container name to match that of your app's identifier.
+
+Alternatively, you can strip out the CloudKit integration and change `DBController` so that it points to a Core Data
+persistent container instead of an iCloud container.
 
 ## Found a bug?
 
