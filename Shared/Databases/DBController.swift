@@ -18,6 +18,7 @@ struct DBController {
     /// The `NSPersistentContainer` that hooks into Core Data.
     let container: NSPersistentCloudKitContainer
 
+    // MARK: - PREVIEWS
     /// A preview instance of the controller used in SwiftUI.
     static var preview: DBController = {
         let controller = DBController(inMemory: true)
@@ -36,6 +37,8 @@ struct DBController {
         return controller
     }()
 
+    // MARK: - CONSTRUCTION AND MODIFICATION
+
     /// Create an instance of the database controller.
     /// - Parameter inMemory: Whether to only keep the database in memory. Defaults to false.
     init(inMemory: Bool = false) {
@@ -43,6 +46,7 @@ struct DBController {
         if inMemory {
             container.persistentStoreDescriptions.first?.url = URL(fileURLWithPath: "/dev/null")
         }
+
         container.viewContext.automaticallyMergesChangesFromParent = true
         container.loadPersistentStores { description, error in
             if let error = error {

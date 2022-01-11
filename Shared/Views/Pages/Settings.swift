@@ -178,7 +178,9 @@ struct SettingsView: View {
                     Text(kind.rawValue)
                         .tag(kind)
                 }
+
             }
+            .disabled(true) // TODO: Enable this when ready.
         }
     }
 

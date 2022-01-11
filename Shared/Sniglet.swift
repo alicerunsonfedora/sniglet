@@ -39,13 +39,15 @@ class Sniglet {
 
     init() {
         // Set the kind from the UserDefaults so that the class can pick the correct model for predictions.
-        // TODO: Implement the switching from other models here.
-        if let kindStr = UserDefaults.standard.string(forKey: "generateMethod") {
-            kind = ValidatorKind(rawValue: kindStr) ?? .Classic
-        } else {
-            UserDefaults.standard.set("Classic", forKey: "generateMethod")
-            kind = .Classic
-        }
+
+        #warning("Uncomment the code below and remove line 50 to allow different models.")
+        // if let kindStr = UserDefaults.standard.string(forKey: "generateMethod") {
+        //     kind = ValidatorKind(rawValue: kindStr) ?? .Classic
+        // } else {
+        //     UserDefaults.standard.set("Classic", forKey: "generateMethod")
+        //     kind = .Classic
+        // }
+        kind = .Classic
         print("Init model with type: \(kind.rawValue)")
 
         // Grab the minimum number of letters from user preferences, or use the default value and set it.
