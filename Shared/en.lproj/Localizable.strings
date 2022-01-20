@@ -30,9 +30,11 @@
 // MARK: - SETTINGS
 "settings.title" = "Settings";
 "settings.general.title" = "General";
+
 "settings.clipboard.title" = "Clipboard";
 "settings.clipboard.name" = "Allow Tap to Copy";
 "settings.clipboard.footer" = "Tap on a generated sniglet to copy it to your clipboard.";
+
 "settings.algorithm.title" = "Algorithm";
 "settings.algorithm.boundaries.title" = "Boundaries";
 "settings.algorithm.boundaries.explain" = "The boundaries determine how many letters are inserted into a word. The boundaries cannot be exceed three to eight characters.";
@@ -41,6 +43,13 @@
 "settings.algorithm.model.title" = "Generation Method";
 "settings.algorithm.model.picker" = "Validation Model";
 "settings.algorithm.model.explain" = "The validation model is used to determine how likely a word is to be valid. Different models are trained with different words, which may improve accuracy based on use case.";
+
+"settings.info.title" = "About";
+"settings.info.header" = "About This App";
+"settings.info.version" = "App Version";
+"settings.info.feedback" = "Send Feedback";
+"settings.info.source" = "View Source Code";
+"settings.info.footer" = "Developed by Marquis Kurt with ❤️";
 
 "settings.syllable.title" = "Syllable Shapes";
 "settings.syllable.add" = "Add";

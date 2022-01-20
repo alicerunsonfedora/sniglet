@@ -10,6 +10,8 @@ import SwiftUI
 /// A view that represents the settings page.
 struct SettingsView: View {
 
+    // MARK: - App Storage
+
     /// Whether the user had turned on "Tap to Copy"
     @AppStorage("allowClipboard") var allowCopying: Bool = true
 
@@ -31,6 +33,8 @@ struct SettingsView: View {
     /// The list of custom syllable shapes to use in the algorithm.
     @AppStorage("customShapes") var customSyllables: SyllableShapes = SyllableShapes()
 
+    // MARK: - State Variables
+
     /// The current custom syllable entry in the text field.
     @State private var customSyllableEntry: String = ""
 
@@ -40,6 +44,12 @@ struct SettingsView: View {
     /// The validation model to use.
     /// This is used in the picker. To store into User Defaults, refer to `generateMethod`.
     @State private var genMethodEnum: ValidatorKind = .Classic
+
+    /// Whether to display the Safari view used for opening the feedback/licensing pages.
+    @State private var showSafariView: Bool = false
+
+    /// The link to use.
+    @State private var safariLink: AppLinks = .feedback
 
     /// The horizontal size class of the app: either compact or standard.
     /// This is used to determine whether the device is in landscape or if running on iPadOS and/or macOS.
@@ -58,6 +68,7 @@ struct SettingsView: View {
         case syllable
     }
 
+    // MARK: - Main Body
 
     /// The primary body for the view.
     var body: some View {
@@ -71,6 +82,7 @@ struct SettingsView: View {
             if currentPage == nil && horizontalSizeClass == .regular {
                 List {
                     generalSettings
+                    informationSection
                 }
                 .navigationTitle("settings.general.title")
                 .navigationBarTitleDisplayMode(.inline)
@@ -83,13 +95,28 @@ struct SettingsView: View {
         .onChange(of: genMethodEnum) { value in
             generateMethod = value.rawValue
         }
+        .sheet(isPresented: $showSafariView) {
+            VStack {
+                SafariView(url: URL(string: safariLink.rawValue)!)
+            }
+        }
     }
+
+    // MARK: - Body Variants
 
     /// The view to use when in portrait mode or for iPhones.
     var bodyPhone: some View {
         List {
             generalSettings
             generationSection
+
+            NavigationLink {
+                informationSection
+                    .navigationTitle("settings.info.title")
+            } label: {
+                Label("settings.info.title", systemImage: "info.circle")
+            }
+
         }
         .listStyle(.insetGrouped)
         .navigationTitle("settings.title")
@@ -101,6 +128,7 @@ struct SettingsView: View {
             NavigationLink(destination: {
                     List {
                         generalSettings
+                        informationSection
                     }
                     .navigationTitle("settings.general.title")
                     .navigationBarTitleDisplayMode(.inline)
@@ -114,17 +142,23 @@ struct SettingsView: View {
         .listStyle(.sidebar)
     }
 
+    // MARK: - General Settings
+
     /// The general settings section.
     var generalSettings: some View {
-        Section(header: Text("settings.general.title"), footer: Text("settings.clipboard.footer")) {
-            Stepper(value: $generateBatches, in: 1...Int.max) {
-                Label("Generate \(generateBatches) words", systemImage: "sparkles.rectangle.stack.fill")
-            }
-            Toggle(isOn: $allowCopying) {
-                Label("settings.clipboard.name", systemImage: "doc.on.clipboard")
+        Group {
+            Section(header: Text("settings.general.title"), footer: Text("settings.clipboard.footer")) {
+                Stepper(value: $generateBatches, in: 1...Int.max) {
+                    Label("Generate \(generateBatches) words", systemImage: "sparkles.rectangle.stack.fill")
+                }
+                Toggle(isOn: $allowCopying) {
+                    Label("settings.clipboard.name", systemImage: "doc.on.clipboard")
+                }
             }
         }
     }
+
+    // MARK: - Generation and Batches
 
     /// The generation settings section.
     var generationSection: some View {
@@ -183,6 +217,58 @@ struct SettingsView: View {
             .disabled(true) // TODO: Enable this when ready.
         }
     }
+
+    // MARK: - App Information
+
+    /// The section dedicated to displaying app information such as its version.
+    var informationSection: some View {
+        Group {
+            Section {
+                HStack {
+                    Text("settings.info.version")
+                    Spacer()
+                    Text(getAppVersion())
+                        .foregroundColor(.secondary)
+                }
+                Button {
+                    safariLink = .license
+                    showSafariView.toggle()
+                } label: {
+                    HStack {
+                        Text("License")
+                            .foregroundColor(.primary)
+                        Spacer()
+                        Text("MPLv2")
+                            .foregroundColor(.secondary)
+                        Image(systemName: "chevron.right")
+                            .font(.caption.bold())
+                            .foregroundColor(.secondary)
+                    }
+                }
+            } header: {
+                Text("settings.info.header")
+            } footer: {
+                Text("settings.info.footer")
+            }
+
+            Section {
+                Button {
+                    safariLink = .feedback
+                    showSafariView.toggle()
+                } label: {
+                    Label("settings.info.feedback", systemImage: "exclamationmark.bubble")
+                }
+                Link(
+                    destination: URL(string: AppLinks.source.rawValue)!
+                ) {
+                    Label("settings.info.source", systemImage: "chevron.left.forwardslash.chevron.right")
+                }
+            }
+        }
+
+    }
+
+    // MARK: - Syllable Shapes
 
     /// The syllable shapes section.
     var syllables: some View {
@@ -253,6 +339,8 @@ struct SettingsView: View {
     }
 }
 
+// MARK: - Previews
+
 struct Settings_Previews: PreviewProvider {
     static var previews: some View {
         Group {
@@ -269,6 +357,13 @@ struct Settings_Previews: PreviewProvider {
                 .previewDevice("iPhone 13")
             NavigationView {
                 SettingsView().syllables
+            }
+                .previewDevice("iPhone 13")
+            NavigationView {
+                List {
+                    SettingsView().informationSection
+                        .navigationTitle("settings.info.title")
+                }
             }
                 .previewDevice("iPhone 13")
             SettingsView()
