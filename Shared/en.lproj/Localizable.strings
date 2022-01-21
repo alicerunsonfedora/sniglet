@@ -20,6 +20,7 @@
 // MARK: - SAVED WORDS
 "saved.title" = "Dictionary";
 "saved.title.long" = "Your Dictionary";
+"saved.select.prompt" = "No Sniglet Selected";
 "saved.empty.title" = "No Saved Sniglets";
 "saved.empty.prompt" = "Fill your dictionary by saving generated sniglets and assign personal definitions to them.";
 "saved.detail.title" = "Dictionary Entry";

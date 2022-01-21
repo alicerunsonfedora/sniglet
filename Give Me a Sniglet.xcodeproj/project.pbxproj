@@ -38,6 +38,9 @@
 		9589F6832770A79000BF3855 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9589F6822770A79000BF3855 /* StoreKit.framework */; };
 		9589F68C2770D98500BF3855 /* Upgrades.storekit in Resources */ = {isa = PBXBuildFile; fileRef = 9589F68B2770D98500BF3855 /* Upgrades.storekit */; };
 		958C2D3F274C1C1D0076E0D9 /* SyllableShapes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958C2D3E274C1C1D0076E0D9 /* SyllableShapes.swift */; };
+		95944207279ADCA90066DC62 /* SharedActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95944206279ADCA80066DC62 /* SharedActivity.swift */; };
+		95944209279ADE450066DC62 /* SavedDefinitionImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95944208279ADE450066DC62 /* SavedDefinitionImage.swift */; };
+		9594420B279AF5B10066DC62 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9594420A279AF5B10066DC62 /* UIView.swift */; };
 		95C7401E276D6C2200A9AE63 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95609546276D512E0026D4E1 /* CloudKit.framework */; };
 		95C794952766D33100051AED /* RandomSniglet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C794942766D33100051AED /* RandomSniglet.swift */; };
 		95C794972766D35300051AED /* RandomSnigletProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C794962766D35300051AED /* RandomSnigletProvider.swift */; };
@@ -125,6 +128,9 @@
 		9589F6822770A79000BF3855 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS15.2.sdk/System/Library/Frameworks/StoreKit.framework; sourceTree = DEVELOPER_DIR; };
 		9589F68B2770D98500BF3855 /* Upgrades.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = Upgrades.storekit; sourceTree = "<group>"; };
 		958C2D3E274C1C1D0076E0D9 /* SyllableShapes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyllableShapes.swift; sourceTree = "<group>"; };
+		95944206279ADCA80066DC62 /* SharedActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedActivity.swift; sourceTree = "<group>"; };
+		95944208279ADE450066DC62 /* SavedDefinitionImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedDefinitionImage.swift; sourceTree = "<group>"; };
+		9594420A279AF5B10066DC62 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		95B048E82771FD92006F84F6 /* dtest.csv */ = {isa = PBXFileReference; lastKnownFileType = text; path = dtest.csv; sourceTree = "<group>"; };
 		95B048E92771FD92006F84F6 /* dtest_predict.csv */ = {isa = PBXFileReference; lastKnownFileType = text; path = dtest_predict.csv; sourceTree = "<group>"; };
 		95B048EA2771FD92006F84F6 /* dtrain.csv */ = {isa = PBXFileReference; lastKnownFileType = text; path = dtrain.csv; sourceTree = "<group>"; };
@@ -214,6 +220,7 @@
 				95C794A32766E5A500051AED /* AppGroup.swift */,
 				951FC4EA27998660009CA715 /* AppVersions.swift */,
 				951FC4EC27998A56009CA715 /* AppLink.swift */,
+				9594420A279AF5B10066DC62 /* UIView.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -291,12 +298,9 @@
 		957676EE274CA5140011E558 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				95944205279AD4AD0066DC62 /* Components */,
 				957DFBC3276D722C0034CBB0 /* Pages */,
 				9552F64427432CE0004582D6 /* ContentView.swift */,
-				957DFBC4276D724A0034CBB0 /* WhatsNewView.swift */,
-				9589F6802770A29D00BF3855 /* UpgradePromptView.swift */,
-				951FC4E827997A29009CA715 /* SafariView.swift */,
-				952449C3279ABAD2001AB7D7 /* SettingsSafariWindow.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -337,6 +341,19 @@
 				9589F68B2770D98500BF3855 /* Upgrades.storekit */,
 			);
 			path = Upgrades;
+			sourceTree = "<group>";
+		};
+		95944205279AD4AD0066DC62 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				957DFBC4276D724A0034CBB0 /* WhatsNewView.swift */,
+				9589F6802770A29D00BF3855 /* UpgradePromptView.swift */,
+				951FC4E827997A29009CA715 /* SafariView.swift */,
+				952449C3279ABAD2001AB7D7 /* SettingsSafariWindow.swift */,
+				95944206279ADCA80066DC62 /* SharedActivity.swift */,
+				95944208279ADE450066DC62 /* SavedDefinitionImage.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 		95B048E62771FD92006F84F6 /* Datasets */ = {
@@ -520,6 +537,7 @@
 				9552F65527432CE2004582D6 /* ContentView.swift in Sources */,
 				9552F65327432CE2004582D6 /* Give_Me_a_SnigletApp.swift in Sources */,
 				957676EC274CA38A0011E558 /* GeneratorSingle.swift in Sources */,
+				9594420B279AF5B10066DC62 /* UIView.swift in Sources */,
 				9552F66527432F0F004582D6 /* Sniglet.swift in Sources */,
 				95C794A42766E5A500051AED /* AppGroup.swift in Sources */,
 				951FC4EB27998660009CA715 /* AppVersions.swift in Sources */,
@@ -530,7 +548,9 @@
 				958C2D3F274C1C1D0076E0D9 /* SyllableShapes.swift in Sources */,
 				95511DC2274AC36500234573 /* String.swift in Sources */,
 				951FC4E927997A29009CA715 /* SafariView.swift in Sources */,
+				95944207279ADCA90066DC62 /* SharedActivity.swift in Sources */,
 				95E0697C274417F00043F568 /* Generator.swift in Sources */,
+				95944209279ADE450066DC62 /* SavedDefinitionImage.swift in Sources */,
 				9540B227276692DE00A6E5D2 /* DataModel.xcdatamodeld in Sources */,
 				95562DCE276695FF00E0C6FD /* Dictionary.swift in Sources */,
 				957676EA274CA3250011E558 /* GeneratorList.swift in Sources */,
@@ -714,6 +734,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "App Entitlements/Give-Me-a-Sniglet--iOS--Info.plist";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "Give Me A Sniglet would like to make images of your shared sniglets when you request them.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -749,6 +770,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "App Entitlements/Give-Me-a-Sniglet--iOS--Info.plist";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "Give Me A Sniglet would like to make images of your shared sniglets when you request them.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

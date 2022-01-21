@@ -24,7 +24,8 @@ struct Dictionary: View {
         sortDescriptors: [
             NSSortDescriptor(keyPath: \SavedWord.word, ascending: true)
         ]
-    ) var words: FetchedResults<SavedWord>
+    )
+    var words: FetchedResults<SavedWord>
 
     /// The search query that will be used to filter the request results.
     @State private var searchQuery: String = ""
@@ -45,6 +46,16 @@ struct Dictionary: View {
             .navigationTitle("saved.title.long")
 
             if words.isEmpty && horizontalSizeClass == .regular { emptyView }
+            else if horizontalSizeClass == .regular {
+                VStack {
+                    Image(systemName: "character.book.closed")
+                        .font(.system(size: 56))
+                        .foregroundColor(.secondary)
+                    Text("saved.select.prompt")
+                        .font(.system(.largeTitle, design: .rounded))
+                        .foregroundColor(.secondary)
+                }
+            }
         }
     }
 
@@ -116,8 +127,13 @@ struct DictionaryEntryView: View {
     /// Whether to show the details window that explains the validation process and confidence score.
     @State private var showDetails: Bool = false
 
+    @State private var showShareSheet: Bool = false
+
     /// The user-assigned definition of the sniglet.
     @State var definition: String = ""
+
+    /// A user-created image of the saved sniglet.
+    @State private var savedImage: UIImage? = nil
 
     /// The primary body for the view.
     var body: some View {
@@ -154,6 +170,7 @@ struct DictionaryEntryView: View {
                 TextEditor(text: $definition)
                     .font(.system(.body, design: .serif))
                     .lineSpacing(1.5)
+                    .frame(minHeight: 300)
             }
         }
         .navigationTitle("saved.detail.title")
@@ -168,8 +185,19 @@ struct DictionaryEntryView: View {
                     Label("Copy", systemImage: "doc.on.doc")
                 }
             }
+            Button {
+                showShareSheet.toggle()
+            } label: {
+                Label("Share", systemImage: "square.and.arrow.up")
+            }
+            .popover(isPresented: $showShareSheet) {
+                SharedActivity(activities: [ savedImage as Any ])
+            }
         }
-        .onAppear { definition = entry.note ?? "" }
+        .onAppear {
+            definition = entry.note ?? ""
+            savedImage = makeImage()
+        }
         .onChange(of: definition) { _ in
             entry.note = definition
             DBController.shared.save()
@@ -179,6 +207,26 @@ struct DictionaryEntryView: View {
                 showDetails.toggle()
             }
         }
+    }
+
+    private var savedPreview: SavedDefinitionImage {
+        SavedDefinitionImage(entry: entry)
+    }
+
+    /// Generates an image used to share with others.
+    /// Original: https://codakuma.com/swiftui-view-to-image/
+    private func makeImage() -> UIImage {
+        let window = UIWindow(frame: CGRect(origin: .init(x: 0, y: -225), size: CGSize(width: 550, height: 275)))
+
+        let hosting = UIHostingController(rootView: savedPreview)
+        hosting.view.frame = window.frame
+        hosting.view.backgroundColor = .init(named: "SavedBackground")!
+
+        window.backgroundColor = .init(named: "SavedBackground")!
+        window.addSubview(hosting.view)
+        window.makeKeyAndVisible()
+
+        return hosting.view.renderedImage
     }
 }
 
