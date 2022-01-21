@@ -112,7 +112,7 @@ struct SettingsView: View {
             generationSection
 
             NavigationLink {
-                informationSection
+                List { informationSection }
                     .navigationTitle("settings.info.title")
             } label: {
                 Label("settings.info.title", systemImage: "info.circle")
