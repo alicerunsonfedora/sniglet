@@ -15,7 +15,8 @@
 		95187FDF277332C500313B85 /* Fantasy.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 95187FDD277332C500313B85 /* Fantasy.mlmodel */; };
 		951FC4E927997A29009CA715 /* SafariView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951FC4E827997A29009CA715 /* SafariView.swift */; };
 		951FC4EB27998660009CA715 /* AppVersions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951FC4EA27998660009CA715 /* AppVersions.swift */; };
-		951FC4ED27998A56009CA715 /* AppLinks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951FC4EC27998A56009CA715 /* AppLinks.swift */; };
+		951FC4ED27998A56009CA715 /* AppLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951FC4EC27998A56009CA715 /* AppLink.swift */; };
+		952449C4279ABAD2001AB7D7 /* SettingsSafariWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952449C3279ABAD2001AB7D7 /* SettingsSafariWindow.swift */; };
 		9539B80F27651F9D00E9E54D /* SnigletResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9539B80E27651F9D00E9E54D /* SnigletResult.swift */; };
 		9539B81027651FCF00E9E54D /* SnigletResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9539B80E27651F9D00E9E54D /* SnigletResult.swift */; };
 		9540B227276692DE00A6E5D2 /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9540B225276692DE00A6E5D2 /* DataModel.xcdatamodeld */; };
@@ -101,7 +102,8 @@
 		95187FDD277332C500313B85 /* Fantasy.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = Fantasy.mlmodel; sourceTree = "<group>"; };
 		951FC4E827997A29009CA715 /* SafariView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariView.swift; sourceTree = "<group>"; };
 		951FC4EA27998660009CA715 /* AppVersions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppVersions.swift; sourceTree = "<group>"; };
-		951FC4EC27998A56009CA715 /* AppLinks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLinks.swift; sourceTree = "<group>"; };
+		951FC4EC27998A56009CA715 /* AppLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLink.swift; sourceTree = "<group>"; };
+		952449C3279ABAD2001AB7D7 /* SettingsSafariWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsSafariWindow.swift; sourceTree = "<group>"; };
 		9539B80E27651F9D00E9E54D /* SnigletResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnigletResult.swift; sourceTree = "<group>"; };
 		9539B8112765263200E9E54D /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		9540B226276692DE00A6E5D2 /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
@@ -211,7 +213,7 @@
 				958C2D3E274C1C1D0076E0D9 /* SyllableShapes.swift */,
 				95C794A32766E5A500051AED /* AppGroup.swift */,
 				951FC4EA27998660009CA715 /* AppVersions.swift */,
-				951FC4EC27998A56009CA715 /* AppLinks.swift */,
+				951FC4EC27998A56009CA715 /* AppLink.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -294,6 +296,7 @@
 				957DFBC4276D724A0034CBB0 /* WhatsNewView.swift */,
 				9589F6802770A29D00BF3855 /* UpgradePromptView.swift */,
 				951FC4E827997A29009CA715 /* SafariView.swift */,
+				952449C3279ABAD2001AB7D7 /* SettingsSafariWindow.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -523,6 +526,7 @@
 				95E0698927442B9D0043F568 /* DoubleExtension.swift in Sources */,
 				95187FD027720C5A00313B85 /* ValidatorModels.swift in Sources */,
 				95187FCE27720C4500313B85 /* Classic.mlmodel in Sources */,
+				952449C4279ABAD2001AB7D7 /* SettingsSafariWindow.swift in Sources */,
 				958C2D3F274C1C1D0076E0D9 /* SyllableShapes.swift in Sources */,
 				95511DC2274AC36500234573 /* String.swift in Sources */,
 				951FC4E927997A29009CA715 /* SafariView.swift in Sources */,
@@ -531,7 +535,7 @@
 				95562DCE276695FF00E0C6FD /* Dictionary.swift in Sources */,
 				957676EA274CA3250011E558 /* GeneratorList.swift in Sources */,
 				95187FDE277332C500313B85 /* Fantasy.mlmodel in Sources */,
-				951FC4ED27998A56009CA715 /* AppLinks.swift in Sources */,
+				951FC4ED27998A56009CA715 /* AppLink.swift in Sources */,
 				9539B80F27651F9D00E9E54D /* SnigletResult.swift in Sources */,
 				9589F6812770A29D00BF3855 /* UpgradePromptView.swift in Sources */,
 			);
@@ -704,7 +708,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "App Entitlements/Give Me a Sniglet (iOS).entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = FQQXSP79X3;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -739,7 +743,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "App Entitlements/Give Me a Sniglet (iOS).entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = FQQXSP79X3;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -774,7 +778,7 @@
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_ENTITLEMENTS = "App Entitlements/Sniglet WidgetExtension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = FQQXSP79X3;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Sniglet Widget/Info.plist";
@@ -805,7 +809,7 @@
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_ENTITLEMENTS = "App Entitlements/Sniglet WidgetExtension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = FQQXSP79X3;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Sniglet Widget/Info.plist";

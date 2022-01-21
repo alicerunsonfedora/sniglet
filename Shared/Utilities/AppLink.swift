@@ -8,13 +8,17 @@
 import Foundation
 
 /// An enumeration for the various app links.
-public enum AppLinks: String {
+public enum AppLink: String {
 
     /// A link that redirects to the YouTrack bug reporter.
     case feedback = "https://youtrack.marquiskurt.net/youtrack/newIssue?project=ABY"
 
     /// A link that redirects to the official Mozilla Public License webpage.
     case license = "https://www.mozilla.org/en-US/MPL/2.0/"
+
+    /// A blank page.
+    /// - Important: This will cause an error in an `SFSafariViewController`.
+    case none = "about:blank"
 
     /// A link that redirects to the GitHub source code.
     case source = "https://github.com/alicerunsonfedora/sniglet"

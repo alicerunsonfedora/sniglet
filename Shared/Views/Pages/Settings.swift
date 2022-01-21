@@ -49,7 +49,7 @@ struct SettingsView: View {
     @State private var showSafariView: Bool = false
 
     /// The link to use.
-    @State private var safariLink: AppLinks = .feedback
+    @State private var safariLink: AppLink = .none
 
     /// The horizontal size class of the app: either compact or standard.
     /// This is used to determine whether the device is in landscape or if running on iPadOS and/or macOS.
@@ -91,13 +91,14 @@ struct SettingsView: View {
         }
         .onAppear {
             genMethodEnum = ValidatorKind(rawValue: generateMethod) ?? .Classic
+            showSafariView = false
         }
         .onChange(of: genMethodEnum) { value in
             generateMethod = value.rawValue
         }
         .sheet(isPresented: $showSafariView) {
             VStack {
-                SafariView(url: URL(string: safariLink.rawValue)!)
+                SettingsSafariWindow(link: $safariLink)
             }
         }
     }
@@ -147,13 +148,17 @@ struct SettingsView: View {
     /// The general settings section.
     var generalSettings: some View {
         Group {
-            Section(header: Text("settings.general.title"), footer: Text("settings.clipboard.footer")) {
+            Section {
                 Stepper(value: $generateBatches, in: 1...Int.max) {
                     Label("Generate \(generateBatches) words", systemImage: "sparkles.rectangle.stack.fill")
                 }
                 Toggle(isOn: $allowCopying) {
                     Label("settings.clipboard.name", systemImage: "doc.on.clipboard")
                 }
+            } header: {
+                Text("settings.general.title")
+            } footer: {
+                Text("settings.clipboard.footer")
             }
         }
     }
@@ -162,7 +167,7 @@ struct SettingsView: View {
 
     /// The generation settings section.
     var generationSection: some View {
-        Section(header: Text("Generation")) {
+        Section {
             NavigationLink(destination: {
                 List {
                     boundaries
@@ -175,38 +180,49 @@ struct SettingsView: View {
                 Label("settings.algorithm.title", systemImage: "waveform")
             }
             .tag(Page.algorithm)
-            NavigationLink(destination: { syllables.navigationBarTitleDisplayMode(.inline)
-            }) {
+            NavigationLink {
+                syllables.navigationBarTitleDisplayMode(.inline)
+            } label: {
                 Label("settings.syllable.title", systemImage: "quote.closing")
             }
             .tag(Page.syllable)
+        } header: {
+            Text("Generation")
         }
     }
 
     /// The batch size parameter sections.
     var batches: some View {
-        Section(header: Text("settings.algorithm.batch.title"), footer: Text("settings.algorithm.batch.explain")) {
+        Section {
             Stepper(value: $batchSize, in: 5...Int.max, step: 5) {
                 Label("\(batchSize) words", systemImage: "square.stack")
             }
+        } header: {
+            Text("settings.algorithm.batch.title")
+        } footer: {
+            Text("settings.algorithm.batch.explain")
         }
     }
 
     /// The word boundary section.
     var boundaries: some View {
-        Section(header: Text("settings.algorithm.boundaries.title"), footer: Text("settings.algorithm.boundaries.explain")) {
+        Section {
             Stepper(value: $minGenerationValue, in: 3...maxGenerationValue) {
                 Label("Min: \(minGenerationValue) letters", systemImage: "smallcircle.filled.circle")
             }
             Stepper(value: $maxGenerationValue, in: minGenerationValue...8) {
                 Label("Max: \(maxGenerationValue) letters", systemImage: "circle.circle.fill")
             }
+        } header: {
+            Text("settings.algorithm.boundaries.title")
+        } footer: {
+            Text("settings.algorithm.boundaries.explain")
         }
     }
 
     /// The section dedicated to selecting the validation model.
     var generationMethod: some View {
-        Section(header: Text("settings.algorithm.model.title"), footer: Text("settings.algorithm.model.explain")) {
+        Section {
             Picker("settings.algorithm.model.picker", selection: $genMethodEnum) {
                 ForEach(ValidatorKind.allCases, id: \.self) { kind in
                     Text(kind.rawValue)
@@ -215,6 +231,10 @@ struct SettingsView: View {
 
             }
             .disabled(true) // TODO: Enable this when ready.
+        } header: {
+            Text("settings.algorithm.model.title")
+        } footer: {
+            Text("settings.algorithm.model.explain")
         }
     }
 
@@ -231,8 +251,7 @@ struct SettingsView: View {
                         .foregroundColor(.secondary)
                 }
                 Button {
-                    safariLink = .license
-                    showSafariView.toggle()
+                    showSafariWindow(to: .license)
                 } label: {
                     HStack {
                         Text("License")
@@ -253,13 +272,12 @@ struct SettingsView: View {
 
             Section {
                 Button {
-                    safariLink = .feedback
-                    showSafariView.toggle()
+                    showSafariWindow(to: .feedback)
                 } label: {
                     Label("settings.info.feedback", systemImage: "exclamationmark.bubble")
                 }
                 Link(
-                    destination: URL(string: AppLinks.source.rawValue)!
+                    destination: URL(string: AppLink.source.rawValue)!
                 ) {
                     Label("settings.info.source", systemImage: "chevron.left.forwardslash.chevron.right")
                 }
@@ -337,6 +355,16 @@ struct SettingsView: View {
             }
         }
     }
+
+    // MARK: - Methods
+
+    /// Show the in-app Safari window and open the corresponding link.
+    /// - Parameter link: The app link to open in the Safari in-app browser.
+    private func showSafariWindow(to link: AppLink) {
+        safariLink = link
+        showSafariView.toggle()
+    }
+
 }
 
 // MARK: - Previews

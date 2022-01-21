@@ -14,8 +14,23 @@ struct SafariView: UIViewControllerRepresentable {
     /// The URL to load into the Safari view controller.
     let url: URL
 
+    /// Whether to enter reader mode by default.
+    let reader: Bool
+
+    init(_ urlString: String, reader: Bool = false) {
+        self.url = URL(string: urlString)!
+        self.reader = reader
+    }
+
+    init(_ url: URL, reader: Bool = false) {
+        self.url = url
+        self.reader = reader
+    }
+
     func makeUIViewController(context: UIViewControllerRepresentableContext<Self>) -> SFSafariViewController {
-        SFSafariViewController(url: url)
+        let controller = SFSafariViewController(url: url)
+        controller.configuration.entersReaderIfAvailable = reader
+        return controller
     }
 
     func updateUIViewController(
@@ -23,5 +38,11 @@ struct SafariView: UIViewControllerRepresentable {
         context: UIViewControllerRepresentableContext<SafariView>
     ) {
         return
+    }
+}
+
+extension SafariView {
+    func prefersReaderMode() -> some View {
+        SafariView(self.url, reader: true)
     }
 }
