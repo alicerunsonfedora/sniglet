@@ -48,6 +48,7 @@
 "settings.info.header" = "About This App";
 "settings.info.version" = "App Version";
 "settings.info.feedback" = "Send Feedback";
+"settings.info.privacy" = "View Privacy Policy";
 "settings.info.source" = "View Source Code";
 "settings.info.footer" = "Developed by Marquis Kurt with ❤️";
 

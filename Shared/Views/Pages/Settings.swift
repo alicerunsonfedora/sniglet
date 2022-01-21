@@ -243,6 +243,8 @@ struct SettingsView: View {
     /// The section dedicated to displaying app information such as its version.
     var informationSection: some View {
         Group {
+
+            // App Information
             Section {
                 HStack {
                     Text("settings.info.version")
@@ -270,11 +272,17 @@ struct SettingsView: View {
                 Text("settings.info.footer")
             }
 
+            // Actionable Items
             Section {
                 Button {
                     showSafariWindow(to: .feedback)
                 } label: {
                     Label("settings.info.feedback", systemImage: "exclamationmark.bubble")
+                }
+                Link(
+                    destination: URL(string: AppLink.privacyPolicy.rawValue)!
+                ) {
+                    Label("settings.info.privacy", systemImage: "hand.raised")
                 }
                 Link(
                     destination: URL(string: AppLink.source.rawValue)!
@@ -306,9 +314,7 @@ struct SettingsView: View {
                 }
             }
 
-
-
-            Section(footer: Text("settings.syllable.footer")) {
+            Section {
                 ForEach(customSyllables, id: \.self) { custom in
                     Text(custom)
                         .font(.system(.body, design: .monospaced))
@@ -326,6 +332,8 @@ struct SettingsView: View {
                             .font(.caption)
                     }
                 }
+            } footer: {
+                Text("settings.syllable.footer")
             }
         }
         .navigationTitle("settings.syllable.title")

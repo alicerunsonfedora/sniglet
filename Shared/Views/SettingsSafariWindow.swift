@@ -20,10 +20,11 @@ struct SettingsSafariWindow: View {
         Group {
             switch link {
             case .feedback:
-                SafariView(AppLink.feedback.rawValue)
-            case .license:
-                SafariView(AppLink.license.rawValue)
-                    .prefersReaderMode()
+                SafariView(link.rawValue)
+            case .license, .privacyPolicy:
+                SafariView(link.rawValue)
+                    .prefersReaderMode(.constant(true))
+                    .collapsible(.constant(false))
             default:
                 VStack(spacing: 8) {
                     Spacer()

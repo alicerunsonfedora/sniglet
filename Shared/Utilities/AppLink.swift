@@ -20,6 +20,9 @@ public enum AppLink: String {
     /// - Important: This will cause an error in an `SFSafariViewController`.
     case none = "about:blank"
 
+    /// A link that opens the privacy policy for this app.
+    case privacyPolicy = "https://marquiskurt.net/app-privacy.html"
+
     /// A link that redirects to the GitHub source code.
     case source = "https://github.com/alicerunsonfedora/sniglet"
 }
