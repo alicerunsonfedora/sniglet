@@ -12,8 +12,6 @@ with a single tap. Customize the algorithm by changing the size of the words and
     </a>
 </p>
 
----
-
 This project was originally a part of Codename Abysima as an attempt to generate a language using machine learning. Now,
 this project will host updates to the Give Me A Sniglet app.
 
@@ -22,13 +20,14 @@ More information on the original project can be found at https://github.com/alic
 ## Features
 
 - Generate as many sniglets as you like and share them easily
-- Customize the generation algorithm by adjusting the word length and syllabic shapes
+    - Customize the generation algorithm by adjusting the word length and syllabic shapes
+    - 🧪 Generate sniglets on-the-go with support for Apple Watch
+    - 🧪 Listen to pronunciations of sniglets from your device's language
 - View random sniglets on your home screen with the Random Sniglet Widget
     - 🧪 Select from different trained models for validation
 - 🧪 Save your favorite sniglets into a personal dictionary synced with iCloud
     - 🧪 Assign a definition to your saved sniglets for future reference
     - 🧪 View a different entry every day with the Daily Saved Sniglet Widget
-- 🧪 Generate sniglets on-the-go with support for Apple Watch
 
 > *Features marked with 🧪 are in a pre-release state, usually in a TestFlight build.
 
@@ -53,6 +52,11 @@ want to change the container name to match that of your app's identifier.
 
 Alternatively, you can strip out the CloudKit integration and change `DBController` so that it points to a Core Data
 persistent container instead of an iCloud container.
+
+> :warning: As of recently, there appears to be some issues pertaining to CloudKit sync. Some users may not see their
+> saved sniglets sync correctly because of this.
+> 
+> Refer to https://reverttosaved.com/2022/01/24/icloud-sync-is-randomly-breaking/ for more information.
 
 ## Found a bug?
 
