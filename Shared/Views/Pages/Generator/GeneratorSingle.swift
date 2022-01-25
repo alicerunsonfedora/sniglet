@@ -8,6 +8,7 @@
 import Foundation
 import CoreData
 import SwiftUI
+import AVFoundation
 
 /// A view that represents the single generation view.
 struct GeneratorSingleView: View {
@@ -33,17 +34,25 @@ struct GeneratorSingleView: View {
         VStack(spacing: 16) {
             HStack {
                 Spacer()
-                Button(action: saveSniglet) {
-                    Label("saved.button.add", systemImage: "bookmark")
+                HStack(spacing: 24) {
+                    Button {
+                        result.word.speak()
+                    } label: {
+                        Label("sound.button.prompt", systemImage: "speaker.wave.3")
+                    }
+                    Button(action: saveSniglet) {
+                        Label("saved.button.add", systemImage: "bookmark")
+                    }
+                    .alert(
+                        "saved.alert.title",
+                        isPresented: $showAddedAlert,
+                        actions: {
+                            Button("OK", role: .cancel) { }
+                        },
+                        message: { Text("saved.alert.detail") }
+                    )
                 }
-                .alert(
-                    "saved.alert.title",
-                    isPresented: $showAddedAlert,
-                    actions: {
-                        Button("OK", role: .cancel) { }
-                    },
-                    message: { Text("saved.alert.detail") }
-                )
+                .labelStyle(.iconOnly)
             }
             Spacer()
             if tapToCopy {
@@ -104,7 +113,6 @@ struct GeneratorSingleView: View {
         DBController.shared.save()
         showAddedAlert = true
     }
-
 }
 
 struct GeneratorSingle_Preview: PreviewProvider {

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		95050FA927A0393E00A31E45 /* DictionaryEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95050FA827A0393E00A31E45 /* DictionaryEntry.swift */; };
 		95187FCE27720C4500313B85 /* Classic.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 95187FCD27720C4500313B85 /* Classic.mlmodel */; };
 		95187FD027720C5A00313B85 /* ValidatorModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95187FCF27720C5A00313B85 /* ValidatorModels.swift */; };
 		95187FD127720EB600313B85 /* ValidatorModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95187FCF27720C5A00313B85 /* ValidatorModels.swift */; };
@@ -51,6 +52,7 @@
 		95C794A22766DE1900051AED /* DailySavedSniglet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C794A12766DE1800051AED /* DailySavedSniglet.swift */; };
 		95C794A42766E5A500051AED /* AppGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C794A32766E5A500051AED /* AppGroup.swift */; };
 		95C794A52766E5A500051AED /* AppGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C794A32766E5A500051AED /* AppGroup.swift */; };
+		95D74B3327A0408C0063E2AA /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95D74B3227A0408C0063E2AA /* AVFoundation.framework */; };
 		95E0697C274417F00043F568 /* Generator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E0697B274417F00043F568 /* Generator.swift */; };
 		95E0697F2744188B0043F568 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E0697E2744188B0043F568 /* Settings.swift */; };
 		95E06984274419870043F568 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 95E06987274419870043F568 /* Localizable.strings */; };
@@ -91,6 +93,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		95050FA827A0393E00A31E45 /* DictionaryEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryEntry.swift; sourceTree = "<group>"; };
 		95071750276E51F900A3E541 /* create_dataset.py */ = {isa = PBXFileReference; lastKnownFileType = text.script.python; path = create_dataset.py; sourceTree = "<group>"; };
 		95071752276E51F900A3E541 /* INFO.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = INFO.txt; sourceTree = "<group>"; };
 		95071753276E51F900A3E541 /* jp-romaji.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "jp-romaji.txt"; sourceTree = "<group>"; };
@@ -144,6 +147,7 @@
 		95C7949F2766D92A00051AED /* SavedWOTDEV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedWOTDEV.swift; sourceTree = "<group>"; };
 		95C794A12766DE1800051AED /* DailySavedSniglet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailySavedSniglet.swift; sourceTree = "<group>"; };
 		95C794A32766E5A500051AED /* AppGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppGroup.swift; sourceTree = "<group>"; };
+		95D74B3227A0408C0063E2AA /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		95E0697B274417F00043F568 /* Generator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Generator.swift; sourceTree = "<group>"; };
 		95E0697E2744188B0043F568 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		95E06986274419870043F568 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -172,6 +176,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				95D74B3327A0408C0063E2AA /* AVFoundation.framework in Frameworks */,
 				95C7401E276D6C2200A9AE63 /* CloudKit.framework in Frameworks */,
 				95F6D19327568CBC00668877 /* SwiftUI.framework in Frameworks */,
 				95F6D19127568CBC00668877 /* WidgetKit.framework in Frameworks */,
@@ -181,6 +186,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		95050FA727A0392C00A31E45 /* Dictionary */ = {
+			isa = PBXGroup;
+			children = (
+				95562DCD276695FF00E0C6FD /* Dictionary.swift */,
+				95050FA827A0393E00A31E45 /* DictionaryEntry.swift */,
+			);
+			path = Dictionary;
+			sourceTree = "<group>";
+		};
 		9507174F276E51F900A3E541 /* Scripts */ = {
 			isa = PBXGroup;
 			children = (
@@ -223,6 +237,15 @@
 				9594420A279AF5B10066DC62 /* UIView.swift */,
 			);
 			path = Utilities;
+			sourceTree = "<group>";
+		};
+		954AACE327A0388700F97D9C /* Bridges */ = {
+			isa = PBXGroup;
+			children = (
+				951FC4E827997A29009CA715 /* SafariView.swift */,
+				95944206279ADCA80066DC62 /* SharedActivity.swift */,
+			);
+			path = Bridges;
 			sourceTree = "<group>";
 		};
 		9552F63D27432CE0004582D6 = {
@@ -308,9 +331,9 @@
 		957DFBC3276D722C0034CBB0 /* Pages */ = {
 			isa = PBXGroup;
 			children = (
+				95050FA727A0392C00A31E45 /* Dictionary */,
 				957676E8274CA3110011E558 /* Generator */,
 				95E0697E2744188B0043F568 /* Settings.swift */,
-				95562DCD276695FF00E0C6FD /* Dictionary.swift */,
 			);
 			path = Pages;
 			sourceTree = "<group>";
@@ -346,11 +369,10 @@
 		95944205279AD4AD0066DC62 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				954AACE327A0388700F97D9C /* Bridges */,
 				957DFBC4276D724A0034CBB0 /* WhatsNewView.swift */,
 				9589F6802770A29D00BF3855 /* UpgradePromptView.swift */,
-				951FC4E827997A29009CA715 /* SafariView.swift */,
 				952449C3279ABAD2001AB7D7 /* SettingsSafariWindow.swift */,
-				95944206279ADCA80066DC62 /* SharedActivity.swift */,
 				95944208279ADE450066DC62 /* SavedDefinitionImage.swift */,
 			);
 			path = Components;
@@ -407,6 +429,7 @@
 		95F6D18F27568CBC00668877 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				95D74B3227A0408C0063E2AA /* AVFoundation.framework */,
 				9589F6822770A79000BF3855 /* StoreKit.framework */,
 				95609546276D512E0026D4E1 /* CloudKit.framework */,
 				95F6D19027568CBC00668877 /* WidgetKit.framework */,
@@ -547,6 +570,7 @@
 				952449C4279ABAD2001AB7D7 /* SettingsSafariWindow.swift in Sources */,
 				958C2D3F274C1C1D0076E0D9 /* SyllableShapes.swift in Sources */,
 				95511DC2274AC36500234573 /* String.swift in Sources */,
+				95050FA927A0393E00A31E45 /* DictionaryEntry.swift in Sources */,
 				951FC4E927997A29009CA715 /* SafariView.swift in Sources */,
 				95944207279ADCA90066DC62 /* SharedActivity.swift in Sources */,
 				95E0697C274417F00043F568 /* Generator.swift in Sources */,

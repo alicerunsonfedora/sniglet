@@ -132,6 +132,15 @@ struct GeneratorListDetail: View {
                     }
                 }
             }
+
+            ToolbarItem {
+                Button {
+                    result.word.speak()
+                } label: {
+                    Label("sound.button.prompt", systemImage: "speaker.wave.3")
+                }
+            }
+            
             ToolbarItem {
                 Button(action: saveSniglet) {
                     Label("saved.button.add", systemImage: "bookmark")
