@@ -20,30 +20,32 @@ struct WhatsNewView: View {
 
             Text("feat.title")
                 .bold()
-                .font(.title)
+                .font(.system(.title, design: .rounded))
                 .multilineTextAlignment(.center)
 
-            VStack(alignment: .leading, spacing: 24) {
-                WhatsNewLabel(
-                    title: LocalizedStringKey("feat.watch.title"),
-                    subtitle: "feat.watch.detail",
-                    systemImage: "applewatch.watchface"
-                )
-                WhatsNewLabel(
-                    title: LocalizedStringKey("feat.dictionary.title"),
-                    subtitle: "feat.dictionary.detail",
-                    systemImage: "bookmark"
-                )
-                WhatsNewLabel(
-                    title: LocalizedStringKey("feat.icloud.title"),
-                    subtitle: "feat.icloud.detail",
-                    systemImage: "icloud"
-                )
-                WhatsNewLabel(
-                    title: LocalizedStringKey("feat.models.title"),
-                    subtitle: "feat.models.detail",
-                    systemImage: "brain"
-                )
+            ScrollView {
+                VStack(alignment: .leading, spacing: 24) {
+                    WhatsNewLabel(
+                        title: LocalizedStringKey("feat.watch.title"),
+                        subtitle: "feat.watch.detail",
+                        systemImage: "applewatch.watchface"
+                    )
+                    WhatsNewLabel(
+                        title: LocalizedStringKey("feat.dictionary.title"),
+                        subtitle: "feat.dictionary.detail",
+                        systemImage: "externaldrive.badge.icloud"
+                    )
+                    WhatsNewLabel(
+                        title: LocalizedStringKey("feat.models.title"),
+                        subtitle: "feat.models.detail",
+                        systemImage: "brain"
+                    )
+                    WhatsNewLabel(
+                        title: LocalizedStringKey("feat.actions.title"),
+                        subtitle: "feat.actions.detail",
+                        systemImage: "dot.circle.and.hand.point.up.left.fill"
+                    )
+                }
             }
 
             Spacer()
@@ -54,14 +56,14 @@ struct WhatsNewView: View {
                     onDismiss()
                 } label: {
                     Text("feat.accept")
-                        .font(.headline)
+                        .font(.system(.headline, design: .rounded))
                         .padding(.horizontal)
                         .padding(.vertical, 8)
                         .frame(maxWidth: 400)
                 }
                 .buttonStyle(.borderedProminent)
                 Text("feat.prompt")
-                    .font(.caption)
+                    .font(.system(.caption, design: .rounded))
                     .foregroundColor(.secondary)
             }
             .padding(.bottom, 16)
@@ -94,15 +96,15 @@ struct WhatsNewLabel: View {
         Label {
             VStack(alignment: .leading, spacing: 4) {
                 Text(title)
-                    .font(.title2)
-                    .bold()
+                    .font(.system(.title3, design: .rounded))
+                    .fontWeight(.bold)
                 Text(subtitle)
-                    .font(.subheadline)
+                    .font(.system(.subheadline, design: .rounded))
                     .foregroundColor(.secondary)
             }
         } icon: {
             Image(systemName: systemImage)
-                .font(.title2)
+                .font(.title3)
                 .foregroundColor(.accentColor)
                 .frame(width: 32)
         }

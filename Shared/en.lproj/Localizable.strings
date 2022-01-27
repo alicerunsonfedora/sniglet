@@ -81,16 +81,16 @@
 
 // MARK: - CHANGELOG
 "feat.dictionary.title" = "Sniglet Dictionary*";
-"feat.dictionary.detail" = "Save your favorite sniglets into your personal dictionary.";
+"feat.dictionary.detail" = "Save your favorite sniglets into your personal dictionary, synced across all your devices through iCloud.";
 
 "feat.watch.title" = "Apple Watch Support";
 "feat.watch.detail" = "Generate random sniglets on the fly with a brand-new app for Apple Watch.";
 
-"feat.icloud.title" = "iCloud Sync*";
-"feat.icloud.detail" = "Sync your dictionaries across your devices with iCloud.";
-
 "feat.models.title" = "Model Customization";
 "feat.models.detail" = "Switch between different validation models to fit your needs.";
+
+"feat.actions.title" = "Sniglet Actions";
+"feat.actions.detail" = "Listen to how your device pronounces generated sniglets, and share your favorites to others as an image.";
 
 "feat.title" = "What's New in Give Me a Sniglet";
 "feat.accept" = "Continue";
