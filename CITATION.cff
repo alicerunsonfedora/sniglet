@@ -4,8 +4,8 @@ authors:
 - family-names: "Kurt"
   given-names: "Marquis"
 title: "Give Me A Sniglet!"
-version: 1.1-6
-date-released: 2022-01-21
+version: 1.1-7
+date-released: 2022-02-01
 url: "https://apple.co/336C4oX"
 license: MPL-2.0
 repository-code: "https://github.com/alicerunsonfedora/sniglet"
