@@ -1,5 +1,5 @@
 //
-//  Give_Me_a_SnigletApp.swift
+//  MainEntry.swift
 //  Shared
 //
 //  Created by Marquis Kurt on 15/11/21.
@@ -9,7 +9,7 @@ import SwiftUI
 
 /// The main entry point of the application.
 @main
-struct Give_Me_a_SnigletApp: App {
+struct SnigletApp: App {
 
     /// The shared database that the app will use to store saved sniglets.
     let database = DBController.shared
