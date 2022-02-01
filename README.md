@@ -39,8 +39,16 @@ More information on the original project can be found at https://github.com/alic
 - macOS 12.0 Monterey or later
 - Apple ID registered with the Apple Developer Program
 
-Clone the repository using `git clone`, and then open the Xcode project. To run for iOS, change the run target from
-"My Mac" to either an iOS simulator device or "Any iOS Device". The same applies for macOS.
+Clone the repository using `git clone`, and then open the Xcode project. Select any of the three schemes to build that
+target, then click the Run button or go to **Product > Run** to run the project.
+
+There are three schemes included in the project:
+
+- **Main App** refers to the primary app for iOS, iPadOS, and macOS. This is likely the scheme you want to use.
+- **Widgets** refers to the widgets that are included in the main app. This scheme is typically used to preview the
+  widgets available in the main app and should be used for debugging purposes only.
+- **Watch App** refers to the app for the Apple Watch. The watch app is a companion to the main app and is embedded in
+  the main app when archiving the project.
 
 ### CloudKit integration
 
