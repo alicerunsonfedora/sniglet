@@ -42,6 +42,7 @@ struct DBController {
     /// Create an instance of the database controller.
     /// - Parameter inMemory: Whether to only keep the database in memory. Defaults to false.
     init(inMemory: Bool = false) {
+        print("Init has been callled")
         container = NSPersistentCloudKitContainer(name: "DataModel")
         if inMemory {
             container.persistentStoreDescriptions.first?.url = URL(fileURLWithPath: "/dev/null")
