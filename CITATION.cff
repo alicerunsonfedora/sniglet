@@ -1,0 +1,11 @@
+cff-version: 1.2.0
+message: "If you reference this app or its source code in your work, please cite it as described below."
+authors:
+- family-names: "Kurt"
+  given-names: "Marquis"
+title: "Give Me A Sniglet!"
+version: 1.1-6
+date-released: 2022-01-21
+url: "https://apple.co/336C4oX"
+license: MPL-2.0
+repository-code: "https://github.com/alicerunsonfedora/sniglet"
