@@ -330,7 +330,6 @@
 				9507174F276E51F900A3E541 /* Scripts */,
 				9552F64227432CE0004582D6 /* Shared */,
 				9590D53627A9799000F51F10 /* Platforms */,
-				95F6D19427568CBC00668877 /* Sniglet Widget */,
 				95F6D18F27568CBC00668877 /* Frameworks */,
 				9552F64B27432CE2004582D6 /* Products */,
 			);
@@ -483,6 +482,7 @@
 		9590D53627A9799000F51F10 /* Platforms */ = {
 			isa = PBXGroup;
 			children = (
+				95F6D19427568CBC00668877 /* Sniglet Widget */,
 				9552F65127432CE2004582D6 /* macOS */,
 				9590D51427A9798300F51F10 /* Watch */,
 				9590D51F27A9798400F51F10 /* Watch WatchKit Extension */,
@@ -1162,7 +1162,7 @@
 				CURRENT_PROJECT_VERSION = 7;
 				DEVELOPMENT_TEAM = FQQXSP79X3;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Sniglet Widget/Info.plist";
+				INFOPLIST_FILE = "Platforms/Sniglet Widget/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "Sniglet Widget";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
@@ -1193,7 +1193,7 @@
 				CURRENT_PROJECT_VERSION = 7;
 				DEVELOPMENT_TEAM = FQQXSP79X3;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Sniglet Widget/Info.plist";
+				INFOPLIST_FILE = "Platforms/Sniglet Widget/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "Sniglet Widget";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
