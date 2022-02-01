@@ -12,6 +12,9 @@ import CoreData
 /// A view that shows multiple sniglet entries at a time.
 struct GeneratorList: View {
 
+    /// The managed object context from the database.
+    @Environment(\.managedObjectContext) var managedObjectContext
+
     /// The number of sniglets to generate at a given time.
     @AppStorage("generateSize") var generateSize: Int = 1
 
@@ -46,6 +49,23 @@ struct GeneratorList: View {
                     }
                     .padding(.vertical)
                     .tag(result.word)
+                    .contextMenu {
+                        Button {
+                            result.word.speak()
+                        } label: {
+                            Label("sound.button.prompt", systemImage: "speaker.wave.3")
+                        }
+                        Button {
+                            let entry = SavedWord(context: managedObjectContext)
+                            entry.word = result.word
+                            entry.confidence = result.confidence
+                            entry.validity = result.validation
+                            entry.note = ""
+                            DBController.shared.save()
+                        } label: {
+                            Label("saved.button.add", systemImage: "bookmark")
+                        }
+                    }
                 }
             }
             .navigationTitle("generator.title")

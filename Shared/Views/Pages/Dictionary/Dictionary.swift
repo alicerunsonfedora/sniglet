@@ -76,17 +76,7 @@ struct Dictionary: View {
     var dictionaryList: some View {
         List {
             ForEach(filteredWords(), id: \.self) { word in
-                NavigationLink(destination: DictionaryEntryView(entry: word)) {
-                    VStack(alignment: .leading, spacing: 4) {
-                        Text(word.word ?? "")
-                            .font(.system(.title2, design: .serif))
-                            .bold()
-                        Text("Confidence: \(word.confidence.asPercentage())%")
-                            .font(.footnote)
-                            .foregroundColor(.secondary)
-                    }
-                    .padding(.vertical)
-                }
+                DictionaryLink(entry: word)
             }
             .onDelete(perform: removeEntries)
         }
@@ -99,10 +89,12 @@ struct Dictionary: View {
     /// Remove entries from the database at the specified offsets.
     /// This is used to handle delete gestures when the list is in editing mode.
     func removeEntries(at offsets: IndexSet) {
-        for index in offsets {
-            managedObjectContext.delete(words[index])
+        withAnimation {
+            for index in offsets {
+                managedObjectContext.delete(words[index])
+            }
+            DBController.shared.save()
         }
-        DBController.shared.save()
     }
 
     /// Returns a list of saved sniglets that contain the search query text.
@@ -125,5 +117,42 @@ struct Dictionary_Previews: PreviewProvider {
                 .previewDevice("iPhone 13")
         }
 
+    }
+}
+
+struct DictionaryLink: View {
+
+    /// The managed object context from the database.
+    @Environment(\.managedObjectContext) var managedObjectContext
+
+    @State var entry: SavedWord
+
+    var body: some View {
+        NavigationLink(destination: DictionaryEntryView(entry: entry)) {
+            VStack(alignment: .leading, spacing: 4) {
+                Text(entry.word ?? "")
+                    .font(.system(.title2, design: .serif))
+                    .bold()
+                Text("Confidence: \(entry.confidence.asPercentage())%")
+                    .font(.footnote)
+                    .foregroundColor(.secondary)
+            }
+            .padding(.vertical)
+        }
+        .contextMenu {
+            Button {
+                entry.word!.speak()
+            } label: {
+                Label("sound.button.prompt", systemImage: "speaker.wave.3")
+            }
+            Button {
+                withAnimation {
+                    managedObjectContext.delete(entry)
+                    DBController.shared.save()
+                }
+            } label: {
+                Label("Delete...", systemImage: "trash")
+            }
+        }
     }
 }
