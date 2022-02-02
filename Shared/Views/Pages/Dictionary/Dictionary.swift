@@ -8,6 +8,7 @@
 import SwiftUI
 import CoreData
 
+
 /// A view that represents the Dictionary page in the application.
 struct Dictionary: View {
 
@@ -107,24 +108,13 @@ struct Dictionary: View {
     }
 }
 
-struct Dictionary_Previews: PreviewProvider {
-    static let previewCtx = DBController.preview
-
-    static var previews: some View {
-        Group {
-            Dictionary()
-                .environment(\.managedObjectContext, previewCtx.container.viewContext)
-                .previewDevice("iPhone 13")
-        }
-
-    }
-}
-
+/// A view that represents a link in the dictionary list.
 struct DictionaryLink: View {
 
     /// The managed object context from the database.
     @Environment(\.managedObjectContext) var managedObjectContext
 
+    /// The corresponding entry this link works with.
     @State var entry: SavedWord
 
     var body: some View {
@@ -154,5 +144,19 @@ struct DictionaryLink: View {
                 Label("Delete...", systemImage: "trash")
             }
         }
+    }
+}
+
+
+struct Dictionary_Previews: PreviewProvider {
+    static let previewCtx = DBController.preview
+
+    static var previews: some View {
+        Group {
+            Dictionary()
+                .environment(\.managedObjectContext, previewCtx.container.viewContext)
+                .previewDevice("iPhone 13")
+        }
+
     }
 }

@@ -9,10 +9,14 @@ import SwiftUI
 import CoreData
 
 struct ContentView: View {
+
     /// The managed object context from the database.
     @Environment(\.managedObjectContext) var managedObjectContext
 
+    /// The current generated sniglet.
     @State private var sniglet: Sniglet.Result = .empty()
+
+    /// Whether this sniglet was just saved into iCloud.
     @State private var saved: Bool = false
 
     var body: some View {
