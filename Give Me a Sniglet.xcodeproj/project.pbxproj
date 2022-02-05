@@ -44,7 +44,6 @@
 		9590D51C27A9798400F51F10 /* Watch WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 9590D51B27A9798400F51F10 /* Watch WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		9590D52127A9798400F51F10 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9590D52027A9798400F51F10 /* ContentView.swift */; };
 		9590D52327A9798400F51F10 /* SnigletWatchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9590D52227A9798400F51F10 /* SnigletWatchApp.swift */; };
-		9590D52527A9798400F51F10 /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9590D52427A9798400F51F10 /* ComplicationController.swift */; };
 		9590D52727A9798400F51F10 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9590D52627A9798400F51F10 /* Assets.xcassets */; };
 		9590D52A27A9798400F51F10 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9590D52927A9798400F51F10 /* Preview Assets.xcassets */; };
 		9590D52E27A9798400F51F10 /* Watch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 9590D51327A9798300F51F10 /* Watch.app */; platformFilter = ios; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -193,7 +192,6 @@
 		9590D51B27A9798400F51F10 /* Watch WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Watch WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9590D52027A9798400F51F10 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		9590D52227A9798400F51F10 /* SnigletWatchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnigletWatchApp.swift; sourceTree = "<group>"; };
-		9590D52427A9798400F51F10 /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
 		9590D52627A9798400F51F10 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9590D52927A9798400F51F10 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		9590D52B27A9798400F51F10 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -466,7 +464,6 @@
 			children = (
 				9590D52027A9798400F51F10 /* ContentView.swift */,
 				9590D52227A9798400F51F10 /* SnigletWatchApp.swift */,
-				9590D52427A9798400F51F10 /* ComplicationController.swift */,
 				9590D52627A9798400F51F10 /* Assets.xcassets */,
 				9590D52B27A9798400F51F10 /* Info.plist */,
 				9590D52827A9798400F51F10 /* Preview Content */,
@@ -783,7 +780,6 @@
 				9590D52327A9798400F51F10 /* SnigletWatchApp.swift in Sources */,
 				9590D53827A97C8400F51F10 /* Classic.mlmodel in Sources */,
 				9590D53727A97C3200F51F10 /* Sniglet.swift in Sources */,
-				9590D52527A9798400F51F10 /* ComplicationController.swift in Sources */,
 				9590D53D27A97CAC00F51F10 /* SnigletResult.swift in Sources */,
 				9590D53E27A97CAC00F51F10 /* ValidatorModels.swift in Sources */,
 				9590D53A27A97C8E00F51F10 /* DoubleExtension.swift in Sources */,
@@ -1041,7 +1037,7 @@
 		9590D53027A9798400F51F10 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = "";
 				CODE_SIGN_ENTITLEMENTS = "App Entitlements/Watch WatchKit Extension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 7;
@@ -1051,7 +1047,6 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Platforms/Watch WatchKit Extension/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "Watch WatchKit Extension";
-				INFOPLIST_KEY_CLKComplicationPrincipalClass = Watch_WatchKit_Extension.ComplicationController;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1073,7 +1068,7 @@
 		9590D53127A9798400F51F10 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = "";
 				CODE_SIGN_ENTITLEMENTS = "App Entitlements/Watch WatchKit Extension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 7;
@@ -1083,7 +1078,6 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Platforms/Watch WatchKit Extension/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "Watch WatchKit Extension";
-				INFOPLIST_KEY_CLKComplicationPrincipalClass = Watch_WatchKit_Extension.ComplicationController;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
