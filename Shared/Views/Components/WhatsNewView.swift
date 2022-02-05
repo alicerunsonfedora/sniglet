@@ -25,11 +25,15 @@ struct WhatsNewView: View {
 
             ScrollView {
                 VStack(alignment: .leading, spacing: 24) {
+
+                    // Show the Apple Watch support on devices that can utilize it.
+                    #if !targetEnvironment(macCatalyst)
                     WhatsNewLabel(
                         title: LocalizedStringKey("feat.watch.title"),
                         subtitle: "feat.watch.detail",
                         systemImage: "applewatch.watchface"
                     )
+                    #endif
                     WhatsNewLabel(
                         title: LocalizedStringKey("feat.dictionary.title"),
                         subtitle: "feat.dictionary.detail",
