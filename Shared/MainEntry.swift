@@ -22,7 +22,7 @@ struct SnigletApp: App {
         }
         .commands {
             CommandGroup(after: .appInfo) {
-                Button("Reset Dialogs") {
+                Button("settings.reset.title") {
                     resetWarnings()
                 }
             }

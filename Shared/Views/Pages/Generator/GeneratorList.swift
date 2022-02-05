@@ -131,7 +131,7 @@ struct GeneratorListDetail: View {
                     GeneratorResultText(word: result.word)
                 }
                 .buttonStyle(.plain)
-                Text("Tap the word to copy it to your clipboard.")
+                Text("generator.copy.prompt")
                     .font(.caption)
                     .foregroundColor(.secondary)
 
@@ -148,7 +148,7 @@ struct GeneratorListDetail: View {
             ToolbarItem {
                 if !tapToCopy {
                     Button(action: { UIPasteboard.general.string = result.word }) {
-                        Label("Copy to Clipboard", systemImage: "doc.on.doc")
+                        Label("generator.copy.button", systemImage: "doc.on.doc")
                     }
                 }
             }

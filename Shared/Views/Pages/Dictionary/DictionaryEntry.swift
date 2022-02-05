@@ -76,7 +76,7 @@ struct DictionaryEntryView: View {
                         UIPasteboard.general.string = word
                     }
                 } label: {
-                    Label("Copy", systemImage: "doc.on.doc")
+                    Label("generator.copy.button", systemImage: "doc.on.doc")
                 }
             }
 
@@ -117,7 +117,7 @@ struct DictionaryEntryView: View {
             showShareSheet.toggle()
             #endif
         } label: {
-            Label("Share", systemImage: "square.and.arrow.up")
+            Label("saved.button.share", systemImage: "square.and.arrow.up")
         }
         .popover(isPresented: $showShareSheet) {
             SharedActivity(activities: [ savedImage as Any ])
