@@ -35,6 +35,7 @@
 		957676EA274CA3250011E558 /* GeneratorList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957676E9274CA3250011E558 /* GeneratorList.swift */; };
 		957676EC274CA38A0011E558 /* GeneratorSingle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957676EB274CA38A0011E558 /* GeneratorSingle.swift */; };
 		957DFBC5276D724A0034CBB0 /* WhatsNewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957DFBC4276D724A0034CBB0 /* WhatsNewView.swift */; };
+		95838E7427AEF67400B80BB2 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95838E7327AEF67400B80BB2 /* ColorExtension.swift */; };
 		9589F6812770A29D00BF3855 /* UpgradePromptView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9589F6802770A29D00BF3855 /* UpgradePromptView.swift */; };
 		9589F6832770A79000BF3855 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9589F6822770A79000BF3855 /* StoreKit.framework */; };
 		9589F68C2770D98500BF3855 /* Upgrades.storekit in Resources */ = {isa = PBXBuildFile; fileRef = 9589F68B2770D98500BF3855 /* Upgrades.storekit */; };
@@ -182,6 +183,7 @@
 		957676E9274CA3250011E558 /* GeneratorList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneratorList.swift; sourceTree = "<group>"; };
 		957676EB274CA38A0011E558 /* GeneratorSingle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneratorSingle.swift; sourceTree = "<group>"; };
 		957DFBC4276D724A0034CBB0 /* WhatsNewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhatsNewView.swift; sourceTree = "<group>"; };
+		95838E7327AEF67400B80BB2 /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		9589F6802770A29D00BF3855 /* UpgradePromptView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpgradePromptView.swift; sourceTree = "<group>"; };
 		9589F6822770A79000BF3855 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS15.2.sdk/System/Library/Frameworks/StoreKit.framework; sourceTree = DEVELOPER_DIR; };
 		9589F68B2770D98500BF3855 /* Upgrades.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = Upgrades.storekit; sourceTree = "<group>"; };
@@ -302,12 +304,13 @@
 		9539B80D27650FD200E9E54D /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				95C794A32766E5A500051AED /* AppGroup.swift */,
+				951FC4EC27998A56009CA715 /* AppLink.swift */,
+				951FC4EA27998660009CA715 /* AppVersions.swift */,
+				95838E7327AEF67400B80BB2 /* ColorExtension.swift */,
 				95E0698827442B9D0043F568 /* DoubleExtension.swift */,
 				95511DC1274AC36500234573 /* String.swift */,
 				958C2D3E274C1C1D0076E0D9 /* SyllableShapes.swift */,
-				95C794A32766E5A500051AED /* AppGroup.swift */,
-				951FC4EA27998660009CA715 /* AppVersions.swift */,
-				951FC4EC27998A56009CA715 /* AppLink.swift */,
 				9594420A279AF5B10066DC62 /* UIView.swift */,
 			);
 			path = Utilities;
@@ -751,6 +754,7 @@
 				95C794A42766E5A500051AED /* AppGroup.swift in Sources */,
 				951FC4EB27998660009CA715 /* AppVersions.swift in Sources */,
 				95E0698927442B9D0043F568 /* DoubleExtension.swift in Sources */,
+				95838E7427AEF67400B80BB2 /* ColorExtension.swift in Sources */,
 				95187FD027720C5A00313B85 /* ValidatorModels.swift in Sources */,
 				95187FCE27720C4500313B85 /* Classic.mlmodel in Sources */,
 				952449C4279ABAD2001AB7D7 /* SettingsSafariWindow.swift in Sources */,

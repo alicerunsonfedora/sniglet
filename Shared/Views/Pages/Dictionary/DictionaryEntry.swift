@@ -126,9 +126,9 @@ struct DictionaryEntryView: View {
 
         let hosting = UIHostingController(rootView: savedPreview)
         hosting.view.frame = window.frame
-        hosting.view.backgroundColor = .init(named: "SavedBackground")!
+        hosting.view.backgroundColor = .savedBackground
 
-        window.backgroundColor = .init(named: "SavedBackground")!
+        window.backgroundColor = .savedBackground
         window.addSubview(hosting.view)
         window.makeKeyAndVisible()
 
