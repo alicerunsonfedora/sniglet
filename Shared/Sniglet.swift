@@ -38,9 +38,8 @@ class Sniglet {
     // MARK: - CONSTRUCTOR
 
     init() {
+        // TODO: Re-enable this once the datasets are fleshed out. In the meantime, keep this as the classic mode.
         // Set the kind from the UserDefaults so that the class can pick the correct model for predictions.
-
-        #warning("Uncomment the code below and remove line 50 to allow different models.")
         // if let kindStr = UserDefaults.standard.string(forKey: "generateMethod") {
         //     kind = ValidatorKind(rawValue: kindStr) ?? .Classic
         // } else {

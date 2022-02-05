@@ -35,11 +35,12 @@ struct WhatsNewView: View {
                         subtitle: "feat.dictionary.detail",
                         systemImage: "externaldrive.badge.icloud"
                     )
-                    WhatsNewLabel(
-                        title: LocalizedStringKey("feat.models.title"),
-                        subtitle: "feat.models.detail",
-                        systemImage: "brain"
-                    )
+                    // TODO: Show this part once models are fully ready.
+//                    WhatsNewLabel(
+//                        title: LocalizedStringKey("feat.models.title"),
+//                        subtitle: "feat.models.detail",
+//                        systemImage: "brain"
+//                    )
                     WhatsNewLabel(
                         title: LocalizedStringKey("feat.actions.title"),
                         subtitle: "feat.actions.detail",

@@ -172,7 +172,9 @@ struct SettingsView: View {
                 List {
                     boundaries
                     batches
-                    generationMethod
+
+                    // TODO: Re-enable the settings page for the Generation Method once the models are ready.
+                    // generationMethod
                 }
                 .navigationTitle("settings.algorithm.title")
                 .navigationBarTitleDisplayMode(.inline)
