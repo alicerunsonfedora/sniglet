@@ -79,14 +79,9 @@ struct DictionaryEntryView: View {
                     Label("Copy", systemImage: "doc.on.doc")
                 }
             }
-            Button {
-                showShareSheet.toggle()
-            } label: {
-                Label("Share", systemImage: "square.and.arrow.up")
-            }
-            .popover(isPresented: $showShareSheet) {
-                SharedActivity(activities: [ savedImage as Any ])
-            }
+
+            sharedButton
+
             Button {
                 if let word = entry.word {
                     word.speak()
@@ -114,6 +109,21 @@ struct DictionaryEntryView: View {
         SavedDefinitionImage(entry: entry)
     }
 
+    private var sharedButton: some View {
+        Button {
+            #if targetEnvironment(macCatalyst)
+            showCatalystShareSheet()
+            #else
+            showShareSheet.toggle()
+            #endif
+        } label: {
+            Label("Share", systemImage: "square.and.arrow.up")
+        }
+        .popover(isPresented: $showShareSheet) {
+            SharedActivity(activities: [ savedImage as Any ])
+        }
+    }
+
     /// Generates an image used to share with others.
     /// Original: https://codakuma.com/swiftui-view-to-image/
     private func makeImage() -> UIImage {
@@ -133,6 +143,38 @@ struct DictionaryEntryView: View {
         window.makeKeyAndVisible()
 
         return hosting.view.renderedImage
+    }
+
+    /// Shows the share sheet for Mac Catalyst.
+    ///
+    /// Use this function to show the share sheet and anchor it to the share button (or close to the share button).
+    private func showCatalystShareSheet() {
+        // Create the activity view controller that will be displayed. This is the share sheet.
+        let activityVC = UIActivityViewController(
+            activityItems: [savedImage as Any],
+            applicationActivities: nil
+        )
+        activityVC.modalPresentationStyle = .popover
+
+        // Grab the first window scene available to display the share sheet. This is needed because there may be
+        // multiple scenes, per iPadOS 15 SDK documentation.
+        if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene {
+
+            // Anchor the activity view controller's source view to around where the share sheet button is located.
+            // Source: https://www.raywenderlich.com/5037284-catalyst-tutorial-running-ipad-apps-on-macos
+            if let view = windowScene.keyWindow?.rootViewController?.view {
+                activityVC.popoverPresentationController?.sourceView = view
+                activityVC.popoverPresentationController?.sourceRect = CGRect(
+                    x: view.bounds.width - 200,
+                    y: 50,
+                    width: 1,
+                    height: 1
+                )
+            }
+
+            // Present the activity view controller.
+            windowScene.keyWindow?.rootViewController?.present(activityVC, animated: true, completion: nil)
+        }
     }
 }
 
