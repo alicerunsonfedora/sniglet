@@ -149,9 +149,6 @@ struct SettingsView: View {
     var generalSettings: some View {
         Group {
             Section {
-                Stepper(value: $generateBatches, in: 1...Int.max) {
-                    Label("Generate \(generateBatches) words", systemImage: "sparkles.rectangle.stack.fill")
-                }
                 Toggle(isOn: $allowCopying) {
                     Label("settings.clipboard.name", systemImage: "doc.on.clipboard")
                 }
@@ -159,6 +156,24 @@ struct SettingsView: View {
                 Text("settings.general.title")
             } footer: {
                 Text("settings.clipboard.footer")
+            }
+
+            Section {
+                Stepper(value: $generateBatches, in: 1...500) {
+                    Label("Generate \(generateBatches) words", systemImage: "sparkles.rectangle.stack.fill")
+                }
+            } footer: {
+                if generateBatches > 7 {
+                    Label {
+                        Text("frugal.warning.increased_values")
+                    } icon: {
+                        Image(systemName: "exclamationmark.triangle")
+                            .imageScale(.large)
+                            .foregroundColor(.yellow)
+                    }
+                } else {
+                    Text("")
+                }
             }
         }
     }
