@@ -12,6 +12,13 @@ import CoreData
 /// A view that shows multiple sniglet entries at a time.
 struct GeneratorList: View {
 
+    enum PageState {
+        case initial
+        case loading
+        case loaded
+        case updated
+    }
+
     /// The managed object context from the database.
     @Environment(\.managedObjectContext) var managedObjectContext
 
@@ -32,50 +39,53 @@ struct GeneratorList: View {
     /// This becomes the data passed into the detail view when no sniglet is selected.
     @State var currentResult: Sniglet.Result = .empty()
 
+    @State private var pageState: PageState = .initial
+
     /// The primary body for the view.
     var body: some View {
         NavigationView {
             List {
-                ForEach(validateResults) { result in
-                    NavigationLink(destination: GeneratorListDetail(result: result)) {
-                        VStack(alignment: .leading, spacing: 4) {
-                            Text(result.word)
-                                .font(.system(.title2, design: .serif))
-                                .bold()
-                            Text("Confidence: \(result.confidence.asPercentage())%")
-                                .font(.footnote)
-                                .foregroundColor(.secondary)
+                Group {
+                    switch pageState {
+                    case .initial, .loading:
+                        ForEach(Array.init(repeating: Sniglet.Result.empty(), count: 5), id: \.id) { result in
+                            VStack(alignment: .leading, spacing: 4) {
+                                Text(result.word)
+                                    .font(.system(.title2, design: .serif))
+                                    .bold()
+                                Text("Confidence: \(result.confidence.asPercentage())%")
+                                    .font(.footnote)
+                                    .foregroundColor(.secondary)
+                            }
+                            .padding(.vertical)
                         }
-                    }
-                    .padding(.vertical)
-                    .tag(result.word)
-                    .contextMenu {
-                        Button {
-                            result.word.speak()
-                        } label: {
-                            Label("sound.button.prompt", systemImage: "speaker.wave.3")
-                        }
-                        Button {
-                            let entry = SavedWord(context: managedObjectContext)
-                            entry.word = result.word
-                            entry.confidence = result.confidence
-                            entry.validity = result.validation
-                            entry.note = ""
-                            DBController.shared.save()
-                        } label: {
-                            Label("saved.button.add", systemImage: "bookmark")
-                        }
+                        .redacted(reason: .placeholder)
+                    case .loaded, .updated:
+                        generatedList
                     }
                 }
             }
             .navigationTitle("generator.title")
             .onAppear(perform: setInitialState)
             .refreshable {
-                updateState()
+                withAnimation {
+                    pageState = .loading
+                    validateResults = []
+                }
+                Task {
+                    await updateState()
+                }
+                withAnimation {
+                    pageState = .updated
+                }
             }
             .toolbar {
                 ToolbarItem(placement: .automatic) {
-                    Button(action: updateState) {
+                    Button {
+                        Task {
+                            await updateState()
+                        }
+                    } label: {
                         Label("generator.button.prompt", systemImage: "wand.and.stars")
                     }
                     .keyboardShortcut(.space, modifiers: [.shift])
@@ -84,23 +94,69 @@ struct GeneratorList: View {
             }
 
             if currentWord == nil {
-                GeneratorListDetail(result: currentResult)
+                if [PageState.loaded, PageState.updated].contains(pageState) {
+                    GeneratorListDetail(result: currentResult)
+                } else {
+                    ProgressView()
+                }
             }
         }
     }
 
     /// Sets the initial state for the view by generating sniglets.
     func setInitialState() {
-        if !validateResults.isEmpty { return }
-        validateResults = Sniglet.shared.getNewWords(count: generateSize).asArray()
-        if let firstResult = validateResults.first {
-            currentResult = firstResult
+        if !validateResults.isEmpty {
+            pageState = .loaded
+            return
+        }
+        withAnimation {
+            pageState = .loading
+            validateResults = Sniglet.shared.getNewWords(count: generateSize).asArray()
+            if let firstResult = validateResults.first {
+                currentResult = firstResult
+            }
+            pageState = .loaded
         }
     }
 
     /// Refreshes the view by generating sniglets.
-    func updateState() {
-        validateResults = Sniglet.shared.getNewWords(count: generateSize).asArray()
+    func updateState() async {
+        validateResults = await Sniglet.shared.getNewWords(count: generateSize).asArray()
+    }
+
+    var generatedList: some View {
+        ForEach(validateResults) { result in
+            NavigationLink(destination: GeneratorListDetail(result: result)) {
+                VStack(alignment: .leading, spacing: 4) {
+                    Text(result.word)
+                        .font(.system(.title2, design: .serif))
+                        .bold()
+                    Text("Confidence: \(result.confidence.asPercentage())%")
+                        .font(.footnote)
+                        .foregroundColor(.secondary)
+                }
+            }
+            .padding(.vertical)
+            .tag(result.word)
+            .contextMenu {
+                Button {
+                    result.word.speak()
+                } label: {
+                    Label("sound.button.prompt", systemImage: "speaker.wave.3")
+                }
+                Button {
+                    let entry = SavedWord(context: managedObjectContext)
+                    entry.word = result.word
+                    entry.confidence = result.confidence
+                    entry.validity = result.validation
+                    entry.note = ""
+                    DBController.shared.save()
+                } label: {
+                    Label("saved.button.add", systemImage: "bookmark")
+                }
+            }
+        }
+
     }
 }
 

@@ -67,7 +67,11 @@ struct GeneratorSingleView: View {
                 GeneratorResultText(word: result.word)
             }
 
-            Button(action: setSniglet) {
+            Button {
+                Task {
+                    await setSniglet()
+                }
+            } label: {
                 Label("generator.button.prompt", systemImage: "wand.and.stars")
             }
 
@@ -89,7 +93,11 @@ struct GeneratorSingleView: View {
             }
 
         }
-        .onAppear(perform: setSniglet)
+        .onAppear {
+            Task {
+                await setSniglet()
+            }
+        }
         .sheet(isPresented: $showDetails) {
             GeneratorExplanation {
                 showDetails.toggle()
@@ -99,8 +107,8 @@ struct GeneratorSingleView: View {
     }
 
     /// Sets the result to a generated sniglet.
-    func setSniglet() {
-        result = Sniglet.shared.getNewWords().first ?? .null()
+    func setSniglet() async {
+        result = await Sniglet.shared.getNewWords().first ?? .null()
     }
 
     /// Saves the sniglet to the user's dictionary.

@@ -81,7 +81,7 @@ struct Dictionary: View {
             }
             .onDelete(perform: removeEntries)
         }
-        .searchable(text: $searchQuery)
+        .searchable(text: $searchQuery.animation(), placement: .navigationBarDrawer(displayMode: .always))
         .toolbar {
             EditButton()
         }

@@ -82,6 +82,15 @@ class Sniglet {
 
     /// Returns a list of results from the sniglet validator.
     /// - Parameter count: The number of words to create.
+    /// - Important: This method supports concurrency. When avaialable, use this method instead.
+    public func getNewWords(count: Int = 1) async -> Set<Result> {
+        return getNewWords(count: count, from: .init())
+    }
+
+    /// Returns a list of results from the sniglet validator.
+    /// - Parameter count: The number of words to create.
+    /// - Parameter set: The set to store the words into. Generally, this is not used from the developer and is instead used to call the method
+    ///     recursively.
     public func getNewWords(count: Int = 1, from set: Set<Result> = Set()) -> Set<Result> {
         // If our existing set already has the amount of words we need, return that here.
         if set.count == count { return set }
