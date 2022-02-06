@@ -16,16 +16,35 @@ struct SettingsGeneralView: View {
     /// The number of sniglets to generate at a given time.
     @AppStorage("generateSize") var generateBatches: Int = 1
 
+    /// The method of sharing to use when sharing a saved sniglet from the dictionary.
+    @AppStorage("shareMethod") var shareMethod: String = "image"
+
+    @State private var sharedMethodEnum: ShareMethod = .image
+
+    enum ShareMethod: String, CaseIterable {
+        case image
+        case text
+    }
+
     var body: some View {
         Group {
             Section {
                 Toggle(isOn: $allowCopying) {
                     Label("settings.clipboard.name", systemImage: "doc.on.clipboard")
                 }
-            } header: {
-                Text("settings.general.title")
             } footer: {
                 Text("settings.clipboard.footer")
+            }
+
+            Section {
+                Picker(selection: $sharedMethodEnum) {
+                    Text("settings.saved.share_as.image")
+                        .tag(ShareMethod.image)
+                    Text("settings.saved.share_as.text")
+                        .tag(ShareMethod.text)
+                } label: {
+                    Label("settings.saved.share_as.title", systemImage: "square.and.arrow.up")
+                }
             }
 
             Section {
@@ -45,6 +64,26 @@ struct SettingsGeneralView: View {
                     Text("")
                 }
             }
+        }
+        .onAppear {
+            sharedMethodEnum = ShareMethod(rawValue: shareMethod) ?? .image
+        }
+        .onChange(of: sharedMethodEnum) { value in
+            shareMethod = value.rawValue
+        }
+    }
+}
+
+struct SettingsGeneralView_Previews: PreviewProvider {
+    static var previews: some View {
+        Group {
+            NavigationView {
+                List {
+                    SettingsGeneralView()
+                }
+                .navigationTitle("settings.general.title")
+            }
+                .previewDevice("iPhone 13")
         }
     }
 }

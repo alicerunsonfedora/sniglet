@@ -15,6 +15,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 - Improves the "What's New" dialog to not show the Apple Watch support point on Mac Catalyst targets.
 - Refactors the Settings view into smaller subpages to make maintainability more feasible.
 - Replaces saved alert with a non-intrusive toast notification.
+- Introduces a new setting to change how saved sniglets are shared.
 
 ## [1.1-7] - 01-02-2022
 

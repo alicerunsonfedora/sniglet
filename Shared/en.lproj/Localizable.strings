@@ -60,6 +60,10 @@
 
 "settings.reset.title" = "Reset Dialogs and Warnings";
 
+"settings.saved.share_as.title" = "Share Saved As";
+"settings.saved.share_as.image" = "Image (Default)";
+"settings.saved.share_as.text" = "Text";
+
 "settings.syllable.title" = "Syllable Shapes";
 "settings.syllable.add" = "Add";
 "settings.syllable.convert" = "This word will be converted into a syllable shape automatically.";
