@@ -13,6 +13,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 - Adds a warning to the "Generate N words" setting it goes over seven words per generation.
 - Adds concurrency support to sniglet generation methods to improve load times.
 - Improves the "What's New" dialog to not show the Apple Watch support point on Mac Catalyst targets.
+- Refactors the Settings view into smaller subpages to make maintainability more feasible.
+- Replaces saved alert with a non-intrusive toast notification.
 
 ## [1.1-7] - 01-02-2022
 

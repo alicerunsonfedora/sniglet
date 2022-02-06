@@ -221,15 +221,10 @@ struct GeneratorListDetail: View {
                 Button(action: saveSniglet) {
                     Label("saved.button.add", systemImage: "bookmark")
                 }
-                .alert(
-                    "saved.alert.title",
-                    isPresented: $showAddedAlert,
-                    actions: {
-                        Button("OK", role: .cancel) { }
-                    },
-                    message: { Text("saved.alert.detail") }
-                )
             }
+        }
+        .toast(isPresented: $showAddedAlert, dismissAfter: 3.0) {
+            ToastNotification("saved.alert.title", systemImage: "bookmark.fill", with: "saved.alert.detail")
         }
         .sheet(isPresented: $showDetails) {
             GeneratorExplanation {
@@ -246,7 +241,9 @@ struct GeneratorListDetail: View {
         entry.validity = result.validation
         entry.note = ""
         DBController.shared.save()
-        showAddedAlert = true
+        withAnimation(.easeInOut) {
+            showAddedAlert = true
+        }
     }
 
 }

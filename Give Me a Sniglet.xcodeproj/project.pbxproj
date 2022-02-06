@@ -22,6 +22,8 @@
 		952FD1A127B04D940026847C /* SettingsAbout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952FD1A027B04D940026847C /* SettingsAbout.swift */; };
 		952FD1A327B04E840026847C /* SettingsSyllable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952FD1A227B04E840026847C /* SettingsSyllable.swift */; };
 		952FD1A527B050220026847C /* SettingsGeneration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952FD1A427B050220026847C /* SettingsGeneration.swift */; };
+		952FD1A727B052900026847C /* ToastNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952FD1A627B052900026847C /* ToastNotification.swift */; };
+		952FD1AB27B056BB0026847C /* ToastOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952FD1AA27B056BB0026847C /* ToastOverlay.swift */; };
 		9539B80F27651F9D00E9E54D /* SnigletResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9539B80E27651F9D00E9E54D /* SnigletResult.swift */; };
 		9539B81027651FCF00E9E54D /* SnigletResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9539B80E27651F9D00E9E54D /* SnigletResult.swift */; };
 		9540B227276692DE00A6E5D2 /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9540B225276692DE00A6E5D2 /* DataModel.xcdatamodeld */; };
@@ -174,6 +176,8 @@
 		952FD1A027B04D940026847C /* SettingsAbout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsAbout.swift; sourceTree = "<group>"; };
 		952FD1A227B04E840026847C /* SettingsSyllable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsSyllable.swift; sourceTree = "<group>"; };
 		952FD1A427B050220026847C /* SettingsGeneration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsGeneration.swift; sourceTree = "<group>"; };
+		952FD1A627B052900026847C /* ToastNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastNotification.swift; sourceTree = "<group>"; };
+		952FD1AA27B056BB0026847C /* ToastOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastOverlay.swift; sourceTree = "<group>"; };
 		9539B80E27651F9D00E9E54D /* SnigletResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnigletResult.swift; sourceTree = "<group>"; };
 		9539B8112765263200E9E54D /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		9540B226276692DE00A6E5D2 /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
@@ -520,6 +524,8 @@
 				9589F6802770A29D00BF3855 /* UpgradePromptView.swift */,
 				952449C3279ABAD2001AB7D7 /* SettingsSafariWindow.swift */,
 				95944208279ADE450066DC62 /* SavedDefinitionImage.swift */,
+				952FD1A627B052900026847C /* ToastNotification.swift */,
+				952FD1AA27B056BB0026847C /* ToastOverlay.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -772,6 +778,7 @@
 				9594420B279AF5B10066DC62 /* UIView.swift in Sources */,
 				9552F66527432F0F004582D6 /* Sniglet.swift in Sources */,
 				95C794A42766E5A500051AED /* AppGroup.swift in Sources */,
+				952FD1A727B052900026847C /* ToastNotification.swift in Sources */,
 				951FC4EB27998660009CA715 /* AppVersions.swift in Sources */,
 				95E0698927442B9D0043F568 /* DoubleExtension.swift in Sources */,
 				95838E7427AEF67400B80BB2 /* ColorExtension.swift in Sources */,
@@ -793,6 +800,7 @@
 				95187FDE277332C500313B85 /* Fantasy.mlmodel in Sources */,
 				951FC4ED27998A56009CA715 /* AppLink.swift in Sources */,
 				952FD19F27B04CDC0026847C /* SettingsGeneral.swift in Sources */,
+				952FD1AB27B056BB0026847C /* ToastOverlay.swift in Sources */,
 				9539B80F27651F9D00E9E54D /* SnigletResult.swift in Sources */,
 				9589F6812770A29D00BF3855 /* UpgradePromptView.swift in Sources */,
 			);
