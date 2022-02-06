@@ -18,6 +18,10 @@
 		951FC4EB27998660009CA715 /* AppVersions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951FC4EA27998660009CA715 /* AppVersions.swift */; };
 		951FC4ED27998A56009CA715 /* AppLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951FC4EC27998A56009CA715 /* AppLink.swift */; };
 		952449C4279ABAD2001AB7D7 /* SettingsSafariWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952449C3279ABAD2001AB7D7 /* SettingsSafariWindow.swift */; };
+		952FD19F27B04CDC0026847C /* SettingsGeneral.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952FD19E27B04CDC0026847C /* SettingsGeneral.swift */; };
+		952FD1A127B04D940026847C /* SettingsAbout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952FD1A027B04D940026847C /* SettingsAbout.swift */; };
+		952FD1A327B04E840026847C /* SettingsSyllable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952FD1A227B04E840026847C /* SettingsSyllable.swift */; };
+		952FD1A527B050220026847C /* SettingsGeneration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952FD1A427B050220026847C /* SettingsGeneration.swift */; };
 		9539B80F27651F9D00E9E54D /* SnigletResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9539B80E27651F9D00E9E54D /* SnigletResult.swift */; };
 		9539B81027651FCF00E9E54D /* SnigletResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9539B80E27651F9D00E9E54D /* SnigletResult.swift */; };
 		9540B227276692DE00A6E5D2 /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9540B225276692DE00A6E5D2 /* DataModel.xcdatamodeld */; };
@@ -166,6 +170,10 @@
 		951FC4EC27998A56009CA715 /* AppLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLink.swift; sourceTree = "<group>"; };
 		952449C3279ABAD2001AB7D7 /* SettingsSafariWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsSafariWindow.swift; sourceTree = "<group>"; };
 		952FD19A27B048BF0026847C /* CHANGELOG.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CHANGELOG.md; sourceTree = "<group>"; };
+		952FD19E27B04CDC0026847C /* SettingsGeneral.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsGeneral.swift; sourceTree = "<group>"; };
+		952FD1A027B04D940026847C /* SettingsAbout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsAbout.swift; sourceTree = "<group>"; };
+		952FD1A227B04E840026847C /* SettingsSyllable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsSyllable.swift; sourceTree = "<group>"; };
+		952FD1A427B050220026847C /* SettingsGeneration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsGeneration.swift; sourceTree = "<group>"; };
 		9539B80E27651F9D00E9E54D /* SnigletResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnigletResult.swift; sourceTree = "<group>"; };
 		9539B8112765263200E9E54D /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		9540B226276692DE00A6E5D2 /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
@@ -300,6 +308,18 @@
 			path = Fantasy;
 			sourceTree = "<group>";
 		};
+		952FD19D27B04CB70026847C /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				95E0697E2744188B0043F568 /* Settings.swift */,
+				952FD19E27B04CDC0026847C /* SettingsGeneral.swift */,
+				952FD1A027B04D940026847C /* SettingsAbout.swift */,
+				952FD1A227B04E840026847C /* SettingsSyllable.swift */,
+				952FD1A427B050220026847C /* SettingsGeneration.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
 		9539B80D27650FD200E9E54D /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
@@ -409,7 +429,7 @@
 			children = (
 				95050FA727A0392C00A31E45 /* Dictionary */,
 				957676E8274CA3110011E558 /* Generator */,
-				95E0697E2744188B0043F568 /* Settings.swift */,
+				952FD19D27B04CB70026847C /* Settings */,
 			);
 			path = Pages;
 			sourceTree = "<group>";
@@ -744,6 +764,7 @@
 			files = (
 				95E0697F2744188B0043F568 /* Settings.swift in Sources */,
 				957DFBC5276D724A0034CBB0 /* WhatsNewView.swift in Sources */,
+				952FD1A127B04D940026847C /* SettingsAbout.swift in Sources */,
 				95562DD1276698FA00E0C6FD /* DBController.swift in Sources */,
 				9552F65527432CE2004582D6 /* ContentView.swift in Sources */,
 				9552F65327432CE2004582D6 /* MainEntry.swift in Sources */,
@@ -765,10 +786,13 @@
 				95E0697C274417F00043F568 /* Generator.swift in Sources */,
 				95944209279ADE450066DC62 /* SavedDefinitionImage.swift in Sources */,
 				9540B227276692DE00A6E5D2 /* DataModel.xcdatamodeld in Sources */,
+				952FD1A527B050220026847C /* SettingsGeneration.swift in Sources */,
 				95562DCE276695FF00E0C6FD /* Dictionary.swift in Sources */,
 				957676EA274CA3250011E558 /* GeneratorList.swift in Sources */,
+				952FD1A327B04E840026847C /* SettingsSyllable.swift in Sources */,
 				95187FDE277332C500313B85 /* Fantasy.mlmodel in Sources */,
 				951FC4ED27998A56009CA715 /* AppLink.swift in Sources */,
+				952FD19F27B04CDC0026847C /* SettingsGeneral.swift in Sources */,
 				9539B80F27651F9D00E9E54D /* SnigletResult.swift in Sources */,
 				9589F6812770A29D00BF3855 /* UpgradePromptView.swift in Sources */,
 			);
