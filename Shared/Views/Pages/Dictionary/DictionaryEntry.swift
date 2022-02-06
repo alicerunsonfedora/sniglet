@@ -79,9 +79,6 @@ struct DictionaryEntryView: View {
                     Label("generator.copy.button", systemImage: "doc.on.doc")
                 }
             }
-
-            sharedButton
-
             Button {
                 if let word = entry.word {
                     word.speak()
@@ -89,10 +86,14 @@ struct DictionaryEntryView: View {
             } label: {
                 Label("sound.button.prompt", systemImage: "speaker.wave.3")
             }
+            sharedButton
         }
         .onAppear {
             definition = entry.note ?? ""
             savedImage = makeImage()
+        }
+        .onDisappear {
+            savedImage = nil
         }
         .onChange(of: definition) { _ in
             entry.note = definition
@@ -112,7 +113,7 @@ struct DictionaryEntryView: View {
     private var sharedButton: some View {
         Button {
             #if targetEnvironment(macCatalyst)
-            showCatalystShareSheet()
+            showCatalystShareSheet(from: .init(x: 200, y: 84), with: .popover)
             #else
             showShareSheet.toggle()
             #endif
@@ -125,6 +126,8 @@ struct DictionaryEntryView: View {
     }
 
     /// Generates an image used to share with others.
+    /// - Returns: A UIImage containing the rendered view of the saved image.
+    ///
     /// Original: https://codakuma.com/swiftui-view-to-image/
     private func makeImage() -> UIImage {
         let window = UIWindow(
@@ -148,13 +151,13 @@ struct DictionaryEntryView: View {
     /// Shows the share sheet for Mac Catalyst.
     ///
     /// Use this function to show the share sheet and anchor it to the share button (or close to the share button).
-    private func showCatalystShareSheet() {
+    private func showCatalystShareSheet(from offset: CGPoint, with presentStyle: UIModalPresentationStyle = .automatic) {
         // Create the activity view controller that will be displayed. This is the share sheet.
         let activityVC = UIActivityViewController(
             activityItems: [savedImage as Any],
             applicationActivities: nil
         )
-        activityVC.modalPresentationStyle = .popover
+        activityVC.modalPresentationStyle = presentStyle
 
         // Grab the first window scene available to display the share sheet. This is needed because there may be
         // multiple scenes, per iPadOS 15 SDK documentation.
@@ -165,8 +168,8 @@ struct DictionaryEntryView: View {
             if let view = windowScene.keyWindow?.rootViewController?.view {
                 activityVC.popoverPresentationController?.sourceView = view
                 activityVC.popoverPresentationController?.sourceRect = CGRect(
-                    x: view.bounds.width - 200,
-                    y: 50,
+                    x: view.bounds.width - offset.x,
+                    y: offset.y,
                     width: 1,
                     height: 1
                 )
