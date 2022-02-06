@@ -165,6 +165,7 @@
 		951FC4EA27998660009CA715 /* AppVersions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppVersions.swift; sourceTree = "<group>"; };
 		951FC4EC27998A56009CA715 /* AppLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLink.swift; sourceTree = "<group>"; };
 		952449C3279ABAD2001AB7D7 /* SettingsSafariWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsSafariWindow.swift; sourceTree = "<group>"; };
+		952FD19A27B048BF0026847C /* CHANGELOG.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CHANGELOG.md; sourceTree = "<group>"; };
 		9539B80E27651F9D00E9E54D /* SnigletResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnigletResult.swift; sourceTree = "<group>"; };
 		9539B8112765263200E9E54D /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		9540B226276692DE00A6E5D2 /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
@@ -327,6 +328,7 @@
 			isa = PBXGroup;
 			children = (
 				9539B8112765263200E9E54D /* README.md */,
+				952FD19A27B048BF0026847C /* CHANGELOG.md */,
 				957DFBCD276E451D0034CBB0 /* App Entitlements */,
 				9507174F276E51F900A3E541 /* Scripts */,
 				9552F64227432CE0004582D6 /* Shared */,
