@@ -6,6 +6,14 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## [Unreleased]
 
+- Improves the share sheet experience on the Mac Catalyst target platform.
+- Moves the share icon in the saved dictionary entry page to the rightmost option.
+- Disables toggles for model selection (being held off until 1.2).
+- Removes unnecessary Apple Watch complication files.
+- Adds a warning to the "Generate N words" setting it goes over seven words per generation.
+- Adds concurrency support to sniglet generation methods to improve load times.
+- Improves the "What's New" dialog to not show the Apple Watch support point on Mac Catalyst targets.
+
 ## [1.1-7] - 01-02-2022
 
 - Apple Watch Companion App: Generate sniglets on-the-fly and save them with the new app for Apple Watch.
