@@ -6,6 +6,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## [Unreleased]
 
+## [1.1-8] - 06-02-2022
+
 - Improves the share sheet experience on the Mac Catalyst target platform.
 - Moves the share icon in the saved dictionary entry page to the rightmost option.
 - Disables toggles for model selection (being held off until 1.2).
