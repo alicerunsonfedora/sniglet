@@ -15,6 +15,9 @@ struct DictionaryEntryView: View {
     /// Whether the user has turned on Tap to Copy.
     @AppStorage("allowClipboard") var tapToCopy: Bool = true
 
+    /// The method of sharing to use when sharing a saved sniglet from the dictionary.
+    @AppStorage("shareMethod") var shareMethod: String = "image"
+
     /// The saved sniglet entry.
     @ObservedObject var entry: SavedWord
 
@@ -121,8 +124,22 @@ struct DictionaryEntryView: View {
             Label("saved.button.share", systemImage: "square.and.arrow.up")
         }
         .popover(isPresented: $showShareSheet) {
-            SharedActivity(activities: [ savedImage as Any ])
+            SharedActivity(activities: [ getSharedData() as Any ])
         }
+    }
+
+    private func getSharedData() -> Any {
+        if shareMethod == "image" {
+            return savedImage as Any
+        }
+        return """
+        Check out this sniglet I generated:
+        \(entry.word ?? "")
+        \(entry.note ?? "")
+
+        Confidence: \(entry.confidence.asPercentage())%
+        From Give Me A Sniglet
+        """
     }
 
     /// Generates an image used to share with others.
@@ -154,7 +171,7 @@ struct DictionaryEntryView: View {
     private func showCatalystShareSheet(from offset: CGPoint, with presentStyle: UIModalPresentationStyle = .automatic) {
         // Create the activity view controller that will be displayed. This is the share sheet.
         let activityVC = UIActivityViewController(
-            activityItems: [savedImage as Any],
+            activityItems: [getSharedData() as Any],
             applicationActivities: nil
         )
         activityVC.modalPresentationStyle = presentStyle
