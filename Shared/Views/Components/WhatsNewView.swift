@@ -71,16 +71,13 @@ struct WhatsNewView: View {
                     onDismiss()
                 } label: {
                     Text("feat.accept")
-                        .font(.system(.headline, design: .rounded))
-                        .padding(.horizontal)
-                        .padding(.vertical, 8)
                         .frame(maxWidth: 400)
                 }
-                .buttonStyle(.borderedProminent)
-//                Text("feat.prompt")
-//                    .font(.system(.caption, design: .rounded))
-//                    .foregroundColor(.secondary)
+                .keyboardShortcut(.defaultAction)
+                .headerProminence(.increased)
             }
+            .buttonStyle(.borderedProminent)
+            .controlSize(.large)
             .padding(.bottom, 16)
         }
         .padding(16)
