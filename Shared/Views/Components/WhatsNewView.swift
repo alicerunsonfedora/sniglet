@@ -26,14 +26,6 @@ struct WhatsNewView: View {
             ScrollView {
                 VStack(alignment: .leading, spacing: 24) {
 
-                    // Show the Apple Watch support on devices that can utilize it.
-                    #if !targetEnvironment(macCatalyst)
-                    WhatsNewLabel(
-                        title: LocalizedStringKey("feat.watch.title"),
-                        subtitle: "feat.watch.detail",
-                        systemImage: "applewatch.watchface"
-                    )
-                    #endif
                     WhatsNewLabel(
                         title: LocalizedStringKey("feat.dictionary.title"),
                         subtitle: "feat.dictionary.detail",
@@ -45,11 +37,29 @@ struct WhatsNewView: View {
 //                        subtitle: "feat.models.detail",
 //                        systemImage: "brain"
 //                    )
+                    #if !targetEnvironment(macCatalyst)
+                    WhatsNewLabel(
+                        title: LocalizedStringKey("feat.watch.title"),
+                        subtitle: "feat.watch.detail",
+                        systemImage: "applewatch.watchface"
+                    )
                     WhatsNewLabel(
                         title: LocalizedStringKey("feat.actions.title"),
                         subtitle: "feat.actions.detail",
                         systemImage: "dot.circle.and.hand.point.up.left.fill"
                     )
+                    #else
+                    WhatsNewLabel(
+                        title: LocalizedStringKey("feat.listen.title"),
+                        subtitle: "feat.listen.detail",
+                        systemImage: "speaker.wave.3"
+                    )
+                    WhatsNewLabel(
+                        title: LocalizedStringKey("feat.share.title"),
+                        subtitle: "feat.share.detail",
+                        systemImage: "square.and.arrow.up"
+                    )
+                    #endif
                 }
             }
 
@@ -67,9 +77,9 @@ struct WhatsNewView: View {
                         .frame(maxWidth: 400)
                 }
                 .buttonStyle(.borderedProminent)
-                Text("feat.prompt")
-                    .font(.system(.caption, design: .rounded))
-                    .foregroundColor(.secondary)
+//                Text("feat.prompt")
+//                    .font(.system(.caption, design: .rounded))
+//                    .foregroundColor(.secondary)
             }
             .padding(.bottom, 16)
         }

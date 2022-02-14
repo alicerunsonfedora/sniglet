@@ -40,19 +40,27 @@ struct ToastNotification: View {
         .padding(.vertical)
         .padding(.horizontal, 24)
         .background {
-            Color.white
+            Color.init(uiColor: .secondarySystemBackground)
                 .clipShape(Capsule())
-                .shadow(radius: 2)
+                .shadow(radius: 4)
         }
     }
 }
 
 struct ToastNotification_Previews: PreviewProvider {
     static var previews: some View {
-        ToastNotification(
-            "Saved",
-            systemImage: "bookmark.fill",
-            with: "Go to Dictionary to view it."
-        )
+        Group {
+            ToastNotification(
+                "Saved",
+                systemImage: "bookmark.fill",
+                with: "Go to Dictionary to view it."
+            )
+            ToastNotification(
+                "Saved",
+                systemImage: "bookmark.fill",
+                with: "Go to Dictionary to view it."
+            )
+                .preferredColorScheme(.dark)
+        }
     }
 }

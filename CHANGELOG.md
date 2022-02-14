@@ -5,6 +5,9 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+- Fixes a styling issue with toast notifications to match the system's appearance.
+- Updates the "What's New" dialog to discuss individual features, based on the target platform.
+- Removes code referencing a non-existent in-app purchase upgrade.
 
 ## [1.1-8] - 06-02-2022
 

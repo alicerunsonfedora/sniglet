@@ -90,7 +90,7 @@
 "upgrade.cancel" = "Not Now";
 
 // MARK: - Changelog
-"feat.dictionary.title" = "Sniglet Dictionary*";
+"feat.dictionary.title" = "Sniglet Dictionary";
 "feat.dictionary.detail" = "Save your favorite sniglets into your personal dictionary, synced across all your devices through iCloud.";
 
 "feat.watch.title" = "Apple Watch Support";
@@ -98,6 +98,12 @@
 
 "feat.models.title" = "Model Customization";
 "feat.models.detail" = "Switch between different validation models to fit your needs.";
+
+"feat.listen.title" = "Local Listen";
+"feat.listen.detail" = "Listen to how a sniglet is pronounced according to your device's language settings.";
+
+"feat.share.title" = "Sniglet Sharing";
+"feat.share.detail" = "Share your favorite sniglets with your friends as an image or text.";
 
 "feat.actions.title" = "Sniglet Actions";
 "feat.actions.detail" = "Listen to how your device pronounces generated sniglets, and share your favorites to others as an image.";
