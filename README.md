@@ -31,6 +31,8 @@ More information on the original project can be found at https://github.com/alic
 
 > *Features marked with 🧪 are in a pre-release state, usually in a TestFlight build.
 
+More information on the features and changes this app has can be foound in the CHANGELOG.md file.
+
 ## Build from source
 
 **Required Toolchain**
