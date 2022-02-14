@@ -42,9 +42,7 @@
 		957676EC274CA38A0011E558 /* GeneratorSingle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957676EB274CA38A0011E558 /* GeneratorSingle.swift */; };
 		957DFBC5276D724A0034CBB0 /* WhatsNewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957DFBC4276D724A0034CBB0 /* WhatsNewView.swift */; };
 		95838E7427AEF67400B80BB2 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95838E7327AEF67400B80BB2 /* ColorExtension.swift */; };
-		9589F6812770A29D00BF3855 /* UpgradePromptView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9589F6802770A29D00BF3855 /* UpgradePromptView.swift */; };
 		9589F6832770A79000BF3855 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9589F6822770A79000BF3855 /* StoreKit.framework */; };
-		9589F68C2770D98500BF3855 /* Upgrades.storekit in Resources */ = {isa = PBXBuildFile; fileRef = 9589F68B2770D98500BF3855 /* Upgrades.storekit */; };
 		958C2D3F274C1C1D0076E0D9 /* SyllableShapes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958C2D3E274C1C1D0076E0D9 /* SyllableShapes.swift */; };
 		9590D51627A9798300F51F10 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9590D51527A9798300F51F10 /* Assets.xcassets */; };
 		9590D51C27A9798400F51F10 /* Watch WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 9590D51B27A9798400F51F10 /* Watch WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -196,9 +194,7 @@
 		957676EB274CA38A0011E558 /* GeneratorSingle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneratorSingle.swift; sourceTree = "<group>"; };
 		957DFBC4276D724A0034CBB0 /* WhatsNewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhatsNewView.swift; sourceTree = "<group>"; };
 		95838E7327AEF67400B80BB2 /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
-		9589F6802770A29D00BF3855 /* UpgradePromptView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpgradePromptView.swift; sourceTree = "<group>"; };
 		9589F6822770A79000BF3855 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS15.2.sdk/System/Library/Frameworks/StoreKit.framework; sourceTree = DEVELOPER_DIR; };
-		9589F68B2770D98500BF3855 /* Upgrades.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = Upgrades.storekit; sourceTree = "<group>"; };
 		958C2D3E274C1C1D0076E0D9 /* SyllableShapes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyllableShapes.swift; sourceTree = "<group>"; };
 		9590D51327A9798300F51F10 /* Watch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Watch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9590D51527A9798300F51F10 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -366,7 +362,6 @@
 			isa = PBXGroup;
 			children = (
 				9590D4BF27A971A100F51F10 /* ML */,
-				9589F6842770A79F00BF3855 /* Upgrades */,
 				95562DCF276698EA00E0C6FD /* Databases */,
 				9539B80D27650FD200E9E54D /* Utilities */,
 				957676EE274CA5140011E558 /* Views */,
@@ -459,14 +454,6 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		9589F6842770A79F00BF3855 /* Upgrades */ = {
-			isa = PBXGroup;
-			children = (
-				9589F68B2770D98500BF3855 /* Upgrades.storekit */,
-			);
-			path = Upgrades;
-			sourceTree = "<group>";
-		};
 		9590D4BF27A971A100F51F10 /* ML */ = {
 			isa = PBXGroup;
 			children = (
@@ -521,7 +508,6 @@
 			children = (
 				954AACE327A0388700F97D9C /* Bridges */,
 				957DFBC4276D724A0034CBB0 /* WhatsNewView.swift */,
-				9589F6802770A29D00BF3855 /* UpgradePromptView.swift */,
 				952449C3279ABAD2001AB7D7 /* SettingsSafariWindow.swift */,
 				95944208279ADE450066DC62 /* SavedDefinitionImage.swift */,
 				952FD1A627B052900026847C /* ToastNotification.swift */,
@@ -729,7 +715,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9589F68C2770D98500BF3855 /* Upgrades.storekit in Resources */,
 				9570C9A02771FF5900BE9044 /* Abysima v2.mlproj in Resources */,
 				9552F65727432CE2004582D6 /* Assets.xcassets in Resources */,
 				95E06984274419870043F568 /* Localizable.strings in Resources */,
@@ -802,7 +787,6 @@
 				952FD19F27B04CDC0026847C /* SettingsGeneral.swift in Sources */,
 				952FD1AB27B056BB0026847C /* ToastOverlay.swift in Sources */,
 				9539B80F27651F9D00E9E54D /* SnigletResult.swift in Sources */,
-				9589F6812770A29D00BF3855 /* UpgradePromptView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
