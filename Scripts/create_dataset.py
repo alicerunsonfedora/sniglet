@@ -5,7 +5,6 @@
 # file, You can obtain one at https://mozilla.org/MPL/2.0/.
 
 import os
-import warnings
 from argparse import ArgumentParser
 from random import randrange, shuffle
 from string import ascii_lowercase
@@ -23,14 +22,6 @@ def create_parser() -> ArgumentParser:
     arg_parser.add_argument(
         "input", nargs="+", help="The list of files to make the outputs from.", type=str)
     return arg_parser
-
-# DEPRECATED! DO NOT USE!
-def get_valid_words_from_files() -> List[str]:
-    """Returns a list of words from the specified words files that are valid."""
-    warnings.warn("Deprecated: Use import_valid_words instead and specify file paths.")
-    words_file = "Banks/words" if os.path.isfile("Banks/words") else "/usr/share/dict/words"
-    return import_valid_words(words_file, "Banks/jp-romaji.txt")
-
 
 def import_valid_words(files: List[str]) -> List[str]:
     """Returns a list of valid words from a specified list of word files."""
