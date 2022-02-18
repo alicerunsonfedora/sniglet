@@ -363,16 +363,13 @@
 		9552F64227432CE0004582D6 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				9552F64527432CE2004582D6 /* Assets.xcassets */,
+				95E06987274419870043F568 /* Localizable.strings */,
+				9552F64327432CE0004582D6 /* MainEntry.swift */,
 				9590D4BF27A971A100F51F10 /* ML */,
 				95562DCF276698EA00E0C6FD /* Databases */,
 				9539B80D27650FD200E9E54D /* Utilities */,
 				957676EE274CA5140011E558 /* Views */,
-				9552F64327432CE0004582D6 /* MainEntry.swift */,
-				9552F64527432CE2004582D6 /* Assets.xcassets */,
-				9552F66427432F0F004582D6 /* Sniglet.swift */,
-				95E06987274419870043F568 /* Localizable.strings */,
-				9539B80E27651F9D00E9E54D /* SnigletResult.swift */,
-				95187FCF27720C5A00313B85 /* ValidatorModels.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -449,6 +446,7 @@
 		9589F67F2770A18B00BF3855 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				95187FCF27720C5A00313B85 /* ValidatorModels.swift */,
 				95187FDD277332C500313B85 /* Fantasy.mlmodel */,
 				95187FCD27720C4500313B85 /* Classic.mlmodel */,
 				9570C99F2771FF5900BE9044 /* Abysima v2.mlproj */,
@@ -462,6 +460,8 @@
 				95071751276E51F900A3E541 /* Banks */,
 				95B048E62771FD92006F84F6 /* Datasets */,
 				9589F67F2770A18B00BF3855 /* Models */,
+				9552F66427432F0F004582D6 /* Sniglet.swift */,
+				9539B80E27651F9D00E9E54D /* SnigletResult.swift */,
 			);
 			path = ML;
 			sourceTree = "<group>";
