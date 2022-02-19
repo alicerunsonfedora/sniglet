@@ -4,7 +4,14 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to 
 [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## Unreleased
+## [1.1] - 19-02-2022
+
+- Apple Watch Companion App: Generate sniglets on-the-fly and save them with the new app for Apple Watch.
+- Live Listen: Listen to how sniglets are pronounced according to your device's settings. 
+- Sniglet Dictionary: Save your favorite sniglets for later and define them in your personal dictionary. Share them with
+  your friends and family as a neat little image or a text with a couple taps.
+  - iCloud Sync: Your personal dictionary is stored in iCloud and syncs across all your devices seamlessly.
+  - Daily Sniglet Widget: View sniglets from your dictionary right on your home screen with a new widget.
 
 ## [1.1-9] - 13-02-2022
 

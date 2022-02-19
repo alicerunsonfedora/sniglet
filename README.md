@@ -21,13 +21,13 @@ More information on the original project can be found at https://github.com/alic
 
 - Generate as many sniglets as you like and share them easily
     - Customize the generation algorithm by adjusting the word length and syllabic shapes
-    - 🧪 Generate sniglets on-the-go with support for Apple Watch
-    - 🧪 Listen to pronunciations of sniglets from your device's language
+    - Generate sniglets on-the-go with support for Apple Watch
+    - Listen to pronunciations of sniglets from your device's language
 - View random sniglets on your home screen with the Random Sniglet Widget
     - 🧪 Select from different trained models for validation
-- 🧪 Save your favorite sniglets into a personal dictionary synced with iCloud
-    - 🧪 Assign a definition to your saved sniglets for future reference
-    - 🧪 View a different entry every day with the Daily Saved Sniglet Widget
+- Save your favorite sniglets into a personal dictionary synced with iCloud
+    - Assign a definition to your saved sniglets for future reference
+    - View a different entry every day with the Daily Saved Sniglet Widget
 
 > *Features marked with 🧪 are in a pre-release state, usually in a TestFlight build.
 
