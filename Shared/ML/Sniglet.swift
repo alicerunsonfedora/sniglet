@@ -63,6 +63,11 @@ class Sniglet {
             UserDefaults.standard.set(8, forKey: "algoMaxBound")
         }
 
+        if maxChars == minChars {
+            maxChars += 1
+            print("WARN: Max characters was set to min chars.")
+        }
+
         // Grab the batch size from user preferences, or use the default value and set it.
         batchSize = UserDefaults.standard.integer(forKey: "algoBatchSize")
         if batchSize <= 0 {

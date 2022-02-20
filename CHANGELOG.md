@@ -7,6 +7,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 ## Unreleased
 
 - Adds a toast notification to provide feedback when copying a word with "Tap to Copy" turned on (ABY-14).
+- Resolves a bug where an empty range could occur when generating a long list of sniglets with bounds of the same size
+  (ABY-12).
 
 ## [1.1] - 19-02-2022
 
