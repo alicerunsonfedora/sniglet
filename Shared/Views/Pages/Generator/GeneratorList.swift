@@ -183,14 +183,7 @@ struct GeneratorListDetail: View {
         VStack(spacing: 16) {
             Spacer()
             if tapToCopy {
-                Button(action: { UIPasteboard.general.string = result.word }) {
-                    GeneratorResultText(word: result.word)
-                }
-                .buttonStyle(.plain)
-                Text("generator.copy.prompt")
-                    .font(.caption)
-                    .foregroundColor(.secondary)
-
+                TapToCopyButton(word: result.word)
             } else {
                 GeneratorResultText(word: result.word)
             }

@@ -38,18 +38,7 @@ struct DictionaryEntryView: View {
             Section {
                 VStack(spacing: 8) {
                     if tapToCopy {
-                        Button {
-                            if let word = entry.word {
-                                UIPasteboard.general.string = word
-                            }
-                        } label: {
-                            GeneratorResultText(word: entry.word ?? "")
-                                .listRowSeparator(.hidden, edges: .bottom)
-                        }
-                        .buttonStyle(.plain)
-                        Text("generator.copy.prompt")
-                            .font(.caption)
-                            .foregroundColor(.secondary)
+                        TapToCopyButton(word: entry.word ?? "")
                         Spacer()
                     } else {
                         GeneratorResultText(word: entry.word ?? "")

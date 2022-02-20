@@ -48,13 +48,7 @@ struct GeneratorSingleView: View {
             }
             Spacer()
             if tapToCopy {
-                Button {
-                    UIPasteboard.general.string = result.word
-
-                } label: {
-                    GeneratorResultText(word: result.word)
-                }
-                .buttonStyle(.plain)
+                TapToCopyButton(word: result.word)
             } else {
                 GeneratorResultText(word: result.word)
             }

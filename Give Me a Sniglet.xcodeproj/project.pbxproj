@@ -65,6 +65,7 @@
 		95944207279ADCA90066DC62 /* SharedActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95944206279ADCA80066DC62 /* SharedActivity.swift */; };
 		95944209279ADE450066DC62 /* SavedDefinitionImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95944208279ADE450066DC62 /* SavedDefinitionImage.swift */; };
 		9594420B279AF5B10066DC62 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9594420A279AF5B10066DC62 /* UIView.swift */; };
+		95BBFFA827C296F70008A40B /* TapToCopyButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BBFFA727C296F70008A40B /* TapToCopyButton.swift */; };
 		95C7401E276D6C2200A9AE63 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95609546276D512E0026D4E1 /* CloudKit.framework */; };
 		95C794952766D33100051AED /* RandomSniglet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C794942766D33100051AED /* RandomSniglet.swift */; };
 		95C794972766D35300051AED /* RandomSnigletProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C794962766D35300051AED /* RandomSnigletProvider.swift */; };
@@ -214,6 +215,7 @@
 		95B048E92771FD92006F84F6 /* dtest_predict.csv */ = {isa = PBXFileReference; lastKnownFileType = text; path = dtest_predict.csv; sourceTree = "<group>"; };
 		95B048EA2771FD92006F84F6 /* dtrain.csv */ = {isa = PBXFileReference; lastKnownFileType = text; path = dtrain.csv; sourceTree = "<group>"; };
 		95B048EB2771FD92006F84F6 /* dtrain_predict.csv */ = {isa = PBXFileReference; lastKnownFileType = text; path = dtrain_predict.csv; sourceTree = "<group>"; };
+		95BBFFA727C296F70008A40B /* TapToCopyButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapToCopyButton.swift; sourceTree = "<group>"; };
 		95BFE9C72766F804004E8630 /* Give-Me-a-Sniglet--iOS--Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Give-Me-a-Sniglet--iOS--Info.plist"; sourceTree = "<group>"; };
 		95C794942766D33100051AED /* RandomSniglet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomSniglet.swift; sourceTree = "<group>"; };
 		95C794962766D35300051AED /* RandomSnigletProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomSnigletProvider.swift; sourceTree = "<group>"; };
@@ -514,6 +516,7 @@
 				95944208279ADE450066DC62 /* SavedDefinitionImage.swift */,
 				952FD1A627B052900026847C /* ToastNotification.swift */,
 				952FD1AA27B056BB0026847C /* ToastOverlay.swift */,
+				95BBFFA727C296F70008A40B /* TapToCopyButton.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -755,6 +758,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				95BBFFA827C296F70008A40B /* TapToCopyButton.swift in Sources */,
 				95E0697F2744188B0043F568 /* Settings.swift in Sources */,
 				957DFBC5276D724A0034CBB0 /* WhatsNewView.swift in Sources */,
 				952FD1A127B04D940026847C /* SettingsAbout.swift in Sources */,

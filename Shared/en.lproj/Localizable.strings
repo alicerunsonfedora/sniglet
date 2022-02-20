@@ -12,6 +12,7 @@
 "generator.button.help" = "What's this?";
 "generator.copy.prompt" = "Tap the word to copy it to your clipboard.";
 "generator.copy.button" = "Copy";
+"generator.copy.complete" = "Copied to Clipboard";
 
 "generator.explain.title" = "Confidence Score";
 "generator.explain.detail" = "Generated sniglets are compared against a machine learning algorithm that detects whether or not a word is likely to exist in a given language. This algorithm has been trained on English and Japanese words and returns a percentage that represents how likely it is for the generated sniglet to be a real word (or wordlike).";
