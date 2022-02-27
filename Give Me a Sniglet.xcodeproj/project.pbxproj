@@ -85,6 +85,7 @@
 		95944209279ADE450066DC62 /* SavedDefinitionImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95944208279ADE450066DC62 /* SavedDefinitionImage.swift */; };
 		9594420B279AF5B10066DC62 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9594420A279AF5B10066DC62 /* UIView.swift */; };
 		95BBFFA827C296F70008A40B /* TapToCopyButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BBFFA727C296F70008A40B /* TapToCopyButton.swift */; };
+		95C3F01D27CBE17200A59BD3 /* GeneratorTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C3F01C27CBE17200A59BD3 /* GeneratorTableView.swift */; };
 		95C7401E276D6C2200A9AE63 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95609546276D512E0026D4E1 /* CloudKit.framework */; };
 		95C794952766D33100051AED /* RandomSniglet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C794942766D33100051AED /* RandomSniglet.swift */; };
 		95C794972766D35300051AED /* RandomSnigletProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C794962766D35300051AED /* RandomSnigletProvider.swift */; };
@@ -240,6 +241,7 @@
 		95B048EB2771FD92006F84F6 /* dtrain_predict.csv */ = {isa = PBXFileReference; lastKnownFileType = text; path = dtrain_predict.csv; sourceTree = "<group>"; };
 		95BBFFA727C296F70008A40B /* TapToCopyButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapToCopyButton.swift; sourceTree = "<group>"; };
 		95BFE9C72766F804004E8630 /* Give-Me-a-Sniglet--iOS--Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Give-Me-a-Sniglet--iOS--Info.plist"; sourceTree = "<group>"; };
+		95C3F01C27CBE17200A59BD3 /* GeneratorTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneratorTableView.swift; sourceTree = "<group>"; };
 		95C794942766D33100051AED /* RandomSniglet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomSniglet.swift; sourceTree = "<group>"; };
 		95C794962766D35300051AED /* RandomSnigletProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomSnigletProvider.swift; sourceTree = "<group>"; };
 		95C794992766D3C100051AED /* RandomSnigletEV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomSnigletEV.swift; sourceTree = "<group>"; };
@@ -422,6 +424,7 @@
 				955306F327CAC78B0064039F /* Assets.xcassets */,
 				955306F527CAC78B0064039F /* Preview Content */,
 				9552F65227432CE2004582D6 /* macOS.entitlements */,
+				95C3F01C27CBE17200A59BD3 /* GeneratorTableView.swift */,
 			);
 			path = macOS;
 			sourceTree = "<group>";
@@ -753,7 +756,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1320;
-				LastUpgradeCheck = 1310;
+				LastUpgradeCheck = 1320;
 				TargetAttributes = {
 					9552F64927432CE2004582D6 = {
 						CreatedOnToolsVersion = 13.1;
@@ -903,6 +906,7 @@
 				9553070E27CAC9160064039F /* DoubleExtension.swift in Sources */,
 				9553070C27CAC90E0064039F /* AppLink.swift in Sources */,
 				9553070627CAC8E40064039F /* Classic.mlmodel in Sources */,
+				95C3F01D27CBE17200A59BD3 /* GeneratorTableView.swift in Sources */,
 				9553070D27CAC9110064039F /* AppVersions.swift in Sources */,
 				9553070527CAC8E20064039F /* Fantasy.mlmodel in Sources */,
 			);
@@ -1176,6 +1180,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Platforms/macOS/macOS.entitlements;
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 12;
@@ -1205,6 +1210,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Platforms/macOS/macOS.entitlements;
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 12;
