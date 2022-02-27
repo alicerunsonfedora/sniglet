@@ -121,14 +121,7 @@ struct DictionaryEntryView: View {
         if shareMethod == "image" {
             return savedImage as Any
         }
-        return """
-        Check out this sniglet I generated:
-        \(entry.word ?? "")
-        \(entry.note ?? "")
-
-        Confidence: \(entry.confidence.asPercentage())%
-        From Give Me A Sniglet
-        """
+        return entry.shareableText()
     }
 
     /// Generates an image used to share with others.

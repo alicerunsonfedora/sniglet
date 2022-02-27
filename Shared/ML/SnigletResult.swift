@@ -41,3 +41,26 @@ struct SnigletResult: Hashable, Identifiable, Equatable {
         return lhs.word == rhs.word && lhs.validation == rhs.validation
     }
 }
+
+extension SnigletResult {
+
+    /// Returns a multi-line string suitable for sharing services such as ``NSShareServicePicker``.
+    ///
+    /// An example is seen below:
+    ///
+    ///     Check out this sniglet I generated:
+    ///     word
+    ///
+    ///     Confidence: 69%
+    ///     From Give Me A Sniglet
+    ///
+    func shareableText() -> String {
+        """
+        Check out this sniglet I generated:
+        \(self.word)
+
+        Confidence: \(self.confidence.asPercentage())%
+        From Give Me A Sniglet
+        """
+    }
+}

@@ -28,8 +28,15 @@ struct ContentView: View {
                     Label("generator.title", systemImage: "wand.and.stars")
                 }
 
-                Label("saved.title", systemImage: "bookmark")
+                NavigationLink(tag: PageSelector.dictionary, selection: $currentPage) {
+                    DictionaryTableView()
+                        .navigationTitle("saved.title")
+                } label: {
+                    Label("saved.title", systemImage: "bookmark")
+                }
+
                 Label("Customize", systemImage: "waveform")
+                    .disabled(true)
             }
             .listStyle(.sidebar)
             .frame(minWidth: 175, idealWidth: 200)

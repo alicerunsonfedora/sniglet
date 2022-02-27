@@ -18,6 +18,7 @@ struct GeneratorTableView: View {
     /// The managed object context for the database.
     @Environment(\.managedObjectContext) var managedObjectContext
 
+    @State private var requestedShare = false
     @State private var sniglets: [SResult] = []
     @State private var selection: SResult.ID? = nil
     @State private var sortOrder = [
@@ -31,6 +32,9 @@ struct GeneratorTableView: View {
                 generatorTable
                     .toolbar {
                         selectionToolbar
+                        ToolbarItem {
+                            Spacer()
+                        }
                         refreshToolbarItem
                     }
             } else {
@@ -45,6 +49,9 @@ struct GeneratorTableView: View {
             Task {
                 await updateList()
             }
+        }
+        .onChange(of: sortOrder) { sortOrder in
+            sniglets.sort(using: sortOrder)
         }
     }
 
@@ -69,7 +76,7 @@ struct GeneratorTableView: View {
 
     private var generatorTable: some View {
         Table(sniglets, selection: $selection, sortOrder: $sortOrder) {
-            TableColumn("table.sniglet".fromMacLocale(), value: \.word) { row in
+            TableColumn("table.sniglet".fromMacLocale(), value: \.word) { (row: SResult) in
                 Text(row.word)
                     .contextMenu {
                         if selection != nil {
@@ -77,9 +84,11 @@ struct GeneratorTableView: View {
                         }
                     }
             }
-            TableColumn("table.score".fromMacLocale(), value: \.confidence) { row in
+            .width(min: 75, ideal: 125)
+            TableColumn("table.score".fromMacLocale(), value: \.confidence) { (row: SResult) in
                 Text("\(row.confidence.asPercentage())%")
                     .font(.system(.body, design: .monospaced))
+                    .foregroundColor(.secondary)
                     .contextMenu {
                         if selection != nil {
                             contextMenu
@@ -88,9 +97,6 @@ struct GeneratorTableView: View {
             }
             .width(min: 75, ideal: 100, max: 125)
 
-        }
-        .onChange(of: sortOrder) { sortOrder in
-            sniglets.sort(using: sortOrder)
         }
     }
 
@@ -131,6 +137,17 @@ struct GeneratorTableView: View {
                 }
                 .help("generator.help.save".fromMacLocale())
             }
+            ToolbarItem {
+                Button {
+                    requestedShare.toggle()
+                } label: {
+                    Label("generator.actions.share".fromMacLocale(), systemImage: "square.and.arrow.up")
+                }
+                .help("generator.help.share".fromMacLocale())
+                .background(
+                    SharingServicePicker(isPresented: $requestedShare, items: [ getSelection()?.shareableText() ])
+                )
+            }
         }
     }
 
@@ -139,14 +156,7 @@ struct GeneratorTableView: View {
     }
 
     private func copySelection() {
-        guard let result = getSelection() else {
-            return
-        }
-
-        let pasteboard = NSPasteboard.general
-        pasteboard.clearContents()
-        pasteboard.declareTypes([.string], owner: nil)
-        pasteboard.setString(result.word, forType: .string)
+        getSelection()?.word.copyToClipboard()
     }
 
     private func getSelection() -> Sniglet.Result? {

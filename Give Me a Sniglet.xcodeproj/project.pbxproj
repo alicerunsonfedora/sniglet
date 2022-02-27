@@ -20,6 +20,13 @@
 		952449C4279ABAD2001AB7D7 /* SettingsSafariWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952449C3279ABAD2001AB7D7 /* SettingsSafariWindow.swift */; };
 		9526E45327CBF71F00DB7382 /* Mac_Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9526E45527CBF71F00DB7382 /* Mac_Localizable.strings */; };
 		9526E45827CBF8F900DB7382 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9526E45727CBF8F900DB7382 /* StringExtension.swift */; };
+		9526E45C27CBFEE900DB7382 /* DictionaryTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9526E45B27CBFEE900DB7382 /* DictionaryTableView.swift */; };
+		9526E45E27CC003100DB7382 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9526E45D27CC003100DB7382 /* CloudKit.framework */; };
+		9526E45F27CC017700DB7382 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95D74B3227A0408C0063E2AA /* AVFoundation.framework */; platformFilter = maccatalyst; };
+		9526E46227CC02F900DB7382 /* Mac_Localizable.stringsdict in Resources */ = {isa = PBXBuildFile; fileRef = 9526E46427CC02F900DB7382 /* Mac_Localizable.stringsdict */; };
+		9526E46627CC0CDF00DB7382 /* SharingServicePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9526E46527CC0CDF00DB7382 /* SharingServicePicker.swift */; };
+		9526E46827CC102800DB7382 /* SavedWordExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9526E46727CC102800DB7382 /* SavedWordExtension.swift */; };
+		9526E46927CC102800DB7382 /* SavedWordExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9526E46727CC102800DB7382 /* SavedWordExtension.swift */; };
 		952FD19F27B04CDC0026847C /* SettingsGeneral.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952FD19E27B04CDC0026847C /* SettingsGeneral.swift */; };
 		952FD1A127B04D940026847C /* SettingsAbout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952FD1A027B04D940026847C /* SettingsAbout.swift */; };
 		952FD1A327B04E840026847C /* SettingsSyllable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952FD1A227B04E840026847C /* SettingsSyllable.swift */; };
@@ -194,6 +201,11 @@
 		952449C3279ABAD2001AB7D7 /* SettingsSafariWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsSafariWindow.swift; sourceTree = "<group>"; };
 		9526E45427CBF71F00DB7382 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Mac_Localizable.strings; sourceTree = "<group>"; };
 		9526E45727CBF8F900DB7382 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
+		9526E45B27CBFEE900DB7382 /* DictionaryTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryTableView.swift; sourceTree = "<group>"; };
+		9526E45D27CC003100DB7382 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		9526E46327CC02F900DB7382 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.stringsdict; name = en; path = en.lproj/Mac_Localizable.stringsdict; sourceTree = "<group>"; };
+		9526E46527CC0CDF00DB7382 /* SharingServicePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharingServicePicker.swift; sourceTree = "<group>"; };
+		9526E46727CC102800DB7382 /* SavedWordExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedWordExtension.swift; sourceTree = "<group>"; };
 		952FD19A27B048BF0026847C /* CHANGELOG.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CHANGELOG.md; sourceTree = "<group>"; };
 		952FD19E27B04CDC0026847C /* SettingsGeneral.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsGeneral.swift; sourceTree = "<group>"; };
 		952FD1A027B04D940026847C /* SettingsAbout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsAbout.swift; sourceTree = "<group>"; };
@@ -283,6 +295,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9526E45F27CC017700DB7382 /* AVFoundation.framework in Frameworks */,
+				9526E45E27CC003100DB7382 /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -354,6 +368,7 @@
 				9526E45527CBF71F00DB7382 /* Mac_Localizable.strings */,
 				9552F65227432CE2004582D6 /* macOS.entitlements */,
 				955306F527CAC78B0064039F /* Preview Content */,
+				9526E46427CC02F900DB7382 /* Mac_Localizable.stringsdict */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -371,6 +386,8 @@
 			children = (
 				955306F127CAC78A0064039F /* ContentView.swift */,
 				95C3F01C27CBE17200A59BD3 /* GeneratorTableView.swift */,
+				9526E45B27CBFEE900DB7382 /* DictionaryTableView.swift */,
+				9526E46527CC0CDF00DB7382 /* SharingServicePicker.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -396,6 +413,7 @@
 				95E0698827442B9D0043F568 /* DoubleExtension.swift */,
 				95511DC1274AC36500234573 /* String.swift */,
 				958C2D3E274C1C1D0076E0D9 /* SyllableShapes.swift */,
+				9526E46727CC102800DB7382 /* SavedWordExtension.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -617,8 +635,8 @@
 		95C3F01A27CACA8B00A59BD3 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
-				95C3F01B27CACAA000A59BD3 /* Utilities */,
 				957676EE274CA5140011E558 /* Views */,
+				95C3F01B27CACAA000A59BD3 /* Utilities */,
 			);
 			path = iOS;
 			sourceTree = "<group>";
@@ -663,6 +681,7 @@
 		95F6D18F27568CBC00668877 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9526E45D27CC003100DB7382 /* CloudKit.framework */,
 				9590D54227A9835300F51F10 /* CloudKit.framework */,
 				95D74B3227A0408C0063E2AA /* AVFoundation.framework */,
 				9589F6822770A79000BF3855 /* StoreKit.framework */,
@@ -845,6 +864,7 @@
 				955306F727CAC78B0064039F /* Preview Assets.xcassets in Resources */,
 				9526E45327CBF71F00DB7382 /* Mac_Localizable.strings in Resources */,
 				9553070827CAC8EF0064039F /* Localizable.strings in Resources */,
+				9526E46227CC02F900DB7382 /* Mac_Localizable.stringsdict in Resources */,
 				955306F427CAC78B0064039F /* Assets.xcassets in Resources */,
 				9553070727CAC8E80064039F /* Abysima v2.mlproj in Resources */,
 			);
@@ -905,6 +925,7 @@
 				95050FA927A0393E00A31E45 /* DictionaryEntry.swift in Sources */,
 				951FC4E927997A29009CA715 /* SafariView.swift in Sources */,
 				95944207279ADCA90066DC62 /* SharedActivity.swift in Sources */,
+				9526E46827CC102800DB7382 /* SavedWordExtension.swift in Sources */,
 				95E0697C274417F00043F568 /* Generator.swift in Sources */,
 				95944209279ADE450066DC62 /* SavedDefinitionImage.swift in Sources */,
 				9540B227276692DE00A6E5D2 /* DataModel.xcdatamodeld in Sources */,
@@ -927,14 +948,17 @@
 				9553070427CAC8DF0064039F /* ValidatorModels.swift in Sources */,
 				9553070927CAC8FF0064039F /* DataModel.xcdatamodeld in Sources */,
 				9553070A27CAC9010064039F /* DBController.swift in Sources */,
+				9526E46927CC102800DB7382 /* SavedWordExtension.swift in Sources */,
 				955306F227CAC78A0064039F /* ContentView.swift in Sources */,
 				9553070F27CAC91D0064039F /* String.swift in Sources */,
 				9553070127CAC8D20064039F /* MainEntry.swift in Sources */,
+				9526E46627CC0CDF00DB7382 /* SharingServicePicker.swift in Sources */,
 				9553070B27CAC90B0064039F /* AppGroup.swift in Sources */,
 				9553071027CAC91F0064039F /* SyllableShapes.swift in Sources */,
 				9526E45827CBF8F900DB7382 /* StringExtension.swift in Sources */,
 				9553070227CAC8DA0064039F /* Sniglet.swift in Sources */,
 				9553070327CAC8DC0064039F /* SnigletResult.swift in Sources */,
+				9526E45C27CBFEE900DB7382 /* DictionaryTableView.swift in Sources */,
 				9553070E27CAC9160064039F /* DoubleExtension.swift in Sources */,
 				9553070C27CAC90E0064039F /* AppLink.swift in Sources */,
 				9553070627CAC8E40064039F /* Classic.mlmodel in Sources */,
@@ -1017,6 +1041,14 @@
 				9526E45427CBF71F00DB7382 /* en */,
 			);
 			name = Mac_Localizable.strings;
+			sourceTree = "<group>";
+		};
+		9526E46427CC02F900DB7382 /* Mac_Localizable.stringsdict */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9526E46327CC02F900DB7382 /* en */,
+			);
+			name = Mac_Localizable.stringsdict;
 			sourceTree = "<group>";
 		};
 		95E06987274419870043F568 /* Localizable.strings */ = {
@@ -1220,7 +1252,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Platforms/macOS/macOS.entitlements;
-				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 12;
@@ -1250,7 +1282,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Platforms/macOS/macOS.entitlements;
-				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 12;
