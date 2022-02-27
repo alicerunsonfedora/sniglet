@@ -21,7 +21,8 @@ struct GeneratorTableView: View {
     @State private var sniglets: [SResult] = []
     @State private var selection: SResult.ID? = nil
     @State private var sortOrder = [
-        KeyPathComparator(\SResult.word)
+        KeyPathComparator(\SResult.word),
+        KeyPathComparator(\SResult.confidence)
     ]
 
     var body: some View {
@@ -47,13 +48,45 @@ struct GeneratorTableView: View {
         }
     }
 
+    private var contextMenu: some View {
+        Group {
+            Button {
+                copySelection()
+            } label: {
+                Label("generator.actions.copy".fromMacLocale(), systemImage: "doc.on.doc")
+            }
+            Button {
+                getSelection()?.word.speak()
+            } label: {
+                Label("generator.actions.speak".fromMacLocale(), systemImage: "speaker.wave.3")
+            }
+            Button(action: saveSelection) {
+                Label("generator.actions.save".fromMacLocale(), systemImage: "bookmark")
+            }
+        }
+
+    }
+
     private var generatorTable: some View {
         Table(sniglets, selection: $selection, sortOrder: $sortOrder) {
-            TableColumn("Sniglet", value: \.word)
-            TableColumn("Confidence") { value in
-                Text("\(value.confidence.asPercentage())%")
+            TableColumn("table.sniglet".fromMacLocale(), value: \.word) { row in
+                Text(row.word)
+                    .contextMenu {
+                        if selection != nil {
+                            contextMenu
+                        }
+                    }
             }
-            .width(75)
+            TableColumn("table.score".fromMacLocale(), value: \.confidence) { row in
+                Text("\(row.confidence.asPercentage())%")
+                    .font(.system(.body, design: .monospaced))
+                    .contextMenu {
+                        if selection != nil {
+                            contextMenu
+                        }
+                    }
+            }
+            .width(min: 75, ideal: 100, max: 125)
 
         }
         .onChange(of: sortOrder) { sortOrder in
@@ -68,9 +101,9 @@ struct GeneratorTableView: View {
                     await updateList()
                 }
             } label: {
-                Label("generator.button.prompt", systemImage: "arrow.clockwise")
+                Label("generator.actions.refresh".fromMacLocale(), systemImage: "arrow.clockwise")
             }
-            .help("generator.button.prompt")
+            .help("generator.help.refresh".fromMacLocale())
         }
     }
 
@@ -80,22 +113,23 @@ struct GeneratorTableView: View {
                 Button {
                     copySelection()
                 } label: {
-                    Label("generator.copy.prompt", systemImage: "doc.on.doc")
+                    Label("generator.actions.copy".fromMacLocale(), systemImage: "doc.on.doc")
                 }
+                .help("generator.help.copy".fromMacLocale())
             }
             ToolbarItem {
                 Button {
                     getSelection()?.word.speak()
                 } label: {
-                    Label("sound.button.prompt", systemImage: "speaker.wave.3")
+                    Label("generator.actions.speak".fromMacLocale(), systemImage: "speaker.wave.3")
                 }
-                .help("sound.button.prompt")
+                .help("generator.help.speak".fromMacLocale())
             }
             ToolbarItem {
                 Button(action: saveSelection) {
-                    Label("saved.button.add", systemImage: "bookmark")
+                    Label("generator.actions.save".fromMacLocale(), systemImage: "bookmark")
                 }
-                .help("saved.button.add")
+                .help("generator.help.save".fromMacLocale())
             }
         }
     }

@@ -32,6 +32,20 @@ struct ContentView: View {
                 Label("Customize", systemImage: "waveform")
             }
             .listStyle(.sidebar)
+            .frame(minWidth: 175, idealWidth: 200)
+            .toolbar {
+                ToolbarItem(placement: .navigation) {
+                    Button {
+                        NSApp.keyWindow?.firstResponder?.tryToPerform(
+                            #selector(NSSplitViewController.toggleSidebar(_:)),
+                            with: nil
+                        )
+                    } label: {
+                        Label("general.togglesidebar", systemImage: "sidebar.left")
+                    }
+                    .help("help.sidebar")
+                }
+            }
 
             Text("Give Me a Sniglet!")
                 .padding()

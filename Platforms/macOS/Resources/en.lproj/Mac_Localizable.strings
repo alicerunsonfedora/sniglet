@@ -1,0 +1,24 @@
+/* 
+  MacLocalizable.strings
+  Give Me a Sniglet
+
+  Created by Marquis Kurt on 27/2/22.
+  
+*/
+
+// MARK: Table Column Headers
+"table.sniglet" = "Sniglet";
+"table.score" = "Confidence";
+"table.note" = "Note";
+
+// MARK: - Generator Actions
+"generator.actions.copy" = "Copy to Clipboard";
+"generator.actions.save" = "Save to Dictionary";
+"generator.actions.speak" = "Speak";
+"generator.actions.refresh" = "Generate New Sniglets";
+
+// MARK: - Generator Help Strings
+"generator.help.copy" = "Copy the sniglet to your clipboard.";
+"generator.help.save" = "Save the sniglet to your personal dictionary.";
+"generator.help.speak" = "Listen to a pronunciation of this sniglet with your device's settings.";
+"generator.help.refresh" = "Generate a new list of sniglets.";

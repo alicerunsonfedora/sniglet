@@ -18,6 +18,8 @@
 		951FC4EB27998660009CA715 /* AppVersions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951FC4EA27998660009CA715 /* AppVersions.swift */; };
 		951FC4ED27998A56009CA715 /* AppLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951FC4EC27998A56009CA715 /* AppLink.swift */; };
 		952449C4279ABAD2001AB7D7 /* SettingsSafariWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952449C3279ABAD2001AB7D7 /* SettingsSafariWindow.swift */; };
+		9526E45327CBF71F00DB7382 /* Mac_Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9526E45527CBF71F00DB7382 /* Mac_Localizable.strings */; };
+		9526E45827CBF8F900DB7382 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9526E45727CBF8F900DB7382 /* StringExtension.swift */; };
 		952FD19F27B04CDC0026847C /* SettingsGeneral.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952FD19E27B04CDC0026847C /* SettingsGeneral.swift */; };
 		952FD1A127B04D940026847C /* SettingsAbout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952FD1A027B04D940026847C /* SettingsAbout.swift */; };
 		952FD1A327B04E840026847C /* SettingsSyllable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952FD1A227B04E840026847C /* SettingsSyllable.swift */; };
@@ -190,6 +192,8 @@
 		951FC4EA27998660009CA715 /* AppVersions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppVersions.swift; sourceTree = "<group>"; };
 		951FC4EC27998A56009CA715 /* AppLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLink.swift; sourceTree = "<group>"; };
 		952449C3279ABAD2001AB7D7 /* SettingsSafariWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsSafariWindow.swift; sourceTree = "<group>"; };
+		9526E45427CBF71F00DB7382 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Mac_Localizable.strings; sourceTree = "<group>"; };
+		9526E45727CBF8F900DB7382 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		952FD19A27B048BF0026847C /* CHANGELOG.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CHANGELOG.md; sourceTree = "<group>"; };
 		952FD19E27B04CDC0026847C /* SettingsGeneral.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsGeneral.swift; sourceTree = "<group>"; };
 		952FD1A027B04D940026847C /* SettingsAbout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsAbout.swift; sourceTree = "<group>"; };
@@ -343,6 +347,34 @@
 			path = Fantasy;
 			sourceTree = "<group>";
 		};
+		9526E45627CBF78400DB7382 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				955306F327CAC78B0064039F /* Assets.xcassets */,
+				9526E45527CBF71F00DB7382 /* Mac_Localizable.strings */,
+				9552F65227432CE2004582D6 /* macOS.entitlements */,
+				955306F527CAC78B0064039F /* Preview Content */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		9526E45927CBFA2C00DB7382 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				9526E45727CBF8F900DB7382 /* StringExtension.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		9526E45A27CBFA3100DB7382 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				955306F127CAC78A0064039F /* ContentView.swift */,
+				95C3F01C27CBE17200A59BD3 /* GeneratorTableView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		952FD19D27B04CB70026847C /* Settings */ = {
 			isa = PBXGroup;
 			children = (
@@ -420,11 +452,9 @@
 		9552F65127432CE2004582D6 /* macOS */ = {
 			isa = PBXGroup;
 			children = (
-				955306F127CAC78A0064039F /* ContentView.swift */,
-				955306F327CAC78B0064039F /* Assets.xcassets */,
-				955306F527CAC78B0064039F /* Preview Content */,
-				9552F65227432CE2004582D6 /* macOS.entitlements */,
-				95C3F01C27CBE17200A59BD3 /* GeneratorTableView.swift */,
+				9526E45A27CBFA3100DB7382 /* Views */,
+				9526E45927CBFA2C00DB7382 /* Utilities */,
+				9526E45627CBF78400DB7382 /* Resources */,
 			);
 			path = macOS;
 			sourceTree = "<group>";
@@ -813,6 +843,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				955306F727CAC78B0064039F /* Preview Assets.xcassets in Resources */,
+				9526E45327CBF71F00DB7382 /* Mac_Localizable.strings in Resources */,
 				9553070827CAC8EF0064039F /* Localizable.strings in Resources */,
 				955306F427CAC78B0064039F /* Assets.xcassets in Resources */,
 				9553070727CAC8E80064039F /* Abysima v2.mlproj in Resources */,
@@ -901,6 +932,7 @@
 				9553070127CAC8D20064039F /* MainEntry.swift in Sources */,
 				9553070B27CAC90B0064039F /* AppGroup.swift in Sources */,
 				9553071027CAC91F0064039F /* SyllableShapes.swift in Sources */,
+				9526E45827CBF8F900DB7382 /* StringExtension.swift in Sources */,
 				9553070227CAC8DA0064039F /* Sniglet.swift in Sources */,
 				9553070327CAC8DC0064039F /* SnigletResult.swift in Sources */,
 				9553070E27CAC9160064039F /* DoubleExtension.swift in Sources */,
@@ -979,6 +1011,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		9526E45527CBF71F00DB7382 /* Mac_Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9526E45427CBF71F00DB7382 /* en */,
+			);
+			name = Mac_Localizable.strings;
+			sourceTree = "<group>";
+		};
 		95E06987274419870043F568 /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -1184,7 +1224,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 12;
-				DEVELOPMENT_ASSET_PATHS = "Platforms/macOS/Preview\\ Content";
+				DEVELOPMENT_ASSET_PATHS = "Platforms/macOS/Resources/Preview\\ Content";
 				DEVELOPMENT_TEAM = FQQXSP79X3;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
@@ -1214,7 +1254,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 12;
-				DEVELOPMENT_ASSET_PATHS = "Platforms/macOS/Preview\\ Content";
+				DEVELOPMENT_ASSET_PATHS = "Platforms/macOS/Resources/Preview\\ Content";
 				DEVELOPMENT_TEAM = FQQXSP79X3;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
