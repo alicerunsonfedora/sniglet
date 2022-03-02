@@ -9,7 +9,7 @@ import SwiftUI
 
 struct TapToCopyButton: View {
 
-    @State var word: String
+    var word: String
     @State private var showCopyToast: Bool = false
 
     var body: some View {
