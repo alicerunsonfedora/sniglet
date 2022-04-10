@@ -19,7 +19,13 @@ struct CustomizeSyllablesView: View {
     var body: some View {
         VStack(alignment: .leading) {
             HStack {
-                TextField("", text: $syllableString)
+                TextField(
+                    "",
+                    text: $syllableString,
+                    prompt: Text(
+                        "customize.syllable.placeholder".fromMacLocale()
+                    )
+                )
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                 Button {
                     withAnimation {

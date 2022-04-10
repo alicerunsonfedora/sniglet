@@ -20,6 +20,12 @@ struct CustomizePageView: View {
     /// The validation model to use.
     @AppStorage("generateMethod") var generateMethod: String = "Classic"
 
+    /// The minimum number of characters needed to generate a sniglet input.
+    @AppStorage("algoMinBound") var minGenerationValue: Int = 3
+
+    /// The maximum number of characters needed to generate a sniglet input.
+    @AppStorage("algoMaxBound") var maxGenerationValue: Int = 8
+
     /// The validation model to use.
     /// This is used in the picker. To store into User Defaults, refer to `generateMethod`.
     @State private var genMethodEnum: ValidatorKind = .Classic
@@ -30,6 +36,28 @@ struct CustomizePageView: View {
     var body: some View {
         Form {
             Section {
+                Picker("customize.form.boundary-min".fromMacLocale(), selection: $minGenerationValue) {
+                    ForEach(3..<maxGenerationValue, id: \.self) { value in
+                        Text(
+                            String(format: "customize.form.boundary-lbl".fromMacLocale(), value)
+                        )
+                        .tag(value)
+                    }
+                }
+                Picker("customize.form.boundary-max".fromMacLocale(), selection: $maxGenerationValue) {
+                    ForEach(minGenerationValue+1..<9, id: \.self) { value in
+                        Text(
+                            String(format: "customize.form.boundary-lbl".fromMacLocale(), value)
+                        )
+                        .tag(value)
+                    }
+                }
+            }
+
+            Divider()
+                .padding(.vertical)
+
+            Section {
                 Picker("customize.form.validate-model".fromMacLocale(), selection: $genMethodEnum) {
                     ForEach(ValidatorKind.allCases, id: \.self) { kind in
                         Text(kind.rawValue)
@@ -37,7 +65,7 @@ struct CustomizePageView: View {
                     }
                 }
                 .disabled(true) // TODO: Enable this when ready.
-                Text("This feature is not available yet.")
+                Text("features.unavailable".fromMacLocale())
                     .foregroundColor(.secondary)
             }
 
@@ -84,9 +112,15 @@ struct CustomizePageView: View {
             HStack {
                 Spacer()
                 Button {
+                    minGenerationValue = 3
+                    maxGenerationValue = 8
+                } label: {
+                    Text("customize.form.boundary-reset".fromMacLocale())
+                }
+                Button {
                     openURL(.init(string: "sniglets://syllables")!)
                 } label: {
-                    Text("Customize Syllables...")
+                    Text("customize.form.syllables".fromMacLocale())
                 }
             }
         }

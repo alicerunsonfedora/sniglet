@@ -40,9 +40,18 @@
 "customize.form.validate-model" = "Validate with model: ";
 "customize.form.words" = "Generate words: ";
 "customize.form.batch-size" = "Generate batches of this size: ";
+"customize.form.syllables" = "Customize Syllables...";
+"customize.form.boundary-min" = "Generate words no less than: ";
+"customize.form.boundary-max" = "Generate words no more than: ";
+"customize.form.boundary-lbl" = "%d letters";
+"customize.form.boundary-reset" = "Reset Boundaries";
 
 // MARK: - Syllable Shapes Window
 "customize.syllable.delete" = "customize.syllable.delete";
+"customize.syllable.placeholder" = "Type a word or syllable shape";
 
 // MARK: - Subtitles
 "subtitle.entries" = "subtitle.entries";    // Handled by plural rules
+
+// MARK: - Feature Availability Texts
+"features.unavailable" = "This feature is not available yet.";
