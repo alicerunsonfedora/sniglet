@@ -35,5 +35,14 @@
 "dictionary.help.edit" = "Edit the note for the selected sniglet.";
 "dictionary.help.share" = "Share the selected sniglet and its note.";
 
+// MARK: - Customize Page Strings
+"customize.title" = "Customize";
+"customize.form.validate-model" = "Validate with model: ";
+"customize.form.words" = "Generate words: ";
+"customize.form.batch-size" = "Generate batches of this size: ";
+
+// MARK: - Syllable Shapes Window
+"customize.syllable.delete" = "customize.syllable.delete";
+
 // MARK: - Subtitles
 "subtitle.entries" = "subtitle.entries";    // Handled by plural rules

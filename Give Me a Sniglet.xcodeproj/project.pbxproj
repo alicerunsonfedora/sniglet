@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		95004DA62802672000C28EC9 /* CustomizePageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95004DA52802672000C28EC9 /* CustomizePageView.swift */; };
+		95004DA82802733100C28EC9 /* CustomizeSyllablesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95004DA72802733100C28EC9 /* CustomizeSyllablesView.swift */; };
 		95050FA927A0393E00A31E45 /* DictionaryEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95050FA827A0393E00A31E45 /* DictionaryEntry.swift */; };
 		95187FCE27720C4500313B85 /* Classic.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 95187FCD27720C4500313B85 /* Classic.mlmodel */; };
 		95187FD027720C5A00313B85 /* ValidatorModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95187FCF27720C5A00313B85 /* ValidatorModels.swift */; };
@@ -182,6 +184,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		95004DA52802672000C28EC9 /* CustomizePageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomizePageView.swift; sourceTree = "<group>"; };
+		95004DA72802733100C28EC9 /* CustomizeSyllablesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomizeSyllablesView.swift; sourceTree = "<group>"; };
+		95004DA92802756F00C28EC9 /* Give-Me-a-Sniglet-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Give-Me-a-Sniglet-Info.plist"; sourceTree = "<group>"; };
 		95050FA827A0393E00A31E45 /* DictionaryEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryEntry.swift; sourceTree = "<group>"; };
 		95071750276E51F900A3E541 /* create_dataset.py */ = {isa = PBXFileReference; lastKnownFileType = text.script.python; path = create_dataset.py; sourceTree = "<group>"; };
 		95071752276E51F900A3E541 /* INFO.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = INFO.txt; sourceTree = "<group>"; };
@@ -388,6 +393,8 @@
 				95C3F01C27CBE17200A59BD3 /* GeneratorTableView.swift */,
 				9526E45B27CBFEE900DB7382 /* DictionaryTableView.swift */,
 				9526E46527CC0CDF00DB7382 /* SharingServicePicker.swift */,
+				95004DA52802672000C28EC9 /* CustomizePageView.swift */,
+				95004DA72802733100C28EC9 /* CustomizeSyllablesView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -430,6 +437,7 @@
 		9552F63D27432CE0004582D6 = {
 			isa = PBXGroup;
 			children = (
+				95004DA92802756F00C28EC9 /* Give-Me-a-Sniglet-Info.plist */,
 				9539B8112765263200E9E54D /* README.md */,
 				952FD19A27B048BF0026847C /* CHANGELOG.md */,
 				9534C24C27B9DD5D00F75C8C /* CITATION.cff */,
@@ -950,6 +958,7 @@
 				9553070A27CAC9010064039F /* DBController.swift in Sources */,
 				9526E46927CC102800DB7382 /* SavedWordExtension.swift in Sources */,
 				955306F227CAC78A0064039F /* ContentView.swift in Sources */,
+				95004DA62802672000C28EC9 /* CustomizePageView.swift in Sources */,
 				9553070F27CAC91D0064039F /* String.swift in Sources */,
 				9553070127CAC8D20064039F /* MainEntry.swift in Sources */,
 				9526E46627CC0CDF00DB7382 /* SharingServicePicker.swift in Sources */,
@@ -964,6 +973,7 @@
 				9553070627CAC8E40064039F /* Classic.mlmodel in Sources */,
 				95C3F01D27CBE17200A59BD3 /* GeneratorTableView.swift in Sources */,
 				9553070D27CAC9110064039F /* AppVersions.swift in Sources */,
+				95004DA82802733100C28EC9 /* CustomizeSyllablesView.swift in Sources */,
 				9553070527CAC8E20064039F /* Fantasy.mlmodel in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1181,7 +1191,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "App Entitlements/Give Me a Sniglet (iOS).entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 12;
+				CURRENT_PROJECT_VERSION = 13;
 				DEVELOPMENT_TEAM = FQQXSP79X3;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -1217,7 +1227,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "App Entitlements/Give Me a Sniglet (iOS).entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 12;
+				CURRENT_PROJECT_VERSION = 13;
 				DEVELOPMENT_TEAM = FQQXSP79X3;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -1261,6 +1271,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Give-Me-a-Sniglet-Info.plist";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1291,6 +1302,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Give-Me-a-Sniglet-Info.plist";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

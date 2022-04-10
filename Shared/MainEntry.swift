@@ -27,6 +27,13 @@ struct SnigletApp: App {
                 }
             }
         }
+
+        #if os(macOS)
+        WindowGroup {
+            CustomizeSyllablesView()
+        }
+        .handlesExternalEvents(matching: ["syllables"])
+        #endif
     }
 
     /// Reset dialogs and warnings.

@@ -35,8 +35,13 @@ struct ContentView: View {
                     Label("saved.title", systemImage: "bookmark")
                 }
 
-                Label("Customize", systemImage: "waveform")
-                    .disabled(true)
+                NavigationLink(tag: PageSelector.algorithm, selection: $currentPage) {
+                    CustomizePageView()
+                        .navigationTitle("customize.title".fromMacLocale())
+                } label: {
+                    Label("customize.title".fromMacLocale(), systemImage: "waveform")
+                        .disabled(true)
+                }
             }
             .listStyle(.sidebar)
             .frame(minWidth: 175, idealWidth: 200)

@@ -2,6 +2,24 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>customize.syllables.delete</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@selection@</string>
+		<key>selection</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>d</string>
+			<key>zero</key>
+			<string>Delete Syllable Shape</string>
+			<key>one</key>
+			<string>Delete Syllable Shape</string>
+			<key>other</key>
+			<string>Delete Selected Syllable Shapes</string>
+		</dict>
+	</dict>
 	<key>subtitle.entries</key>
 	<dict>
 		<key>NSStringLocalizedFormatKey</key>
