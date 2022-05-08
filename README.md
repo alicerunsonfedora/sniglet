@@ -12,9 +12,7 @@ with a single tap. Customize the algorithm by changing the size of the words and
     </a>
 </p>
 
-This project was originally a part of Codename Abysima as an attempt to generate a language using machine learning. Now,
-this project will host updates to the Give Me A Sniglet app.
-
+This project was originally a part of Codename Abysima as an attempt to generate a language using machine learning.
 More information on the original project can be found at https://github.com/alicerunsonfedora/abysima.
 
 ## Features
