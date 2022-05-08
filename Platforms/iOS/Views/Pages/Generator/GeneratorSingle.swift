@@ -88,8 +88,10 @@ struct GeneratorSingleView: View {
             }
         }
         .sheet(isPresented: $showDetails) {
-            GeneratorExplanation {
-                showDetails.toggle()
+            NavigationView {
+                GeneratorExplanation {
+                    showDetails.toggle()
+                }
             }
         }
         .padding()

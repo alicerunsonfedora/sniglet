@@ -13,6 +13,8 @@ struct DictionaryTableView: View {
     /// The managed object context for the database.
     @Environment(\.managedObjectContext) var managedObjectContext
 
+    @Environment(\.openURL) var openURL
+
     /// The fetch request that stores the saved sniglets.
     @FetchRequest(
         entity: SavedWord.entity(),
@@ -73,7 +75,9 @@ struct DictionaryTableView: View {
             }
             ToolbarItem {
                 Button {
-
+                    if let url = URL(string: "sniglets://dictionary?id=\(getSelection()?.objectID.uriRepresentation().absoluteString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? "")") {
+                        openURL(url)
+                    }
                 } label: {
                     Label("dictionary.actions.edit".fromMacLocale(), systemImage: "square.and.pencil")
                 }

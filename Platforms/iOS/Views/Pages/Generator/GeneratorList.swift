@@ -220,8 +220,10 @@ struct GeneratorListDetail: View {
             ToastNotification("saved.alert.title", systemImage: "bookmark.fill", with: "saved.alert.detail")
         }
         .sheet(isPresented: $showDetails) {
-            GeneratorExplanation {
-                showDetails.toggle()
+            NavigationView {
+                GeneratorExplanation {
+                    showDetails.toggle()
+                }
             }
         }
     }

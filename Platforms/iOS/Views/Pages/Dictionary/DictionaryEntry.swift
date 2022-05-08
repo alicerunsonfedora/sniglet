@@ -15,7 +15,7 @@ struct DictionaryEntryView: View {
     /// Whether the user has turned on Tap to Copy.
     @AppStorage("allowClipboard") var tapToCopy: Bool = true
 
-    /// The method of sharing to use when sharing a saved sniglet from the dictionary.
+    /// The method of shari ng to use when sharing a saved sniglet from the dictionary.
     @AppStorage("shareMethod") var shareMethod: String = "image"
 
     /// The saved sniglet entry.
@@ -92,8 +92,10 @@ struct DictionaryEntryView: View {
             DBController.shared.save()
         }
         .sheet(isPresented: $showDetails) {
-            GeneratorExplanation {
-                showDetails.toggle()
+            NavigationView {
+                GeneratorExplanation {
+                    showDetails.toggle()
+                }
             }
         }
     }

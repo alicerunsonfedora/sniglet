@@ -108,6 +108,12 @@
 		95C794A22766DE1900051AED /* DailySavedSniglet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C794A12766DE1800051AED /* DailySavedSniglet.swift */; };
 		95C794A42766E5A500051AED /* AppGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C794A32766E5A500051AED /* AppGroup.swift */; };
 		95C794A52766E5A500051AED /* AppGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C794A32766E5A500051AED /* AppGroup.swift */; };
+		95CF06E32828457500B9F14D /* DictionaryEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CF06E22828457500B9F14D /* DictionaryEditorView.swift */; };
+		95CF06E52828475400B9F14D /* HelpButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CF06E42828475400B9F14D /* HelpButton.swift */; };
+		95CF06E82828497C00B9F14D /* GeneratorExplanation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CF06E72828497C00B9F14D /* GeneratorExplanation.swift */; };
+		95CF06E92828497C00B9F14D /* GeneratorExplanation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CF06E72828497C00B9F14D /* GeneratorExplanation.swift */; };
+		95CF06EE282860A100B9F14D /* URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CF06ED282860A100B9F14D /* URL.swift */; };
+		95CF06EF282860A100B9F14D /* URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CF06ED282860A100B9F14D /* URL.swift */; };
 		95D74B3327A0408C0063E2AA /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95D74B3227A0408C0063E2AA /* AVFoundation.framework */; };
 		95E0697C274417F00043F568 /* Generator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E0697B274417F00043F568 /* Generator.swift */; };
 		95E0697F2744188B0043F568 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E0697E2744188B0043F568 /* Settings.swift */; };
@@ -272,6 +278,10 @@
 		95C7949F2766D92A00051AED /* SavedWOTDEV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedWOTDEV.swift; sourceTree = "<group>"; };
 		95C794A12766DE1800051AED /* DailySavedSniglet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailySavedSniglet.swift; sourceTree = "<group>"; };
 		95C794A32766E5A500051AED /* AppGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppGroup.swift; sourceTree = "<group>"; };
+		95CF06E22828457500B9F14D /* DictionaryEditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryEditorView.swift; sourceTree = "<group>"; };
+		95CF06E42828475400B9F14D /* HelpButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpButton.swift; sourceTree = "<group>"; };
+		95CF06E72828497C00B9F14D /* GeneratorExplanation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneratorExplanation.swift; sourceTree = "<group>"; };
+		95CF06ED282860A100B9F14D /* URL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URL.swift; sourceTree = "<group>"; };
 		95D74B3227A0408C0063E2AA /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		95E0697B274417F00043F568 /* Generator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Generator.swift; sourceTree = "<group>"; };
 		95E0697E2744188B0043F568 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
@@ -392,11 +402,13 @@
 			isa = PBXGroup;
 			children = (
 				955306F127CAC78A0064039F /* ContentView.swift */,
-				95C3F01C27CBE17200A59BD3 /* GeneratorTableView.swift */,
-				9526E45B27CBFEE900DB7382 /* DictionaryTableView.swift */,
-				9526E46527CC0CDF00DB7382 /* SharingServicePicker.swift */,
 				95004DA52802672000C28EC9 /* CustomizePageView.swift */,
 				95004DA72802733100C28EC9 /* CustomizeSyllablesView.swift */,
+				95CF06E22828457500B9F14D /* DictionaryEditorView.swift */,
+				9526E45B27CBFEE900DB7382 /* DictionaryTableView.swift */,
+				95C3F01C27CBE17200A59BD3 /* GeneratorTableView.swift */,
+				95CF06E42828475400B9F14D /* HelpButton.swift */,
+				9526E46527CC0CDF00DB7382 /* SharingServicePicker.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -423,6 +435,7 @@
 				95511DC1274AC36500234573 /* String.swift */,
 				958C2D3E274C1C1D0076E0D9 /* SyllableShapes.swift */,
 				9526E46727CC102800DB7382 /* SavedWordExtension.swift */,
+				95CF06ED282860A100B9F14D /* URL.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -458,8 +471,9 @@
 				9552F64527432CE2004582D6 /* Assets.xcassets */,
 				95E06987274419870043F568 /* Localizable.strings */,
 				9552F64327432CE0004582D6 /* MainEntry.swift */,
-				9590D4BF27A971A100F51F10 /* ML */,
 				95562DCF276698EA00E0C6FD /* Databases */,
+				9590D4BF27A971A100F51F10 /* ML */,
+				95CF06E62828496000B9F14D /* Views */,
 				9539B80D27650FD200E9E54D /* Utilities */,
 			);
 			path = Shared;
@@ -684,6 +698,14 @@
 				95C794992766D3C100051AED /* RandomSnigletEV.swift */,
 				95C7949B2766D3EF00051AED /* WidgetConfidenceBar.swift */,
 				95C7949F2766D92A00051AED /* SavedWOTDEV.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		95CF06E62828496000B9F14D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				95CF06E72828497C00B9F14D /* GeneratorExplanation.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -922,6 +944,7 @@
 				95E0697F2744188B0043F568 /* Settings.swift in Sources */,
 				957DFBC5276D724A0034CBB0 /* WhatsNewView.swift in Sources */,
 				952FD1A127B04D940026847C /* SettingsAbout.swift in Sources */,
+				95CF06E82828497C00B9F14D /* GeneratorExplanation.swift in Sources */,
 				95562DD1276698FA00E0C6FD /* DBController.swift in Sources */,
 				9552F65527432CE2004582D6 /* ContentView.swift in Sources */,
 				9552F65327432CE2004582D6 /* MainEntry.swift in Sources */,
@@ -942,6 +965,7 @@
 				951FC4E927997A29009CA715 /* SafariView.swift in Sources */,
 				95944207279ADCA90066DC62 /* SharedActivity.swift in Sources */,
 				9526E46827CC102800DB7382 /* SavedWordExtension.swift in Sources */,
+				95CF06EE282860A100B9F14D /* URL.swift in Sources */,
 				95E0697C274417F00043F568 /* Generator.swift in Sources */,
 				95944209279ADE450066DC62 /* SavedDefinitionImage.swift in Sources */,
 				9540B227276692DE00A6E5D2 /* DataModel.xcdatamodeld in Sources */,
@@ -966,6 +990,7 @@
 				9553070A27CAC9010064039F /* DBController.swift in Sources */,
 				9526E46927CC102800DB7382 /* SavedWordExtension.swift in Sources */,
 				955306F227CAC78A0064039F /* ContentView.swift in Sources */,
+				95CF06EF282860A100B9F14D /* URL.swift in Sources */,
 				95004DA62802672000C28EC9 /* CustomizePageView.swift in Sources */,
 				9553070F27CAC91D0064039F /* String.swift in Sources */,
 				9553070127CAC8D20064039F /* MainEntry.swift in Sources */,
@@ -975,10 +1000,13 @@
 				9526E45827CBF8F900DB7382 /* StringExtension.swift in Sources */,
 				9553070227CAC8DA0064039F /* Sniglet.swift in Sources */,
 				9553070327CAC8DC0064039F /* SnigletResult.swift in Sources */,
+				95CF06E32828457500B9F14D /* DictionaryEditorView.swift in Sources */,
 				9526E45C27CBFEE900DB7382 /* DictionaryTableView.swift in Sources */,
+				95CF06E52828475400B9F14D /* HelpButton.swift in Sources */,
 				9553070E27CAC9160064039F /* DoubleExtension.swift in Sources */,
 				9553070C27CAC90E0064039F /* AppLink.swift in Sources */,
 				9553070627CAC8E40064039F /* Classic.mlmodel in Sources */,
+				95CF06E92828497C00B9F14D /* GeneratorExplanation.swift in Sources */,
 				95C3F01D27CBE17200A59BD3 /* GeneratorTableView.swift in Sources */,
 				9553070D27CAC9110064039F /* AppVersions.swift in Sources */,
 				95004DA82802733100C28EC9 /* CustomizeSyllablesView.swift in Sources */,

@@ -105,20 +105,10 @@ struct CustomizePageView: View {
                         EmptyView()
                     }
                     .labelsHidden()
-                    Button {
-                        popoverBatch.toggle()
-                    } label: {
-                        Image(systemName: "questionmark.circle")
+                    HelpButton(isPresented: $popoverBatch) {
+                        Text("settings.algorithm.batch.explain")
                     }
-                    .buttonStyle(.link)
                     .padding(.leading, 6)
-                    .popover(isPresented: $popoverBatch) {
-                        VStack {
-                            Text("settings.algorithm.batch.explain")
-                        }
-                        .frame(maxWidth: 300, minHeight: 64)
-                        .padding(8)
-                    }
                     
                 }
             }
