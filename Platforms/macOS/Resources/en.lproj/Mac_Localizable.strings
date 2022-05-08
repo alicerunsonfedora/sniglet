@@ -41,6 +41,7 @@
 "customize.form.words" = "Generate words: ";
 "customize.form.batch-size" = "Generate batches of this size: ";
 "customize.form.syllables" = "Customize Syllables...";
+"customize.form.boundary" = "Generate words in range: ";
 "customize.form.boundary-min" = "Generate words no less than: ";
 "customize.form.boundary-max" = "Generate words no more than: ";
 "customize.form.boundary-lbl" = "%d letters";

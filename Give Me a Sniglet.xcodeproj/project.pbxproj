@@ -37,6 +37,7 @@
 		952FD1AB27B056BB0026847C /* ToastOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952FD1AA27B056BB0026847C /* ToastOverlay.swift */; };
 		9539B80F27651F9D00E9E54D /* SnigletResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9539B80E27651F9D00E9E54D /* SnigletResult.swift */; };
 		9539B81027651FCF00E9E54D /* SnigletResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9539B80E27651F9D00E9E54D /* SnigletResult.swift */; };
+		953BE5A12828336100D4CED9 /* CompactSlider in Frameworks */ = {isa = PBXBuildFile; productRef = 953BE5A02828336100D4CED9 /* CompactSlider */; };
 		9540B227276692DE00A6E5D2 /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9540B225276692DE00A6E5D2 /* DataModel.xcdatamodeld */; };
 		9540B228276692DE00A6E5D2 /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9540B225276692DE00A6E5D2 /* DataModel.xcdatamodeld */; };
 		95511DC2274AC36500234573 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95511DC1274AC36500234573 /* String.swift */; };
@@ -301,6 +302,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9526E45F27CC017700DB7382 /* AVFoundation.framework in Frameworks */,
+				953BE5A12828336100D4CED9 /* CompactSlider in Frameworks */,
 				9526E45E27CC003100DB7382 /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -750,6 +752,9 @@
 			dependencies = (
 			);
 			name = "Give Me a Sniglet";
+			packageProductDependencies = (
+				953BE5A02828336100D4CED9 /* CompactSlider */,
+			);
 			productName = "Give Me a Sniglet";
 			productReference = 955306ED27CAC78A0064039F /* Give Me a Sniglet.app */;
 			productType = "com.apple.product-type.application";
@@ -841,6 +846,9 @@
 				Base,
 			);
 			mainGroup = 9552F63D27432CE0004582D6;
+			packageReferences = (
+				953BE59F2828336100D4CED9 /* XCRemoteSwiftPackageReference "CompactSlider" */,
+			);
 			productRefGroup = 9552F64B27432CE2004582D6 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -1555,6 +1563,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		953BE59F2828336100D4CED9 /* XCRemoteSwiftPackageReference "CompactSlider" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/buh/CompactSlider";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		953BE5A02828336100D4CED9 /* CompactSlider */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 953BE59F2828336100D4CED9 /* XCRemoteSwiftPackageReference "CompactSlider" */;
+			productName = CompactSlider;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		9540B225276692DE00A6E5D2 /* DataModel.xcdatamodeld */ = {

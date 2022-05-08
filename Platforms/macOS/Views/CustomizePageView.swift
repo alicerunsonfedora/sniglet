@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import CompactSlider
 
 struct CustomizePageView: View {
 
@@ -26,6 +27,12 @@ struct CustomizePageView: View {
     /// The maximum number of characters needed to generate a sniglet input.
     @AppStorage("algoMaxBound") var maxGenerationValue: Int = 8
 
+    /// The minimum number of characters needed to generate a sniglet input.
+    @State private var minGenVal: Double = 3.0
+
+    /// The maximum number of characters needed to generate a sniglet input.
+    @State private var maxGenVal: Double = 8.0
+
     /// The validation model to use.
     /// This is used in the picker. To store into User Defaults, refer to `generateMethod`.
     @State private var genMethodEnum: ValidatorKind = .Classic
@@ -36,21 +43,30 @@ struct CustomizePageView: View {
     var body: some View {
         Form {
             Section {
-                Picker("customize.form.boundary-min".fromMacLocale(), selection: $minGenerationValue) {
-                    ForEach(3..<maxGenerationValue, id: \.self) { value in
+                HStack(spacing: 4) {
+                    CompactSlider(from: $minGenVal, to: $maxGenVal, in: 3...8, step: 1) {
+                        Text("customize.form.boundary".fromMacLocale())
+                        Spacer()
                         Text(
-                            String(format: "customize.form.boundary-lbl".fromMacLocale(), value)
+                            String(format: "customize.form.boundary-lbl".fromMacLocale(), minGenerationValue)
+                            + " - " +
+                            String(format: "customize.form.boundary-lbl".fromMacLocale(), maxGenerationValue)
                         )
-                        .tag(value)
+
                     }
-                }
-                Picker("customize.form.boundary-max".fromMacLocale(), selection: $maxGenerationValue) {
-                    ForEach(minGenerationValue+1..<9, id: \.self) { value in
-                        Text(
-                            String(format: "customize.form.boundary-lbl".fromMacLocale(), value)
-                        )
-                        .tag(value)
+                    .onAppear {
+                        minGenVal = Double(minGenerationValue)
+                        maxGenVal = Double(maxGenerationValue)
                     }
+                    .onChange(of: minGenVal) { value in
+                        minGenVal = value
+                        minGenerationValue = Int(value)
+                    }
+                    .onChange(of: maxGenVal) { value in
+                        maxGenVal = value
+                        maxGenerationValue = Int(value)
+                    }
+                    .frame(maxWidth: .infinity)
                 }
             }
 
@@ -114,6 +130,8 @@ struct CustomizePageView: View {
                 Button {
                     minGenerationValue = 3
                     maxGenerationValue = 8
+                    minGenVal = 3.0
+                    maxGenVal = 8.0
                 } label: {
                     Text("customize.form.boundary-reset".fromMacLocale())
                 }
