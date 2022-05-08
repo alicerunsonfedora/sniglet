@@ -5,6 +5,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## Unreleased
+- Introduces a brand-new redesign of the app on Mac with more information at a glance.
 
 ## [1.1.2] - 02-03-2022
 - Resolves a bug where, in single sniglet mode, the sniglet always appears as "empty" (ABY-15).
