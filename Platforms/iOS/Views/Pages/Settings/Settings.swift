@@ -103,7 +103,7 @@ struct Settings_Previews: PreviewProvider {
                 .previewDevice("iPhone 13")
             NavigationView {
                 List {
-                    SettingsGenerationBoundarySegment()
+                    SettingsGenerationBoundarySliderSegment()
                     SettingsGenerationBatchSegment()
                     SettingsGenerationMethodSegment()
                 }

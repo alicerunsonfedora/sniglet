@@ -7,13 +7,15 @@
 
 import Foundation
 import SwiftUI
+import CompactSlider
 
 struct SettingsGenerationView: View {
+
     var body: some View {
         Section {
-            NavigationLink(destination: {
+            NavigationLink {
                 List {
-                    SettingsGenerationBoundarySegment()
+                    SettingsGenerationBoundarySliderSegment()
                     SettingsGenerationBatchSegment()
 
                     // TODO: Re-enable the settings page for the Generation Method once the models are ready.
@@ -21,7 +23,7 @@ struct SettingsGenerationView: View {
                 }
                 .navigationTitle("settings.algorithm.title")
                 .navigationBarTitleDisplayMode(.inline)
-            }) {
+            } label: {
                 Label("settings.algorithm.title", systemImage: "waveform")
             }
             .tag(SettingsView.Page.algorithm)
@@ -54,6 +56,7 @@ struct SettingsGenerationBatchSegment: View {
     }
 }
 
+@available(*, deprecated, message: "Use SettingsBoundarySlider instead.")
 struct SettingsGenerationBoundarySegment: View {
     /// The minimum number of characters needed to generate a sniglet input.
     @AppStorage("algoMinBound") var minGenerationValue: Int = 3
@@ -74,6 +77,31 @@ struct SettingsGenerationBoundarySegment: View {
         } footer: {
             Text("settings.algorithm.boundaries.explain")
         }
+    }
+}
+
+struct SettingsGenerationBoundarySliderSegment: View {
+    /// The minimum number of characters needed to generate a sniglet input.
+    @AppStorage("algoMinBound") var minGenerationValue: Int = 3
+
+    /// The maximum number of characters needed to generate a sniglet input.
+    @AppStorage("algoMaxBound") var maxGenerationValue: Int = 8
+
+    /// The minimum number of characters needed to generate a sniglet input.
+    @State private var minGenVal: Double = 3.0
+
+    /// The maximum number of characters needed to generate a sniglet input.
+    @State private var maxGenVal: Double = 8.0
+
+    var body: some View {
+        Section {
+            SettingsBoundarySlider()
+        } header: {
+            Text("settings.algorithm.boundaries.title")
+        } footer: {
+            Text("settings.algorithm.boundaries.explain")
+        }
+
     }
 }
 

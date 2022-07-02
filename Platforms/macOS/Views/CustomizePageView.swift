@@ -44,29 +44,8 @@ struct CustomizePageView: View {
         Form {
             Section {
                 HStack(spacing: 4) {
-                    CompactSlider(from: $minGenVal, to: $maxGenVal, in: 3...8, step: 1) {
-                        Text("customize.form.boundary".fromMacLocale())
-                        Spacer()
-                        Text(
-                            String(format: "customize.form.boundary-lbl".fromMacLocale(), minGenerationValue)
-                            + " - " +
-                            String(format: "customize.form.boundary-lbl".fromMacLocale(), maxGenerationValue)
-                        )
-
-                    }
-                    .onAppear {
-                        minGenVal = Double(minGenerationValue)
-                        maxGenVal = Double(maxGenerationValue)
-                    }
-                    .onChange(of: minGenVal) { value in
-                        minGenVal = value
-                        minGenerationValue = Int(value)
-                    }
-                    .onChange(of: maxGenVal) { value in
-                        maxGenVal = value
-                        maxGenerationValue = Int(value)
-                    }
-                    .frame(maxWidth: .infinity)
+                    SettingsBoundarySlider()
+                        .frame(maxWidth: .infinity)
                 }
             }
 

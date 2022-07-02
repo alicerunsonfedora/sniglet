@@ -44,7 +44,10 @@
 
 "settings.algorithm.title" = "Algorithm";
 "settings.algorithm.boundaries.title" = "Boundaries";
-"settings.algorithm.boundaries.explain" = "The boundaries determine how many letters are inserted into a word. The boundaries cannot be exceed three to eight characters.";
+"settings.algorithm.boundaries.explain" = "The boundaries determine how many letters are inserted into a word.";
+"settings.algorithm.boundaries.prompt" = "Generate words between: ";
+"settings.algorithm.boundaries.chars" = "%d letters";
+
 "settings.algorithm.batch.title" = "Batch Size";
 "settings.algorithm.batch.explain" = "The batch size determines how many sniglets to generate at a time to ensure at least one valid sniglet appears.";
 "settings.algorithm.model.title" = "Generation Method";
