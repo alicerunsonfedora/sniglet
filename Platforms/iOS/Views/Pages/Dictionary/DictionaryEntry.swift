@@ -10,7 +10,9 @@ import CoreData
 import AVFoundation
 
 /// A view that represents a single entry from the database.
-struct DictionaryEntryView: View {
+struct DictionaryEntryView: View, SnigletShareable {
+
+    @Environment(\.horizontalSizeClass) var horizontalSizeClass
 
     /// Whether the user has turned on Tap to Copy.
     @AppStorage("allowClipboard") var tapToCopy: Bool = true
@@ -24,7 +26,8 @@ struct DictionaryEntryView: View {
     /// Whether to show the details window that explains the validation process and confidence score.
     @State private var showDetails: Bool = false
 
-    @State private var showShareSheet: Bool = false
+    /// Whether to show the share sheet.
+    @State internal var showShareSheet: Bool = false
 
     /// The user-assigned definition of the sniglet.
     @State var definition: String = ""
@@ -62,27 +65,55 @@ struct DictionaryEntryView: View {
         .navigationTitle("saved.detail.title")
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {
-            if !tapToCopy {
-                Button {
-                    if let word = entry.word {
-                        UIPasteboard.general.string = word
+            ToolbarItem {
+                if !tapToCopy {
+                    Button {
+                        if let word = entry.word {
+                            UIPasteboard.general.string = word
+                        }
+                    } label: {
+                        Label("generator.copy.button", systemImage: "doc.on.doc")
                     }
-                } label: {
-                    Label("generator.copy.button", systemImage: "doc.on.doc")
                 }
             }
-            Button {
-                if let word = entry.word {
-                    word.speak()
+
+            ToolbarItem {
+                if horizontalSizeClass == .compact {
+                    Menu {
+                        Button {
+                            if let word = entry.word {
+                                word.speak()
+                            }
+                        } label: {
+                            Label("sound.button.prompt", systemImage: "speaker.wave.3")
+                        }
+                        sharedButton
+                    } label: {
+                        Image(systemName: "ellipsis.circle")
+                    }
+                    .popover(isPresented: $showShareSheet) {
+                        SharedActivity(activities: createShareActivities(from: getShareableContent()))
+                    }
+                } else {
+                    Button {
+                        if let word = entry.word {
+                            word.speak()
+                        }
+                    } label: {
+                        Label("sound.button.prompt", systemImage: "speaker.wave.3")
+                    }
                 }
-            } label: {
-                Label("sound.button.prompt", systemImage: "speaker.wave.3")
             }
-            sharedButton
+            ToolbarItem {
+                sharedButton
+                    .popover(isPresented: $showShareSheet) {
+                        SharedActivity(activities: createShareActivities(from: getShareableContent()))
+                    }
+            }
         }
         .onAppear {
             definition = entry.note ?? ""
-            savedImage = makeImage()
+            savedImage = makeImage(in: savedPreview)
         }
         .onDisappear {
             savedImage = nil
@@ -114,11 +145,13 @@ struct DictionaryEntryView: View {
         } label: {
             Label("saved.button.share", systemImage: "square.and.arrow.up")
         }
-        .popover(isPresented: $showShareSheet) {
-            SharedActivity(activities: [ getSharedData() as Any ])
-        }
     }
 
+    func getShareableContent() -> Either<UIImage, String> {
+        Either(shareMethod == "image" ? savedImage : nil, or: entry.shareableText())
+    }
+
+    @available(*, deprecated, renamed: "getShareableContent")
     private func getSharedData() -> Any {
         if shareMethod == "image" {
             return savedImage as Any
@@ -126,36 +159,16 @@ struct DictionaryEntryView: View {
         return entry.shareableText()
     }
 
-    /// Generates an image used to share with others.
-    /// - Returns: A UIImage containing the rendered view of the saved image.
-    ///
-    /// Original: https://codakuma.com/swiftui-view-to-image/
-    private func makeImage() -> UIImage {
-        let window = UIWindow(
-            frame: CGRect(
-                origin: .init(x: 0, y: -225),
-                size: CGSize(width: 550, height: 275)
-            )
-        )
-
-        let hosting = UIHostingController(rootView: savedPreview)
-        hosting.view.frame = window.frame
-        hosting.view.backgroundColor = .savedBackground
-
-        window.backgroundColor = .savedBackground
-        window.addSubview(hosting.view)
-        window.makeKeyAndVisible()
-
-        return hosting.view.renderedImage
-    }
-
     /// Shows the share sheet for Mac Catalyst.
     ///
     /// Use this function to show the share sheet and anchor it to the share button (or close to the share button).
+    /// - Important: This method will be deperecated in the future as future versions of the app will no longer
+    /// use Mac Catalyst.
+    @available(macOS, introduced: 12.0, deprecated: 13.0, message: "Future versions of this app will not use Catalyst.")
     private func showCatalystShareSheet(from offset: CGPoint, with presentStyle: UIModalPresentationStyle = .automatic) {
         // Create the activity view controller that will be displayed. This is the share sheet.
         let activityVC = UIActivityViewController(
-            activityItems: [getSharedData() as Any],
+            activityItems: createShareActivities(from: getShareableContent()),
             applicationActivities: nil
         )
         activityVC.modalPresentationStyle = presentStyle

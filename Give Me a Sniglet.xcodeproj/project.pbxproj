@@ -97,6 +97,10 @@
 		9594420B279AF5B10066DC62 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9594420A279AF5B10066DC62 /* UIView.swift */; };
 		95BBFFA827C296F70008A40B /* TapToCopyButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BBFFA727C296F70008A40B /* TapToCopyButton.swift */; };
 		95C3F01D27CBE17200A59BD3 /* GeneratorTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C3F01C27CBE17200A59BD3 /* GeneratorTableView.swift */; };
+		95C736892871FA2100B8C4FE /* SnigletShareable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C736882871FA2100B8C4FE /* SnigletShareable.swift */; };
+		95C7368B2871FA8200B8C4FE /* Either.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C7368A2871FA8200B8C4FE /* Either.swift */; };
+		95C7368D2872006100B8C4FE /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C7368C2872006100B8C4FE /* ViewExtension.swift */; };
+		95C7368F2872025500B8C4FE /* SharedSnigletImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C7368E2872025500B8C4FE /* SharedSnigletImage.swift */; };
 		95C7401E276D6C2200A9AE63 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95609546276D512E0026D4E1 /* CloudKit.framework */; };
 		95C794952766D33100051AED /* RandomSniglet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C794942766D33100051AED /* RandomSniglet.swift */; };
 		95C794972766D35300051AED /* RandomSnigletProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C794962766D35300051AED /* RandomSnigletProvider.swift */; };
@@ -273,6 +277,10 @@
 		95BBFFA727C296F70008A40B /* TapToCopyButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapToCopyButton.swift; sourceTree = "<group>"; };
 		95BFE9C72766F804004E8630 /* Give-Me-a-Sniglet--iOS--Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Give-Me-a-Sniglet--iOS--Info.plist"; sourceTree = "<group>"; };
 		95C3F01C27CBE17200A59BD3 /* GeneratorTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneratorTableView.swift; sourceTree = "<group>"; };
+		95C736882871FA2100B8C4FE /* SnigletShareable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnigletShareable.swift; sourceTree = "<group>"; };
+		95C7368A2871FA8200B8C4FE /* Either.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Either.swift; sourceTree = "<group>"; };
+		95C7368C2872006100B8C4FE /* ViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtension.swift; sourceTree = "<group>"; };
+		95C7368E2872025500B8C4FE /* SharedSnigletImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedSnigletImage.swift; sourceTree = "<group>"; };
 		95C794942766D33100051AED /* RandomSniglet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomSniglet.swift; sourceTree = "<group>"; };
 		95C794962766D35300051AED /* RandomSnigletProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomSnigletProvider.swift; sourceTree = "<group>"; };
 		95C794992766D3C100051AED /* RandomSnigletEV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomSnigletEV.swift; sourceTree = "<group>"; };
@@ -637,6 +645,7 @@
 				952FD1A627B052900026847C /* ToastNotification.swift */,
 				952FD1AA27B056BB0026847C /* ToastOverlay.swift */,
 				95BBFFA727C296F70008A40B /* TapToCopyButton.swift */,
+				95C7368E2872025500B8C4FE /* SharedSnigletImage.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -675,6 +684,9 @@
 			children = (
 				95838E7327AEF67400B80BB2 /* ColorExtension.swift */,
 				9594420A279AF5B10066DC62 /* UIView.swift */,
+				95C736882871FA2100B8C4FE /* SnigletShareable.swift */,
+				95C7368A2871FA8200B8C4FE /* Either.swift */,
+				95C7368C2872006100B8C4FE /* ViewExtension.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -962,6 +974,7 @@
 				9594420B279AF5B10066DC62 /* UIView.swift in Sources */,
 				9552F66527432F0F004582D6 /* Sniglet.swift in Sources */,
 				95C794A42766E5A500051AED /* AppGroup.swift in Sources */,
+				95C7368F2872025500B8C4FE /* SharedSnigletImage.swift in Sources */,
 				952FD1A727B052900026847C /* ToastNotification.swift in Sources */,
 				951FC4EB27998660009CA715 /* AppVersions.swift in Sources */,
 				95E0698927442B9D0043F568 /* DoubleExtension.swift in Sources */,
@@ -969,10 +982,12 @@
 				95187FD027720C5A00313B85 /* ValidatorModels.swift in Sources */,
 				95187FCE27720C4500313B85 /* Classic.mlmodel in Sources */,
 				952449C4279ABAD2001AB7D7 /* SettingsSafariWindow.swift in Sources */,
+				95C7368B2871FA8200B8C4FE /* Either.swift in Sources */,
 				955EE2022870C8A400254FD9 /* SettingsBoundarySlider.swift in Sources */,
 				958C2D3F274C1C1D0076E0D9 /* SyllableShapes.swift in Sources */,
 				95511DC2274AC36500234573 /* String.swift in Sources */,
 				95050FA927A0393E00A31E45 /* DictionaryEntry.swift in Sources */,
+				95C7368D2872006100B8C4FE /* ViewExtension.swift in Sources */,
 				95E28FC7285B781100B1FEC6 /* Fantasy.mlmodel in Sources */,
 				951FC4E927997A29009CA715 /* SafariView.swift in Sources */,
 				95944207279ADCA90066DC62 /* SharedActivity.swift in Sources */,
@@ -980,6 +995,7 @@
 				95CF06EE282860A100B9F14D /* URL.swift in Sources */,
 				95E0697C274417F00043F568 /* Generator.swift in Sources */,
 				95944209279ADE450066DC62 /* SavedDefinitionImage.swift in Sources */,
+				95C736892871FA2100B8C4FE /* SnigletShareable.swift in Sources */,
 				9540B227276692DE00A6E5D2 /* DataModel.xcdatamodeld in Sources */,
 				952FD1A527B050220026847C /* SettingsGeneration.swift in Sources */,
 				95562DCE276695FF00E0C6FD /* Dictionary.swift in Sources */,

@@ -10,7 +10,6 @@ import SwiftUI
 import CompactSlider
 
 struct SettingsGenerationView: View {
-
     var body: some View {
         Section {
             NavigationLink {

@@ -11,7 +11,7 @@ import SwiftUI
 import AVFoundation
 
 /// A view that represents the single generation view.
-struct GeneratorSingleView: View {
+struct GeneratorSingleView: View, SnigletShareable {
 
     /// Whether the user has turned on "Tap to Copy"
     @AppStorage("allowClipboard") var tapToCopy: Bool = true
@@ -28,6 +28,11 @@ struct GeneratorSingleView: View {
     /// Whether to display an alert that indicates the user has saved the sniglet to their dictionary.
     @State private var showAddedAlert: Bool = false
 
+    /// Whether to show the share sheet.
+    @State internal var showShareSheet: Bool = false
+
+//    @State private var sharedImage: UIImage? = nil
+
 
     /// The primary body for the view.
     var body: some View {
@@ -40,11 +45,23 @@ struct GeneratorSingleView: View {
                     } label: {
                         Label("sound.button.prompt", systemImage: "speaker.wave.3")
                     }
-                    Button(action: saveSniglet) {
-                        Label("saved.button.add", systemImage: "bookmark")
+                    .labelStyle(.iconOnly)
+                    Menu {
+                        Button(action: saveSniglet) {
+                            Label("saved.button.add", systemImage: "bookmark")
+                        }
+                        Button {
+                            showShareSheet.toggle()
+                        } label: {
+                            Label("saved.button.share", systemImage: "square.and.arrow.up")
+                        }
+                    } label: {
+                        Image(systemName: "ellipsis.circle")
+                    }
+                    .popover(isPresented: $showShareSheet) {
+                        SharedActivity(activities: createShareActivities(from: getShareableContent()))
                     }
                 }
-                .labelStyle(.iconOnly)
             }
             Spacer()
             if tapToCopy {
@@ -86,7 +103,15 @@ struct GeneratorSingleView: View {
             Task {
                 await setSniglet()
             }
+//            sharedImage = makeImage(in: sharedPreview)
         }
+        .onChange(of: result) { newResult in
+            result = newResult
+//            sharedImage = makeImage(in: sharedPreview)
+        }
+//        .onDisappear {
+//            sharedImage = nil
+//        }
         .sheet(isPresented: $showDetails) {
             NavigationView {
                 GeneratorExplanation {
@@ -95,6 +120,14 @@ struct GeneratorSingleView: View {
             }
         }
         .padding()
+    }
+
+    private var sharedPreview: SharedSnigletImage {
+        SharedSnigletImage(entry: result)
+    }
+
+    func getShareableContent() -> Either<UIImage, String> {
+        Either(nil, or: result.shareableText())
     }
 
     /// Sets the result to a generated sniglet.

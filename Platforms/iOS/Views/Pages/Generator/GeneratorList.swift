@@ -161,7 +161,7 @@ struct GeneratorList: View {
 }
 
 /// A view that represents a detail that is provided when the user clicks on a sniglet.
-struct GeneratorListDetail: View {
+struct GeneratorListDetail: View, SnigletShareable {
 
     /// The managed object context of the database.
     @Environment(\.managedObjectContext) var managedObjectContext
@@ -177,6 +177,8 @@ struct GeneratorListDetail: View {
 
     /// Whether to display the alert that indicates a user has saved a sniglet to their dictionary.
     @State private var showAddedAlert: Bool = false
+
+    @State internal var showShareSheet: Bool = false
 
     /// The primary body for the view.
     var body: some View {
@@ -211,10 +213,23 @@ struct GeneratorListDetail: View {
             }
             
             ToolbarItem {
-                Button(action: saveSniglet) {
-                    Label("saved.button.add", systemImage: "bookmark")
+                Menu {
+                    Button(action: saveSniglet) {
+                        Label("saved.button.add", systemImage: "bookmark")
+                    }
+                    Button {
+                        showShareSheet.toggle()
+                    } label: {
+                        Label("saved.button.share", systemImage: "square.and.arrow.up")
+                    }
+                } label: {
+                    Image(systemName: "ellipsis.circle")
+                }
+                .popover(isPresented: $showShareSheet) {
+                    SharedActivity(activities: createShareActivities(from: getShareableContent()))
                 }
             }
+
         }
         .toast(isPresented: $showAddedAlert, dismissAfter: 3.0) {
             ToastNotification("saved.alert.title", systemImage: "bookmark.fill", with: "saved.alert.detail")
@@ -226,6 +241,10 @@ struct GeneratorListDetail: View {
                 }
             }
         }
+    }
+
+    func getShareableContent() -> Either<UIImage, String> {
+        Either(nil, or: result.shareableText())
     }
 
     /// Save the entry to the database.
