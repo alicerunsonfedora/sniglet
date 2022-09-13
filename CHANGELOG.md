@@ -4,6 +4,12 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to 
 [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## Unreleased
+- Removes "Tap to Copy" option and replaces it with a new toolbar item.
+- Adds support for customizable toolbars for iPad.
+- Improves sharing support on iOS 16 by allowing users to share images from the generator and the dictionary.
+- Updates What's New screen.
+
 ## [2.0-14] - 14-08-2022 (also 1.2-14)
 - Ports the new range slider for word boundaries to the iOS app (ABY-18).
 - Updates sharing system in preparation for iOS 16.
