@@ -5,9 +5,9 @@
 //  Created by Marquis Kurt on 27/2/22.
 //
 
+import AppKit
 import Foundation
 import SwiftUI
-import AppKit
 
 // Original: https://stackoverflow.com/a/60955909/5354594
 
@@ -15,7 +15,7 @@ struct SharingServicePicker: NSViewRepresentable {
     @Binding var isPresented: Bool
     var items: [Any] = []
 
-    func makeNSView(context: Context) -> some NSView {
+    func makeNSView(context _: Context) -> some NSView {
         NSView()
     }
 
@@ -42,8 +42,8 @@ class Coordinator: NSObject, NSSharingServicePickerDelegate {
         self.owner = owner
     }
 
-    func sharingServicePicker(_ sharingServicePicker: NSSharingServicePicker, didChoose service: NSSharingService?) {
+    func sharingServicePicker(_ sharingServicePicker: NSSharingServicePicker, didChoose _: NSSharingService?) {
         sharingServicePicker.delegate = nil
-        self.owner.isPresented = false
+        owner.isPresented = false
     }
 }

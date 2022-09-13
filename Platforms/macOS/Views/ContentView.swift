@@ -5,11 +5,10 @@
 //  Created by Marquis Kurt on 26/2/22.
 //
 
-import SwiftUI
 import CoreData
+import SwiftUI
 
 struct ContentView: View {
-
     enum PageSelector {
         case generator
         case dictionary

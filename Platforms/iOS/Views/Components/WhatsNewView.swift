@@ -8,6 +8,7 @@
 import SwiftUI
 
 /// A view that shows a prompt displaying the new features.
+@available(iOS, introduced: 15.0, deprecated: 16.0, message: "Use WhatsNewKit instead.")
 struct WhatsNewView: View {
 
     /// An action that executes when the prompt is closed, after writing logic to not display it again.

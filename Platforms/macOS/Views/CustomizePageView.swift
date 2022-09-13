@@ -5,11 +5,10 @@
 //  Created by Marquis Kurt on 9/4/22.
 //
 
-import SwiftUI
 import CompactSlider
+import SwiftUI
 
 struct CustomizePageView: View {
-
     @Environment(\.openURL) var openURL
 
     /// The number of batches at a given time to ensure that at least one valid sniglet appears.
@@ -39,7 +38,7 @@ struct CustomizePageView: View {
 
     @State private var popoverBatch = false
     @State private var popoverGenerate = false
-    
+
     var body: some View {
         Form {
             Section {
@@ -70,7 +69,7 @@ struct CustomizePageView: View {
                     TextField("", value: $generateBatches, format: .number)
                         .multilineTextAlignment(.center)
                         .frame(width: 50)
-                    Stepper(value: $generateBatches, in: 1...Int.max) {
+                    Stepper(value: $generateBatches, in: 1 ... Int.max) {
                         EmptyView()
                     }
                     .labelsHidden()
@@ -80,7 +79,7 @@ struct CustomizePageView: View {
                     TextField("", value: $batchSize, format: .number)
                         .multilineTextAlignment(.center)
                         .frame(width: 50)
-                    Stepper(value: $batchSize, in: 5...Int.max, step: 5) {
+                    Stepper(value: $batchSize, in: 5 ... Int.max, step: 5) {
                         EmptyView()
                     }
                     .labelsHidden()
@@ -88,7 +87,6 @@ struct CustomizePageView: View {
                         Text("settings.algorithm.batch.explain")
                     }
                     .padding(.leading, 6)
-                    
                 }
             }
 

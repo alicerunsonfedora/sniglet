@@ -5,13 +5,12 @@
 //  Created by Marquis Kurt on 12/12/21.
 //
 
-import Foundation
-import CoreData
 import CloudKit
+import CoreData
+import Foundation
 
 /// A structure responsible for calling the Core Data database to store save words.
 struct DBController {
-
     /// An accessible, shared instance of the controller.
     static let shared = DBController()
 
@@ -19,13 +18,14 @@ struct DBController {
     let container: NSPersistentCloudKitContainer
 
     // MARK: - PREVIEWS
+
     /// A preview instance of the controller used in SwiftUI.
     static var preview: DBController = {
         let controller = DBController(inMemory: true)
 
         // Create ten entries in the preview context, so that there is content available when using a preview instance
         // of the database.
-        for _ in 0..<10 {
+        for _ in 0 ..< 10 {
             let sniglet = Sniglet.shared.getNewWords().first ?? .null()
             let dictWord = SavedWord(context: controller.container.viewContext)
             dictWord.word = sniglet.word
@@ -49,7 +49,7 @@ struct DBController {
         }
 
         container.viewContext.automaticallyMergesChangesFromParent = true
-        container.loadPersistentStores { description, error in
+        container.loadPersistentStores { _, error in
             if let error = error {
                 fatalError("Fatal Error: \(error.localizedDescription)")
             }

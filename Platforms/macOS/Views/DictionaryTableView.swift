@@ -5,11 +5,10 @@
 //  Created by Marquis Kurt on 27/2/22.
 //
 
-import SwiftUI
 import CoreData
+import SwiftUI
 
 struct DictionaryTableView: View {
-
     /// The managed object context for the database.
     @Environment(\.managedObjectContext) var managedObjectContext
 
@@ -19,7 +18,7 @@ struct DictionaryTableView: View {
     @FetchRequest(
         entity: SavedWord.entity(),
         sortDescriptors: [
-            NSSortDescriptor(keyPath: \SavedWord.word, ascending: true)
+            NSSortDescriptor(keyPath: \SavedWord.word, ascending: true),
         ]
     )
     var words: FetchedResults<SavedWord>
@@ -103,7 +102,6 @@ struct DictionaryTableView: View {
                 .help("dictionary.help.delete".fromMacLocale())
             }
         }
-
     }
 
     private func deleteEntry() {
@@ -128,12 +126,11 @@ struct DictionaryTableView: View {
     private func getSelection() -> SavedWord? {
         words.first { word in word.id == selection }
     }
-
 }
 
 struct DictionaryTableView_Previews: PreviewProvider {
     static let previewCtx = DBController.preview
-    
+
     static var previews: some View {
         DictionaryTableView()
             .environment(\.managedObjectContext, previewCtx.container.viewContext)

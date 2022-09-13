@@ -5,13 +5,12 @@
 //  Created by Marquis Kurt on 27/2/22.
 //
 
-import SwiftUI
 import CoreData
+import SwiftUI
 
-fileprivate typealias SResult = Sniglet.Result
+private typealias SResult = Sniglet.Result
 
 struct GeneratorTableView: View {
-
     /// The number of sniglets to generate at a given time.
     @AppStorage("generateSize") var generateSize: Int = 10
 
@@ -23,7 +22,7 @@ struct GeneratorTableView: View {
     @State private var selection: SResult.ID? = nil
     @State private var sortOrder = [
         KeyPathComparator(\SResult.word),
-        KeyPathComparator(\SResult.confidence)
+        KeyPathComparator(\SResult.confidence),
     ]
 
     var body: some View {
@@ -71,7 +70,6 @@ struct GeneratorTableView: View {
                 Label("generator.actions.save".fromMacLocale(), systemImage: "bookmark")
             }
         }
-
     }
 
     private var generatorTable: some View {
@@ -96,7 +94,6 @@ struct GeneratorTableView: View {
                     }
             }
             .width(min: 75, ideal: 100, max: 125)
-
         }
     }
 
@@ -145,7 +142,7 @@ struct GeneratorTableView: View {
                 }
                 .help("generator.help.share".fromMacLocale())
                 .background(
-                    SharingServicePicker(isPresented: $requestedShare, items: [ getSelection()?.shareableText() ])
+                    SharingServicePicker(isPresented: $requestedShare, items: [getSelection()?.shareableText()])
                 )
             }
         }

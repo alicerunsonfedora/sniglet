@@ -9,7 +9,6 @@ import Foundation
 
 /// An enumeration for the various app links.
 public enum AppLink: String {
-
     /// A link that redirects to the YouTrack bug reporter.
     case feedback = "https://youtrack.marquiskurt.net/youtrack/newIssue?project=ABY"
 

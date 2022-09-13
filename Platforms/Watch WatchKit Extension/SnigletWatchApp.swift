@@ -9,7 +9,6 @@ import SwiftUI
 
 @main
 struct SnigletWatchApp: App {
-
     /// The database that the Apple Watch app can access.
     let database = DBController.shared
 

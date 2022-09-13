@@ -5,8 +5,8 @@
 //  Created by Marquis Kurt on 2/7/22.
 //
 
-import SwiftUI
 import CompactSlider
+import SwiftUI
 
 /// A view that shows the range slider for word boundaries.
 struct SettingsBoundarySlider: View {
@@ -23,19 +23,19 @@ struct SettingsBoundarySlider: View {
     @State private var maxGenVal: Double = 8.0
 
     var body: some View {
-        CompactSlider(from: $minGenVal, to: $maxGenVal, in: 3...8, step: 1) {
+        CompactSlider(from: $minGenVal, to: $maxGenVal, in: 3 ... 8, step: 1) {
             Text("settings.algorithm.boundaries.prompt")
             Spacer()
             Text(
                 String(
-                    format: String(localized: "settings.algorithm.boundaries.chars", comment: "Min characters")
-                    , minGenerationValue
+                    format: String(localized: "settings.algorithm.boundaries.chars", comment: "Min characters"),
+                    minGenerationValue
                 )
-                + " - " +
-                String(
-                    format: String(localized: "settings.algorithm.boundaries.chars", comment: "Max characters")
-                    , maxGenerationValue
-                )
+                    + " - " +
+                    String(
+                        format: String(localized: "settings.algorithm.boundaries.chars", comment: "Max characters"),
+                        maxGenerationValue
+                    )
             )
         }
         .onAppear {

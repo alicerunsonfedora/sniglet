@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct DictionaryEditorView: View {
-
     @Environment(\.managedObjectContext) var managedObjectContext
     @Environment(\.openURL) var openURL
 
@@ -35,7 +34,6 @@ struct DictionaryEditorView: View {
                 }
                 .font(.title2)
                 .padding(.trailing, 2)
-
             }
             TextEditor(text: $definition)
                 .textFieldStyle(.roundedBorder)
@@ -57,7 +55,6 @@ struct DictionaryEditorView: View {
                     definition = note
                 }
             }
-
         }
         .toolbar {
             ToolbarItem {
@@ -86,7 +83,8 @@ struct DictionaryEditorView: View {
         let url = entryID.wrappedValue
         guard let objectURL = URL(string: url) else { return }
         if let objID = DBController.shared.container.persistentStoreCoordinator
-            .managedObjectID(forURIRepresentation: objectURL) {
+            .managedObjectID(forURIRepresentation: objectURL)
+        {
             do {
                 entry = try managedObjectContext
                     .existingObject(with: objID) as? SavedWord
@@ -97,10 +95,10 @@ struct DictionaryEditorView: View {
     }
 }
 
-//struct DictionaryEditorView_Previews: PreviewProvider {
+// struct DictionaryEditorView_Previews: PreviewProvider {
 //    static let previewCtx = DBController.preview
 //
 //    static var previews: some View {
 //        DictionaryEditorView(entry: .constant(previewCtx.singleEntry()))
 //    }
-//}
+// }

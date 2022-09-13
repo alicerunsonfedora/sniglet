@@ -68,6 +68,9 @@
 		955EE2022870C8A400254FD9 /* SettingsBoundarySlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955EE2012870C8A400254FD9 /* SettingsBoundarySlider.swift */; };
 		955EE2032870C8A400254FD9 /* SettingsBoundarySlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955EE2012870C8A400254FD9 /* SettingsBoundarySlider.swift */; };
 		95609547276D512E0026D4E1 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95609546276D512E0026D4E1 /* CloudKit.framework */; };
+		9570946128D0CDEC00BA759B /* WhatsNewKit in Frameworks */ = {isa = PBXBuildFile; productRef = 9570946028D0CDEC00BA759B /* WhatsNewKit */; };
+		9570946328D0D0BC00BA759B /* MainEntry+WhatsNewProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9570946228D0D0BC00BA759B /* MainEntry+WhatsNewProvider.swift */; };
+		9570946428D0D0BC00BA759B /* MainEntry+WhatsNewProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9570946228D0D0BC00BA759B /* MainEntry+WhatsNewProvider.swift */; };
 		9570C9A02771FF5900BE9044 /* Abysima v2.mlproj in Resources */ = {isa = PBXBuildFile; fileRef = 9570C99F2771FF5900BE9044 /* Abysima v2.mlproj */; };
 		957676EA274CA3250011E558 /* GeneratorList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957676E9274CA3250011E558 /* GeneratorList.swift */; };
 		957676EC274CA38A0011E558 /* GeneratorSingle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957676EB274CA38A0011E558 /* GeneratorSingle.swift */; };
@@ -250,6 +253,7 @@
 		95562DD0276698FA00E0C6FD /* DBController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBController.swift; sourceTree = "<group>"; };
 		955EE2012870C8A400254FD9 /* SettingsBoundarySlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsBoundarySlider.swift; sourceTree = "<group>"; };
 		95609546276D512E0026D4E1 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS15.2.sdk/System/Library/Frameworks/CloudKit.framework; sourceTree = DEVELOPER_DIR; };
+		9570946228D0D0BC00BA759B /* MainEntry+WhatsNewProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainEntry+WhatsNewProvider.swift"; sourceTree = "<group>"; };
 		9570C99F2771FF5900BE9044 /* Abysima v2.mlproj */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = "Abysima v2.mlproj"; sourceTree = "<group>"; };
 		957676E9274CA3250011E558 /* GeneratorList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneratorList.swift; sourceTree = "<group>"; };
 		957676EB274CA38A0011E558 /* GeneratorSingle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneratorSingle.swift; sourceTree = "<group>"; };
@@ -314,6 +318,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9570946128D0CDEC00BA759B /* WhatsNewKit in Frameworks */,
 				95609547276D512E0026D4E1 /* CloudKit.framework in Frameworks */,
 				955EE2002870BC3200254FD9 /* CompactSlider in Frameworks */,
 				9589F6832770A79000BF3855 /* StoreKit.framework in Frameworks */,
@@ -484,6 +489,7 @@
 				9552F64527432CE2004582D6 /* Assets.xcassets */,
 				95E06987274419870043F568 /* Localizable.strings */,
 				9552F64327432CE0004582D6 /* MainEntry.swift */,
+				9570946228D0D0BC00BA759B /* MainEntry+WhatsNewProvider.swift */,
 				95562DCF276698EA00E0C6FD /* Databases */,
 				9590D4BF27A971A100F51F10 /* ML */,
 				95CF06E62828496000B9F14D /* Views */,
@@ -777,6 +783,7 @@
 			name = "Give Me a Sniglet (iOS)";
 			packageProductDependencies = (
 				955EE1FF2870BC3200254FD9 /* CompactSlider */,
+				9570946028D0CDEC00BA759B /* WhatsNewKit */,
 			);
 			productName = "Give Me a Sniglet (iOS)";
 			productReference = 9552F64A27432CE2004582D6 /* Give Me a Sniglet.app */;
@@ -892,6 +899,7 @@
 			packageReferences = (
 				953BE59F2828336100D4CED9 /* XCRemoteSwiftPackageReference "CompactSlider" */,
 				955EE1FE2870BC3200254FD9 /* XCRemoteSwiftPackageReference "CompactSlider" */,
+				9570945F28D0CDEC00BA759B /* XCRemoteSwiftPackageReference "WhatsNewKit" */,
 			);
 			productRefGroup = 9552F64B27432CE2004582D6 /* Products */;
 			projectDirPath = "";
@@ -996,6 +1004,7 @@
 				95E0697C274417F00043F568 /* Generator.swift in Sources */,
 				95944209279ADE450066DC62 /* SavedDefinitionImage.swift in Sources */,
 				95C736892871FA2100B8C4FE /* SnigletShareable.swift in Sources */,
+				9570946328D0D0BC00BA759B /* MainEntry+WhatsNewProvider.swift in Sources */,
 				9540B227276692DE00A6E5D2 /* DataModel.xcdatamodeld in Sources */,
 				952FD1A527B050220026847C /* SettingsGeneration.swift in Sources */,
 				95562DCE276695FF00E0C6FD /* Dictionary.swift in Sources */,
@@ -1018,6 +1027,7 @@
 				9526E46927CC102800DB7382 /* SavedWordExtension.swift in Sources */,
 				955306F227CAC78A0064039F /* ContentView.swift in Sources */,
 				95CF06EF282860A100B9F14D /* URL.swift in Sources */,
+				9570946428D0D0BC00BA759B /* MainEntry+WhatsNewProvider.swift in Sources */,
 				95004DA62802672000C28EC9 /* CustomizePageView.swift in Sources */,
 				9553070F27CAC91D0064039F /* String.swift in Sources */,
 				9553070127CAC8D20064039F /* MainEntry.swift in Sources */,
@@ -1639,6 +1649,14 @@
 				minimumVersion = 1.0.0;
 			};
 		};
+		9570945F28D0CDEC00BA759B /* XCRemoteSwiftPackageReference "WhatsNewKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SvenTiigi/WhatsNewKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1651,6 +1669,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 953BE59F2828336100D4CED9 /* XCRemoteSwiftPackageReference "CompactSlider" */;
 			productName = CompactSlider;
+		};
+		9570946028D0CDEC00BA759B /* WhatsNewKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9570945F28D0CDEC00BA759B /* XCRemoteSwiftPackageReference "WhatsNewKit" */;
+			productName = WhatsNewKit;
 		};
 /* End XCSwiftPackageProductDependency section */
 

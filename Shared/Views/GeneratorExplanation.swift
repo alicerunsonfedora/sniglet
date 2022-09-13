@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct GeneratorExplanation: View {
-
     /// An action that executes when the user clicks "Done" or "Dismiss".
     var onDismiss: () -> Void
 
@@ -25,7 +24,7 @@ struct GeneratorExplanation: View {
                     letterNode("c")
                     letterNode("d")
                     letterNode("e")
-                    ForEach(0..<3) { _ in
+                    ForEach(0 ..< 3) { _ in
                         letterNode("*")
                     }
                     Spacer()
@@ -36,18 +35,17 @@ struct GeneratorExplanation: View {
                     .padding(.horizontal)
             }
             .font(.system(.body, design: .serif))
-#if os(macOS)
-            .padding()
-#endif
+            #if os(macOS)
+                .padding()
+            #endif
             Spacer()
-
         }
         .navigationTitle("generator.explain.title")
         .toolbar {
             #if os(iOS)
-            Button(action: onDismiss) {
-                Text("Dismiss")
-            }
+                Button(action: onDismiss) {
+                    Text("Dismiss")
+                }
             #endif
         }
     }
@@ -65,8 +63,6 @@ struct GeneratorExplanation: View {
 
 struct GeneratorExplainView_Previews: PreviewProvider {
     static var previews: some View {
-        GeneratorExplanation() {
-
-        }
+        GeneratorExplanation {}
     }
 }

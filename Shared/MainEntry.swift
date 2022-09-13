@@ -6,16 +6,16 @@
 //
 
 import SwiftUI
+import WhatsNewKit
 
 /// The main entry point of the application.
 @main
 struct SnigletApp: App {
-
     /// The shared database that the app will use to store saved sniglets.
     let database = DBController.shared
 
     #if os(macOS)
-    @State private var editedUrl: String = ""
+        @State private var editedUrl: String = ""
     #endif
 
     /// The main body of the application.
@@ -23,9 +23,11 @@ struct SnigletApp: App {
         WindowGroup {
             ContentView()
                 .environment(\.managedObjectContext, database.container.viewContext)
-            #if os(macOS)
-
-            #endif
+                .whatsNewSheet()
+                .environment(
+                    \.whatsNew,
+                    WhatsNewEnvironment(versionStore: UserDefaultsWhatsNewVersionStore(), whatsNewCollection: self)
+                )
         }
         .commands {
             CommandGroup(after: .appInfo) {
@@ -36,46 +38,44 @@ struct SnigletApp: App {
         }
 
         #if os(macOS)
-        WindowGroup {
-            CustomizeSyllablesView()
-        }
-        .handlesExternalEvents(matching: ["syllables"])
+            WindowGroup {
+                CustomizeSyllablesView()
+            }
+            .handlesExternalEvents(matching: ["syllables"])
 
-        WindowGroup {
-            GeneratorExplanation() { }
-                .navigationSubtitle("Give Me a Sniglet")
-                .toolbar {
-                    Spacer()
-                }
-        }
-        .handlesExternalEvents(matching: ["help"])
-
-        WindowGroup {
-            DictionaryEditorView(entryID: $editedUrl)
-                .handlesExternalEvents(preferring: ["dictionary"], allowing: ["dictionary"])
-                .environment(\.managedObjectContext, database.container.viewContext)
-                .onOpenURL { url in
-
-                    if let params = url.queryParameters() {
-                        guard let id = params["id"] else {
-                            editedUrl = ""
-                            return
-                        }
-                        guard let objectURL = URL(string: id ?? "") else {
-                            editedUrl = ""
-                            return
-                        }
-                        editedUrl = objectURL.absoluteString
-                        print(editedUrl)
+            WindowGroup {
+                GeneratorExplanation {}
+                    .navigationSubtitle("Give Me a Sniglet")
+                    .toolbar {
+                        Spacer()
                     }
+            }
+            .handlesExternalEvents(matching: ["help"])
 
+            WindowGroup {
+                DictionaryEditorView(entryID: $editedUrl)
+                    .handlesExternalEvents(preferring: ["dictionary"], allowing: ["dictionary"])
+                    .environment(\.managedObjectContext, database.container.viewContext)
+                    .onOpenURL { url in
 
-                }
-                .onDisappear {
-                    editedUrl = ""
-                }
-        }
-        .handlesExternalEvents(matching: ["dictionary"])
+                        if let params = url.queryParameters() {
+                            guard let id = params["id"] else {
+                                editedUrl = ""
+                                return
+                            }
+                            guard let objectURL = URL(string: id ?? "") else {
+                                editedUrl = ""
+                                return
+                            }
+                            editedUrl = objectURL.absoluteString
+                            print(editedUrl)
+                        }
+                    }
+                    .onDisappear {
+                        editedUrl = ""
+                    }
+            }
+            .handlesExternalEvents(matching: ["dictionary"])
         #endif
     }
 

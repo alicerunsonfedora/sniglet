@@ -5,8 +5,8 @@
 //  Created by Marquis Kurt on 30/11/21.
 //
 
-import WidgetKit
 import SwiftUI
+import WidgetKit
 
 @main struct SnigletWidgets: WidgetBundle {
     var body: some Widget {

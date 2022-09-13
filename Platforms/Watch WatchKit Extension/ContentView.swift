@@ -5,11 +5,10 @@
 //  Created by Marquis Kurt on 1/2/22.
 //
 
-import SwiftUI
 import CoreData
+import SwiftUI
 
 struct ContentView: View {
-
     /// The managed object context from the database.
     @Environment(\.managedObjectContext) var managedObjectContext
 

@@ -8,9 +8,8 @@
 import SwiftUI
 
 struct CustomizeSyllablesView: View {
-
     /// The list of custom syllable shapes to use in the algorithm.
-    @AppStorage("customShapes") var customSyllables: SyllableShapes = SyllableShapes()
+    @AppStorage("customShapes") var customSyllables: SyllableShapes = .init()
 
     @State private var syllableSelection: Set<String> = .init()
 
@@ -26,7 +25,7 @@ struct CustomizeSyllablesView: View {
                         "customize.syllable.placeholder".fromMacLocale()
                     )
                 )
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                .textFieldStyle(RoundedBorderTextFieldStyle())
                 Button {
                     withAnimation {
                         customSyllables.append(syllableString.toSyllableMarker())
@@ -60,7 +59,6 @@ struct CustomizeSyllablesView: View {
             }
             .listStyle(.inset(alternatesRowBackgrounds: true))
 
-
             Text("settings.syllable.footer")
                 .foregroundColor(.secondary)
         }
@@ -80,8 +78,7 @@ struct CustomizeSyllablesView: View {
                 }
             } else if !syllableString.isMarker {
                 Label("settings.syllable.convert", systemImage: "wand.and.stars")
-            }
-            else {
+            } else {
                 Text("")
             }
         }

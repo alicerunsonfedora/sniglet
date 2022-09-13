@@ -8,21 +8,20 @@
 import SwiftUI
 
 struct HelpButton: View {
-
     @Binding var isPresented: Bool
     @State var onClick: (() -> Void)? = nil
     @State var help: () -> Text
 
     init(isPresented: Binding<Bool>, help: @escaping () -> Text) {
         self.help = help
-        self.onClick = nil
-        self._isPresented = isPresented
+        onClick = nil
+        _isPresented = isPresented
     }
 
     init(onClick: @escaping () -> Void) {
-        self.help = { Text("") }
+        help = { Text("") }
         self.onClick = onClick
-        self._isPresented = .constant(false)
+        _isPresented = .constant(false)
     }
 
     var body: some View {
