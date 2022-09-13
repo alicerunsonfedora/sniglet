@@ -9,60 +9,25 @@ import Foundation
 import CoreData
 import SwiftUI
 import AVFoundation
+import Bunker
 
 /// A view that represents the single generation view.
 struct GeneratorSingleView: View, SnigletShareable {
-
-    /// Whether the user has turned on "Tap to Copy"
-    @AppStorage("allowClipboard") var tapToCopy: Bool = true
-
-    /// The managed object context for the database.
     @Environment(\.managedObjectContext) var managedObjectContext
 
-    /// The current generated sniglet.
+    @AppStorage("allowClipboard") var tapToCopy: Bool = true
+    @AppStorage("shareMethod") var shareMethod: String = "image"
+
     @State var result: Sniglet.Result = .empty()
-
-    /// Whether to show the explanation dialog.
     @State var showDetails: Bool = false
+    @State var showShareSheet: Bool = false
 
-    /// Whether to display an alert that indicates the user has saved the sniglet to their dictionary.
     @State private var showAddedAlert: Bool = false
+    @State private var stack = Set<Sniglet.Result>()
+    @State private var transferableContent: Either<Image, String>? = nil
 
-    /// Whether to show the share sheet.
-    @State internal var showShareSheet: Bool = false
-
-//    @State private var sharedImage: UIImage? = nil
-
-
-    /// The primary body for the view.
     var body: some View {
         VStack(spacing: 16) {
-            HStack {
-                Spacer()
-                HStack(spacing: 24) {
-                    Button {
-                        result.word.speak()
-                    } label: {
-                        Label("sound.button.prompt", systemImage: "speaker.wave.3")
-                    }
-                    .labelStyle(.iconOnly)
-                    Menu {
-                        Button(action: saveSniglet) {
-                            Label("saved.button.add", systemImage: "bookmark")
-                        }
-                        Button {
-                            showShareSheet.toggle()
-                        } label: {
-                            Label("saved.button.share", systemImage: "square.and.arrow.up")
-                        }
-                    } label: {
-                        Image(systemName: "ellipsis.circle")
-                    }
-                    .popover(isPresented: $showShareSheet) {
-                        SharedActivity(activities: createShareActivities(from: getShareableContent()))
-                    }
-                }
-            }
             Spacer()
             if tapToCopy {
                 TapToCopyButton(word: result.word)
@@ -99,19 +64,37 @@ struct GeneratorSingleView: View, SnigletShareable {
         .toast(isPresented: $showAddedAlert, dismissAfter: 3.0) {
             ToastNotification("saved.alert.title", systemImage: "bookmark.fill", with: "saved.alert.detail")
         }
+        .toolbar {
+            ToolbarItem(placement: .navigation) {
+                Menu {
+                    ForEach(Array(stack).reversed()) { sniglet in
+                        Button {
+                            result = sniglet
+                        } label: {
+                            Label(sniglet.word, systemImage: "clock.arrow.circlepath")
+                        }
+
+                    }
+                } label: {
+                    Image(systemName: "rectangle.stack")
+                }
+                .disabled(stack.isEmpty)
+            }
+        }
+        .toolbar(id: "actions") {
+            actionToolbar
+        }
         .onAppear {
             Task {
                 await setSniglet()
+                if #available(iOS 16.0, *) {
+                    transferableContent = await getTransferableContent()
+                }
             }
-//            sharedImage = makeImage(in: sharedPreview)
         }
         .onChange(of: result) { newResult in
             result = newResult
-//            sharedImage = makeImage(in: sharedPreview)
         }
-//        .onDisappear {
-//            sharedImage = nil
-//        }
         .sheet(isPresented: $showDetails) {
             NavigationView {
                 GeneratorExplanation {
@@ -122,16 +105,64 @@ struct GeneratorSingleView: View, SnigletShareable {
         .padding()
     }
 
+    private var actionToolbar: some CustomizableToolbarContent {
+        Group {
+            ToolbarItem(id: "speech", placement: .primaryAction) {
+                Button {
+                    result.word.speak()
+                } label: {
+                    Label("sound.button.prompt", systemImage: "speaker.wave.3")
+                }
+            }
+            ToolbarItem(id: "save") {
+                Button(action: saveSniglet) {
+                    Label("saved.button.add", systemImage: "bookmark")
+                }
+            }
+            ToolbarItem(id: "share") {
+                    if #available(iOS 16.0, *), let shared = transferableContent {
+                    Group {
+                        switch shared {
+                        case .left(let image):
+                            ShareLink(item: image, preview: .init("Generated Image", image: image))
+                        case .right(let text):
+                            ShareLink(item: text, subject: Text("Generated Text"))
+                        }
+                    }
+                } else {
+                    Button {
+                        showShareSheet.toggle()
+                    } label: {
+                        Label("saved.button.share", systemImage: "square.and.arrow.up")
+                    }
+                    .popover(isPresented: $showShareSheet) {
+                        SharedActivity(activities: createShareActivities(from: getShareableContent()))
+                    }
+                }
+            }
+        }
+    }
+
     private var sharedPreview: SharedSnigletImage {
         SharedSnigletImage(entry: result)
     }
 
     func getShareableContent() -> Either<UIImage, String> {
-        Either(nil, or: result.shareableText())
+        .right(result.shareableText())
+    }
+
+    @available(iOS 16.0, *)
+    func getTransferableContent() async -> Either<Image, String> {
+        if shareMethod == "image", let image = await ImageRenderer(content: sharedPreview).uiImage {
+            return .left(Image(uiImage: image))
+        }
+        return .right(result.shareableText())
     }
 
     /// Sets the result to a generated sniglet.
     func setSniglet() async {
+        if stack.count >= 5 { stack.removeFirst() }
+        if result != .empty() { stack.insert(result) }
         result = await Sniglet.shared.getNewWords().first ?? .null()
     }
 

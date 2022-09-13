@@ -20,7 +20,9 @@ struct Generator: View {
     var body: some View {
         Group {
             if generateSize == 1 {
-                GeneratorSingleView()
+                NavigationView {
+                    GeneratorSingleView()
+                }.navigationViewStyle(.stack)
             } else {
                 GeneratorList()
             }

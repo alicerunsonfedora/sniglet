@@ -17,24 +17,9 @@ extension SnigletApp: WhatsNewCollectionProvider {
                 foregroundColor: .accentColor),
             features: [
                 .init(
-                    image: .init(systemName: "externaldrive.badge.icloud"),
-                    title: .init(.localized("feat.dictionary.title")),
-                    subtitle: .init(.localized("feat.dictionary.detail"))
-                ),
-                .init(
-                    image: .init(systemName: "applewatch.watchface"),
-                    title: .init(.localized("feat.watch.title")),
-                    subtitle: .init(.localized("feat.watch.detail"))
-                ),
-                .init(
-                    image: .init(systemName: "dot.circle.and.hand.point.up.left.fill"),
-                    title: .init(.localized("feat.actions.title")),
-                    subtitle: .init(.localized("feat.actions.detail"))
-                ),
-                .init(
-                    image: .init(systemName: "square.and.arrow.up"),
-                    title: .init(.localized("feat.share.title")),
-                    subtitle: .init(.localized("feat.share.detail"))
+                    image: .init(systemName: "rectangle.stack.fill"),
+                    title: .init(.localized("feat.stack.title")),
+                    subtitle: .init(.localized("feat.stack.detail"))
                 ),
             ]
         )

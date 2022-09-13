@@ -9,10 +9,6 @@ import Foundation
 import SwiftUI
 
 struct SettingsGeneralView: View {
-    
-    /// Whether the user had turned on "Tap to Copy"
-    @AppStorage("allowClipboard") var allowCopying: Bool = true
-
     /// The number of sniglets to generate at a given time.
     @AppStorage("generateSize") var generateBatches: Int = 1
 
@@ -28,14 +24,6 @@ struct SettingsGeneralView: View {
 
     var body: some View {
         Group {
-            Section {
-                Toggle(isOn: $allowCopying) {
-                    Label("settings.clipboard.name", systemImage: "doc.on.clipboard")
-                }
-            } footer: {
-                Text("settings.clipboard.footer")
-            }
-
             Section {
                 Picker(selection: $sharedMethodEnum) {
                     Text("settings.saved.share_as.image")

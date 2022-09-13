@@ -8,10 +8,10 @@
 import Foundation
 import SwiftUI
 import CoreData
+import Bunker
 
 /// A view that shows multiple sniglet entries at a time.
 struct GeneratorList: View {
-
     enum PageState {
         case initial
         case loading
@@ -40,6 +40,7 @@ struct GeneratorList: View {
     @State var currentResult: Sniglet.Result = .empty()
 
     @State private var pageState: PageState = .initial
+    @State private var transferableContent: Either<Image, String>? = nil
 
     /// The primary body for the view.
     var body: some View {
@@ -158,108 +159,6 @@ struct GeneratorList: View {
         }
 
     }
-}
-
-/// A view that represents a detail that is provided when the user clicks on a sniglet.
-struct GeneratorListDetail: View, SnigletShareable {
-
-    /// The managed object context of the database.
-    @Environment(\.managedObjectContext) var managedObjectContext
-
-    /// Whether the user has selected "Tap to Copy"
-    @AppStorage("allowClipboard") var tapToCopy: Bool = true
-
-    /// The current result that will be displayed in the detail.
-    @State var result: Sniglet.Result
-
-    /// Whether to show the explanation dialog.
-    @State var showDetails: Bool = false
-
-    /// Whether to display the alert that indicates a user has saved a sniglet to their dictionary.
-    @State private var showAddedAlert: Bool = false
-
-    @State internal var showShareSheet: Bool = false
-
-    /// The primary body for the view.
-    var body: some View {
-        VStack(spacing: 16) {
-            Spacer()
-            if tapToCopy {
-                TapToCopyButton(word: result.word)
-            } else {
-                GeneratorResultText(word: result.word)
-            }
-            Spacer()
-            GeneratorConfidence(confidence: result.confidence) {
-                showDetails.toggle()
-            }
-        }
-        .padding()
-        .toolbar {
-            ToolbarItem {
-                if !tapToCopy {
-                    Button(action: { UIPasteboard.general.string = result.word }) {
-                        Label("generator.copy.button", systemImage: "doc.on.doc")
-                    }
-                }
-            }
-
-            ToolbarItem {
-                Button {
-                    result.word.speak()
-                } label: {
-                    Label("sound.button.prompt", systemImage: "speaker.wave.3")
-                }
-            }
-            
-            ToolbarItem {
-                Menu {
-                    Button(action: saveSniglet) {
-                        Label("saved.button.add", systemImage: "bookmark")
-                    }
-                    Button {
-                        showShareSheet.toggle()
-                    } label: {
-                        Label("saved.button.share", systemImage: "square.and.arrow.up")
-                    }
-                } label: {
-                    Image(systemName: "ellipsis.circle")
-                }
-                .popover(isPresented: $showShareSheet) {
-                    SharedActivity(activities: createShareActivities(from: getShareableContent()))
-                }
-            }
-
-        }
-        .toast(isPresented: $showAddedAlert, dismissAfter: 3.0) {
-            ToastNotification("saved.alert.title", systemImage: "bookmark.fill", with: "saved.alert.detail")
-        }
-        .sheet(isPresented: $showDetails) {
-            NavigationView {
-                GeneratorExplanation {
-                    showDetails.toggle()
-                }
-            }
-        }
-    }
-
-    func getShareableContent() -> Either<UIImage, String> {
-        Either(nil, or: result.shareableText())
-    }
-
-    /// Save the entry to the database.
-    func saveSniglet() {
-        let entry = SavedWord(context: managedObjectContext)
-        entry.word = result.word
-        entry.confidence = result.confidence
-        entry.validity = result.validation
-        entry.note = ""
-        DBController.shared.save()
-        withAnimation(.easeInOut) {
-            showAddedAlert = true
-        }
-    }
-
 }
 
 struct GeneratorList_Preview: PreviewProvider {

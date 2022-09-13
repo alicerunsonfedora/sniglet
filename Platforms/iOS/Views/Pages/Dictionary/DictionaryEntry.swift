@@ -8,14 +8,11 @@
 import SwiftUI
 import CoreData
 import AVFoundation
+import Bunker
 
 /// A view that represents a single entry from the database.
 struct DictionaryEntryView: View, SnigletShareable {
-
     @Environment(\.horizontalSizeClass) var horizontalSizeClass
-
-    /// Whether the user has turned on Tap to Copy.
-    @AppStorage("allowClipboard") var tapToCopy: Bool = true
 
     /// The method of shari ng to use when sharing a saved sniglet from the dictionary.
     @AppStorage("shareMethod") var shareMethod: String = "image"
@@ -27,93 +24,51 @@ struct DictionaryEntryView: View, SnigletShareable {
     @State private var showDetails: Bool = false
 
     /// Whether to show the share sheet.
-    @State internal var showShareSheet: Bool = false
+    @State var showShareSheet: Bool = false
 
     /// The user-assigned definition of the sniglet.
     @State var definition: String = ""
 
-    /// A user-created image of the saved sniglet.
     @State private var savedImage: UIImage? = nil
+
+    @State private var transferrableContent: Either<Image, String>? = nil
 
     /// The primary body for the view.
     var body: some View {
-        List {
-            Section {
-                VStack(spacing: 8) {
-                    if tapToCopy {
-                        TapToCopyButton(word: entry.word ?? "")
-                        Spacer()
-                    } else {
+        CustomizableToolbarView(id: "actions") {
+            List {
+                Section {
+                    VStack(spacing: 8) {
                         GeneratorResultText(word: entry.word ?? "")
                             .listRowSeparator(.hidden, edges: .bottom)
-                    }
-                    GeneratorConfidence(confidence: entry.confidence) {
-                        showDetails.toggle()
+                        GeneratorConfidence(confidence: entry.confidence) {
+                            showDetails.toggle()
+                        }
                     }
                 }
-            }
-            .listRowInsets(.init(top: 16, leading: 0, bottom: 16, trailing: 0))
-            .listRowBackground(Color.secondary.opacity(0))
+                .listRowInsets(.init(top: 16, leading: 0, bottom: 16, trailing: 0))
+                .listRowBackground(Color.secondary.opacity(0))
 
-            Section("Definition") {
-                TextEditor(text: $definition)
-                    .font(.system(.body, design: .serif))
-                    .lineSpacing(1.5)
-                    .frame(minHeight: 300)
-            }
-        }
-        .navigationTitle("saved.detail.title")
-        .navigationBarTitleDisplayMode(.inline)
-        .toolbar {
-            ToolbarItem {
-                if !tapToCopy {
-                    Button {
-                        if let word = entry.word {
-                            UIPasteboard.general.string = word
-                        }
-                    } label: {
-                        Label("generator.copy.button", systemImage: "doc.on.doc")
-                    }
+                Section("Definition") {
+                    TextEditor(text: $definition)
+                        .font(.system(.body, design: .serif))
+                        .lineSpacing(1.5)
+                        .frame(minHeight: 300)
                 }
             }
-
-            ToolbarItem {
-                if horizontalSizeClass == .compact {
-                    Menu {
-                        Button {
-                            if let word = entry.word {
-                                word.speak()
-                            }
-                        } label: {
-                            Label("sound.button.prompt", systemImage: "speaker.wave.3")
-                        }
-                        sharedButton
-                    } label: {
-                        Image(systemName: "ellipsis.circle")
-                    }
-                    .popover(isPresented: $showShareSheet) {
-                        SharedActivity(activities: createShareActivities(from: getShareableContent()))
-                    }
-                } else {
-                    Button {
-                        if let word = entry.word {
-                            word.speak()
-                        }
-                    } label: {
-                        Label("sound.button.prompt", systemImage: "speaker.wave.3")
-                    }
-                }
-            }
-            ToolbarItem {
-                sharedButton
-                    .popover(isPresented: $showShareSheet) {
-                        SharedActivity(activities: createShareActivities(from: getShareableContent()))
-                    }
-            }
+            .navigationTitle("saved.detail.title")
+            .navigationBarTitleDisplayMode(.inline)
+        } toolbar: {
+            actionToolbar
         }
         .onAppear {
             definition = entry.note ?? ""
             savedImage = makeImage(in: savedPreview)
+            if #available(iOS 16.0, *) {
+                Task {
+                    transferrableContent = await getTransferableContent()
+                }
+            }
         }
         .onDisappear {
             savedImage = nil
@@ -136,61 +91,69 @@ struct DictionaryEntryView: View, SnigletShareable {
     }
 
     private var sharedButton: some View {
-        Button {
-            #if targetEnvironment(macCatalyst)
-            showCatalystShareSheet(from: .init(x: 200, y: 84), with: .popover)
-            #else
-            showShareSheet.toggle()
-            #endif
-        } label: {
-            Label("saved.button.share", systemImage: "square.and.arrow.up")
+        Group {
+            if #available(iOS 16.0, *) {
+                if let shared = transferrableContent {
+                    switch shared {
+                    case .left(let image):
+                        ShareLink(item: image, preview: .init("Generated Image", image: image))
+                    case .right(let text):
+                        ShareLink(item: text)
+                    }
+                }
+            } else {
+                Button {
+                    showShareSheet.toggle()
+                } label: {
+                    Label("saved.button.share", systemImage: "square.and.arrow.up")
+                }
+            }
         }
     }
 
     func getShareableContent() -> Either<UIImage, String> {
-        Either(shareMethod == "image" ? savedImage : nil, or: entry.shareableText())
-    }
-
-    @available(*, deprecated, renamed: "getShareableContent")
-    private func getSharedData() -> Any {
-        if shareMethod == "image" {
-            return savedImage as Any
+        if shareMethod == "image", let image = savedImage {
+            return .left(image)
         }
-        return entry.shareableText()
+        return .right(entry.shareableText())
     }
 
-    /// Shows the share sheet for Mac Catalyst.
-    ///
-    /// Use this function to show the share sheet and anchor it to the share button (or close to the share button).
-    /// - Important: This method will be deperecated in the future as future versions of the app will no longer
-    /// use Mac Catalyst.
-    @available(macOS, introduced: 12.0, deprecated: 13.0, message: "Future versions of this app will not use Catalyst.")
-    private func showCatalystShareSheet(from offset: CGPoint, with presentStyle: UIModalPresentationStyle = .automatic) {
-        // Create the activity view controller that will be displayed. This is the share sheet.
-        let activityVC = UIActivityViewController(
-            activityItems: createShareActivities(from: getShareableContent()),
-            applicationActivities: nil
-        )
-        activityVC.modalPresentationStyle = presentStyle
+    @available(iOS 16.0, *)
+    func getTransferableContent() async -> Either<Image, String> {
+        if shareMethod == "image", let image = ImageRenderer(content: SavedDefinitionImage(entry: entry)).uiImage {
+            return .left(Image(uiImage: image))
+        }
+        return .right(entry.shareableText())
+    }
 
-        // Grab the first window scene available to display the share sheet. This is needed because there may be
-        // multiple scenes, per iPadOS 15 SDK documentation.
-        if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene {
-
-            // Anchor the activity view controller's source view to around where the share sheet button is located.
-            // Source: https://www.raywenderlich.com/5037284-catalyst-tutorial-running-ipad-apps-on-macos
-            if let view = windowScene.keyWindow?.rootViewController?.view {
-                activityVC.popoverPresentationController?.sourceView = view
-                activityVC.popoverPresentationController?.sourceRect = CGRect(
-                    x: view.bounds.width - offset.x,
-                    y: offset.y,
-                    width: 1,
-                    height: 1
-                )
+    private var actionToolbar: some CustomizableToolbarContent {
+        Group {
+            customizeToolbarItem(with: "copy") {
+                Button {
+                    if let word = entry.word {
+                        UIPasteboard.general.string = word
+                    }
+                } label: {
+                    Label("generator.copy.button", systemImage: "doc.on.doc")
+                }
             }
 
-            // Present the activity view controller.
-            windowScene.keyWindow?.rootViewController?.present(activityVC, animated: true, completion: nil)
+            customizeToolbarItem(with: "speech") {
+                Button {
+                    if let word = entry.word {
+                        word.speak()
+                    }
+                } label: {
+                    Label("sound.button.prompt", systemImage: "speaker.wave.3")
+                }
+            }
+
+            customizeToolbarItem(with: "share", primary: true) {
+                sharedButton
+                    .popover(isPresented: $showShareSheet) {
+                        SharedActivity(activities: createShareActivities(from: getShareableContent()))
+                    }
+            }
         }
     }
 }

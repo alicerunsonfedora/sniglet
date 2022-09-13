@@ -76,6 +76,9 @@
 "settings.syllable.footer" = "Syllable shapes describe how to place consonants (C) and vowels (V) together. Shapes may repeat to match the length of the word. Common syllable structures cannot be removed.";
 
 // MARK: - Changelog
+"feat.stack.title" = "Sniglet Stack";
+"feat.stack.detail" = "View sniglets you've generated in the past while in single mode.";
+
 "feat.dictionary.title" = "Sniglet Dictionary";
 "feat.dictionary.detail" = "Save your favorite sniglets into your personal dictionary, synced across all your devices through iCloud.";
 

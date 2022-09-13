@@ -71,6 +71,11 @@
 		9570946128D0CDEC00BA759B /* WhatsNewKit in Frameworks */ = {isa = PBXBuildFile; productRef = 9570946028D0CDEC00BA759B /* WhatsNewKit */; };
 		9570946328D0D0BC00BA759B /* MainEntry+WhatsNewProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9570946228D0D0BC00BA759B /* MainEntry+WhatsNewProvider.swift */; };
 		9570946428D0D0BC00BA759B /* MainEntry+WhatsNewProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9570946228D0D0BC00BA759B /* MainEntry+WhatsNewProvider.swift */; };
+		9570946728D0EFF500BA759B /* Bunker in Frameworks */ = {isa = PBXBuildFile; productRef = 9570946628D0EFF500BA759B /* Bunker */; };
+		9570946928D0FD2E00BA759B /* CustomizableToolbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9570946828D0FD2E00BA759B /* CustomizableToolbarView.swift */; };
+		9570946D28D107C900BA759B /* View+ToolbarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9570946C28D107C900BA759B /* View+ToolbarItem.swift */; };
+		9570946E28D107C900BA759B /* View+ToolbarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9570946C28D107C900BA759B /* View+ToolbarItem.swift */; };
+		9570947128D10E6800BA759B /* GeneratorListDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9570947028D10E6800BA759B /* GeneratorListDetail.swift */; };
 		9570C9A02771FF5900BE9044 /* Abysima v2.mlproj in Resources */ = {isa = PBXBuildFile; fileRef = 9570C99F2771FF5900BE9044 /* Abysima v2.mlproj */; };
 		957676EA274CA3250011E558 /* GeneratorList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957676E9274CA3250011E558 /* GeneratorList.swift */; };
 		957676EC274CA38A0011E558 /* GeneratorSingle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957676EB274CA38A0011E558 /* GeneratorSingle.swift */; };
@@ -101,7 +106,6 @@
 		95BBFFA827C296F70008A40B /* TapToCopyButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BBFFA727C296F70008A40B /* TapToCopyButton.swift */; };
 		95C3F01D27CBE17200A59BD3 /* GeneratorTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C3F01C27CBE17200A59BD3 /* GeneratorTableView.swift */; };
 		95C736892871FA2100B8C4FE /* SnigletShareable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C736882871FA2100B8C4FE /* SnigletShareable.swift */; };
-		95C7368B2871FA8200B8C4FE /* Either.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C7368A2871FA8200B8C4FE /* Either.swift */; };
 		95C7368D2872006100B8C4FE /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C7368C2872006100B8C4FE /* ViewExtension.swift */; };
 		95C7368F2872025500B8C4FE /* SharedSnigletImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C7368E2872025500B8C4FE /* SharedSnigletImage.swift */; };
 		95C7401E276D6C2200A9AE63 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95609546276D512E0026D4E1 /* CloudKit.framework */; };
@@ -254,6 +258,9 @@
 		955EE2012870C8A400254FD9 /* SettingsBoundarySlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsBoundarySlider.swift; sourceTree = "<group>"; };
 		95609546276D512E0026D4E1 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS15.2.sdk/System/Library/Frameworks/CloudKit.framework; sourceTree = DEVELOPER_DIR; };
 		9570946228D0D0BC00BA759B /* MainEntry+WhatsNewProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainEntry+WhatsNewProvider.swift"; sourceTree = "<group>"; };
+		9570946828D0FD2E00BA759B /* CustomizableToolbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomizableToolbarView.swift; sourceTree = "<group>"; };
+		9570946C28D107C900BA759B /* View+ToolbarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+ToolbarItem.swift"; sourceTree = "<group>"; };
+		9570947028D10E6800BA759B /* GeneratorListDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneratorListDetail.swift; sourceTree = "<group>"; };
 		9570C99F2771FF5900BE9044 /* Abysima v2.mlproj */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = "Abysima v2.mlproj"; sourceTree = "<group>"; };
 		957676E9274CA3250011E558 /* GeneratorList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneratorList.swift; sourceTree = "<group>"; };
 		957676EB274CA38A0011E558 /* GeneratorSingle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneratorSingle.swift; sourceTree = "<group>"; };
@@ -282,7 +289,6 @@
 		95BFE9C72766F804004E8630 /* Give-Me-a-Sniglet--iOS--Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Give-Me-a-Sniglet--iOS--Info.plist"; sourceTree = "<group>"; };
 		95C3F01C27CBE17200A59BD3 /* GeneratorTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneratorTableView.swift; sourceTree = "<group>"; };
 		95C736882871FA2100B8C4FE /* SnigletShareable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnigletShareable.swift; sourceTree = "<group>"; };
-		95C7368A2871FA8200B8C4FE /* Either.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Either.swift; sourceTree = "<group>"; };
 		95C7368C2872006100B8C4FE /* ViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtension.swift; sourceTree = "<group>"; };
 		95C7368E2872025500B8C4FE /* SharedSnigletImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedSnigletImage.swift; sourceTree = "<group>"; };
 		95C794942766D33100051AED /* RandomSniglet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomSniglet.swift; sourceTree = "<group>"; };
@@ -318,6 +324,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9570946728D0EFF500BA759B /* Bunker in Frameworks */,
 				9570946128D0CDEC00BA759B /* WhatsNewKit in Frameworks */,
 				95609547276D512E0026D4E1 /* CloudKit.framework in Frameworks */,
 				955EE2002870BC3200254FD9 /* CompactSlider in Frameworks */,
@@ -461,6 +468,7 @@
 		954AACE327A0388700F97D9C /* Bridges */ = {
 			isa = PBXGroup;
 			children = (
+				9570946828D0FD2E00BA759B /* CustomizableToolbarView.swift */,
 				951FC4E827997A29009CA715 /* SafariView.swift */,
 				95944206279ADCA80066DC62 /* SharedActivity.swift */,
 			);
@@ -490,6 +498,7 @@
 				95E06987274419870043F568 /* Localizable.strings */,
 				9552F64327432CE0004582D6 /* MainEntry.swift */,
 				9570946228D0D0BC00BA759B /* MainEntry+WhatsNewProvider.swift */,
+				9570946C28D107C900BA759B /* View+ToolbarItem.swift */,
 				95562DCF276698EA00E0C6FD /* Databases */,
 				9590D4BF27A971A100F51F10 /* ML */,
 				95CF06E62828496000B9F14D /* Views */,
@@ -543,6 +552,7 @@
 				95E0697B274417F00043F568 /* Generator.swift */,
 				957676E9274CA3250011E558 /* GeneratorList.swift */,
 				957676EB274CA38A0011E558 /* GeneratorSingle.swift */,
+				9570947028D10E6800BA759B /* GeneratorListDetail.swift */,
 			);
 			path = Generator;
 			sourceTree = "<group>";
@@ -691,7 +701,6 @@
 				95838E7327AEF67400B80BB2 /* ColorExtension.swift */,
 				9594420A279AF5B10066DC62 /* UIView.swift */,
 				95C736882871FA2100B8C4FE /* SnigletShareable.swift */,
-				95C7368A2871FA8200B8C4FE /* Either.swift */,
 				95C7368C2872006100B8C4FE /* ViewExtension.swift */,
 			);
 			path = Utilities;
@@ -784,6 +793,7 @@
 			packageProductDependencies = (
 				955EE1FF2870BC3200254FD9 /* CompactSlider */,
 				9570946028D0CDEC00BA759B /* WhatsNewKit */,
+				9570946628D0EFF500BA759B /* Bunker */,
 			);
 			productName = "Give Me a Sniglet (iOS)";
 			productReference = 9552F64A27432CE2004582D6 /* Give Me a Sniglet.app */;
@@ -900,6 +910,7 @@
 				953BE59F2828336100D4CED9 /* XCRemoteSwiftPackageReference "CompactSlider" */,
 				955EE1FE2870BC3200254FD9 /* XCRemoteSwiftPackageReference "CompactSlider" */,
 				9570945F28D0CDEC00BA759B /* XCRemoteSwiftPackageReference "WhatsNewKit" */,
+				9570946528D0EFF500BA759B /* XCRemoteSwiftPackageReference "bunker" */,
 			);
 			productRefGroup = 9552F64B27432CE2004582D6 /* Products */;
 			projectDirPath = "";
@@ -986,11 +997,12 @@
 				952FD1A727B052900026847C /* ToastNotification.swift in Sources */,
 				951FC4EB27998660009CA715 /* AppVersions.swift in Sources */,
 				95E0698927442B9D0043F568 /* DoubleExtension.swift in Sources */,
+				9570946D28D107C900BA759B /* View+ToolbarItem.swift in Sources */,
 				95838E7427AEF67400B80BB2 /* ColorExtension.swift in Sources */,
 				95187FD027720C5A00313B85 /* ValidatorModels.swift in Sources */,
 				95187FCE27720C4500313B85 /* Classic.mlmodel in Sources */,
 				952449C4279ABAD2001AB7D7 /* SettingsSafariWindow.swift in Sources */,
-				95C7368B2871FA8200B8C4FE /* Either.swift in Sources */,
+				9570946928D0FD2E00BA759B /* CustomizableToolbarView.swift in Sources */,
 				955EE2022870C8A400254FD9 /* SettingsBoundarySlider.swift in Sources */,
 				958C2D3F274C1C1D0076E0D9 /* SyllableShapes.swift in Sources */,
 				95511DC2274AC36500234573 /* String.swift in Sources */,
@@ -1011,6 +1023,7 @@
 				957676EA274CA3250011E558 /* GeneratorList.swift in Sources */,
 				952FD1A327B04E840026847C /* SettingsSyllable.swift in Sources */,
 				951FC4ED27998A56009CA715 /* AppLink.swift in Sources */,
+				9570947128D10E6800BA759B /* GeneratorListDetail.swift in Sources */,
 				952FD19F27B04CDC0026847C /* SettingsGeneral.swift in Sources */,
 				952FD1AB27B056BB0026847C /* ToastOverlay.swift in Sources */,
 				9539B80F27651F9D00E9E54D /* SnigletResult.swift in Sources */,
@@ -1049,6 +1062,7 @@
 				95004DA82802733100C28EC9 /* CustomizeSyllablesView.swift in Sources */,
 				955EE2032870C8A400254FD9 /* SettingsBoundarySlider.swift in Sources */,
 				95E28FCA285B781100B1FEC6 /* Fantasy.mlmodel in Sources */,
+				9570946E28D107C900BA759B /* View+ToolbarItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1657,6 +1671,14 @@
 				minimumVersion = 2.0.0;
 			};
 		};
+		9570946528D0EFF500BA759B /* XCRemoteSwiftPackageReference "bunker" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/alicerunsonfedora/bunker.git";
+			requirement = {
+				branch = root;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1674,6 +1696,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 9570945F28D0CDEC00BA759B /* XCRemoteSwiftPackageReference "WhatsNewKit" */;
 			productName = WhatsNewKit;
+		};
+		9570946628D0EFF500BA759B /* Bunker */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9570946528D0EFF500BA759B /* XCRemoteSwiftPackageReference "bunker" */;
+			productName = Bunker;
 		};
 /* End XCSwiftPackageProductDependency section */
 

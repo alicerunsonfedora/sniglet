@@ -7,6 +7,8 @@
 
 import Foundation
 import UIKit
+import SwiftUI
+import Bunker
 
 /// A protocol that indicates a view has the capability of sharing a sniglet.
 protocol SnigletShareable {
@@ -24,12 +26,10 @@ protocol SnigletShareable {
 
 extension SnigletShareable {
     func createShareActivities(from data: Either<UIImage, String>) -> [Any] {
-        if let lhs = data.left {
-            return [lhs]
+        data.getEither { image in
+            [image]
+        } defaultCase: { text in
+            [text]
         }
-        if let rhs = data.right {
-            return [rhs]
-        }
-        return []
     }
 }
