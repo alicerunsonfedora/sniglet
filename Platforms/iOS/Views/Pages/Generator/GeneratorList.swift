@@ -68,6 +68,7 @@ struct GeneratorList: View {
             }
             .navigationTitle("generator.title")
             .onAppear(perform: setInitialState)
+            .listStyle(.plain)
             .refreshable {
                 withAnimation {
                     pageState = .loading
@@ -137,7 +138,7 @@ struct GeneratorList: View {
                         .foregroundColor(.secondary)
                 }
             }
-            .padding(.vertical)
+            .padding(.vertical, 2)
             .tag(result.word)
             .contextMenu {
                 Button {
@@ -164,7 +165,7 @@ struct GeneratorList: View {
 struct GeneratorList_Preview: PreviewProvider {
     static var previews: some View {
         GeneratorList(generateSize: 5)
-            .previewInterfaceOrientation(.landscapeRight)
-            .previewDevice("iPad mini (6th generation)")
+//            .previewInterfaceOrientation(.landscapeRight)
+//            .previewDevice("iPad mini (6th generation)")
     }
 }

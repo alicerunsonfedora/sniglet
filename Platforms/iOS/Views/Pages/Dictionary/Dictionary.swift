@@ -81,6 +81,7 @@ struct Dictionary: View {
             }
             .onDelete(perform: removeEntries)
         }
+        .listStyle(.plain)
         .searchable(text: $searchQuery.animation(), placement: .navigationBarDrawer(displayMode: .always))
         .toolbar {
             EditButton()
@@ -127,7 +128,7 @@ struct DictionaryLink: View {
                     .font(.footnote)
                     .foregroundColor(.secondary)
             }
-            .padding(.vertical)
+            .padding(.vertical, 2)
         }
         .contextMenu {
             Button {

@@ -290,6 +290,7 @@
 		95AAAA5D28D201BF0029E523 /* AVSpeechSynthesizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AVSpeechSynthesizer.swift; sourceTree = "<group>"; };
 		95AAAA6328D204C20029E523 /* RandomSnigletAccessory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomSnigletAccessory.swift; sourceTree = "<group>"; };
 		95AAAA6828D205070029E523 /* RandomSnigletAccessoryEV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomSnigletAccessoryEV.swift; sourceTree = "<group>"; };
+		95AAAA7E28D2159B0029E523 /* MakeSnigletIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeSnigletIntent.swift; sourceTree = "<group>"; };
 		95B048E82771FD92006F84F6 /* dtest.csv */ = {isa = PBXFileReference; lastKnownFileType = text; path = dtest.csv; sourceTree = "<group>"; };
 		95B048E92771FD92006F84F6 /* dtest_predict.csv */ = {isa = PBXFileReference; lastKnownFileType = text; path = dtest_predict.csv; sourceTree = "<group>"; };
 		95B048EA2771FD92006F84F6 /* dtrain.csv */ = {isa = PBXFileReference; lastKnownFileType = text; path = dtrain.csv; sourceTree = "<group>"; };
@@ -676,6 +677,14 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
+		95AAAA7D28D215890029E523 /* Intents */ = {
+			isa = PBXGroup;
+			children = (
+				95AAAA7E28D2159B0029E523 /* MakeSnigletIntent.swift */,
+			);
+			path = Intents;
+			sourceTree = "<group>";
+		};
 		95B048E62771FD92006F84F6 /* Datasets */ = {
 			isa = PBXGroup;
 			children = (
@@ -699,6 +708,7 @@
 		95C3F01A27CACA8B00A59BD3 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
+				95AAAA7D28D215890029E523 /* Intents */,
 				957676EE274CA5140011E558 /* Views */,
 				95C3F01B27CACAA000A59BD3 /* Utilities */,
 			);
