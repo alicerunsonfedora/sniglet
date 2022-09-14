@@ -29,12 +29,7 @@ struct GeneratorSingleView: View, SnigletShareable {
     var body: some View {
         VStack(spacing: 16) {
             Spacer()
-            if tapToCopy {
-                TapToCopyButton(word: result.word)
-            } else {
-                GeneratorResultText(word: result.word)
-            }
-
+            GeneratorResultText(word: result.word)
             Button {
                 Task {
                     await setSniglet()
@@ -47,13 +42,7 @@ struct GeneratorSingleView: View, SnigletShareable {
             #if os(iOS)
             .cornerRadius(16)
             #endif
-
-            if tapToCopy {
-                Text("generator.copy.prompt")
-                    .font(.caption)
-                    .foregroundColor(.secondary)
-            }
-
+            
             Spacer()
 
             GeneratorConfidence(confidence: result.confidence) {

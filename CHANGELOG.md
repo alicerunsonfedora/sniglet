@@ -6,7 +6,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## Unreleased
 - Removes "Tap to Copy" option and replaces it with a new toolbar item.
-- Adds support for customizable toolbars for iPad.
+- Adds support for customizable toolbars for iPad (iOS 16).
+- Adds new random sniglet Lock Screen widget (iOS 16).
 - Improves sharing support on iOS 16 by allowing users to share images from the generator and the dictionary.
 - Updates What's New screen.
 

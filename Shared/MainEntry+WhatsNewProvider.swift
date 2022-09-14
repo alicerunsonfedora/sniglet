@@ -21,6 +21,11 @@ extension SnigletApp: WhatsNewCollectionProvider {
                     title: .init(.localized("feat.stack.title")),
                     subtitle: .init(.localized("feat.stack.detail"))
                 ),
+                .init(
+                    image: .init(systemName: "16.square"),
+                    title: .init(.localized("feat.ios-next.title")),
+                    subtitle: .init(.localized("feat.ios-next.detail"))
+                ),
             ]
         )
     }

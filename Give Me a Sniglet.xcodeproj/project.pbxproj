@@ -103,6 +103,12 @@
 		95944207279ADCA90066DC62 /* SharedActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95944206279ADCA80066DC62 /* SharedActivity.swift */; };
 		95944209279ADE450066DC62 /* SavedDefinitionImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95944208279ADE450066DC62 /* SavedDefinitionImage.swift */; };
 		9594420B279AF5B10066DC62 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9594420A279AF5B10066DC62 /* UIView.swift */; };
+		95AAAA5E28D201BF0029E523 /* AVSpeechSynthesizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95AAAA5D28D201BF0029E523 /* AVSpeechSynthesizer.swift */; };
+		95AAAA5F28D201BF0029E523 /* AVSpeechSynthesizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95AAAA5D28D201BF0029E523 /* AVSpeechSynthesizer.swift */; };
+		95AAAA6128D2020F0029E523 /* AVSpeechSynthesizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95AAAA5D28D201BF0029E523 /* AVSpeechSynthesizer.swift */; };
+		95AAAA6228D202620029E523 /* AVSpeechSynthesizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95AAAA5D28D201BF0029E523 /* AVSpeechSynthesizer.swift */; };
+		95AAAA6628D204D50029E523 /* RandomSnigletAccessory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95AAAA6328D204C20029E523 /* RandomSnigletAccessory.swift */; };
+		95AAAA6928D205070029E523 /* RandomSnigletAccessoryEV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95AAAA6828D205070029E523 /* RandomSnigletAccessoryEV.swift */; };
 		95BBFFA827C296F70008A40B /* TapToCopyButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BBFFA727C296F70008A40B /* TapToCopyButton.swift */; };
 		95C3F01D27CBE17200A59BD3 /* GeneratorTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C3F01C27CBE17200A59BD3 /* GeneratorTableView.swift */; };
 		95C736892871FA2100B8C4FE /* SnigletShareable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C736882871FA2100B8C4FE /* SnigletShareable.swift */; };
@@ -281,6 +287,9 @@
 		95944206279ADCA80066DC62 /* SharedActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedActivity.swift; sourceTree = "<group>"; };
 		95944208279ADE450066DC62 /* SavedDefinitionImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedDefinitionImage.swift; sourceTree = "<group>"; };
 		9594420A279AF5B10066DC62 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
+		95AAAA5D28D201BF0029E523 /* AVSpeechSynthesizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AVSpeechSynthesizer.swift; sourceTree = "<group>"; };
+		95AAAA6328D204C20029E523 /* RandomSnigletAccessory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomSnigletAccessory.swift; sourceTree = "<group>"; };
+		95AAAA6828D205070029E523 /* RandomSnigletAccessoryEV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomSnigletAccessoryEV.swift; sourceTree = "<group>"; };
 		95B048E82771FD92006F84F6 /* dtest.csv */ = {isa = PBXFileReference; lastKnownFileType = text; path = dtest.csv; sourceTree = "<group>"; };
 		95B048E92771FD92006F84F6 /* dtest_predict.csv */ = {isa = PBXFileReference; lastKnownFileType = text; path = dtest_predict.csv; sourceTree = "<group>"; };
 		95B048EA2771FD92006F84F6 /* dtrain.csv */ = {isa = PBXFileReference; lastKnownFileType = text; path = dtrain.csv; sourceTree = "<group>"; };
@@ -461,6 +470,7 @@
 				958C2D3E274C1C1D0076E0D9 /* SyllableShapes.swift */,
 				9526E46727CC102800DB7382 /* SavedWordExtension.swift */,
 				95CF06ED282860A100B9F14D /* URL.swift */,
+				95AAAA5D28D201BF0029E523 /* AVSpeechSynthesizer.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -720,6 +730,7 @@
 			children = (
 				95C794942766D33100051AED /* RandomSniglet.swift */,
 				95C794A12766DE1800051AED /* DailySavedSniglet.swift */,
+				95AAAA6328D204C20029E523 /* RandomSnigletAccessory.swift */,
 			);
 			path = Widgets;
 			sourceTree = "<group>";
@@ -730,6 +741,7 @@
 				95C794992766D3C100051AED /* RandomSnigletEV.swift */,
 				95C7949B2766D3EF00051AED /* WidgetConfidenceBar.swift */,
 				95C7949F2766D92A00051AED /* SavedWOTDEV.swift */,
+				95AAAA6828D205070029E523 /* RandomSnigletAccessoryEV.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1027,6 +1039,7 @@
 				952FD19F27B04CDC0026847C /* SettingsGeneral.swift in Sources */,
 				952FD1AB27B056BB0026847C /* ToastOverlay.swift in Sources */,
 				9539B80F27651F9D00E9E54D /* SnigletResult.swift in Sources */,
+				95AAAA5E28D201BF0029E523 /* AVSpeechSynthesizer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1055,6 +1068,7 @@
 				95CF06E52828475400B9F14D /* HelpButton.swift in Sources */,
 				9553070E27CAC9160064039F /* DoubleExtension.swift in Sources */,
 				9553070C27CAC90E0064039F /* AppLink.swift in Sources */,
+				95AAAA5F28D201BF0029E523 /* AVSpeechSynthesizer.swift in Sources */,
 				9553070627CAC8E40064039F /* Classic.mlmodel in Sources */,
 				95CF06E92828497C00B9F14D /* GeneratorExplanation.swift in Sources */,
 				95C3F01D27CBE17200A59BD3 /* GeneratorTableView.swift in Sources */,
@@ -1075,6 +1089,7 @@
 				9590D53827A97C8400F51F10 /* Classic.mlmodel in Sources */,
 				9590D53727A97C3200F51F10 /* Sniglet.swift in Sources */,
 				9590D53D27A97CAC00F51F10 /* SnigletResult.swift in Sources */,
+				95AAAA6128D2020F0029E523 /* AVSpeechSynthesizer.swift in Sources */,
 				9590D53E27A97CAC00F51F10 /* ValidatorModels.swift in Sources */,
 				9590D53A27A97C8E00F51F10 /* DoubleExtension.swift in Sources */,
 				9590D53B27A97C9100F51F10 /* String.swift in Sources */,
@@ -1090,6 +1105,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				95C794972766D35300051AED /* RandomSnigletProvider.swift in Sources */,
+				95AAAA6628D204D50029E523 /* RandomSnigletAccessory.swift in Sources */,
 				95C7949E2766D55000051AED /* SavedWOTDProvider.swift in Sources */,
 				95562DD227669A7500E0C6FD /* DBController.swift in Sources */,
 				95C7949C2766D3EF00051AED /* WidgetConfidenceBar.swift in Sources */,
@@ -1100,6 +1116,7 @@
 				95C7949A2766D3C100051AED /* RandomSnigletEV.swift in Sources */,
 				95C794A52766E5A500051AED /* AppGroup.swift in Sources */,
 				95187FD227720EC100313B85 /* Classic.mlmodel in Sources */,
+				95AAAA6228D202620029E523 /* AVSpeechSynthesizer.swift in Sources */,
 				95C794952766D33100051AED /* RandomSniglet.swift in Sources */,
 				95C794A02766D92A00051AED /* SavedWOTDEV.swift in Sources */,
 				9539B81027651FCF00E9E54D /* SnigletResult.swift in Sources */,
@@ -1108,6 +1125,7 @@
 				95C794A22766DE1900051AED /* DailySavedSniglet.swift in Sources */,
 				95187FD127720EB600313B85 /* ValidatorModels.swift in Sources */,
 				95F6D1A427568CEC00668877 /* SyllableShapes.swift in Sources */,
+				95AAAA6928D205070029E523 /* RandomSnigletAccessoryEV.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1418,7 +1436,7 @@
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = "";
 				CODE_SIGN_ENTITLEMENTS = "App Entitlements/Watch WatchKit Extension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 14;
+				CURRENT_PROJECT_VERSION = 15;
 				DEVELOPMENT_ASSET_PATHS = "\"Platforms/Watch WatchKit Extension/Preview Content\"";
 				DEVELOPMENT_TEAM = FQQXSP79X3;
 				ENABLE_PREVIEWS = YES;
@@ -1449,7 +1467,7 @@
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = "";
 				CODE_SIGN_ENTITLEMENTS = "App Entitlements/Watch WatchKit Extension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 14;
+				CURRENT_PROJECT_VERSION = 15;
 				DEVELOPMENT_ASSET_PATHS = "\"Platforms/Watch WatchKit Extension/Preview Content\"";
 				DEVELOPMENT_TEAM = FQQXSP79X3;
 				ENABLE_PREVIEWS = YES;
@@ -1535,7 +1553,7 @@
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_ENTITLEMENTS = "App Entitlements/Sniglet WidgetExtension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 14;
+				CURRENT_PROJECT_VERSION = 15;
 				DEVELOPMENT_TEAM = FQQXSP79X3;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Platforms/Sniglet Widget/Info.plist";
@@ -1566,7 +1584,7 @@
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_ENTITLEMENTS = "App Entitlements/Sniglet WidgetExtension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 14;
+				CURRENT_PROJECT_VERSION = 15;
 				DEVELOPMENT_TEAM = FQQXSP79X3;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Platforms/Sniglet Widget/Info.plist";

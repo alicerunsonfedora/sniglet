@@ -79,8 +79,8 @@ extension String {
     /// Speak the current string using an `AVSpeechSynthesizer`.
     func speak() {
         let utterance = AVSpeechUtterance(string: self)
-        utterance.voice = AVSpeechSynthesisVoice()
-        AVSpeechSynthesizer().speak(utterance)
+        utterance.voice = .speechVoices().first
+        AVSpeechSynthesizer.shared.speak(utterance)
     }
 }
 

@@ -76,8 +76,18 @@
 "settings.syllable.footer" = "Syllable shapes describe how to place consonants (C) and vowels (V) together. Shapes may repeat to match the length of the word. Common syllable structures cannot be removed.";
 
 // MARK: - Changelog
+"feat.title" = "What's New in Give Me a Sniglet";
+"feat.accept" = "Continue";
+"feat.prompt" = "*Some features may require an in-app purchase.";
+
+"feat.ios-next.title" = "iOS 16 Support";
+"feat.ios-next.detail" = "Add new sniglet widgets to the lock screen and customize the toolbars on iPad.";
+
 "feat.stack.title" = "Sniglet Stack";
 "feat.stack.detail" = "View sniglets you've generated in the past while in single mode.";
+
+// MARK: - Old Changelog
+// TODO: Remove these in a future release.
 
 "feat.dictionary.title" = "Sniglet Dictionary";
 "feat.dictionary.detail" = "Save your favorite sniglets into your personal dictionary, synced across all your devices through iCloud.";
@@ -96,10 +106,6 @@
 
 "feat.actions.title" = "Sniglet Actions";
 "feat.actions.detail" = "Listen to how your device pronounces generated sniglets, and share your favorites to others as an image.";
-
-"feat.title" = "What's New in Give Me a Sniglet";
-"feat.accept" = "Continue";
-"feat.prompt" = "*Some features may require an in-app purchase.";
 
 // MARK: - Frugal Warnings
 "frugal.warning.increased_values" = "Increasing this value may take more resources and affect the performance of the app.";
