@@ -42,7 +42,7 @@ struct GeneratorSingleView: View, SnigletShareable {
             #if os(iOS)
             .cornerRadius(16)
             #endif
-            
+
             Spacer()
 
             GeneratorConfidence(confidence: result.confidence) {
@@ -96,20 +96,28 @@ struct GeneratorSingleView: View, SnigletShareable {
 
     private var actionToolbar: some CustomizableToolbarContent {
         Group {
-            ToolbarItem(id: "speech", placement: .primaryAction) {
+            customizeToolbarItem(with: "copy") {
+                Button {
+                    UIPasteboard.general.string = result.word
+                } label: {
+                    Label("generator.copy.button", systemImage: "doc.on.doc")
+                }
+            }
+
+            customizeToolbarItem(with: "speech") {
                 Button {
                     result.word.speak()
                 } label: {
                     Label("sound.button.prompt", systemImage: "speaker.wave.3")
                 }
             }
-            ToolbarItem(id: "save") {
+            customizeToolbarItem(with: "save") {
                 Button(action: saveSniglet) {
                     Label("saved.button.add", systemImage: "bookmark")
                 }
             }
-            ToolbarItem(id: "share") {
-                    if #available(iOS 16.0, *), let shared = transferableContent {
+            customizeToolbarItem(with: "share", primary: true) {
+                if #available(iOS 16.0, *), let shared = transferableContent {
                     Group {
                         switch shared {
                         case .left(let image):
