@@ -33,7 +33,7 @@ struct Dictionary: View {
 
     /// The primary body for the view.
     var body: some View {
-        NavigationView {
+//        NavigationView {
             Group {
                 if words.isEmpty {
                     if horizontalSizeClass == .compact {
@@ -57,7 +57,7 @@ struct Dictionary: View {
                         .foregroundColor(.secondary)
                 }
             }
-        }
+//        }
     }
 
     /// The view to display when there are no saved sniglets.

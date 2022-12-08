@@ -84,6 +84,7 @@
 		95834E18294236A200BCE6F2 /* Bunker in Frameworks */ = {isa = PBXBuildFile; productRef = 95834E17294236A200BCE6F2 /* Bunker */; };
 		95834E1E29423CAE00BCE6F2 /* GeneratorTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95834E1D29423CAE00BCE6F2 /* GeneratorTable.swift */; };
 		95834E1F29423CAE00BCE6F2 /* GeneratorTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95834E1D29423CAE00BCE6F2 /* GeneratorTable.swift */; };
+		95834E212942786C00BCE6F2 /* DictionaryTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95834E202942786C00BCE6F2 /* DictionaryTable.swift */; };
 		95838E7427AEF67400B80BB2 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95838E7327AEF67400B80BB2 /* ColorExtension.swift */; };
 		9589F6832770A79000BF3855 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9589F6822770A79000BF3855 /* StoreKit.framework */; };
 		958C2D3F274C1C1D0076E0D9 /* SyllableShapes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958C2D3E274C1C1D0076E0D9 /* SyllableShapes.swift */; };
@@ -257,6 +258,7 @@
 		957676EB274CA38A0011E558 /* GeneratorSingle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneratorSingle.swift; sourceTree = "<group>"; };
 		957DFBC4276D724A0034CBB0 /* WhatsNewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhatsNewView.swift; sourceTree = "<group>"; };
 		95834E1D29423CAE00BCE6F2 /* GeneratorTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneratorTable.swift; sourceTree = "<group>"; };
+		95834E202942786C00BCE6F2 /* DictionaryTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryTable.swift; sourceTree = "<group>"; };
 		95838E7327AEF67400B80BB2 /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		9589F6822770A79000BF3855 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS15.2.sdk/System/Library/Frameworks/StoreKit.framework; sourceTree = DEVELOPER_DIR; };
 		958C2D3E274C1C1D0076E0D9 /* SyllableShapes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyllableShapes.swift; sourceTree = "<group>"; };
@@ -366,6 +368,7 @@
 			children = (
 				95562DCD276695FF00E0C6FD /* Dictionary.swift */,
 				95050FA827A0393E00A31E45 /* DictionaryEntry.swift */,
+				95834E202942786C00BCE6F2 /* DictionaryTable.swift */,
 			);
 			path = Dictionary;
 			sourceTree = "<group>";
@@ -971,6 +974,7 @@
 				95CF06E82828497C00B9F14D /* GeneratorExplanation.swift in Sources */,
 				95562DD1276698FA00E0C6FD /* DBController.swift in Sources */,
 				9552F65527432CE2004582D6 /* ContentView.swift in Sources */,
+				95834E212942786C00BCE6F2 /* DictionaryTable.swift in Sources */,
 				9552F65327432CE2004582D6 /* MainEntry.swift in Sources */,
 				957676EC274CA38A0011E558 /* GeneratorSingle.swift in Sources */,
 				9594420B279AF5B10066DC62 /* UIView.swift in Sources */,

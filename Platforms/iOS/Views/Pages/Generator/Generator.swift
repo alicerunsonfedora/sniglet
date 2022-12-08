@@ -16,8 +16,6 @@ struct Generator: View {
     /// Whether to show the details page that explains the algorithm and confidence scores.
     @State var showDetails: Bool = false
 
-    @Environment(\.horizontalSizeClass) var horizontalSizeClass
-
     /// The primary body for the view.
     var body: some View {
         Group {
@@ -25,7 +23,7 @@ struct Generator: View {
                 NavigationView {
                     GeneratorSingleView()
                 }.navigationViewStyle(.stack)
-            } else if horizontalSizeClass == .regular, #available(iOS 16.0, *) {
+            } else if #available(iOS 16.0, *) {
                 NavigationStack {
                     GeneratorTable()
                         .navigationBarTitleDisplayMode(.inline)

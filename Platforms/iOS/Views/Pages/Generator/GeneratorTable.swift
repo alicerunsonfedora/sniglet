@@ -5,15 +5,18 @@
 //  Created by Marquis Kurt on 12/8/22.
 //
 
+import Bunker
 import CoreData
 import SwiftUI
 
 private typealias SResult = Sniglet.Result
 
 @available(iOS 16.0, *)
-struct GeneratorTable: View {
+struct GeneratorTable: View, SnigletShareable {
     /// The number of sniglets to generate at a given time.
     @AppStorage("generateSize") var generateSize: Int = 10
+
+    @AppStorage("shareMethod") var shareMethod: String = "image"
 
     /// The managed object context of the database.
     @Environment(\.managedObjectContext) var managedObjectContext
@@ -21,13 +24,16 @@ struct GeneratorTable: View {
     /// Whether to display the alert that indicates a user has saved a sniglet to their dictionary.
     @State private var showAddedAlert: Bool = false
 
-    @State private var requestedShare = false
+    @State internal var showShareSheet = false
+
     @State private var sniglets: [SResult] = []
-    @State private var selection: SResult.ID? = nil
+    @State private var selection: SResult.ID?
     @State private var sortOrder = [
         KeyPathComparator(\SResult.word),
         KeyPathComparator(\SResult.confidence),
     ]
+    @State private var transferableContent: Either<Image, String>?
+
     var body: some View {
         Table(sniglets, selection: $selection, sortOrder: $sortOrder) {
             TableColumn("table.sniglet", value: \.word) { (row: SResult) in
@@ -71,6 +77,11 @@ struct GeneratorTable: View {
         }
         .onAppear {
             Task { await updateList() }
+        }
+        .onChange(of: selection) { newSelection in
+            Task {
+                await updateTransferableContent()
+            }
         }
     }
 
@@ -127,36 +138,37 @@ struct GeneratorTable: View {
                 .disabled(selection == nil)
             }
 
-//            customizeToolbarItem(with: "share", primary: true) {
-//                if #available(iOS 16.0, *), let shared = transferableContent {
-//                    Group {
-//                        switch shared {
-//                        case .left(let image):
-//                            ShareLink(item: image, preview: .init("Generated Image", image: image))
-//                        case .right(let text):
-//                            ShareLink(item: text, subject: Text("Generated Text"))
-//                        }
-//                    }
-//                } else {
-//                    Button {
-//                        showShareSheet.toggle()
-//                    } label: {
-//                        Label("saved.button.share", systemImage: "square.and.arrow.up")
-//                    }
-//                    .popover(isPresented: $showShareSheet) {
-//                        SharedActivity(activities: createShareActivities(from: getShareableContent()))
-//                    }
-//                }
-//            }
+            customizeToolbarItem(with: "share", primary: true) {
+                Group {
+                    switch transferableContent {
+                    case .left(let image):
+                        ShareLink(item: image, preview: .init("Generated Image", image: image))
+                    case .right(let text):
+                        ShareLink(item: text, subject: Text("Generated Text"))
+                    case .none:
+                        ShareLink(item: "")
+                    }
+                }
+                .disabled(selection == nil)
+            }
         }
     }
 
+    private func updateTransferableContent() async {
+        guard let sniglet = sniglets.first(where: { $0.id == selection }) else { return }
+        transferableContent = await getTransferableContent(for: sniglet)
+    }
 
-//    @available(iOS 16.0, *)
-//    func getTransferableContent() async -> Either<Image, String> {
-//        if shareMethod == "image", let image = await ImageRenderer(content: SharedSnigletImage(entry: result)).uiImage {
-//            return .left(Image(uiImage: image))
-//        }
-//        return .right(result.shareableText())
-//    }
+    @available(iOS 16.0, *)
+    private func getTransferableContent(for result: SResult) async -> Either<Image, String> {
+        if shareMethod == "image", let image = await ImageRenderer(content: SharedSnigletImage(entry: result)).uiImage {
+            return .left(Image(uiImage: image))
+        }
+        return .right(result.shareableText())
+    }
+
+    func getShareableContent() -> Either<UIImage, String> {
+        guard let sniglet = sniglets.first(where: { $0.id == selection }) else { return .right("") }
+        return .right(sniglet.shareableText())
+    }
 }
