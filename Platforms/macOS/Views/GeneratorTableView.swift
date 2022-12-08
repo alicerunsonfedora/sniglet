@@ -76,25 +76,21 @@ struct GeneratorTableView: View {
         Table(sniglets, selection: $selection, sortOrder: $sortOrder) {
             TableColumn("table.sniglet".fromMacLocale(), value: \.word) { (row: SResult) in
                 Text(row.word)
-                    .contextMenu {
-                        if selection != nil {
-                            contextMenu
-                        }
-                    }
             }
             .width(min: 75, ideal: 125)
             TableColumn("table.score".fromMacLocale(), value: \.confidence) { (row: SResult) in
                 Text("\(row.confidence.asPercentage())%")
                     .font(.system(.body, design: .monospaced))
                     .foregroundColor(.secondary)
-                    .contextMenu {
-                        if selection != nil {
-                            contextMenu
-                        }
-                    }
             }
             .width(min: 75, ideal: 100, max: 125)
         }
+        .contextMenu(forSelectionType: SResult.ID.self) { id in
+            contextMenu
+        } primaryAction: { _ in
+
+        }
+
     }
 
     private var refreshToolbarItem: some ToolbarContent {
@@ -142,7 +138,10 @@ struct GeneratorTableView: View {
                 }
                 .help("generator.help.share".fromMacLocale())
                 .background(
-                    SharingServicePicker(isPresented: $requestedShare, items: [getSelection()?.shareableText()])
+                    SharingServicePicker(
+                        isPresented: $requestedShare,
+                        items: [getSelection()?.shareableText() ?? ""]
+                    )
                 )
             }
         }

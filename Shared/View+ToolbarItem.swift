@@ -15,7 +15,7 @@ extension View {
         hideByDefault: Bool = false,
         @ViewBuilder content: () -> Content
     ) -> ToolbarItem<String, Content> {
-        if #available(iOS 16.0, *) {
+        if #available(iOS 16.0, macOS 13.0, *) {
             return ToolbarItem(
                 id: id,
                 placement: primary ? .primaryAction: .secondaryAction,

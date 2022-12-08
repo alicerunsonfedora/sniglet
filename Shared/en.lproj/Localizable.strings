@@ -6,6 +6,11 @@
   
 */
 
+// MARK: Table Column Headers
+"table.sniglet" = "Sniglet";
+"table.score" = "Confidence";
+"table.note" = "Note";
+
 // MARK: - Generator
 "generator.title" = "Generator";
 "generator.button.prompt" = "Give me a sniglet!";

@@ -6,11 +6,6 @@
   
 */
 
-// MARK: Table Column Headers
-"table.sniglet" = "Sniglet";
-"table.score" = "Confidence";
-"table.note" = "Note";
-
 // MARK: - Generator Actions
 "generator.actions.copy" = "Copy Selection to Clipboard";
 "generator.actions.save" = "Save Selection to Dictionary";
