@@ -43,17 +43,17 @@ struct DictionaryTableView: View {
 
     private var dictionaryTable: some View {
         Table(filterEntries(by: searchQuery), selection: $selection) {
-            TableColumn("table.sniglet".fromMacLocale()) { (row: SavedWord) in
+            TableColumn("table.sniglet") { (row: SavedWord) in
                 Text(row.word ?? "")
             }
             .width(min: 75, ideal: 125, max: 250)
-            TableColumn("table.score".fromMacLocale()) { (row: SavedWord) in
+            TableColumn("table.score") { (row: SavedWord) in
                 Text("\(row.confidence.asPercentage())%")
                     .font(.system(.body, design: .monospaced))
                     .foregroundColor(.secondary)
             }
             .width(min: 75, ideal: 100, max: 125)
-            TableColumn("table.note".fromMacLocale()) { (row: SavedWord) in
+            TableColumn("table.note") { (row: SavedWord) in
                 Text(row.note ?? "")
                     .foregroundColor(.secondary)
             }

@@ -83,7 +83,6 @@
 		95834E162942369F00BCE6F2 /* WhatsNewKit in Frameworks */ = {isa = PBXBuildFile; productRef = 95834E152942369F00BCE6F2 /* WhatsNewKit */; };
 		95834E18294236A200BCE6F2 /* Bunker in Frameworks */ = {isa = PBXBuildFile; productRef = 95834E17294236A200BCE6F2 /* Bunker */; };
 		95834E1E29423CAE00BCE6F2 /* GeneratorTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95834E1D29423CAE00BCE6F2 /* GeneratorTable.swift */; };
-		95834E1F29423CAE00BCE6F2 /* GeneratorTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95834E1D29423CAE00BCE6F2 /* GeneratorTable.swift */; };
 		95834E212942786C00BCE6F2 /* DictionaryTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95834E202942786C00BCE6F2 /* DictionaryTable.swift */; };
 		95838E7427AEF67400B80BB2 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95838E7327AEF67400B80BB2 /* ColorExtension.swift */; };
 		9589F6832770A79000BF3855 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9589F6822770A79000BF3855 /* StoreKit.framework */; };
@@ -1030,7 +1029,6 @@
 				955306F227CAC78A0064039F /* ContentView.swift in Sources */,
 				95CF06EF282860A100B9F14D /* URL.swift in Sources */,
 				9570946428D0D0BC00BA759B /* MainEntry+WhatsNewProvider.swift in Sources */,
-				95834E1F29423CAE00BCE6F2 /* GeneratorTable.swift in Sources */,
 				95004DA62802672000C28EC9 /* CustomizePageView.swift in Sources */,
 				9553070F27CAC91D0064039F /* String.swift in Sources */,
 				9553070127CAC8D20064039F /* MainEntry.swift in Sources */,

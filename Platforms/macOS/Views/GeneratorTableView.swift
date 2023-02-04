@@ -74,11 +74,11 @@ struct GeneratorTableView: View {
 
     private var generatorTable: some View {
         Table(sniglets, selection: $selection, sortOrder: $sortOrder) {
-            TableColumn("table.sniglet".fromMacLocale(), value: \.word) { (row: SResult) in
+            TableColumn("table.sniglet", value: \.word) { (row: SResult) in
                 Text(row.word)
             }
             .width(min: 75, ideal: 125)
-            TableColumn("table.score".fromMacLocale(), value: \.confidence) { (row: SResult) in
+            TableColumn("table.score", value: \.confidence) { (row: SResult) in
                 Text("\(row.confidence.asPercentage())%")
                     .font(.system(.body, design: .monospaced))
                     .foregroundColor(.secondary)
