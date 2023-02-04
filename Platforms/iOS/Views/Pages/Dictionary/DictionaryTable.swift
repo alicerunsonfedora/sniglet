@@ -14,6 +14,8 @@ struct DictionaryTable: View {
     /// The managed object context for the database.
     @Environment(\.managedObjectContext) var managedObjectContext
 
+    @Environment(\.horizontalSizeClass) var horizontalSizeClass
+
     @AppStorage("shareMethod") var shareMethod: String = "image"
 
     /// The fetch request that stores the saved sniglets.
@@ -49,9 +51,9 @@ struct DictionaryTable: View {
     private var dictionaryTable: some View {
         Table(filterEntries(by: searchQuery), selection: $selection) {
             TableColumn("table.sniglet") { (row: SavedWord) in
-                Text(row.word ?? "")
+                leadingTableEntry(for: row)
             }
-            .width(min: 75, ideal: 125, max: 250)
+//            .width(min: 75, ideal: 125, max: 250)
             TableColumn("table.score") { (row: SavedWord) in
                 Text("\(row.confidence.asPercentage())%")
                     .font(.system(.body, design: .monospaced))
@@ -64,7 +66,6 @@ struct DictionaryTable: View {
             }
         }
         .searchable(text: $searchQuery)
-        .frame(minWidth: 550, idealWidth: 600, minHeight: 350, idealHeight: 450)
         .contextMenu(forSelectionType: SavedWord.ID.self) { selection in
             Button {
                 getSelection()?.word?.speak()
@@ -136,6 +137,25 @@ struct DictionaryTable: View {
                     }
                 }
                 .disabled(selection == nil)
+            }
+        }
+    }
+
+    private func leadingTableEntry(for row: SavedWord) -> some View {
+        VStack(alignment: .leading, spacing: 4) {
+            HStack {
+                Text(row.word ?? "")
+                if horizontalSizeClass == .compact {
+                    Spacer()
+                    Text("\(row.confidence.asPercentage())%")
+                        .font(.system(.body, design: .monospaced))
+                        .foregroundColor(.secondary)
+                }
+            }
+            if horizontalSizeClass == .compact, let note = row.note {
+                Text(note)
+                    .foregroundColor(.secondary)
+                    .lineLimit(1)
             }
         }
     }

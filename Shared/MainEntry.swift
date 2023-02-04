@@ -67,7 +67,6 @@ struct SnigletApp: App {
                     .handlesExternalEvents(preferring: ["dictionary"], allowing: ["dictionary"])
                     .environment(\.managedObjectContext, database.container.viewContext)
                     .onOpenURL { url in
-
                         if let params = url.queryParameters() {
                             guard let id = params["id"] else {
                                 editedUrl = ""

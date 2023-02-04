@@ -21,6 +21,8 @@ struct GeneratorTable: View, SnigletShareable {
     /// The managed object context of the database.
     @Environment(\.managedObjectContext) var managedObjectContext
 
+    @Environment(\.horizontalSizeClass) var horizontalSizeClass
+
     /// Whether to display the alert that indicates a user has saved a sniglet to their dictionary.
     @State private var showAddedAlert: Bool = false
 
@@ -37,7 +39,15 @@ struct GeneratorTable: View, SnigletShareable {
     var body: some View {
         Table(sniglets, selection: $selection, sortOrder: $sortOrder) {
             TableColumn("table.sniglet", value: \.word) { (row: SResult) in
-                Text(row.word)
+                HStack {
+                    Text(row.word)
+                    if horizontalSizeClass == .compact {
+                        Spacer()
+                        Text("\(row.confidence.asPercentage())%")
+                            .font(.system(.body, design: .monospaced))
+                            .foregroundColor(.secondary)
+                    }
+                }
             }
             .width(min: 75, ideal: 125)
             TableColumn("table.score", value: \.confidence) { (row: SResult) in

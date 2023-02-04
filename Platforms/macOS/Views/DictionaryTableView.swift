@@ -58,8 +58,36 @@ struct DictionaryTableView: View {
                     .foregroundColor(.secondary)
             }
         }
-        .searchable(text: $searchQuery)
-        .frame(minWidth: 550, idealWidth: 600, minHeight: 350, idealHeight: 450)
+        .contextMenu(forSelectionType: SavedWord.ID.self) { selection in
+            contextMenu(for: selection)
+        }
+//        .searchable(text: $searchQuery)
+//        .frame(minWidth: 550, idealWidth: 600, minHeight: 350, idealHeight: 450)
+    }
+
+    private func contextMenu(for selection: Set<SavedWord.ID>) -> some View {
+        Group {
+            Button {
+                getSelection(from: selection.first)?.word?.speak()
+            } label: {
+                Label("generator.actions.speak".fromMacLocale(), systemImage: "speaker.wave.3")
+            }
+            .help("generator.help.speak".fromMacLocale())
+            Button {
+                if let url = URL(string: "sniglets://dictionary?id=\(getSelection(from: selection.first)?.objectID.uriRepresentation().absoluteString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? "")") {
+                    openURL(url)
+                }
+            } label: {
+                Label("dictionary.actions.edit".fromMacLocale(), systemImage: "square.and.pencil")
+            }
+            .help("dictionary.help.edit".fromMacLocale())
+            Button {
+                deleteEntry(with: selection.first)
+            } label: {
+                Label("dictionary.actions.delete".fromMacLocale(), systemImage: "trash")
+            }
+            .help("dictionary.help.delete".fromMacLocale())
+        }
     }
 
     private var selectionToolbar: some ToolbarContent {
@@ -104,9 +132,9 @@ struct DictionaryTableView: View {
         }
     }
 
-    private func deleteEntry() {
+    private func deleteEntry(with selectionID: SavedWord.ID? = nil) {
         withAnimation {
-            if let currentWord = getSelection() {
+            if let currentWord = getSelection(from: selectionID) {
                 managedObjectContext.delete(currentWord)
                 selection = nil
                 DBController.shared.save()
@@ -123,8 +151,8 @@ struct DictionaryTableView: View {
         }
     }
 
-    private func getSelection() -> SavedWord? {
-        words.first { word in word.id == selection }
+    private func getSelection(from requestedId: SavedWord.ID? = nil) -> SavedWord? {
+        words.first { word in word.id == (requestedId ?? selection) }
     }
 }
 

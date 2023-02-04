@@ -87,10 +87,7 @@ struct GeneratorTableView: View {
         }
         .contextMenu(forSelectionType: SResult.ID.self) { id in
             contextMenu
-        } primaryAction: { _ in
-
         }
-
     }
 
     private var refreshToolbarItem: some ToolbarContent {
