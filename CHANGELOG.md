@@ -4,7 +4,7 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to 
 [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [1.2-17] - Unreleased
+## [2.0-14] - 04-04-2023 (also 1.2-17)
 - Update localizations for Mac version.
 - Fixes UI inconsistencies with tables on iOS 16.
 - Changes speech options to play alongide music instead of stopping it entirely (ABY-9).
