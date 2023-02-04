@@ -61,9 +61,9 @@ want to change the container name to match that of your app's identifier.
 Alternatively, you can strip out the CloudKit integration and change `DBController` so that it points to a Core Data
 persistent container instead of an iCloud container.
 
-## Found a bug?
+## Got feedback?
 
-Please report an issue on YouTrack at https://youtrack.marquiskurt.net/youtrack/newIssue?project=ABY.
+You can send feedback through the Feedback Portal at https://feedback.marquiskurt.net/t/sniglets.
 
 ## License
 

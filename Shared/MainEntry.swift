@@ -35,6 +35,16 @@ struct SnigletApp: App {
                     resetWarnings()
                 }
             }
+
+            CommandGroup(after: .help) {
+                Group {
+                    if let destination = URL(appLink: .feedback) {
+                        Link(destination: destination) {
+                            Text("settings.info.feedback")
+                        }
+                    }
+                }
+            }
         }
 
         #if os(macOS)
