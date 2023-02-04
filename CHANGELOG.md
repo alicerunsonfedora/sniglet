@@ -6,6 +6,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## [1.2-17] - Unreleased
 - Update localizations for Mac version.
+- Fixes UI inconsistencies with tables on iOS 16.
+- Changes speech options to play alongide music instead of stopping it entirely (ABY-9).
 
 ## [1.2-16] - 08-12-2022
 - Updates design for iOS 16 with new tables.

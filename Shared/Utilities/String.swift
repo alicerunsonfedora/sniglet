@@ -79,6 +79,13 @@ extension String {
     /// Speak the current string using an `AVSpeechSynthesizer`.
     func speak() {
         let utterance = AVSpeechUtterance(string: self)
+        #if os(iOS)
+        do {
+            try AVAudioSession.sharedInstance().setCategory(.playback, options: .duckOthers)
+        } catch {
+            print("Couldn't set category: \(error.localizedDescription)")
+        }
+        #endif
         AVSpeechSynthesizer.shared.speak(utterance)
     }
 }
