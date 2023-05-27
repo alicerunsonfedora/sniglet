@@ -18,48 +18,53 @@ struct ContentView: View {
     @State private var currentPage: PageSelector? = .generator
 
     var body: some View {
-        NavigationView {
+        NavigationSplitView {
             List(selection: $currentPage) {
-                NavigationLink(tag: PageSelector.generator, selection: $currentPage) {
-                    GeneratorTableView()
-                        .navigationTitle("generator.title")
-                } label: {
+                NavigationLink(value: PageSelector.generator) {
                     Label("generator.title", systemImage: "wand.and.stars")
                 }
-
-                NavigationLink(tag: PageSelector.dictionary, selection: $currentPage) {
-                    DictionaryTableView()
-                        .navigationTitle("saved.title")
-                } label: {
+                NavigationLink(value: PageSelector.dictionary) {
                     Label("saved.title", systemImage: "bookmark")
                 }
-
-                NavigationLink(tag: PageSelector.algorithm, selection: $currentPage) {
-                    CustomizePageView()
-                        .navigationTitle("customize.title".fromMacLocale())
-                } label: {
+                NavigationLink(value: PageSelector.algorithm) {
                     Label("customize.title".fromMacLocale(), systemImage: "waveform")
-                        .disabled(true)
                 }
             }
             .listStyle(.sidebar)
             .frame(minWidth: 175, idealWidth: 200)
-            .toolbar {
-                ToolbarItem(placement: .navigation) {
-                    Button {
-                        NSApp.keyWindow?.firstResponder?.tryToPerform(
-                            #selector(NSSplitViewController.toggleSidebar(_:)),
-                            with: nil
-                        )
-                    } label: {
-                        Label("general.togglesidebar", systemImage: "sidebar.left")
+            .navigationDestination(for: PageSelector.self) { page in
+                switch page {
+                case .dictionary:
+                    DictionaryTableView()
+                        .navigationTitle("saved.title")
+                case .generator:
+                    GeneratorTableView()
+                        .navigationTitle("generator.title")
+                case .algorithm:
+                    CustomizePageView()
+                        .navigationTitle("customize.title".fromMacLocale())
+                }
+
+            }
+        } detail: {
+            Group {
+                if let currentPage {
+                    switch currentPage {
+                    case .dictionary:
+                        DictionaryTableView()
+                            .navigationTitle("saved.title")
+                    case .generator:
+                        GeneratorTableView()
+                            .navigationTitle("generator.title")
+                    case .algorithm:
+                        CustomizePageView()
+                            .navigationTitle("customize.title".fromMacLocale())
                     }
-                    .help("help.sidebar")
+                } else {
+                    Text("Give Me a Sniglet!")
+                        .padding()
                 }
             }
-
-            Text("Give Me a Sniglet!")
-                .padding()
         }
     }
 }

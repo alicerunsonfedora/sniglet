@@ -51,3 +51,6 @@
 
 // MARK: - Feature Availability Texts
 "features.unavailable" = "This feature is not available yet.";
+
+// MARK: - Other UI Texts
+"other.done" = "Done";

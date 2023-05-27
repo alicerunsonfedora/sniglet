@@ -61,8 +61,8 @@ struct DictionaryTableView: View {
         .contextMenu(forSelectionType: SavedWord.ID.self) { selection in
             contextMenu(for: selection)
         }
-//        .searchable(text: $searchQuery)
-//        .frame(minWidth: 550, idealWidth: 600, minHeight: 350, idealHeight: 450)
+        .searchable(text: $searchQuery)
+        .frame(minWidth: 550, idealWidth: 600, minHeight: 350, idealHeight: 450)
     }
 
     private func contextMenu(for selection: Set<SavedWord.ID>) -> some View {

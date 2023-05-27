@@ -38,6 +38,7 @@ struct CustomizePageView: View {
 
     @State private var popoverBatch = false
     @State private var popoverGenerate = false
+    @State private var sheetSyllables = false
 
     var body: some View {
         Form {
@@ -51,17 +52,17 @@ struct CustomizePageView: View {
             Divider()
                 .padding(.vertical)
 
-            Section {
-                Picker("customize.form.validate-model".fromMacLocale(), selection: $genMethodEnum) {
-                    ForEach(ValidatorKind.allCases, id: \.self) { kind in
-                        Text(kind.rawValue)
-                            .tag(kind)
-                    }
-                }
-                .disabled(true) // TODO: Enable this when ready.
-                Text("features.unavailable".fromMacLocale())
-                    .foregroundColor(.secondary)
-            }
+//            Section {
+//                Picker("customize.form.validate-model".fromMacLocale(), selection: $genMethodEnum) {
+//                    ForEach(ValidatorKind.allCases, id: \.self) { kind in
+//                        Text(kind.rawValue)
+//                            .tag(kind)
+//                    }
+//                }
+//                .disabled(true) // TODO: Enable this when ready.
+//                Text("features.unavailable".fromMacLocale())
+//                    .foregroundColor(.secondary)
+//            }
 
             Section {
                 HStack(spacing: 2) {
@@ -103,7 +104,7 @@ struct CustomizePageView: View {
                     Text("customize.form.boundary-reset".fromMacLocale())
                 }
                 Button {
-                    openURL(.init(string: "sniglets://syllables")!)
+                    sheetSyllables.toggle()
                 } label: {
                     Text("customize.form.syllables".fromMacLocale())
                 }
@@ -111,6 +112,17 @@ struct CustomizePageView: View {
         }
         .padding()
         .frame(minWidth: 600, minHeight: 400)
+        .sheet(isPresented: $sheetSyllables) {
+            CustomizeSyllablesView()
+                .frame(maxWidth: 500, minHeight: 400)
+                .toolbar {
+                    Button {
+                        sheetSyllables.toggle()
+                    } label: {
+                        Text("other.done".fromMacLocale())
+                    }
+                }
+        }
     }
 }
 

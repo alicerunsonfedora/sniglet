@@ -21,14 +21,12 @@ struct SavedDefinitionImage: View {
                     .font(.system(.body, design: .serif))
                     .foregroundColor(.white)
             }
-            if let result = entry.confidence {
                 Spacer()
-                GeneratorConfidenceBar(confidence: result)
-                    .frame(height: 8)
-                Text("Confidence: \(result.asPercentage())%")
-                    .font(.system(.caption, design: .monospaced))
-                    .foregroundColor(.white)
-            }
+            GeneratorConfidenceBar(confidence: entry.confidence)
+                .frame(height: 8)
+            Text("Confidence: \(entry.confidence.asPercentage())%")
+                .font(.system(.caption, design: .monospaced))
+                .foregroundColor(.white)
             Text("Generated with Give Me A Sniglet")
                 .font(.system(.caption2, design: .serif))
                 .foregroundColor(.white)
